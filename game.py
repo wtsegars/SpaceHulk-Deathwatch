@@ -2,6 +2,14 @@ from sys import exit
 from random import randint
 from textwrap import dedent
 
+squad = {
+    "Sergent" : {},
+    "Terminator1" : {},
+    "Terminator2" : {},
+    "Terminator3" : {},
+    "Terminator4" : {}
+}
+
 class Scene(object):
 
     def enter(self):
@@ -95,3 +103,86 @@ class SquadSelect(Scene):
             "Silver Skulls",
             "Iron Snakes",
             "Mantis Warriors"]
+
+        weapon_loadout = [
+            "Power Sword and Storm Bolter",
+            "Thunder Hammer and Storm Shield",
+            "Lightning Claws",
+            "Storm Bolter and Chainfist",
+            "Storm Bolter and Power Axe",
+            "Assault Cannon and Powerfist",
+            "Heavy Flamer and Powerfist",
+            "Cyclone Missile Launcher, Storm Bolter and Powerfist",
+            "Storm Bolter and Power Maul"
+        ]
+
+        print(chapters)
+
+        terminator_count = 1
+        heavy_count = 0
+
+        while len(squad) < 6:
+            if len(squad) == 0:
+                print("Choose your Sergent:")
+
+                sgt = {}
+                sgt_choice = input("> ")
+
+                for i in chapters:
+                    if sgt_choice == chapters[i]:
+                        sgt["chapter"] = sgt_choice
+                        break
+                    elif sgt_choice != chapters[i] and i == len(chapters):
+                        print("The chapter you entered is not valid, please try again.")
+                        return 'Squad Selection'
+
+                print("Choose your weapon loadout:")
+                print(weapon_loadout)
+
+                weapon_choice = input("> ")
+
+                for j in weapon_loadout:
+                    if weapon_choice == weapon_loadout[j]:
+                        sgt["weapon loadout"] = weapon_choice
+                        if weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[6] or weapon_choice == weapon_loadout[7]:
+                            heavy_count += 1
+                            break
+                        else:
+                            break
+                    elif weapon_choice != weapon_loadout[j] and j == len(weapon_loadout):
+                        print("The weapon loadout you picked is not valid, please try again.")
+                        return 'Squad Selection'
+
+                sgt["alive"] = True
+                squad["Sergent"] = sgt
+
+            else:
+                print("Choose your terminator:")
+
+                terminator = {}
+                term_choice = input("> ")
+
+                for i in chapters:
+                    if term_choice == chapters[i]:
+                        terminator["chapter"] = term_choice
+                        break
+                    elif term_choice != chapters[i] and i == len(chapters):
+                        print("The chapter that you picked is not valid, please try again")
+                        return 'Squad Selection'
+
+                print("Choose your weapon loadout:")
+                print(weapon_loadout)
+
+                weapon_choice = input("> ")
+
+                for j in weapon_loadout:
+                    if weapon_choice == weapon_loadout[j]:
+                        terminator["weapon loadout"] = weapon_choice
+                        if weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[6] or weapon_choice == weapon_loadout[7]:
+                            heavy_count += 1
+                            break
+                        else:
+                            break
+                    elif weapon_choice != weapon_loadout[j] and j == len(weapon_loadout):
+                        print("The weapon loadout you picked is not valid, please try again.")
+                        return 'Squad Selection'
