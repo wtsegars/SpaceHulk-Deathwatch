@@ -147,6 +147,9 @@ class SquadSelect(Scene):
                         if weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[6] or weapon_choice == weapon_loadout[7]:
                             heavy_count += 1
                             break
+                        elif heavy_count == 3:
+                            print("You have reached the maximum amount of heavy weapons for you squad, please try again.")
+                            return 'Squad Selection'
                         else:
                             break
                     elif weapon_choice != weapon_loadout[j] and j == len(weapon_loadout):
@@ -181,8 +184,22 @@ class SquadSelect(Scene):
                         if weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[6] or weapon_choice == weapon_loadout[7]:
                             heavy_count += 1
                             break
+                        elif heavy_count == 3:
+                            print("You have reached the maximum amount of heavy weapons for you squad, please try again.")
+                            return 'Squad Selection'
                         else:
                             break
                     elif weapon_choice != weapon_loadout[j] and j == len(weapon_loadout):
                         print("The weapon loadout you picked is not valid, please try again.")
                         return 'Squad Selection'
+                
+                terminator["alive"] = True
+                squad[f"Terminator{terminator_count}"]
+
+                terminator_count += 1
+
+class SquadPlacement(Scene):
+
+    def enter(self):
+        print("Choose the order of your squad:")
+        
