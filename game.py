@@ -216,4 +216,10 @@ class SquadPlacement(Scene):
 
     def enter(self):
         print("Choose the order of your squad:")
-        
+        spaces = ["first", "second", "third", "fourth", "fifth"]
+
+        for i in squad:
+            print(f"Where would you like to place {squad[i]}?")
+            print(spaces)
+            placement = input("> ")
+     
