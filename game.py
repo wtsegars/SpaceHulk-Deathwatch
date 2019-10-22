@@ -144,8 +144,15 @@ class SquadSelect(Scene):
                 for j in weapon_loadout:
                     if weapon_choice == weapon_loadout[j]:
                         sgt["weapon loadout"] = weapon_choice
-                        if weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[6] or weapon_choice == weapon_loadout[7]:
+                        if weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[6]:
                             heavy_count += 1
+                            sgt["clip_size"] = 10
+                            sgt["clip_num"] = 2
+                            break
+                        elif weapon_choice == weapon_loadout[7]:
+                            heavy_cout += 1
+                            sgt["clip_size"] = 8
+                            sgt["clip_num"] = 0
                             break
                         elif heavy_count == 3:
                             print("You have reached the maximum amount of heavy weapons for you squad, please try again.")
@@ -181,8 +188,15 @@ class SquadSelect(Scene):
                 for j in weapon_loadout:
                     if weapon_choice == weapon_loadout[j]:
                         terminator["weapon loadout"] = weapon_choice
-                        if weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[6] or weapon_choice == weapon_loadout[7]:
+                        if weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[6]:
                             heavy_count += 1
+                            terminator["clip_size"] = 10
+                            terminator["clip_num"] = 2
+                            break
+                        elif weapon_choice == weapon_loadout[7]:
+                            heavy_count +=1
+                            terminator["clip_size"] = 8
+                            terminator["clip_num"] = 0
                             break
                         elif heavy_count == 3:
                             print("You have reached the maximum amount of heavy weapons for you squad, please try again.")
