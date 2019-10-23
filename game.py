@@ -63,6 +63,8 @@ class Openingscene(Scene):
                 on board of space hulks).
                 """))
 
+        return 'squad_selection'
+
 class SquadSelect(Scene):
 
     def enter(self):
@@ -134,7 +136,7 @@ class SquadSelect(Scene):
                         break
                     elif sgt_choice != chapters[i] and i == len(chapters):
                         print("The chapter you entered is not valid, please try again.")
-                        return 'Squad Selection'
+                        return 'squad_selection'
 
                 print("Choose your weapon loadout:")
                 print(weapon_loadout)
@@ -156,12 +158,12 @@ class SquadSelect(Scene):
                             break
                         elif heavy_count == 3:
                             print("You have reached the maximum amount of heavy weapons for you squad, please try again.")
-                            return 'Squad Selection'
+                            return 'squad_selection'
                         else:
                             break
                     elif weapon_choice != weapon_loadout[j] and j == len(weapon_loadout):
                         print("The weapon loadout you picked is not valid, please try again.")
-                        return 'Squad Selection'
+                        return 'squad_selection'
 
                 sgt["alive"] = True
                 squad["Sergent"] = sgt
@@ -178,7 +180,7 @@ class SquadSelect(Scene):
                         break
                     elif term_choice != chapters[i] and i == len(chapters):
                         print("The chapter that you picked is not valid, please try again")
-                        return 'Squad Selection'
+                        return 'squad_selection'
 
                 print("Choose your weapon loadout:")
                 print(weapon_loadout)
@@ -200,26 +202,48 @@ class SquadSelect(Scene):
                             break
                         elif heavy_count == 3:
                             print("You have reached the maximum amount of heavy weapons for you squad, please try again.")
-                            return 'Squad Selection'
+                            return 'squad_selection'
                         else:
                             break
                     elif weapon_choice != weapon_loadout[j] and j == len(weapon_loadout):
                         print("The weapon loadout you picked is not valid, please try again.")
-                        return 'Squad Selection'
+                        return 'squad_selection'
                 
                 terminator["alive"] = True
                 squad[f"Terminator{terminator_count}"]
 
                 terminator_count += 1
 
-class SquadPlacement(Scene):
+                if terminator_count == 4:
+                    return 'squad_placement'
+
+class Squadplacement(Scene):
 
     def enter(self):
-        print("Choose the order of your squad:")
-        spaces = ["first", "second", "third", "fourth", "fifth"]
+        print("Select the order in which your squad is to be deployed:")
+
+        squad_places = ["First", "Second", "Third", "Fourth", "Fifth"]
 
         for i in squad:
-            print(f"Where would you like to place {squad[i]}?")
-            print(spaces)
-            placement = input("> ")
-     
+            print(f"Where do you want to place {squad[i]}?")
+            print(squad_places)
+            placement_selector = input("> ")
+            term_place = {}
+
+            if placement_selector:
+                for j in squad_places:
+                    if placement_selector == squad_places[j]:
+                        term_place["starting_position"] = squad_places[j]
+                        squad_places.pop(j)
+                        break
+                    elif placement_selector != squad_places[j] and j == len(squad_places):
+                        print("The placement that you selected is not valid, please try again")
+                        return 'squad_placement'
+
+class GameControl(object):
+
+    scenes = {
+        'squad_selections': SquadSelect(),
+        'opening_scene': Openingscene(),
+        'squad_placement': Squadplacement()
+    }
