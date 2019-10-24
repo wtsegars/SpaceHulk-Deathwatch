@@ -10,6 +10,18 @@ squad = {
     "Terminator4" : {}
 }
 
+turn_count = 0
+
+tiles = {
+    "starting tiles": {
+        "s1": {},
+        "s2": {},
+        "s3": {},
+        "s4": {},
+        "s5": {}
+    }
+}
+
 class Scene(object):
 
     def enter(self):
@@ -239,6 +251,18 @@ class Squadplacement(Scene):
                     elif placement_selector != squad_places[j] and j == len(squad_places):
                         print("The placement that you selected is not valid, please try again")
                         return 'squad_placement'
+                    elif len(squad_places) == 0:
+                        return 'place_holder'
+
+class SpaceMarineTurn(Scene):
+
+    def enter(self):
+        turn_count += 1
+
+        if turn_count == 1:
+
+
+class GeneStealerTurn(Scene):
 
 class GameControl(object):
 
