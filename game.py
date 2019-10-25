@@ -19,6 +19,98 @@ tiles = {
         "s3": {},
         "s4": {},
         "s5": {}
+    },
+    "genestealer tiles": {
+        "g1": {
+            "entrance": True
+        },
+        "g2": {},
+        "g3": {},
+        "g4": {
+            "door": {
+                "sealed": False
+            }
+        },
+        "g5": {
+            "entrance": True
+        },
+        "g6": {},
+        "g7": {},
+        "g8": {
+            "door": {
+                "sealed": False
+            }
+        },
+        "g9": {
+            "entrance": True
+        },
+        "g10": {},
+        "g11": {
+            "entrance": True
+        },
+        "g12": {},
+        "g13": {
+            "entrance": True
+        },
+        "g14": {},
+        "g15": {
+            "entrance": True
+        },
+        "g16": {},
+        "g17": {
+            "entrance": True
+        },
+        "g18": {
+            "door": {
+                "sealed": False
+            }
+        },
+        "g19": {
+            "entrance": True
+        },
+        "g20": {
+            "door": {
+                "sealed": False
+            }
+        },
+        "g21": {
+            "entrance": True
+        },
+        "g22": {
+            "door": {
+                "sealed": False
+            }
+        },
+        "g23": {
+            "entrance": True
+        },
+        "g24": {
+            "door": {
+                "sealed": False
+            }
+        }
+    },
+    "center tiles": {
+        "c1": {},
+        "c2": {},
+        "c3": {
+            "door": {
+                "sealed": False
+            }
+        },
+        "c4": {},
+        "c5": {
+            "door": {
+                "sealed": False
+            }
+        },
+        "c6": {},
+        "c7": {},
+        "c8": {},
+        "c9": {},
+        "c10": {},
+        "c11": {},
+        "c12": {}
     }
 }
 
