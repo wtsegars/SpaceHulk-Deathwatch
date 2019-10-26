@@ -267,6 +267,7 @@ class SquadSelect(Scene):
             "Mantis Warriors"]
 
         weapon_loadout = [
+            "Storm Bolter and Powerfist",
             "Power Sword and Storm Bolter",
             "Thunder Hammer and Storm Shield",
             "Lightning Claws",
@@ -306,12 +307,14 @@ class SquadSelect(Scene):
                 for j in weapon_loadout:
                     if weapon_choice == weapon_loadout[j]:
                         sgt["weapon loadout"] = weapon_choice
-                        if weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[6]:
+                        if weapon_choice == weapon_loadout[6] or weapon_choice == weapon_loadout[7]:
+                            if weapon_choice == weapon_loadout[6]:
+                                sgt["overwatch"] = False
                             heavy_count += 1
                             sgt["clip_size"] = 10
                             sgt["clip_num"] = 2
                             break
-                        elif weapon_choice == weapon_loadout[7]:
+                        elif weapon_choice == weapon_loadout[8]:
                             heavy_cout += 1
                             sgt["clip_size"] = 8
                             sgt["clip_num"] = 0
@@ -319,6 +322,10 @@ class SquadSelect(Scene):
                         elif heavy_count == 3:
                             print("You have reached the maximum amount of heavy weapons for you squad, please try again.")
                             return 'squad_selection'
+                        elif weapon_choice == weapon_loadout[0] or weapon_choice == weapon_loadout[1] or weapon_choice == weapon_loadout[4] or weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[8] or weapon_choice == weapon_loadout[9]:
+                            sgt["overwatch"] = False
+                            sgt["jammed"] = False
+                            break
                         else:
                             break
                     elif weapon_choice != weapon_loadout[j] and j == len(weapon_loadout):
@@ -350,12 +357,14 @@ class SquadSelect(Scene):
                 for j in weapon_loadout:
                     if weapon_choice == weapon_loadout[j]:
                         terminator["weapon loadout"] = weapon_choice
-                        if weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[6]:
+                        if weapon_choice == weapon_loadout[6] or weapon_choice == weapon_loadout[7]:
+                            if weapon_choice == weapon_loadout[6]:
+                                terminator["overwatch"] = False
                             heavy_count += 1
                             terminator["clip_size"] = 10
                             terminator["clip_num"] = 2
                             break
-                        elif weapon_choice == weapon_loadout[7]:
+                        elif weapon_choice == weapon_loadout[8]:
                             heavy_count +=1
                             terminator["clip_size"] = 8
                             terminator["clip_num"] = 0
@@ -363,6 +372,10 @@ class SquadSelect(Scene):
                         elif heavy_count == 3:
                             print("You have reached the maximum amount of heavy weapons for you squad, please try again.")
                             return 'squad_selection'
+                        elif weapon_choice == weapon_loadout[0] or weapon_choice == weapon_loadout[1] or weapon_choice == weapon_loadout[4] or weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[8] or weapon_choice == weapon_loadout[9]:
+                            terminator["overwatch"] = False
+                            terminator["jammed"] = False
+                            break
                         else:
                             break
                     elif weapon_choice != weapon_loadout[j] and j == len(weapon_loadout):
@@ -395,12 +408,14 @@ class Squadplacement(Scene):
                     if placement_selector == squad_places[j]:
                         term_place["starting_position"] = squad_places[j]
                         squad_places.pop(j)
+                        squad[i]["starting_place"] = term_place
+                        term_place.clear()
                         break
                     elif placement_selector != squad_places[j] and j == len(squad_places):
                         print("The placement that you selected is not valid, please try again")
                         return 'squad_placement'
                     elif len(squad_places) == 0:
-                        return 'place_holder'
+                        return 'space_marine_turn'
 
 class SpaceMarineTurn(Scene):
 
@@ -417,5 +432,6 @@ class GameControl(object):
     scenes = {
         'squad_selections': SquadSelect(),
         'opening_scene': Openingscene(),
-        'squad_placement': Squadplacement()
+        'squad_placement': Squadplacement(),
+        'space_marine_turn': SpaceMarineTurn()
     }
