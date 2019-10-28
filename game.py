@@ -3,11 +3,21 @@ from random import randint
 from textwrap import dedent
 
 squad = {
-    "Sergent" : {},
-    "Terminator1" : {},
-    "Terminator2" : {},
-    "Terminator3" : {},
-    "Terminator4" : {}
+    "Sergent" : {
+        "action points": 4
+    },
+    "Terminator1" : {
+        "action points": 4
+    },
+    "Terminator2" : {
+        "action points": 4
+    },
+    "Terminator3" : {
+        "action points": 4
+    },
+    "Terminator4" : {
+        "action points": 4
+    }
 }
 
 turn_count = 0
@@ -434,6 +444,11 @@ class SpaceMarineTurn(Scene):
                     tiles["starting tiles"]["s4"]["occupied"] = True
                 elif squad[i]["starting_place"] == "Fifth":
                     tiles["starting tiles"]["s5"]["occupied"] = True
+
+        for i in squad:
+            if squad[i]["action points"] != 4:
+                squad[i]["action points"] = 4
+
         
 
 class GeneStealerTurn(Scene):
