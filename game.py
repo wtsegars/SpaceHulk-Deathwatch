@@ -434,7 +434,7 @@ class SpaceMarineTurn(Scene):
                     tiles["starting tiles"]["s4"]["occupied"] = True
                 elif squad[i]["starting_place"] == "Fifth":
                     tiles["starting tiles"]["s5"]["occupied"] = True
-
+        
 
 class GeneStealerTurn(Scene):
 
