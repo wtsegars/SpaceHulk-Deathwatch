@@ -423,6 +423,17 @@ class SpaceMarineTurn(Scene):
         turn_count += 1
 
         if turn_count == 1:
+            for i in squad:
+                if squad[i]["starting_place"] == "First":
+                    tiles["starting tiles"]["s1"]["occupied"] = True
+                elif squad[i]["starting_place"] == "Second":
+                    tiles["starting tiles"]["s2"]["occupied"] = True
+                elif squad[i]["starting_place"] == "Third":
+                    tiles["starting tiles"]["s3"]["occupied"] = True
+                elif squad[i]["starting_place"] == "Fourth":
+                    tiles["starting tiles"]["s4"]["occupied"] = True
+                elif squad[i]["starting_place"] == "Fifth":
+                    tiles["starting tiles"]["s5"]["occupied"] = True
 
 
 class GeneStealerTurn(Scene):
