@@ -26,11 +26,35 @@ turn_count = 0
 
 tiles = {
     "starting tiles": {
-        "s1": {},
-        "s2": {},
-        "s3": {},
-        "s4": {},
-        "s5": {}
+        "s1": {
+            "connected to": {
+                "s2": "north"
+            }
+        },
+        "s2": {
+            "connected to": {
+                "s1": "south",
+                "s3": "north"
+            }
+        },
+        "s3": {
+            "connected to": {
+                "s2": "south",
+                "s4": "north"
+            }
+        },
+        "s4": {
+            "connected to": {
+                "s3": "south",
+                "s5": "north"
+            }
+        },
+        "s5": {
+            "connected to": {
+                "s4": "south",
+                "c1": "north"
+            }
+        }
     },
     "genestealer tiles": {
         "g1": {
@@ -467,6 +491,8 @@ class SpaceMarineTurn(Scene):
             else:
                 print("Your answer is not valid, please try again")
                 return 'space_marine_turn'
+
+            turn_menu()
         
         def turn_menu():
             print("What would you like to do?")
@@ -480,18 +506,20 @@ class SpaceMarineTurn(Scene):
             action_choice = input("> ")
 
             if action_choice == "Move":
-                print("Which terminator would you like to move?")
+                move()
+                
+                def move():
+                    print("Which terminator would you like to move?")
 
-                for i in squad:
-                    if squad[i]["action points"] > 0:
-                        print(squad[i])
+                    for i in squad:
+                        if squad[i]["action points"] > 0:
+                            print(squad[i])
 
-                movement = input("> ")
+                    movement = input("> ")
 
-                for j in squad:
-                    if movement == squad[j]:
-                        
-
+                    for j in squad:
+                        if movement == squad[j]:
+                            print("How would you like to move?")
 
 class GeneStealerTurn(Scene):
 
