@@ -468,6 +468,30 @@ class SpaceMarineTurn(Scene):
                 print("Your answer is not valid, please try again")
                 return 'space_marine_turn'
         
+        def turn_menu():
+            print("What would you like to do?")
+            print(dedent("""
+                    Move,
+                    Attack,
+                    Other Action,
+                    End Turn
+                    """))
+
+            action_choice = input("> ")
+
+            if action_choice == "Move":
+                print("Which terminator would you like to move?")
+
+                for i in squad:
+                    if squad[i]["action points"] > 0:
+                        print(squad[i])
+
+                movement = input("> ")
+
+                for j in squad:
+                    if movement == squad[j]:
+                        
+
 
 class GeneStealerTurn(Scene):
 
