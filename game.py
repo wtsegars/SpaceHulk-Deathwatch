@@ -58,23 +58,57 @@ tiles = {
     },
     "genestealer tiles": {
         "g1": {
-            "entrance": True
+            "entrance": True,
+            "connected to": {
+                "g2": "north"
+            }
         },
-        "g2": {},
-        "g3": {},
+        "g2": {
+            "connected to": {
+                "g1": "south",
+                "g3": "north"
+            }
+        },
+        "g3": {
+            "connected to": {
+                "g2": "south",
+                "g4": "east"
+            }
+        },
         "g4": {
             "door": {
                 "sealed": False
+            },
+            "connected to": {
+                "g3": "west",
+                "ll5": "east"
             }
         },
         "g5": {
-            "entrance": True
+            "entrance": True,
+            "connected to": {
+                "g6": "north"
+            }
         },
-        "g6": {},
-        "g7": {},
+        "g6": {
+            "connected to": {
+                "g5": "south",
+                "g7": "north"
+            }
+        },
+        "g7": {
+            "connected to": {
+                "g6": "south",
+                "g8": "west"
+            }
+        },
         "g8": {
             "door": {
                 "sealed": False
+            },
+            "connected to": {
+                "g7": "east",
+                "lr5": "west"
             }
         },
         "g9": {
@@ -127,7 +161,13 @@ tiles = {
         }
     },
     "center tiles": {
-        "c1": {},
+        "c1": {
+            "connected to": {
+                "s5": "south",
+                "lr1": "east",
+                "ll1": "west"
+            }
+        },
         "c2": {},
         "c3": {
             "door": {
