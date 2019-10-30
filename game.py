@@ -20,6 +20,8 @@ squad = {
     }
 }
 
+command_points = 0
+
 turn_count = 0
 
 tiles = {
@@ -449,6 +451,22 @@ class SpaceMarineTurn(Scene):
             if squad[i]["action points"] != 4:
                 squad[i]["action points"] = 4
 
+        command_points = 0
+        command_points = randint(1, 6)
+
+        if squad["Sergent"]["alive"] == True:
+            print("Would you like to re-roll your command points, yes or no?")
+
+            choice = input("> ")
+
+            if choice == "yes":
+                command_points = 0
+                command_points = rantint(1, 6)
+            elif choice == "no":
+                print("Did not re-roll command points")
+            else:
+                print("Your answer is not valid, please try again")
+                return 'space_marine_turn'
         
 
 class GeneStealerTurn(Scene):
