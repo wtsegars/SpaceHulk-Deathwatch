@@ -112,17 +112,41 @@ tiles = {
             }
         },
         "g9": {
-            "entrance": True
+            "entrance": True,
+            "connected to": {
+                "g10": "east"
+            }
         },
-        "g10": {},
+        "g10": {
+            "connected to": {
+                "g9": "west",
+                "c2": "east"
+            }
+        },
         "g11": {
-            "entrance": True
+            "entrance": True,
+            "connected to": {
+                "g12": "west"
+            }
         },
-        "g12": {},
+        "g12": {
+            "connected to": {
+                "g11": "east",
+                "c2": "west"
+            }
+        },
         "g13": {
-            "entrance": True
+            "entrance": True,
+            "connected to": {
+                "g14": "east"
+            }
         },
-        "g14": {},
+        "g14": {
+            "connected to": {
+                "g13": "west",
+                "c6": "east"
+            }
+        },
         "g15": {
             "entrance": True
         },
