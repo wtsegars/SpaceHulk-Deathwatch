@@ -255,15 +255,58 @@ tiles = {
         "c5": {
             "door": {
                 "sealed": False
+            },
+            "connected to": {
+                "c4": "south",
+                "c6": "north"
             }
         },
-        "c6": {},
-        "c7": {},
-        "c8": {},
-        "c9": {},
-        "c10": {},
-        "c11": {},
-        "c12": {}
+        "c6": {
+            "connected to": {
+                "c5": "south",
+                "g14": "west",
+                "g16": "east"
+            }
+        },
+        "c7": {
+            "connected to": {
+                "g18": "east",
+                "g20": "west"
+            }
+        },
+        "c8": {
+            "connected to": {
+                "c7": "south",
+                "c9": "north"
+            }
+        },
+        "c9": {
+            "connected to": {
+                "c8": "south",
+                "c10": "north"
+            }
+        },
+        "c10": {
+            "connected to": {
+                "c9": "south",
+                "ur4": "east",
+                "ul4": "west",
+                "c11": "north"
+            }
+        },
+        "c11": {
+            "connected to": {
+                "c10": "south",
+                "c12": "north"
+            }
+        },
+        "c12": {
+            "connected to": {
+                "c11": "south",
+                "g22": "east",
+                "g24": "west"
+            }
+        }
     },
     "lower left tiles": {
         "ll1": {},
