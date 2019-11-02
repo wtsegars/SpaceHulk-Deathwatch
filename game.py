@@ -228,13 +228,30 @@ tiles = {
                 "ll1": "west"
             }
         },
-        "c2": {},
+        "c2": {
+            "connected to": {
+                "g10": "west",
+                "g12": "east",
+                "c3": "north"
+            }
+        },
         "c3": {
             "door": {
                 "sealed": False
+            },
+            "connected to": {
+                "c2": "south",
+                "c4": "norht"
             }
         },
-        "c4": {},
+        "c4": {
+            "connected to": {
+                "c3": "south",
+                "cl4": "west",
+                "c5": "north",
+                "cr4": "east"
+            }
+        },
         "c5": {
             "door": {
                 "sealed": False
