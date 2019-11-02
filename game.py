@@ -148,39 +148,75 @@ tiles = {
             }
         },
         "g15": {
-            "entrance": True
+            "entrance": True,
+            "connected to": {
+                "g16": "west"
+            }
         },
-        "g16": {},
+        "g16": {
+            "connected to": {
+                "g15": "east",
+                "c6": "west"
+            }
+        },
         "g17": {
-            "entrance": True
+            "entrance": True,
+            "connected to": {
+                "g18": "west"
+            }
         },
         "g18": {
             "door": {
                 "sealed": False
+            },
+            "connected to": {
+                "g17": "east",
+                "c7": "west"
             }
         },
         "g19": {
-            "entrance": True
+            "entrance": True,
+            "connected to": {
+                "g20": "east"
+            }
         },
         "g20": {
             "door": {
                 "sealed": False
+            },
+            "connected to": {
+                "g19": "west",
+                "c7": "east"
             }
         },
         "g21": {
-            "entrance": True
+            "entrance": True,
+            "connected to": {
+                "g22": "west"
+            }
         },
         "g22": {
             "door": {
                 "sealed": False
+            },
+            "connected to": {
+                "g21": "east",
+                "c12": "west"
             }
         },
         "g23": {
-            "entrance": True
+            "entrance": True,
+            "connected to": {
+                "g24": "east"
+            }
         },
         "g24": {
             "door": {
                 "sealed": False
+            },
+            "connected to": {
+                "g23": "west",
+                "c12": "east"
             }
         }
     },
