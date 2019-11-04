@@ -342,11 +342,37 @@ tiles = {
         }
     },
     "lower right tiles": {
-        "lr1": {},
-        "lr2": {},
-        "lr3": {},
-        "lr4": {},
-        "lr5": {}
+        "lr1": {
+            "connected to": {
+                "c1": "west",
+                "lr1": "east"
+            }
+        },
+        "lr2": {
+            "connected to": {
+                "lr1": "west",
+                "lr3": "east"
+            }
+        },
+        "lr3": {
+            "connected to": {
+                "lr2": "west",
+                "lr4": "east" 
+            }
+        },
+        "lr4": {
+            "connected to": {
+                "lr3": "west",
+                "lr5": "east"
+            }
+        },
+        "lr5": {
+            "connected to": {
+                "lr4": "west",
+                "g8": "east",
+                "r1": "north"
+            }
+        }
     },
     "left tiles": {
         "l1": {},
