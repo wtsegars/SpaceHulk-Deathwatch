@@ -375,19 +375,85 @@ tiles = {
         }
     },
     "left tiles": {
-        "l1": {},
-        "l2": {},
-        "l3": {},
-        "l4": {},
-        "l5": {},
-        "l6": {},
-        "l7": {},
-        "l8": {},
-        "l9": {},
-        "l10": {},
-        "l11": {},
-        "l12": {},
-        "l13": {}
+        "l1": {
+            "connected to": {
+                "ll5": "south",
+                "l2": "north"
+            }
+        },
+        "l2": {
+            "connected to": {
+                "l1": "south",
+                "l3": "north"
+            }
+        },
+        "l3": {
+            "connected to": {
+                "l2": "south",
+                "l4": "north"
+            }
+        },
+        "l4": {
+            "connected to": {
+                "l3": "south",
+                "l5": "north"
+            }
+        },
+        "l5": {
+            "connected to": {
+                "l4": "south",
+                "l6": "north"
+            }
+        },
+        "l6": {
+            "connected to": {
+                "l5": "south",
+                "l7": "north",
+                "cl1": "east"
+            }
+        },
+        "l7": {
+            "connected to": {
+                "l6": "south",
+                "l8": "north"
+            }
+        },
+        "l8": {
+            "connected to": {
+                "l7": "south",
+                "l9": "north"
+            }
+        },
+        "l9": {
+            "connected to": {
+                "l8": "south",
+                "l10": "north"
+            }
+        },
+        "l10": {
+            "connected to": {
+                "l9": "south",
+                "l11": "north"
+            }
+        },
+        "l11": {
+            "connected to": {
+                "l10": "south",
+                "l12": "north"
+            }
+        },
+        "l12": {
+            "connected to": {
+                "l11": "south",
+                "l13": "north"
+            }
+        },
+        "l13": {
+            "connected to": {
+                "l12": "south",
+                "ul1": "east"
+            }
+        }
     },
     "right tiles": {
         "r1": {},
