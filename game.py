@@ -456,31 +456,137 @@ tiles = {
         }
     },
     "right tiles": {
-        "r1": {},
-        "r2": {},
-        "r3": {},
-        "r4": {},
-        "r5": {},
-        "r6": {},
-        "r7": {},
-        "r8": {},
-        "r9": {},
-        "r10": {},
-        "r11": {},
-        "r12": {},
-        "r13": {}
+        "r1": {
+            "connected to": {
+                "lr5": "south",
+                "r2": "north"
+            }
+        },
+        "r2": {
+            "connected to": {
+                "r1": "south",
+                "r3": "north"
+            }
+        },
+        "r3": {
+            "connected to": {
+                "r2": "south",
+                "r4": "north"
+            }
+        },
+        "r4": {
+            "connected to": {
+                "r3": "south",
+                "r5": "north"
+            }
+        },
+        "r5": {
+            "connected to": {
+                "r4": "south",
+                "r6": "north"
+            }
+        },
+        "r6": {
+            "connected to": {
+                "r5": "south",
+                "r7": "north",
+                "cr1": "west"
+            }
+        },
+        "r7": {
+            "connected to": {
+                "r6": "south",
+                "r8": "north"
+            }
+        },
+        "r8": {
+            "connected to": {
+                "r7": "south",
+                "r9": "north"
+            }
+        },
+        "r9": {
+            "connected to": {
+                "r8": "south",
+                "r10": "north"
+            }
+        },
+        "r10": {
+            "connected to": {
+                "r9": "south",
+                "r11": "north"
+            }
+        },
+        "r11": {
+            "connected to": {
+                "r10": "south",
+                "r12": "north"
+            }
+        },
+        "r12": {
+            "connected to": {
+                "r11": "south",
+                "r13": "north"
+            }
+        },
+        "r13": {
+            "connected to": {
+                "r12": "south",
+                "ur1": "west"
+            }
+        }
     },
     "upper left tiles": {
-        "ul1": {},
-        "ul2": {},
-        "ul3": {},
-        "ul4": {}
+        "ul1": {
+            "connected to": {
+                "l13": "west",
+                "ul2": "east"
+            }
+        },
+        "ul2": {
+            "connected to": {
+                "ul1": "west",
+                "ul3": "east"
+            }
+        },
+        "ul3": {
+            "connected to": {
+                "ul2": "west",
+                "ul4": "east"
+            }
+        },
+        "ul4": {
+            "connected to": {
+                "ul3": "west",
+                "c10": "east"
+            }
+        }
     },
     "upper right tiles": {
-        "ur1": {},
-        "ur2": {},
-        "ur3": {},
-        "ur4": {}
+        "ur1": {
+            "connected to": {
+                "r13": "east",
+                "ur2": "west"
+            }
+        },
+        "ur2": {
+            "connected to": {
+                "ur1": "east",
+                "ur3": "west"
+            }
+        },
+        "ur3": {
+            "connected to": {
+                "ur2": "east",
+                "ur4": "west"
+            }
+        },
+        "ur4": {
+            "connected to": {
+                "ur3": "east",
+                "c10": "west"
+            }
+        }
     }
 }
 
