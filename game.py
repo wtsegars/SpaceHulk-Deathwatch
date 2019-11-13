@@ -925,7 +925,7 @@ class SpaceMarineTurn(Scene):
                                 for k in motion_1:
                                     if move_option == motion_1[k]:
                                         if motion_1[k] == "Forwards":
-                                            forwards()
+                                            forwards(squad[i]["action points"])
                                         elif motion_1[k] == "Backwards":
                                             backwards()
                                         elif motion_1[k] == "Turn Left":
@@ -942,6 +942,13 @@ class SpaceMarineTurn(Scene):
                                         Turn Right
                                         """))
 
+                def forwards(x):
+                    print("How far would you like to move forwards?")
+
+                    forward_move = input("> ")
+
+                    if forward_move <= x:
+                        
 class GeneStealerTurn(Scene):
 
 class GameControl(object):
