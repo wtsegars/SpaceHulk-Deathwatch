@@ -900,7 +900,7 @@ class SpaceMarineTurn(Scene):
                     print("Which terminator would you like to move?")
 
                     for i in squad:
-                        if squad[i]["action points"] > 0:
+                        if squad[i]["action points"] > 0 and squad[i]["alive"] == True:
                             print(squad[i])
 
                     movement = input("> ")
@@ -908,6 +908,39 @@ class SpaceMarineTurn(Scene):
                     for j in squad:
                         if movement == squad[j]:
                             print("How would you like to move?")
+
+                            motion_1 = ["Forwards", "Backwards", "Turn Left", "Turn Right"]
+                            motion_2 = ["Forwards", "Turn Left", "Turn Right"]
+
+                            move_option = input("> ")
+
+                            if (squad[i]["action points"] >= 2):
+                                print(dedent("""
+                                        Forwards,
+                                        Backwards,
+                                        Turn Left,
+                                        Turn Right
+                                        """))
+
+                                for k in motion_1:
+                                    if move_option == motion_1[k]:
+                                        if motion_1[k] == "Forwards":
+                                            forwards()
+                                        elif motion_1[k] == "Backwards":
+                                            backwards()
+                                        elif motion_1[k] == "Turn Left":
+                                            turn_left()
+                                        elif motion_1[k] == "Turn Right":
+                                            turn_right()
+                                    else:
+                                        print("Input was invalid. Please try again.")
+                                        move()
+                            else:
+                                print(dedent("""
+                                        Forwards,
+                                        Turn Left,
+                                        Turn Right
+                                        """))
 
 class GeneStealerTurn(Scene):
 
