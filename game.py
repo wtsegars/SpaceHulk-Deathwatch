@@ -822,6 +822,7 @@ class Squadplacement(Scene):
             print(squad_places)
             placement_selector = input("> ")
             term_place = {}
+            term_direction = {}
 
             if placement_selector:
                 for j in squad_places:
@@ -830,6 +831,9 @@ class Squadplacement(Scene):
                         squad_places.pop(j)
                         squad[i]["starting_place"] = term_place
                         term_place.clear()
+                        term_direction["direction"] = "north"
+                        squad[i]["direction"] = term_direction
+                        term_direction.clear()
                         break
                     elif placement_selector != squad_places[j] and j == len(squad_places):
                         print("The placement that you selected is not valid, please try again")
