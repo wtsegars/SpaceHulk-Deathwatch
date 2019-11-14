@@ -828,8 +828,11 @@ class Squadplacement(Scene):
                 for j in squad_places:
                     if placement_selector == squad_places[j]:
                         term_place["starting_position"] = squad_places[j]
-                        squad_places.pop(j)
                         squad[i]["starting_place"] = term_place
+                        term_place.clear()
+                        term_place["current_postion"] = squad_places[j]
+                        squad[i]["current_place"] = term_place
+                        squad_places.pop(j)
                         term_place.clear()
                         term_direction["direction"] = "north"
                         squad[i]["direction"] = term_direction
@@ -914,7 +917,7 @@ class SpaceMarineTurn(Scene):
 
                             move_option = input("> ")
 
-                            if (squad[i]["action points"] >= 2):
+                            if squad[i]["action points"] >= 2:
                                 print(dedent("""
                                         Forwards,
                                         Backwards,
@@ -935,12 +938,23 @@ class SpaceMarineTurn(Scene):
                                     else:
                                         print("Input was invalid. Please try again.")
                                         move()
-                            else:
+                            elif squad[i]["action points"] < 2:
                                 print(dedent("""
                                         Forwards,
                                         Turn Left,
                                         Turn Right
                                         """))
+
+                                for k in motion_2:
+                                    if move_option == motion_2[k]:
+                                        if motion_2[k] == "Forwards":
+                                            forwards(squad[i]["action points"])
+                                        elif motion_2[k] == "Turn Left":
+                                            turn_left()
+                                        elif motion_2[k] == "Turn Right":
+                                            turn_right()
+                                    else:
+                                        print("Input was invalid. Please try again.")       
 
                 def forwards(x):
                     print("How far would you like to move forwards?")
@@ -948,7 +962,7 @@ class SpaceMarineTurn(Scene):
                     forward_move = input("> ")
 
                     if forward_move <= x:
-                        
+                        if 
 class GeneStealerTurn(Scene):
 
 class GameControl(object):
