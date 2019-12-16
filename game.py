@@ -101,9 +101,9 @@ class SquadSelect(Scene):
                 weapon_choice = input("> ")
 
                 for j in weapons.weapon_loadout:
-                    if weapons.weapon_choice == weapons.weapon_loadout[j]:
+                    if weapon_choice == weapons.weapon_loadout[j]:
                         sgt["weapon loadout"] = weapon_choice
-                        if weapons.weapon_choice == weapons.weapon_loadout[6] or weapon_choice == weapons.weapon_loadout[7]:
+                        if weapon_choice == weapons.weapon_loadout[6] or weapon_choice == weapons.weapon_loadout[7]:
                             if weapon_choice == weapons.weapon_loadout[6]:
                                 sgt["overwatch"] = False
                             heavy_count += 1
