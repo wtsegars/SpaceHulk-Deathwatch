@@ -917,7 +917,7 @@ class SpaceMarineTurn(Scene):
 
                             move_option = input("> ")
 
-                            if squad[i]["action points"] >= 2:
+                            if squad[j]["action points"] >= 2:
                                 print(dedent("""
                                         Forwards,
                                         Backwards,
@@ -938,7 +938,7 @@ class SpaceMarineTurn(Scene):
                                     else:
                                         print("Input was invalid. Please try again.")
                                         move()
-                            elif squad[i]["action points"] < 2:
+                            elif squad[j]["action points"] < 2:
                                 print(dedent("""
                                         Forwards,
                                         Turn Left,
@@ -948,7 +948,7 @@ class SpaceMarineTurn(Scene):
                                 for k in motion_2:
                                     if move_option == motion_2[k]:
                                         if motion_2[k] == "Forwards":
-                                            forwards(squad[i]["action points"], squad[i]["current_position"])
+                                            forwards(squad[j]["action points"], squad[j]["current_position"])
                                         elif motion_2[k] == "Turn Left":
                                             turn_left()
                                         elif motion_2[k] == "Turn Right":
@@ -962,7 +962,11 @@ class SpaceMarineTurn(Scene):
                     forward_move = input("> ")
 
                     if forward_move <= x:
-                        
+                        for k in tiles:
+                            for l in tiles[k]:
+                                if tiles[k][l] == y:
+                                    break
+                                
 class GeneStealerTurn(Scene):
 
 class GameControl(object):
