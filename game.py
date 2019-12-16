@@ -735,7 +735,7 @@ class SquadSelect(Scene):
                             sgt["clip_num"] = 2
                             break
                         elif weapon_choice == weapon_loadout[8]:
-                            heavy_cout += 1
+                            heavy_count += 1
                             sgt["clip_size"] = 8
                             sgt["clip_num"] = 0
                             break
@@ -876,7 +876,7 @@ class SpaceMarineTurn(Scene):
 
             if choice == "yes":
                 command_points = 0
-                command_points = rantint(1, 6)
+                command_points = randint(1, 6)
             elif choice == "no":
                 print("Did not re-roll command points")
             else:
@@ -928,7 +928,7 @@ class SpaceMarineTurn(Scene):
                                 for k in motion_1:
                                     if move_option == motion_1[k]:
                                         if motion_1[k] == "Forwards":
-                                            forwards(squad[i]["action points"])
+                                            forwards(squad[i]["action points"], squad[i]["current_position"])
                                         elif motion_1[k] == "Backwards":
                                             backwards()
                                         elif motion_1[k] == "Turn Left":
@@ -948,7 +948,7 @@ class SpaceMarineTurn(Scene):
                                 for k in motion_2:
                                     if move_option == motion_2[k]:
                                         if motion_2[k] == "Forwards":
-                                            forwards(squad[i]["action points"])
+                                            forwards(squad[i]["action points"], squad[i]["current_position"])
                                         elif motion_2[k] == "Turn Left":
                                             turn_left()
                                         elif motion_2[k] == "Turn Right":
@@ -956,13 +956,13 @@ class SpaceMarineTurn(Scene):
                                     else:
                                         print("Input was invalid. Please try again.")       
 
-                def forwards(x):
+                def forwards(x, y):
                     print("How far would you like to move forwards?")
 
                     forward_move = input("> ")
 
                     if forward_move <= x:
-                        if 
+                        
 class GeneStealerTurn(Scene):
 
 class GameControl(object):
