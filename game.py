@@ -3,6 +3,8 @@ from random import randint
 from textwrap import dedent
 import gametiles
 import squad
+import chapters
+import weapons
 
 command_points = 0
 
@@ -73,50 +75,6 @@ class SquadSelect(Scene):
                 wisely because some chapters will have advantages over others.
                 """))
 
-        chapters = [
-            "Ultramarines", 
-            "Space Wolves", 
-            "White Scars",
-            "Blood Angels",
-            "Salamanders",
-            "Dark Angels",
-            "Imperial Fists",
-            "Iron Hands",
-            "Raven Guard",
-            "Crimson Fists",
-            "Blood Ravens",
-            "Howling Griffons",
-            "Black Templars",
-            "Lementers",
-            "Novamarines",
-            "Carcarodons",
-            "Brazen Claws",
-            "Death Eagles",
-            "Red Talons",
-            "Angels of Vengence",
-            "Angels of Absolution",
-            "Flesh Tearers",
-            "Storm Giants",
-            "Storm Lords",
-            "Storm Wardens",
-            "Raptors",
-            "Silver Skulls",
-            "Iron Snakes",
-            "Mantis Warriors"]
-
-        weapon_loadout = [
-            "Storm Bolter and Powerfist",
-            "Power Sword and Storm Bolter",
-            "Thunder Hammer and Storm Shield",
-            "Lightning Claws",
-            "Storm Bolter and Chainfist",
-            "Storm Bolter and Power Axe",
-            "Assault Cannon and Powerfist",
-            "Heavy Flamer and Powerfist",
-            "Cyclone Missile Launcher, Storm Bolter and Powerfist",
-            "Storm Bolter and Power Maul"
-        ]
-
         print(chapters)
 
         terminator_count = 1
@@ -138,21 +96,21 @@ class SquadSelect(Scene):
                         return 'squad_selection'
 
                 print("Choose your weapon loadout:")
-                print(weapon_loadout)
+                print(weapons.weapon_loadout)
 
                 weapon_choice = input("> ")
 
-                for j in weapon_loadout:
-                    if weapon_choice == weapon_loadout[j]:
+                for j in weapons.weapon_loadout:
+                    if weapons.weapon_choice == weapons.weapon_loadout[j]:
                         sgt["weapon loadout"] = weapon_choice
-                        if weapon_choice == weapon_loadout[6] or weapon_choice == weapon_loadout[7]:
-                            if weapon_choice == weapon_loadout[6]:
+                        if weapons.weapon_choice == weapons.weapon_loadout[6] or weapon_choice == weapons.weapon_loadout[7]:
+                            if weapon_choice == weapons.weapon_loadout[6]:
                                 sgt["overwatch"] = False
                             heavy_count += 1
                             sgt["clip_size"] = 10
                             sgt["clip_num"] = 2
                             break
-                        elif weapon_choice == weapon_loadout[8]:
+                        elif weapon_choice == weapons.weapon_loadout[8]:
                             heavy_count += 1
                             sgt["clip_size"] = 8
                             sgt["clip_num"] = 0
@@ -160,13 +118,13 @@ class SquadSelect(Scene):
                         elif heavy_count == 3:
                             print("You have reached the maximum amount of heavy weapons for you squad, please try again.")
                             return 'squad_selection'
-                        elif weapon_choice == weapon_loadout[0] or weapon_choice == weapon_loadout[1] or weapon_choice == weapon_loadout[4] or weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[8] or weapon_choice == weapon_loadout[9]:
+                        elif weapon_choice == weapons.weapon_loadout[0] or weapon_choice == weapons.weapon_loadout[1] or weapon_choice == weapons.weapon_loadout[4] or weapon_choice == weapons.weapon_loadout[5] or weapon_choice == weapons.weapon_loadout[8] or weapon_choice == weapons.weapon_loadout[9]:
                             sgt["overwatch"] = False
                             sgt["jammed"] = False
                             break
                         else:
                             break
-                    elif weapon_choice != weapon_loadout[j] and j == len(weapon_loadout):
+                    elif weapon_choice != weapons.weapon_loadout[j] and j == len(weapons.weapon_loadout):
                         print("The weapon loadout you picked is not valid, please try again.")
                         return 'squad_selection'
 
@@ -188,21 +146,21 @@ class SquadSelect(Scene):
                         return 'squad_selection'
 
                 print("Choose your weapon loadout:")
-                print(weapon_loadout)
+                print(weapons.weapon_loadout)
 
                 weapon_choice = input("> ")
 
-                for j in weapon_loadout:
-                    if weapon_choice == weapon_loadout[j]:
+                for j in weapons.weapon_loadout:
+                    if weapon_choice == weapons.weapon_loadout[j]:
                         terminator["weapon loadout"] = weapon_choice
-                        if weapon_choice == weapon_loadout[6] or weapon_choice == weapon_loadout[7]:
-                            if weapon_choice == weapon_loadout[6]:
+                        if weapon_choice == weapons.weapon_loadout[6] or weapon_choice == weapons.weapon_loadout[7]:
+                            if weapon_choice == weapons.weapon_loadout[6]:
                                 terminator["overwatch"] = False
                             heavy_count += 1
                             terminator["clip_size"] = 10
                             terminator["clip_num"] = 2
                             break
-                        elif weapon_choice == weapon_loadout[8]:
+                        elif weapon_choice == weapons.weapon_loadout[8]:
                             heavy_count +=1
                             terminator["clip_size"] = 8
                             terminator["clip_num"] = 0
@@ -210,13 +168,13 @@ class SquadSelect(Scene):
                         elif heavy_count == 3:
                             print("You have reached the maximum amount of heavy weapons for you squad, please try again.")
                             return 'squad_selection'
-                        elif weapon_choice == weapon_loadout[0] or weapon_choice == weapon_loadout[1] or weapon_choice == weapon_loadout[4] or weapon_choice == weapon_loadout[5] or weapon_choice == weapon_loadout[8] or weapon_choice == weapon_loadout[9]:
+                        elif weapon_choice == weapons.weapon_loadout[0] or weapon_choice == weapons.weapon_loadout[1] or weapon_choice == weapons.weapon_loadout[4] or weapon_choice == weapons.weapon_loadout[5] or weapon_choice == weapons.weapon_loadout[8] or weapon_choice == weapons.weapon_loadout[9]:
                             terminator["overwatch"] = False
                             terminator["jammed"] = False
                             break
                         else:
                             break
-                    elif weapon_choice != weapon_loadout[j] and j == len(weapon_loadout):
+                    elif weapon_choice != weapons.weapon_loadout[j] and j == len(weapons.weapon_loadout):
                         print("The weapon loadout you picked is not valid, please try again.")
                         return 'squad_selection'
                 
