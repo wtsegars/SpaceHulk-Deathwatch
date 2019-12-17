@@ -25,7 +25,9 @@ def move():
                             Forwards,
                             Backwards,
                             Turn Left,
-                            Turn Right
+                            Turn Right,
+                            Move Another Terminator,
+                            Choose Another Action
                             """))
 
                 for k in motion_1:
@@ -39,15 +41,21 @@ def move():
                             turn_left()
                         elif motion_1[k] == "Turn Right":
                             turn_right()
+                        elif motion_1[k] == "Move Another Terminator":
+                            move_other_term()
+                        elif motion_1[k] == "Choose Another Action":
+                            choose_other_action()
                     else:
                         print("Input was invalid. Please try again.")
                         move()
             elif squad[j]["action points"] < 2:
                 print(dedent("""
-                                        Forwards,
-                                        Turn Left,
-                                        Turn Right
-                                        """))
+                            Forwards,
+                            Turn Left,
+                            Turn Right,
+                            Move Another Terminator,
+                            Choose Another Action
+                            """))
 
                 for k in motion_2:
                     if move_option == motion_2[k]:
@@ -58,5 +66,21 @@ def move():
                             turn_left()
                         elif motion_2[k] == "Turn Right":
                             turn_right()
+                        elif motion_2[k] == "Move Another Terminator":
+                            move_other_term()
+                        elif motion_2[k] == "Choose Another Action":
+                            choose_other_action()
                     else:
                         print("Input was invalid. Please try again.")
+
+def forwards(x, y):
+
+def backwards(x, y):
+
+def turn_left(x, y):
+
+def turn_right(x, y):
+
+def move_other_term(x):
+
+def choose_other_action():
