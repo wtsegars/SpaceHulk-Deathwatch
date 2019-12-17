@@ -6,6 +6,8 @@ import squad
 import chapters
 import weapons
 import movement
+import attackaction
+import miscaction
 
 command_points = 0
 
@@ -275,6 +277,12 @@ class SpaceMarineTurn(Scene):
 
             if action_choice == "Move":
                 movement.move()     
+            elif action_choice == "Attack":
+                attackaction.attack()
+            elif action_choice == "Other Action":
+                miscaction.other_action()
+            elif action_choice == "End Turn":
+                
                                 
 #class GeneStealerTurn(Scene):
 
