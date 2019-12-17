@@ -282,7 +282,10 @@ class SpaceMarineTurn(Scene):
             elif action_choice == "Other Action":
                 miscaction.other_action()
             elif action_choice == "End Turn":
-                
+                return 'genestealer_turn'
+            else:
+                print("You entered an invalid command, please try again.")
+                turn_menu()
                                 
 #class GeneStealerTurn(Scene):
 
@@ -292,5 +295,6 @@ class GameControl(object):
         'squad_selections': SquadSelect(),
         'opening_scene': Openingscene(),
         'squad_placement': Squadplacement(),
-        'space_marine_turn': SpaceMarineTurn()
+        'space_marine_turn': SpaceMarineTurn(),
+        'genestealer_turn': GeneStealerTurn()
     }
