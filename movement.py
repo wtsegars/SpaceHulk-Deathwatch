@@ -74,6 +74,11 @@ def move():
                         print("Input was invalid. Please try again.")
 
 def forwards(x, y):
+    print("How far would you like to move forward?")
+
+    forward_move = input('> ')
+
+    
 
 def backwards(x, y):
 

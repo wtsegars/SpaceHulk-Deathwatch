@@ -287,7 +287,9 @@ class SpaceMarineTurn(Scene):
                 print("You entered an invalid command, please try again.")
                 turn_menu()
                                 
-#class GeneStealerTurn(Scene):
+class GeneStealerTurn(Scene):
+
+    turn_count += 1
 
 class GameControl(object):
 
