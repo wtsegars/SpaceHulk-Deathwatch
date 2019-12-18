@@ -77,8 +77,14 @@ def forwards(x, y):
     print("How far would you like to move forward?")
 
     forward_move = input('> ')
+    movements = 0
 
-    
+    if forward_move <= x:
+        movements += forward_move
+
+        for a in range(movements):
+            if a != 0:
+                
 
 def backwards(x, y):
 
