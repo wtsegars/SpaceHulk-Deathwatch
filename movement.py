@@ -1,5 +1,7 @@
 from textwrap import dedent
 import squad
+import gametiles
+import game
 
 def move():
     print("Which terminator would you like to move?")
@@ -60,8 +62,10 @@ def move():
                 for k in motion_2:
                     if move_option == motion_2[k]:
                         if motion_2[k] == "Forwards":
-                            forwards(squad[j]["action points"],
-                                     squad[j]["current_position"])
+                            forwards(game.command_points,
+                                     squad[j]["action points"],
+                                     squad[j]["current_position"],
+                                     squad[j]["direction"])
                         elif motion_2[k] == "Turn Left":
                             turn_left()
                         elif motion_2[k] == "Turn Right":
@@ -73,18 +77,37 @@ def move():
                     else:
                         print("Input was invalid. Please try again.")
 
-def forwards(x, y):
+def forwards(w, x, y, z):
     print("How far would you like to move forward?")
 
     forward_move = input('> ')
     movements = 0
 
-    if forward_move <= x:
+    if forward_move <= w + x:
         movements += forward_move
 
         for a in range(movements):
             if a != 0:
-                
+                if z == "north":
+                    for b in gametiles.tiles:
+                        for c in gametiles.tiles[b]:
+                            if gametiles.tiles[b][c] == y:
+                                if gametiles[b][c - 1]["connected to"][y] == "south":
+                                    gametiles[b][c]["occupied"] == False
+                                    gametiles[b][c - 1]["occupied"] == True
+                                    x -= 1
+                                    break
+                                elif gametiles[b][c + 1]["connected to"][y] == "south":
+                                    gametiles[b][c]["occupied"] == False
+                                    gametiles[b][c + 1]["occupied"] == True
+                                    x -= 1
+                                    break
+                                elif gametiles[b][c - 1]["occupied"] == True or gametiles[b][c + 1]["occupied"] == True:
+                                    print("This space is already occupied.")
+                                    break
+                elif z == "south":
+                    for b in gametiles.tiles:
+                        for c in gametiles.tiles[b]:
 
 def backwards(x, y):
 
