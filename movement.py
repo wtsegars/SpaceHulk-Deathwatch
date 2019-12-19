@@ -148,6 +148,13 @@ def forwards(w, x, y, z):
         move()
 
 def backwards(w, x, y, z):
+    print("How far do you want to move backwards?")
+
+    backwards_move = input('> ')
+    movements = 0
+
+    if backwards_move <= w + x:
+        movements += backwards_move
 
 def turn_left(x, y):
 
