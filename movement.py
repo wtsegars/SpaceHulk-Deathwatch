@@ -90,24 +90,28 @@ def forwards(w, x, y, z):
             if a != 0:
                 if z == "north":
                     for b in gametiles.tiles:
-                        for c in gametiles.tiles[b]:
-                            if gametiles.tiles[b][c] == y:
-                                if gametiles[b][c - 1]["connected to"][y] == "south":
-                                    gametiles[b][c]["occupied"] == False
-                                    gametiles[b][c - 1]["occupied"] == True
-                                    x -= 1
-                                    break
-                                elif gametiles[b][c + 1]["connected to"][y] == "south":
-                                    gametiles[b][c]["occupied"] == False
-                                    gametiles[b][c + 1]["occupied"] == True
-                                    x -= 1
-                                    break
-                                elif gametiles[b][c - 1]["occupied"] == True or gametiles[b][c + 1]["occupied"] == True:
-                                    print("This space is already occupied.")
-                                    break
+                        if gametiles.tiles[b]["connected to"].get(y) == "south":
+                            if gametiles[b]["occupied"] == True:
+                                print("You are unable to move to this spot.")
+                                move()
+                            else:
+                                gametiles.tiles[y]["occupied"] == False
+                                gametiles.tiles[b]["occupied"] == True
+                        else:
+                            print("You are unable to move in this direction")
+                            move()
                 elif z == "south":
                     for b in gametiles.tiles:
-                        for c in gametiles.tiles[b]:
+                        if gametiles.tiles[b]["connected to"].get(y) == "north":
+                            if gametiles[b]["occupied"] == True:
+                                print("You are unable to move to this spot.")
+                                move()
+                            else:
+                                gametiles.tiles[y]["occupied"] == False
+                                gametiles.tiles[b]["occupied"] == True
+                        else:
+                            print("You are unable to move in this direction.")
+                            move()
 
 def backwards(x, y):
 
