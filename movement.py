@@ -35,10 +35,15 @@ def move():
                 for k in motion_1:
                     if move_option == motion_1[k]:
                         if motion_1[k] == "Forwards":
-                            forwards(squad[i]["action points"],
-                                     squad[i]["current_position"])
+                            forwards(game.command_points,
+                                     squad[i]["action points"],
+                                     squad[i]["current_position"],
+                                     squad[i]["direction"])
                         elif motion_1[k] == "Backwards":
-                            backwards()
+                            backwards(game.command_points,
+                                      squad[i]["action points"],
+                                      squad[i]["current_position"],
+                                      squad[i]["direction"])
                         elif motion_1[k] == "Turn Left":
                             turn_left()
                         elif motion_1[k] == "Turn Right":
@@ -91,7 +96,7 @@ def forwards(w, x, y, z):
                 if z == "north":
                     for b in gametiles.tiles:
                         if gametiles.tiles[b]["connected to"].get(y) == "south":
-                            if gametiles[b]["occupied"] == True:
+                            if gametiles.tiles[b]["occupied"] == True:
                                 print("You are unable to move to this spot.")
                                 move()
                             else:
@@ -103,7 +108,7 @@ def forwards(w, x, y, z):
                 elif z == "south":
                     for b in gametiles.tiles:
                         if gametiles.tiles[b]["connected to"].get(y) == "north":
-                            if gametiles[b]["occupied"] == True:
+                            if gametiles.tiles[b]["occupied"] == True:
                                 print("You are unable to move to this spot.")
                                 move()
                             else:
@@ -112,8 +117,37 @@ def forwards(w, x, y, z):
                         else:
                             print("You are unable to move in this direction.")
                             move()
+                elif z == "west":
+                    for b in gametiles.tiles:
+                        if gametiles.tiles[b]["connected to"].get(y) == "east":
+                            if gametiles.tiles[b]["occupied"] == True:
+                                print("You are unable to move to this spot.")
+                                move()
+                            else:
+                                gametiles.tiles[y]["occupied"] == False
+                                gametiles.tiles[b]["occupied"] == True
+                        else:
+                            print("You are unable to move in this direction.")
+                            move()
+                elif z == "east":
+                    for b in gametiles.tiles:
+                        if gametiles.tiles[b]["connected to"].get(y) == "west":
+                            if gametiles.tiles[b]["occupied"] == True:
+                                print("you are unable to move to this spot.")
+                                move()
+                            else:
+                                gametiles.tiles[y]["occupied"] == False
+                                gametiles.tiles[b]["occupied"] == True
+                        else:
+                            print("You are unable to move in this direction.")
+                            move()
+            else:
+                move()
+    elif forward_move > w + x:
+        print("You do not have enough action points to move this far.")
+        move()
 
-def backwards(x, y):
+def backwards(w, x, y, z):
 
 def turn_left(x, y):
 
