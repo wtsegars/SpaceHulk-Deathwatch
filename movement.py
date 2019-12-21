@@ -45,9 +45,13 @@ def move():
                                       squad[i]["current_position"],
                                       squad[i]["direction"])
                         elif motion_1[k] == "Turn Left":
-                            turn_left()
+                            turn_left(game.command_points,
+                                      squad[i]["action points"],
+                                      squad[i]["direction"])
                         elif motion_1[k] == "Turn Right":
-                            turn_right()
+                            turn_right(game.command_points,
+                                       squad[i]["action points"],
+                                       squad[i]["direction"])
                         elif motion_1[k] == "Move Another Terminator":
                             move_other_term()
                         elif motion_1[k] == "Choose Another Action":
@@ -72,9 +76,13 @@ def move():
                                      squad[j]["current_position"],
                                      squad[j]["direction"])
                         elif motion_2[k] == "Turn Left":
-                            turn_left()
+                            turn_left(game.command_points,
+                                      squad[i]["action points"],
+                                      squad[i]["direction"])
                         elif motion_2[k] == "Turn Right":
-                            turn_right()
+                            turn_right(game.command_points,
+                                       squad[i]["action points"],
+                                       squad[i]["direction"])
                         elif motion_2[k] == "Move Another Terminator":
                             move_other_term()
                         elif motion_2[k] == "Choose Another Action":
@@ -110,6 +118,8 @@ def forwards(w, x, y, z):
 
                                 gametiles.tiles[y]["occupied"] == False
                                 gametiles.tiles[b]["occupied"] == True
+
+                                y == gametiles[b]
                         else:
                             print("You are unable to move in this direction")
                             move()
@@ -130,6 +140,8 @@ def forwards(w, x, y, z):
 
                                 gametiles.tiles[y]["occupied"] == False
                                 gametiles.tiles[b]["occupied"] == True
+
+                                y == gametiles[b]
                         else:
                             print("You are unable to move in this direction.")
                             move()
@@ -150,6 +162,8 @@ def forwards(w, x, y, z):
 
                                 gametiles.tiles[y]["occupied"] == False
                                 gametiles.tiles[b]["occupied"] == True
+
+                                y == gametiles[b]
                         else:
                             print("You are unable to move in this direction.")
                             move()
@@ -170,11 +184,14 @@ def forwards(w, x, y, z):
 
                                 gametiles.tiles[y]["occupied"] == False
                                 gametiles.tiles[b]["occupied"] == True
+
+                                y == gametiles[b]
                         else:
                             print("You are unable to move in this direction.")
                             move()
-            else:
-                move()
+        
+        move()
+
     elif forward_move > w + x:
         print("You do not have enough action points to move this far.")
         move()
@@ -207,6 +224,8 @@ def backwards(w, x, y, z):
 
                                 gametiles.tiles[y]["occupied"] == False
                                 gametiles.tiles[b]["occupied"] == True
+
+                                y == gametiles[b]
                         else:
                             print("You are unable to move in this direction.")
                             move()  
@@ -227,6 +246,8 @@ def backwards(w, x, y, z):
 
                                 gametiles.tiles[y]["occupied"] == False
                                 gametiles.tiles[b]["occupied"] == True 
+
+                                y == gametiles[b]
                         else:
                             print("You are unable to move in this direction.")
                             move()
@@ -247,13 +268,43 @@ def backwards(w, x, y, z):
 
                                 gametiles.tiles[y]["occupied"] == False
                                 gametiles.tiles[b]["occupied"] == True
+
+                                y == gametiles[b]
+                        else:
+                            print("You are unable to move in this direction.")
+                            move()
+                elif z == "west":
+                    for b in gametiles.tiles:
+                        if gametiles.tiles[b]["connected to"].get(y) == "west":
+                            if gametiles.tiles[b]["occupied"] == True:
+                                print("You are unable to move to this spot.")
+                                move()
+                            else:
+                                if x < 2 and w >= 2:
+                                    w -= 2
+                                elif x >= 2:
+                                    x -= 2
+                                else:
+                                    print("You don't have enough action points and/or command points to do this action.")
+                                    move()
+
+                                gametiles.tiles[y]["occupied"] == False
+                                gametiles.tiles[b]["occupied"] == True
+
+                                y == gametiles[backwards]
                         else:
                             print("You are unable to move in this direction.")
                             move()
 
-def turn_left(x, y):
+        move()
 
-def turn_right(x, y):
+    elif backwards_move > w + x:
+        print("You do not have enough action points to move this far.")
+        move()
+
+def turn_left(x, y, z):
+
+def turn_right(x, y, z):
 
 def move_other_term(x):
 
