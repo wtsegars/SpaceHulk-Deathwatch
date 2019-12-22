@@ -8,6 +8,7 @@ import weapons
 import movement
 import attackaction
 import miscaction
+import gamemap
 
 command_points = 0
 
@@ -270,6 +271,7 @@ class SpaceMarineTurn(Scene):
                     Move,
                     Attack,
                     Other Action,
+                    View Map,
                     End Turn
                     """))
 
@@ -281,6 +283,8 @@ class SpaceMarineTurn(Scene):
                 attackaction.attack()
             elif action_choice == "Other Action":
                 miscaction.other_action()
+            elif action_choice == "View Map":
+                gamemap.map()
             elif action_choice == "End Turn":
                 return 'genestealer_turn'
             else:
