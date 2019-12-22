@@ -6,7 +6,7 @@ import game
 def move():
     print("Which terminator would you like to move?")
 
-    for i in squad:
+    for i in squad.squad:
         if squad[i]["action points"] > 0 and squad[i]["alive"] == True:
             print(squad[i])
 
@@ -130,7 +130,7 @@ def forwards(w, x, y, z):
                                 print("You are unable to move to this spot.")
                                 move()
                             else:
-                                if x < 1 and w > 1:
+                                if x < 1 and w >= 1:
                                     w -= 1
                                 elif x >= 1:
                                     x -= 1
@@ -368,6 +368,8 @@ def turn_right(x, y, z):
     
     move()
 
-def move_other_term(x):
+def move_other_term():
+    move()
 
 def choose_other_action():
+    game.SpaceMarineTurn.enter.turn_menu()
