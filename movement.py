@@ -116,10 +116,10 @@ def forwards(w, x, y, z):
                                     print("You don't have enough action point and/or command points to do this action.")
                                     move()
 
-                                gametiles.tiles[y]["occupied"] == False
-                                gametiles.tiles[b]["occupied"] == True
+                                gametiles.tiles[y]["occupied"] = False
+                                gametiles.tiles[b]["occupied"] = True
 
-                                y == gametiles[b]
+                                y = gametiles[b]
                         else:
                             print("You are unable to move in this direction")
                             move()
@@ -138,10 +138,10 @@ def forwards(w, x, y, z):
                                     print("You don't have enough action point and/or command points to do this action.")
                                     move()
 
-                                gametiles.tiles[y]["occupied"] == False
-                                gametiles.tiles[b]["occupied"] == True
+                                gametiles.tiles[y]["occupied"] = False
+                                gametiles.tiles[b]["occupied"] = True
 
-                                y == gametiles[b]
+                                y = gametiles[b]
                         else:
                             print("You are unable to move in this direction.")
                             move()
@@ -160,10 +160,10 @@ def forwards(w, x, y, z):
                                     print("You don't have enough action point and/or command points to do this action.")
                                     move()
 
-                                gametiles.tiles[y]["occupied"] == False
-                                gametiles.tiles[b]["occupied"] == True
+                                gametiles.tiles[y]["occupied"] = False
+                                gametiles.tiles[b]["occupied"] = True
 
-                                y == gametiles[b]
+                                y = gametiles[b]
                         else:
                             print("You are unable to move in this direction.")
                             move()
@@ -182,10 +182,10 @@ def forwards(w, x, y, z):
                                     print("You don't have enough action point and/or command points to do this action.")
                                     move()
 
-                                gametiles.tiles[y]["occupied"] == False
-                                gametiles.tiles[b]["occupied"] == True
+                                gametiles.tiles[y]["occupied"] = False
+                                gametiles.tiles[b]["occupied"] = True
 
-                                y == gametiles[b]
+                                y = gametiles[b]
                         else:
                             print("You are unable to move in this direction.")
                             move()
@@ -222,10 +222,10 @@ def backwards(w, x, y, z):
                                     print("You don't have enough action point and/or command points to do this action.")
                                     move()
 
-                                gametiles.tiles[y]["occupied"] == False
-                                gametiles.tiles[b]["occupied"] == True
+                                gametiles.tiles[y]["occupied"] = False
+                                gametiles.tiles[b]["occupied"] = True
 
-                                y == gametiles[b]
+                                y = gametiles[b]
                         else:
                             print("You are unable to move in this direction.")
                             move()  
@@ -244,10 +244,10 @@ def backwards(w, x, y, z):
                                     print("You don't have enough action points and/or command points to do this action.")
                                     move()
 
-                                gametiles.tiles[y]["occupied"] == False
-                                gametiles.tiles[b]["occupied"] == True 
+                                gametiles.tiles[y]["occupied"] = False
+                                gametiles.tiles[b]["occupied"] = True 
 
-                                y == gametiles[b]
+                                y = gametiles[b]
                         else:
                             print("You are unable to move in this direction.")
                             move()
@@ -266,10 +266,10 @@ def backwards(w, x, y, z):
                                     print("You don't have enough action points and/or command points to do this action.")
                                     move()
 
-                                gametiles.tiles[y]["occupied"] == False
-                                gametiles.tiles[b]["occupied"] == True
+                                gametiles.tiles[y]["occupied"] = False
+                                gametiles.tiles[b]["occupied"] = True
 
-                                y == gametiles[b]
+                                y = gametiles[b]
                         else:
                             print("You are unable to move in this direction.")
                             move()
@@ -288,10 +288,10 @@ def backwards(w, x, y, z):
                                     print("You don't have enough action points and/or command points to do this action.")
                                     move()
 
-                                gametiles.tiles[y]["occupied"] == False
-                                gametiles.tiles[b]["occupied"] == True
+                                gametiles.tiles[y]["occupied"] = False
+                                gametiles.tiles[b]["occupied"] = True
 
-                                y == gametiles[backwards]
+                                y = gametiles[backwards]
                         else:
                             print("You are unable to move in this direction.")
                             move()
@@ -303,8 +303,70 @@ def backwards(w, x, y, z):
         move()
 
 def turn_left(x, y, z):
+    if y >= 1:
+        y -= 1
+        if z == "north":
+            z = "west"
+        elif z == "south":
+            z = "east"
+        elif z == "east":
+            z = "north"
+        elif z == "west":
+            z = "south"
+        else:
+            print("Was unable to move left.")
+            move()
+    elif x >= 1 and y < 1:
+        x -= 1
+        if z == "north":
+            z = "west"
+        elif z == "south":
+            z = "east"
+        elif z == "east":
+            z = "north"
+        elif z == "west":
+            z = "south"
+        else:
+            print("Was unable to move left.")
+            move()
+    else:
+        print("You do not have enough action points/command points to complete this action.")
+        move()
+
+    move()
 
 def turn_right(x, y, z):
+    if y >= 1:
+        y -= 1
+        if z == "north":
+            z = "east"
+        elif z == "south":
+            z = "west"
+        elif z == "east":
+            z = "south"
+        elif z == "west":
+            z = "north"
+        else:
+            print("Was unable to move right.")
+            move()
+    elif x >= 1 and y < 1:
+        x -= 1
+        if z == "north":
+            z = "east"
+        elif z == "south":
+            z = "west"
+        elif z == "east":
+            z = "south"
+        elif z == "west":
+            z = "north"
+        else:
+            print("Was unable to move right.")
+            move()
+    else:
+        print("You do not have enough action points/command points to complete this action.")
+        move()
+    
+    move()
 
 def move_other_term(x):
 
