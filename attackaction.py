@@ -90,6 +90,22 @@ def attack():
                 else:
                     print("You entered an invalid command, please try again.")
                     attack()
+            elif squad[i]["weapon loadout"] == "Storm Bolter and Power Axe":
+                print("Strom Bolter")
+                print("Power Axe")
+                print("Cancel")
+
+                attack_choice = input("> ")
+
+                if attack_choice == "Storm Bolter":
+                    ranged_combat()
+                elif attack_choice == "Power Axe":
+                    close_combat()
+                elif attack_choice == "Cancel":
+                    attack()
+                else:
+                    print("You entered an invalid command, please try again.")
+                    attack()
 
 def ranged_combat():
 
