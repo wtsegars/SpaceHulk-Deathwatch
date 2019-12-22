@@ -9,3 +9,7 @@ def attack():
             print(squad[i])
 
     attack_with = input("> ")
+
+    for j in squad.squad:
+        if attack_with == squad[i]:
+            print("How would you like to attack?")
