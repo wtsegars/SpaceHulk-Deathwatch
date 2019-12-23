@@ -15,10 +15,10 @@ def attack():
     attack_with = input("> ")
 
     for j in squad.squad:
-        if attack_with == squad[i]:
+        if attack_with == squad[j]:
             print("How would you like to attack?")
 
-            if squad[i]["weapon loadout"] == "Storm Bolter and Powerfist":
+            if squad[j]["weapon loadout"] == "Storm Bolter and Powerfist":
                 print("Storm Bolter")
                 print("Powerfist")
                 print("Cancel")
@@ -27,10 +27,10 @@ def attack():
 
                 if attack_choice == "Storm Bolter":
                     ranged_combat(game.command_points,
-                                    squad[i]["action points"],
-                                    squad[i]["current position"],
-                                    squad[i]["direction"],
-                                    squad[i]["alive"])
+                                    squad[j]["action points"],
+                                    squad[j]["current position"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"])
                 elif attack_choice == "Powerfist":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -47,10 +47,10 @@ def attack():
 
                 if attack_choice == "Storm Bolter":
                     ranged_combat(game.command_points,
-                                    squad[i]["action points"],
-                                    squad[i]["current position"],
-                                    squad[i]["direction"],
-                                    squad[i]["alive"])
+                                    squad[j]["action points"],
+                                    squad[j]["current position"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"])
                 elif attack_choice == "Power Sword":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -93,10 +93,10 @@ def attack():
 
                 if attack_choice == "Storm Bolter":
                     ranged_combat(game.command_points,
-                                    squad[i]["action points"],
-                                    squad[i]["current position"],
-                                    squad[i]["direction"],
-                                    squad[i]["alive"])
+                                    squad[j]["action points"],
+                                    squad[j]["current position"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"])
                 elif attack_choice == "Chainfist":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -113,10 +113,10 @@ def attack():
 
                 if attack_choice == "Storm Bolter":
                     ranged_combat(game.command_points,
-                                    squad[i]["action points"],
-                                    squad[i]["current position"],
-                                    squad[i]["direction"],
-                                    squad[i]["alive"])
+                                    squad[j]["action points"],
+                                    squad[j]["current position"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"])
                 elif attack_choice == "Power Axe":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -133,10 +133,10 @@ def attack():
 
                 if attack_choice == "Assault Cannon":
                     ranged_combat(game.command_points,
-                                    squad[i]["action points"],
-                                    squad[i]["current position"],
-                                    squad[i]["direction"],
-                                    squad[i]["alive"])
+                                    squad[j]["action points"],
+                                    squad[j]["current position"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"])
                 elif attack_choice == "Powerfist":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -153,10 +153,10 @@ def attack():
 
                 if attack_choice == "Heavy Flamer":
                     ranged_combat(game.command_points,
-                                    squad[i]["action points"],
-                                    squad[i]["current position"],
-                                    squad[i]["direction"],
-                                    squad[i]["alive"])
+                                    squad[j]["action points"],
+                                    squad[j]["current position"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"])
                 elif attack_choice == "Powerfist":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -174,16 +174,16 @@ def attack():
 
                 if attack_choice == "Storm Bolter":
                     ranged_combat(game.command_points,
-                                    squad[i]["action points"],
-                                    squad[i]["current position"],
-                                    squad[i]["direction"],
-                                    squad[i]["alive"])
+                                    squad[j]["action points"],
+                                    squad[j]["current position"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"])
                 elif attack_choice == "Cyclone Missile Launcher":
                     ranged_combat(game.command_points,
-                                    squad[i]["action points"],
-                                    squad[i]["current position"],
-                                    squad[i]["direction"],
-                                    squad[i]["alive"])
+                                    squad[j]["action points"],
+                                    squad[j]["current position"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"])
                 elif attack_choice == "Powerfist":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -200,10 +200,10 @@ def attack():
 
                 if attack_choice == "Storm Bolter":
                     ranged_combat(game.command_points,
-                                    squad[i]["action points"],
-                                    squad[i]["current position"],
-                                    squad[i]["direction"],
-                                    squad[i]["alive"])
+                                    squad[j]["action points"],
+                                    squad[j]["current position"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"])
                 elif attack_choice == "Power Maul":
                     close_combat()
                 elif attack_choice == "Cancel":
