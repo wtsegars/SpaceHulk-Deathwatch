@@ -216,9 +216,4 @@ def attack():
 def ranged_combat(a, b, c, d, e):
 
 def close_combat(a, b, c, d, e):
-    if a >= 1 or b >= 1:
-        for x in gametiles.tiles:
-            if gametiles.tiles[x] == c:
-                for y in gametiles.tiles[x]["connected to"]:
-                    if gametiles.tiles[x]["connected to"][y].get(d):
-                        if gametiles.tiles[y]["occupied"] == True:
+    
