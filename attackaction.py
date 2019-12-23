@@ -1,5 +1,6 @@
 from random import randint
 import squad
+import game
 
 def attack():
     print("Which terminator would you like to attack with?")
@@ -106,6 +107,74 @@ def attack():
                 else:
                     print("You entered an invalid command, please try again.")
                     attack()
+            elif squad[i]["weapon loadout"] == "Assault Cannon and Powerfist":
+                print("Assault Cannon")
+                print("Powerfist")
+                print("Cancel")
+
+                attack_choice = input("> ")
+
+                if attack_choice == "Assault Cannon":
+                    ranged_combat()
+                elif attack_choice == "Powerfist":
+                    close_combat()
+                elif attack_choice == "Cancel":
+                    attack()
+                else:
+                    print("You entered an invalid command, please try again.")
+                    attack()
+            elif squad[i]["weapon loadout"] == "Heavy Flamer and Powerfist":
+                print("Heavy Flamer")
+                print("Powerfist")
+                print("Cancel")
+
+                attack_choice = input("> ")
+
+                if attack_choice == "Heavy Flamer":
+                    ranged_combat()
+                elif attack_choice == "Powerfist":
+                    close_combat()
+                elif attack_choice == "Cancel":
+                    attack()
+                else:
+                    print("You entered an invalid command, please try again.")
+                    attack()
+            elif squad[i]["weapon loadout"] == "Cyclone Missile Launcher, Storm Bolter and Powerfist":
+                print("Storm Bolter")
+                print("Cyclone Missile Launcher")
+                print("Powerfist")
+                print("Cancel")
+
+                attack_choice = input("> ")
+
+                if attack_choice == "Storm Bolter":
+                    ranged_combat()
+                elif attack_choice == "Cyclone Missile Launcher":
+                    ranged_combat()
+                elif attack_choice == "Powerfist":
+                    close_combat()
+                elif attack_choice == "Cancel":
+                    attack()
+                else:
+                    print("You entered and invalid command, please try again.")
+                    attack()
+            elif squad[i]["weapon loadout"] == "Storm Bolter and Power Maul":
+                print("Storm Bolter")
+                print("Power Maul")
+                print("Cancel")
+
+                attack_choice = input("> ")
+
+                if attack_choice == "Storm Bolter":
+                    ranged_combat()
+                elif attack_choice == "Power Maul":
+                    close_combat()
+                elif attack_choice == "Cancel":
+                    attack()
+                else:
+                    print("You entered an invalid command, please try again.")
+        elif attack_with == "Cancel":
+            game.SpaceMarineTurn.enter.turn_menu()
 
 def ranged_combat():
 
