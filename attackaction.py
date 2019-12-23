@@ -2,6 +2,7 @@ from random import randint
 import squad
 import game
 import gametiles
+import genestealers
 
 def attack():
     print("Which terminator would you like to attack with?")
@@ -221,3 +222,6 @@ def close_combat(a, b, c, d, e):
             if gametiles.tiles[x] == c:
                 for y in gametiles.tiles[x]["connected to"]:
                     if gametiles.tiles[y]["occupied"] == True:
+                        for z in genestealers.genestealers:
+                            if genestealers.genestealers[z]["current position"] == gametiles.tiles[y]:
+                                
