@@ -204,7 +204,8 @@ def attack():
                                     squad[j]["action points"],
                                     squad[j]["current position"],
                                     squad[j]["direction"],
-                                    squad[j]["alive"])
+                                    squad[j]["alive"],
+                                    attack_choice = input("> "))
                 elif attack_choice == "Power Maul":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -216,7 +217,7 @@ def attack():
 
 def ranged_combat(a, b, c, d, e):
 
-def close_combat(a, b, c, d, e):
+def close_combat(a, b, c, d, e, f):
     if a >= 1 and b >= 1:
         for x in gametiles.tiles:
             if gametiles.tiles[x] == c:
@@ -224,4 +225,10 @@ def close_combat(a, b, c, d, e):
                     if gametiles.tiles[y]["occupied"] == True:
                         for z in genestealers.genestealers:
                             if genestealers.genestealers[z]["current position"] == gametiles.tiles[y]:
-                                
+                                if genestealers.genestealers[z]["direction"] == "north" and d == "south":
+                                    if f == "Powerfist":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            e == False
