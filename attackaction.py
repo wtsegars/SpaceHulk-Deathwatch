@@ -231,4 +231,57 @@ def close_combat(a, b, c, d, e, f):
                                         genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
 
                                         if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
-                                            e == False
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Power Sword":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            parry(spacemarine_roll)
+
+                                            if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                                e = False
+                                                gametiles.tiles["occupied"] = False
+                                                print("The attacking terminator has perished in combat.")
+                                                game.SpaceMarineTurn.enter.turn_menu()
+                                            elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                                genestealers.genestealers[z]["alive"] == False
+                                                gametiles.tiles[y]["occupied"] == False
+                                                print("The attacking terminator has sucessfully slain the xenos filth.")
+                                                attack()
+                                            else:
+                                                print("There was a draw in combat")
+                                                attack()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+
+def parry(x):
+    print("Your terminator's roll was lower than the highest genestealer roll, do you wish to re-roll?(Y/N)")
+
+    choice = input("> ")
+
+    if choice == "Y":
+        spacemarine_reroll = randint(1, 6)
+        x = spacemarine_reroll
+    elif choice == "N":
+        print("Did not re-roll.")
+    else:
+        print("Your response was not valid, please try again.")
+        parry(spacemarine_reroll)
