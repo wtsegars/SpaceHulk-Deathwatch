@@ -215,7 +215,8 @@ def attack():
         elif attack_with == "Cancel":
             game.SpaceMarineTurn.enter.turn_menu()
 
-def ranged_combat(a, b, c, d, e):
+def ranged_combat(a, b, c, d, e, f):
+
 
 def close_combat(a, b, c, d, e, f):
     if a >= 1 and b >= 1:
@@ -364,6 +365,426 @@ def close_combat(a, b, c, d, e, f):
                                         attack()
                                     
                                     attack()
+                                elif genestealers.genestealers[z]["direction"] == "south" and d == "north":
+                                    if f == "Powerfist":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Power Sword":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            parry(spacemarine_roll)
+
+                                            if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                                e = False
+                                                gametiles.tiles["occupied"] = False
+                                                print("The attacking terminator has perished in combat.")
+                                                game.SpaceMarineTurn.enter.turn_menu()
+                                            elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                                genestealers.genestealers[z]["alive"] == False
+                                                gametiles.tiles[y]["occupied"] == False
+                                                print("The attacking terminator has sucessfully slain the xenos filth.")
+                                                attack()
+                                            else:
+                                                print("There was a draw in combat")
+                                                attack()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Thunder Hammer":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Lightning Claws":
+                                        spacemarine_rolls = [randint(1, 6), randint(1, 6)]
+                                        genestealer_rolls = [randint(1, 6), randint(1, 6), randint(1, 6)]
+
+                                        spacemarine_rolls.sort()
+                                        genestealer_rolls.sort()
+
+                                        if genestealer_rolls[2] > spacemarine_rolls[1]:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[2] < spacemarine_rolls[1]:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Chainfist":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Power Axe":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+                                        
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Power Maul":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    else: 
+                                        print("You entered an invalid weapon type, please try again.")
+                                        attack()
+                                    
+                                    attack()
+                                elif genestealers.genestealers[z]["direction"] == "east" and d == "west":
+                                    if f == "Powerfist":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Power Sword":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            parry(spacemarine_roll)
+
+                                            if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                                e = False
+                                                gametiles.tiles["occupied"] = False
+                                                print("The attacking terminator has perished in combat.")
+                                                game.SpaceMarineTurn.enter.turn_menu()
+                                            elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                                genestealers.genestealers[z]["alive"] == False
+                                                gametiles.tiles[y]["occupied"] == False
+                                                print("The attacking terminator has sucessfully slain the xenos filth.")
+                                                attack()
+                                            else:
+                                                print("There was a draw in combat")
+                                                attack()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Thunder Hammer":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Lightning Claws":
+                                        spacemarine_rolls = [randint(1, 6), randint(1, 6)]
+                                        genestealer_rolls = [randint(1, 6), randint(1, 6), randint(1, 6)]
+
+                                        spacemarine_rolls.sort()
+                                        genestealer_rolls.sort()
+
+                                        if genestealer_rolls[2] > spacemarine_rolls[1]:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[2] < spacemarine_rolls[1]:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Chainfist":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Power Axe":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+                                        
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Power Maul":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    else: 
+                                        print("You entered an invalid weapon type, please try again.")
+                                        attack()
+                                    
+                                    attack()
+                                elif genestealers.genestealers[z]["direction"] == "west" and d == "east":
+                                    if f == "Powerfist":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Power Sword":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            parry(spacemarine_roll)
+
+                                            if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                                e = False
+                                                gametiles.tiles["occupied"] = False
+                                                print("The attacking terminator has perished in combat.")
+                                                game.SpaceMarineTurn.enter.turn_menu()
+                                            elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                                genestealers.genestealers[z]["alive"] == False
+                                                gametiles.tiles[y]["occupied"] == False
+                                                print("The attacking terminator has sucessfully slain the xenos filth.")
+                                                attack()
+                                            else:
+                                                print("There was a draw in combat")
+                                                attack()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Thunder Hammer":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Lightning Claws":
+                                        spacemarine_rolls = [randint(1, 6), randint(1, 6)]
+                                        genestealer_rolls = [randint(1, 6), randint(1, 6), randint(1, 6)]
+
+                                        spacemarine_rolls.sort()
+                                        genestealer_rolls.sort()
+
+                                        if genestealer_rolls[2] > spacemarine_rolls[1]:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[2] < spacemarine_rolls[1]:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Chainfist":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Power Axe":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+                                        
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    elif f == "Power Maul":
+                                        spacemarine_roll = randint(1, 6)
+                                        genestealer_rolls = {randint(1, 6), randint(1, 6), randint(1, 6)}
+
+                                        if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
+                                            e = False
+                                            gametiles.tiles["occupied"] = False
+                                            print("The attacking terminator has perished in combat.")
+                                            game.SpaceMarineTurn.enter.turn_menu()
+                                        elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
+                                            genestealers.genestealers[z]["alive"] == False
+                                            gametiles.tiles[y]["occupied"] == False
+                                            print("The attacking terminator has sucessfully slain the xenos filth.")
+                                            attack()
+                                        else:
+                                            print("There was a draw in combat")
+                                            attack()
+                                    else: 
+                                        print("You entered an invalid weapon type, please try again.")
+                                        attack()
+                                    
+                                    attack()
+                            elif z >= len(genestealers.genestealers):
+                                print("There is no foe that you can attack at your current position.")
+                                attack()
 
 def parry(x):
     print("Your terminator's roll was lower than the highest genestealer roll, do you wish to re-roll?(Y/N)")
