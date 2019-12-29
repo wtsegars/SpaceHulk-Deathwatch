@@ -216,10 +216,14 @@ def attack():
             game.SpaceMarineTurn.enter.turn_menu()
 
 def ranged_combat(a, b, c, d, e, f):
-
+    if a >= 1 or b >= 1:
+        
+    else:
+        print("You don't have enough action points to complete this action.")
+        attack()
 
 def close_combat(a, b, c, d, e, f):
-    if a >= 1 and b >= 1:
+    if a >= 1 or b >= 1:
         for x in gametiles.tiles:
             if gametiles.tiles[x] == c:
                 for y in gametiles.tiles[x]["connected to"]:
@@ -785,6 +789,9 @@ def close_combat(a, b, c, d, e, f):
                             elif z >= len(genestealers.genestealers):
                                 print("There is no foe that you can attack at your current position.")
                                 attack()
+    else: 
+        print("You don't have enough action points and/or command points to complete this action.")
+        attack()
 
 def parry(x):
     print("Your terminator's roll was lower than the highest genestealer roll, do you wish to re-roll?(Y/N)")
