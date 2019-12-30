@@ -218,8 +218,19 @@ def attack():
 
 def ranged_combat(a, b, c, d, e, f):
     if a >= 1 or b >= 1:
-        for x in linesight.line_of_sight:
-            
+        if f == "Storm Bolter":
+            if c == "c1":
+                if d == "south":
+                    for x in linesight.line_of_sight[0]:
+                        for y in genestealers.genestealers:
+                            if genestealers.genestealers[y]["current position"] == linesight.line_of_sight[0][x]:
+                                bolter_fire()
+                            elif y == len(genestealers.genestealers):
+                                print("There are no more genestealers in this area.")
+                                attack()
+                        if x == len(linesight.line_of_sight[0]):
+                            print("There are no genestealers in this area.")
+
     else:
         print("You don't have enough action points to complete this action.")
         attack()
@@ -808,3 +819,5 @@ def parry(x):
     else:
         print("Your response was not valid, please try again.")
         parry(spacemarine_reroll)
+
+def bolter_fire():
