@@ -3,6 +3,7 @@ import squad
 import game
 import gametiles
 import genestealers
+import linesight
 
 def attack():
     print("Which terminator would you like to attack with?")
@@ -217,7 +218,8 @@ def attack():
 
 def ranged_combat(a, b, c, d, e, f):
     if a >= 1 or b >= 1:
-        
+        for x in linesight.line_of_sight:
+            
     else:
         print("You don't have enough action points to complete this action.")
         attack()
