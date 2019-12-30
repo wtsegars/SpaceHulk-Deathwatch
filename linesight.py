@@ -65,5 +65,74 @@ line_of_sight = {
         "r11",
         "r12",
         "r13"
+    },
+    "center hall": {
+        "l6",
+        "cl1",
+        "cl2",
+        "cl3",
+        "cl4",
+        "c4",
+        "cr4",
+        "cr3",
+        "cr2",
+        "cr1",
+        "r6"
+    },
+    "lower middle hall": {
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6"
+    },
+    "lower middle genestealer entrance": {
+        "g9",
+        "g10", 
+        "c2",
+        "g12",
+        "g11"
+    },
+    "upper middle genestealer entrance": {
+        "g13",
+        "g14",
+        "c6",
+        "g16",
+        "g15"
+    },
+    "upper middle hall": {
+        "c7",
+        "c8",
+        "c9",
+        "c10",
+        "c11",
+        "c12"
+    },
+    "lower top genestealer entrance": {
+        "g19",
+        "g20",
+        "c7",
+        "g18",
+        "g17"
+    },
+    "upper top genestealer entrance": {
+        "g23",
+        "g24",
+        "c12",
+        "g22",
+        "g21"
+    },
+    "upper hall": {
+        "l13",
+        "ul1",
+        "ul2",
+        "ul3",
+        "ul4",
+        "c10",
+        "ur4",
+        "ur3",
+        "ur2",
+        "ur1",
+        "r13"
     }
 }
