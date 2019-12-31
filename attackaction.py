@@ -221,16 +221,23 @@ def ranged_combat(a, b, c, d, e, f):
         if f == "Storm Bolter":
             if c == "c1":
                 if d == "south":
-                    for x in linesight.line_of_sight[0]:
-                        for y in genestealers.genestealers:
-                            if genestealers.genestealers[y]["current position"] == linesight.line_of_sight[0][x]:
-                                bolter_fire()
-                            elif y == len(genestealers.genestealers):
-                                print("There are no more genestealers in this area.")
+                    for x in range(5, 0, -1):
+                        if linesight.line_of_sight[0][x] == gametiles.tiles[linesight.line_of_sight[0][x]]:
+                            if gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"] == True:
+                                for y in genestealers.genestealers:
+                                    if genestealers.genestealers["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
+                                        bolter_fire()
+                                    elif y == len(genestealers.genestealers):
+                                        for z in squad.squad:
+                                            if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
+                                                print("You can't fire on your own men.")
+                                                attack()
+                                            elif z == len(squad.squad):
+                                                print("There is nothing here for you to fire upon.")
+                                                attack()
+                            elif x < 0:
+                                print("There is not here for you to fire upon.")
                                 attack()
-                        if x == len(linesight.line_of_sight[0]):
-                            print("There are no genestealers in this area.")
-
     else:
         print("You don't have enough action points to complete this action.")
         attack()
