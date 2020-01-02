@@ -225,7 +225,7 @@ def ranged_combat(a, b, c, d, e, f):
                         if linesight.line_of_sight[0][x] == gametiles.tiles[linesight.line_of_sight[0][x]]:
                             if gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"] == True:
                                 for y in genestealers.genestealers:
-                                    if genestealers.genestealers["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
+                                    if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
                                         bolter_fire()
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
@@ -243,7 +243,7 @@ def ranged_combat(a, b, c, d, e, f):
                         if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                             if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                                 for y in genestealers.genestealers:
-                                    if genestealers.genestealers["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                    if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         bolter_fire()
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
@@ -261,7 +261,7 @@ def ranged_combat(a, b, c, d, e, f):
                         if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                             if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                                 for y in genestealers.genestealers:
-                                    if genestealers.genestealers["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                    if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         bolter_fire()
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
@@ -280,7 +280,7 @@ def ranged_combat(a, b, c, d, e, f):
                         if linesight.line_of_sight[4][x] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                             if gametiles.tiles[linesight.line_of_sight[4][x]]["occupied"] == True:
                                 for y in genestealers.genestealers:
-                                    if genestealers.genestealers["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
+                                    if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                         bolter_fire()
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
@@ -298,7 +298,7 @@ def ranged_combat(a, b, c, d, e, f):
                         if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                             if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                                 for y in genestealers.genestealers:
-                                    if genestealers.genestealers["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                    if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         bolter_fire()
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
@@ -316,7 +316,7 @@ def ranged_combat(a, b, c, d, e, f):
                         if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                             if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                                 for y in genestealers.genestealers:
-                                    if genestealers.genestealers["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                    if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         bolter_fire()
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
@@ -335,7 +335,7 @@ def ranged_combat(a, b, c, d, e, f):
                         if linesight.line_of_sight[5][x] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                             if gametiles.tiles[linesight.line_of_sight[5][x]]["occupied"] == True:
                                 for y in genestealers.genestealers:
-                                    if genestealers.genestealers["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
+                                    if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                         bolter_fire()
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
@@ -353,7 +353,7 @@ def ranged_combat(a, b, c, d, e, f):
                         if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                             if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                                 for y in genestealers.genestealers:
-                                    if genestealers.genestealers["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                    if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         bolter_fire()
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
@@ -371,7 +371,7 @@ def ranged_combat(a, b, c, d, e, f):
                         if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                             if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                                 for y in genestealers.genestealers:
-                                    if genestealers.genestealers["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                    if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         bolter_fire()
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
@@ -390,7 +390,7 @@ def ranged_combat(a, b, c, d, e, f):
                         if linesight.line_of_sight[4][x] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                             if gametiles.tiles[linesight.line_of_sight[4][x]]["occupied"] == True:
                                 for y in genestealers.genestealers:
-                                    if genestealers.genestealers["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
+                                    if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                         bolter_fire()
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
@@ -408,7 +408,7 @@ def ranged_combat(a, b, c, d, e, f):
                         if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                             if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                                 for y in genestealers.genestealers:
-                                    if genestealers.genestealers["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                    if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         bolter_fire()
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
@@ -426,11 +426,30 @@ def ranged_combat(a, b, c, d, e, f):
                         if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                             if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                                 for y in genestealers.genestealers:
-                                    if genestealers.genestealers["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                    if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         bolter_fire()
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
                                             if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                                print("You can't fire on your own men.")
+                                                attack()
+                                            elif z == len(squad.squad):
+                                                print("There is nothing here for you to fire upon.")
+                                                attack()
+                            elif x < 0:
+                                print("There is not here for you to fire upon.")
+                                attack()
+            elif c == "g3":
+                if d == "south":
+                    for x in range(1, 3, 1):
+                        if linesight.line_of_sight[2][x] == gametiles.tiles[linesight.line_of_sight[2][x]]:
+                            if gametiles.tiles[linesight.line_of_sight[2][x]]["occupied"] == True:
+                                for y in genestealers.genestealers:
+                                    if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
+                                        bolter_fire()
+                                    elif y == len(genestealers.genestealers):
+                                        for z in squad.squad:
+                                            if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
                                                 print("You can't fire on your own men.")
                                                 attack()
                                             elif z == len(squad.squad):
