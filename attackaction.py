@@ -1078,6 +1078,11 @@ def ranged_combat(a, b, c, d, e, f):
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                                         bolter_fire()
+                                                    elif g == len(genestealers.genestealers):
+                                                        for h in squad.squad:
+                                                            if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
+                                                                print("You can't fire on your own men.")
+                                                                attack()
     else:
         print("You don't have enough action points to complete this action.")
         attack()
