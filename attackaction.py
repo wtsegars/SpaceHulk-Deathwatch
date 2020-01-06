@@ -1063,6 +1063,21 @@ def ranged_combat(a, b, c, d, e, f):
                             elif x < 0:
                                 print("There is not here for you to fire upon.")
                                 attack()
+            else:
+                for x in linesight.line_of_sight:
+                    for y in linesight.line_of_sight[x]:
+                        if linesight.line_of_sight[x][y] == c:
+                            o = 1
+                            n = -1
+                            m = len(linesight.line_of_sight[x][y])
+                            if linesight.line_of_sight[x] == "starting hall":
+                                if d == "south":
+                                    for z in range(y + 1, 6, n):
+                                        if linesight.line_of_sight[0][z] == gametiles.tiles[linesight.line_of_sight[0][z]]:
+                                            if gametiles.tiles[linesight.line_of_sight[0][z]]["occupied"] == True:
+                                                for g in genestealers.genestealers:
+                                                    if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
+                                                        bolter_fire()
     else:
         print("You don't have enough action points to complete this action.")
         attack()
