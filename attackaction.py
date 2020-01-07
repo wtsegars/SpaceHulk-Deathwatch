@@ -1072,7 +1072,7 @@ def ranged_combat(a, b, c, d, e, f):
                             m = len(linesight.line_of_sight[x][y])
                             if linesight.line_of_sight[x] == "starting hall":
                                 if d == "south":
-                                    for z in range(y + 1, 6, n):
+                                    for z in range(y + 1, 6, o):
                                         if linesight.line_of_sight[0][z] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[0][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -1084,7 +1084,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                                 print("You can't fire on your own men.")
                                                                 attack()
                                 elif d == "north":
-                                    for z in range(y + 1, -1, o):
+                                    for z in range(y + 1, -1, n):
                                         if linesight.line_of_sight[0][z] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[0][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -1100,7 +1100,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     attack()
                             elif linesight.line_of_sight[x] == "lower hall":
                                 if d == "east":
-                                    for z in range(y + 1, 15, n):
+                                    for z in range(y + 1, 15, o):
                                         if linesight.line_of_sight[1][z] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[1][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -1112,7 +1112,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                                 print("You can't fire on your own men.")
                                                                 attack()
                                 elif d == "west":
-                                    for z in range(y + 1, -1, o):
+                                    for z in range(y + 1, -1, n):
                                         if linesight.line_of_sight[1][z] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[1][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -1128,7 +1128,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     attack()
                             elif linesight.line_of_sight[x] == "lower left genestealer entrance":
                                 if d == "north":
-                                    for z in range(y + 1, 3, n):
+                                    for z in range(y + 1, 3, o):
                                         if linesight.line_of_sight[2][z] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[2][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -1140,7 +1140,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                                 print("You can't fire on your own men.")
                                                                 attack()
                                 elif d == "south":
-                                    for z in range(y + 1, -1, o):
+                                    for z in range(y + 1, -1, n):
                                         if linesight.line_of_sight[2][z] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[2][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -1156,7 +1156,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     attack()
                             elif linesight.line_of_sight[x] == "lower right genestealer entrance":
                                 if d == "north":
-                                    for z in range(y + 1, 3, n):
+                                    for z in range(y + 1, 3, o):
                                         if linesight.line_of_sight[3][z] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[3][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -1168,7 +1168,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                                 print("You can't fire on your own men.")
                                                                 attack()
                                 elif d == "south":
-                                    for z in range(y + 1, -1, o):
+                                    for z in range(y + 1, -1, n):
                                         if linesight.line_of_sight[3][z] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[3][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -1177,6 +1177,34 @@ def ranged_combat(a, b, c, d, e, f):
                                                     elif g == len(genestealers.genestealers):
                                                         for h in squad.squad:
                                                             if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
+                                                                print("You can't fire on your own men.")
+                                                                attack()
+                                else:
+                                    print("You cannot fire in this direction.")
+                                    attack()
+                            elif linesight.line_of_sight[x] == "left hallway":
+                                if d == "north":
+                                    for z in range(y + 1, 14, o):
+                                        if linesight.line_of_sight[4][z] == gametiles.tiles[linesight.line_of_sight[4][z]]:
+                                            if gametiles.tiles[linesight.line_of_sight[4][z]]["occupied"] == True:
+                                                for g in genestealers.genestealers:
+                                                    if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
+                                                        bolter_fire()
+                                                    elif g == len(genestealers.genestealers):
+                                                        for h in squad.squad:
+                                                            if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
+                                                                print("You can't fire on your own men.")
+                                                                attack()
+                                elif d == "south":
+                                    for z in range(y + 1, -1, -1):
+                                        if linesight.line_of_sight[4][z] == gametiles.tiles[linesight.line_of_sight[4][z]]:
+                                            if gametiles.tiles[linesight.line_of_sight[4][z]]["occupied"] == True:
+                                                for g in genestealers.genestealers:
+                                                    if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
+                                                        bolter_fire()
+                                                    elif g == len(genestealers.genestealers):
+                                                        for h in squad.squad:
+                                                            if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
                                                                 print("You can't fire on your own men.")
                                                                 attack()
                                 else:
