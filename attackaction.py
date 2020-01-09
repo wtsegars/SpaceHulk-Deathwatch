@@ -226,7 +226,10 @@ def ranged_combat(a, b, c, d, e, f):
                             if gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"] == True:
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
-                                        bolter_fire()
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    squad[j],
+                                                    genestealers.genestealers[y])
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
                                             if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
@@ -2051,4 +2054,7 @@ def parry(x):
         print("Your response was not valid, please try again.")
         parry(spacemarine_reroll)
 
-def bolter_fire():
+def bolter_fire(a, b, c, d):
+    bolt_shot_1 = randint(1, 6)
+    bolt_shot_2 = randint(1, 6)
+
