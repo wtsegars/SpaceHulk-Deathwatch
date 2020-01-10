@@ -228,8 +228,8 @@ def ranged_combat(a, b, c, d, e, f):
                                     if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
-                                                    squad[j],
-                                                    genestealers.genestealers[y])
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
                                             if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
@@ -2058,3 +2058,16 @@ def bolter_fire(a, b, c, d):
     bolt_shot_1 = randint(1, 6)
     bolt_shot_2 = randint(1, 6)
 
+    if b >= 1:
+        b -= 1
+    elif b < 1 and a >= 1:
+        a -= 1
+
+    if bolt_shot_1 >= 5 or bolt_shot_2 >= 5:
+        c == False
+        d == False
+        print("The xenos menace has been slain by bolter fire.")
+        attack()
+    else:
+        print("Your shot missed its target.")
+        attack()
