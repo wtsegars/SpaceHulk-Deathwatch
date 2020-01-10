@@ -33,7 +33,8 @@ def attack():
                                   squad[j]["action points"],
                                   squad[j]["current position"],
                                   squad[j]["direction"],
-                                  squad[j]["alive"])
+                                  squad[j]["alive"],
+                                  attack_choice)
                 elif attack_choice == "Powerfist":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -53,7 +54,8 @@ def attack():
                                   squad[j]["action points"],
                                   squad[j]["current position"],
                                   squad[j]["direction"],
-                                  squad[j]["alive"])
+                                  squad[j]["alive"],
+                                  attack_choice)
                 elif attack_choice == "Power Sword":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -99,7 +101,8 @@ def attack():
                                   squad[j]["action points"],
                                   squad[j]["current position"],
                                   squad[j]["direction"],
-                                  squad[j]["alive"])
+                                  squad[j]["alive"],
+                                  attack_choice)
                 elif attack_choice == "Chainfist":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -119,7 +122,8 @@ def attack():
                                   squad[j]["action points"],
                                   squad[j]["current position"],
                                   squad[j]["direction"],
-                                  squad[j]["alive"])
+                                  squad[j]["alive"],
+                                  attack_choice)
                 elif attack_choice == "Power Axe":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -139,7 +143,8 @@ def attack():
                                   squad[j]["action points"],
                                   squad[j]["current position"],
                                   squad[j]["direction"],
-                                  squad[j]["alive"])
+                                  squad[j]["alive"],
+                                  attack_choice)
                 elif attack_choice == "Powerfist":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -159,7 +164,8 @@ def attack():
                                   squad[j]["action points"],
                                   squad[j]["current position"],
                                   squad[j]["direction"],
-                                  squad[j]["alive"])
+                                  squad[j]["alive"],
+                                  attack_choice)
                 elif attack_choice == "Powerfist":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -180,13 +186,15 @@ def attack():
                                   squad[j]["action points"],
                                   squad[j]["current position"],
                                   squad[j]["direction"],
-                                  squad[j]["alive"])
+                                  squad[j]["alive"],
+                                  attack_choice)
                 elif attack_choice == "Cyclone Missile Launcher":
                     ranged_combat(game.command_points,
                                   squad[j]["action points"],
                                   squad[j]["current position"],
                                   squad[j]["direction"],
-                                  squad[j]["alive"])
+                                  squad[j]["alive"],
+                                  attack_choice)
                 elif attack_choice == "Powerfist":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -207,7 +215,7 @@ def attack():
                                   squad[j]["current position"],
                                   squad[j]["direction"],
                                   squad[j]["alive"],
-                                  attack_choice=input("> "))
+                                  attack_choice)
                 elif attack_choice == "Power Maul":
                     close_combat()
                 elif attack_choice == "Cancel":
@@ -216,7 +224,6 @@ def attack():
                     print("You entered an invalid command, please try again.")
         elif attack_with == "Cancel":
             game.SpaceMarineTurn.enter.turn_menu()
-
 
 def ranged_combat(a, b, c, d, e, f):
     if a >= 1 or b >= 1:
@@ -227,10 +234,16 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
-                                    bolter_fire(game.command_points,
-                                                squad[j]["action points"],
-                                                genestealers.genestealers[y]["alive"],
-                                                gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
@@ -250,7 +263,12 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == ""
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
@@ -1592,7 +1610,6 @@ def ranged_combat(a, b, c, d, e, f):
         print("You don't have enough action points to complete this action.")
         attack()
 
-
 def close_combat(a, b, c, d, e, f):
     if a >= 1 or b >= 1:
         for x in gametiles.tiles:
@@ -2265,7 +2282,6 @@ def close_combat(a, b, c, d, e, f):
         print("You don't have enough action points and/or command points to complete this action.")
         attack()
 
-
 def parry(x):
     print("Your terminator's roll was lower than the highest genestealer roll, do you wish to re-roll?(Y/N)")
 
@@ -2279,7 +2295,6 @@ def parry(x):
     else:
         print("Your response was not valid, please try again.")
         parry(spacemarine_reroll)
-
 
 def bolter_fire(a, b, c, d):
     bolt_shot_1 = randint(1, 6)
@@ -2298,3 +2313,21 @@ def bolter_fire(a, b, c, d):
     else:
         print("Your shot missed its target.")
         attack()
+
+def assault_cannon(a, b, c, d):
+    assault_shot_1 = randint(1, 6)
+    assault_shot_2 = randint(1, 6)
+    assault_shot_3 = randint(1, 6)
+
+    if b >= 1:
+        b -= 1
+    elif b < 1 and a >= 1:
+        a -= 1
+
+    if assault_shot_1 >= 4 or assault_shot_2 >= 4 or assault_shot_3 >= 4:
+        c == False
+        d == False
+        print("The xenos menace has been slain by assault cannon fire.")
+        attack()
+    elif assault_shot_1 == assault_shot_2 and assault_shot_2 == assault_shot_3:
+        
