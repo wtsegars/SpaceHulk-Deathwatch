@@ -243,7 +243,9 @@ def ranged_combat(a, b, c, d, e, f):
                                         assault_cannon(game.command_points,
                                                         squad[j]["action points"],
                                                         genestealers.genestealers[y]["alive"],
-                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]])
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
@@ -2306,28 +2308,35 @@ def bolter_fire(a, b, c, d):
         a -= 1
 
     if bolt_shot_1 >= 5 or bolt_shot_2 >= 5:
-        c == False
-        d == False
+        c = False
+        d = False
         print("The xenos menace has been slain by bolter fire.")
         attack()
     else:
         print("Your shot missed its target.")
         attack()
 
-def assault_cannon(a, b, c, d):
+def assault_cannon(a, b, c, d, e, f):
     assault_shot_1 = randint(1, 6)
     assault_shot_2 = randint(1, 6)
     assault_shot_3 = randint(1, 6)
 
     if b >= 1:
         b -= 1
+        f -= 1
     elif b < 1 and a >= 1:
         a -= 1
+        f -= 1
 
     if assault_shot_1 >= 4 or assault_shot_2 >= 4 or assault_shot_3 >= 4:
-        c == False
-        d == False
+        c = False
+        d = False
         print("The xenos menace has been slain by assault cannon fire.")
         attack()
     elif assault_shot_1 == assault_shot_2 and assault_shot_2 == assault_shot_3:
-        
+        e = False
+        print("The terminator's assault cannon malfunctioned resulting in instant death.")
+        attack()
+    else:
+        print("The assault cannon volly missed its target.")
+        attack()
