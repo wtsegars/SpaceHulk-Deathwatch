@@ -111,7 +111,7 @@ def attack():
                     print("You entered an invalid command, please try again.")
                     attack()
             elif squad[i]["weapon loadout"] == "Storm Bolter and Power Axe":
-                print("Strom Bolter")
+                print("Storm Bolter")
                 print("Power Axe")
                 print("Cancel")
 
@@ -2328,7 +2328,7 @@ def assault_cannon(a, b, c, d, e, f):
         a -= 1
         f -= 1
 
-    if assault_shot_1 >= 4 or assault_shot_2 >= 4 or assault_shot_3 >= 4:
+    if assault_shot_1 >= 5 or assault_shot_2 >= 5 or assault_shot_3 >= 5:
         c = False
         d = False
         print("The xenos menace has been slain by assault cannon fire.")
@@ -2340,3 +2340,13 @@ def assault_cannon(a, b, c, d, e, f):
     else:
         print("The assault cannon volly missed its target.")
         attack()
+
+def heavy_flamer(a, b, c, d, e):
+    flamer_shot = randint(1, 6)
+
+    if b >= 1:
+        b -= 1
+        e -= 1
+    elif b < 1 and a >= 1:
+        a -= 1
+        e -= 1
