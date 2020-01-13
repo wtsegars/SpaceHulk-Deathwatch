@@ -250,16 +250,15 @@ class SpaceMarineTurn(Scene):
         for i in gametiles.tiles:
             if gametiles.tiles[i]["on fire"] == True:
                 gametiles.tiles[i]["on fire"] = False
-                if gametiles.tiles[i]["occupied"] == True:
-                    for x in genestealers.genestealers:
-                        if genestealers.genestealers[x]["current position"] == gametiles.tiles[i]:
-                            gametiles.tiles[i]["occupied"] = True
+                gametiles.tiles[i]["occupied"] == True:
+
+                for x in genestealers.genestealers:
+                    if genestealers.genestealers[x]["current position"] == gametiles.tiles[i]:
+                        gametiles.tiles[i]["occupied"] = True
                     
-                    for y in squad.squad:
-                        if squad.squad[y]["current position"] == gametiles.tiles[i]:
-                            gametiles.tiles[i]["occupied"] = True
-                else:
-                    gametiles.tiles[i]["occupied"] = False
+                for y in squad.squad:
+                    if squad.squad[y]["current position"] == gametiles.tiles[i]:
+                        gametiles.tiles[i]["occupied"] = True
 
         command_points = 0
         command_points = randint(1, 6)
