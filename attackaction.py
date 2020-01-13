@@ -246,6 +246,12 @@ def ranged_combat(a, b, c, d, e, f):
                                                         gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
                                                         squad[j]["alive"],
                                                         squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
@@ -2341,12 +2347,32 @@ def assault_cannon(a, b, c, d, e, f):
         print("The assault cannon volly missed its target.")
         attack()
 
-def heavy_flamer(a, b, c, d, e):
-    flamer_shot = randint(1, 6)
-
+def heavy_flamer(a, b, c, d, e, f):
     if b >= 1:
         b -= 1
         e -= 1
     elif b < 1 and a >= 1:
         a -= 1
         e -= 1
+
+    for g in d["connected to"]:
+        flamer_shot = randint(1, 6)
+
+        if d[d["connected to"]]["occupied"] == True:
+            for h in genestealers.genestealers:
+                if genestealers.genestealers[h]["current position"] == d[d["connected to"]]["occupied"]:
+                    if flamer_shot >= 2:
+                        genestealers.genestealers[h]["alive"] = False
+                        d[d["connected to"]]["occupied"] = False
+                        print("The flamer shot hit a target.")
+                    else:
+                        print("The flamer shot didn't hit anything.")
+
+            for i in squad.squad:
+                if squad.squad[i]["current position"] == d[d["connected to"]]["occupied"]:
+                    if flamer_shot >= 2:
+                        squad.squad[i]["alive"] = False
+                        d[d["connected to"]]["occupied"] = False
+                        print("The flamer shot hit some of your own men.")
+                    else:
+                        print("The flamer shot hit a target.")
