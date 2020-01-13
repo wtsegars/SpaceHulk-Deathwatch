@@ -276,7 +276,19 @@ def ranged_combat(a, b, c, d, e, f):
                                                     squad[j]["action points"],
                                                     genestealers.genestealers[y]["alive"],
                                                     gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
-                                    elif f == ""
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
@@ -296,7 +308,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
@@ -317,7 +346,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[4][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
@@ -337,7 +383,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
@@ -357,7 +420,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
@@ -378,7 +458,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[5][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
@@ -399,7 +496,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
@@ -419,7 +533,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
@@ -440,7 +571,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[4][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
@@ -461,7 +609,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
@@ -481,7 +646,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
@@ -502,7 +684,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[2][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
@@ -522,7 +721,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
@@ -543,7 +759,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[2][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
@@ -563,7 +796,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
@@ -584,7 +834,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[4][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
@@ -604,7 +871,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[4][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
@@ -624,7 +908,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[6][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
@@ -645,7 +946,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[5][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
@@ -665,7 +983,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[5][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
@@ -685,7 +1020,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[6][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])s
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
@@ -706,7 +1058,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[7][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
@@ -726,7 +1095,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[7][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
@@ -746,7 +1132,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[6][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
@@ -766,7 +1169,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[6][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
@@ -787,7 +1207,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[7][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
@@ -807,7 +1244,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[8][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
@@ -827,7 +1281,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[8][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
@@ -848,7 +1319,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[7][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
@@ -868,7 +1356,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[9][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
@@ -888,7 +1393,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[9][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
@@ -909,7 +1431,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[10][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
@@ -929,7 +1468,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[9][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
@@ -949,7 +1505,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[9][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
@@ -970,7 +1543,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[4][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
@@ -990,7 +1580,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[13][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
@@ -1011,7 +1618,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[5][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
@@ -1031,7 +1655,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[13][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
@@ -1052,7 +1693,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[10][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
@@ -1072,7 +1730,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[10][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])s
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
@@ -1092,7 +1767,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[13][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
@@ -1112,7 +1804,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[13][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
@@ -1133,7 +1842,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[10][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
@@ -1153,7 +1879,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[12][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
@@ -1173,7 +1916,24 @@ def ranged_combat(a, b, c, d, e, f):
                         if gametiles.tiles[linesight.line_of_sight[12][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
                                 if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
-                                    bolter_fire()
+                                    if f == "Storm Bolter":
+                                        bolter_fire(game.command_points,
+                                                    squad[j]["action points"],
+                                                    genestealers.genestealers[y]["alive"],
+                                                    gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"])
+                                    elif f == "Assault Cannon":
+                                        assault_cannon(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers[y]["alive"],
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["alive"],
+                                                        squad[j]["clip_size"])
+                                    elif f == "Heavy Flamer":
+                                        heavy_flamer(game.command_points,
+                                                        squad[j]["action points"],
+                                                        genestealers.genestealers,
+                                                        gametiles.tiles[linesight.line_of_sight[0][x]["occupied"]],
+                                                        squad[j]["clip_size"])
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
                                         if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[12][x]]:

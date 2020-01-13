@@ -279,6 +279,8 @@ class SpaceMarineTurn(Scene):
 
             turn_menu()
         
+        turn_menu()
+        
         def turn_menu():
             print("What would you like to do?")
             print(dedent("""
