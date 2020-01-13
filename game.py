@@ -246,6 +246,11 @@ class SpaceMarineTurn(Scene):
             if squad[i]["action points"] != 4:
                 squad[i]["action points"] = 4
 
+        for i in gametiles.tiles:
+            if gametiles.tiles[i]["on fire"] == True:
+                gametiles.tiles[i]["on fire"] = False
+                gametiles.tiles[i]["occupied"] = False
+
         command_points = 0
         command_points = randint(1, 6)
 

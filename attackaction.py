@@ -2363,7 +2363,7 @@ def heavy_flamer(a, b, c, d, e, f):
                 if genestealers.genestealers[h]["current position"] == d[d["connected to"]]["occupied"]:
                     if flamer_shot >= 2:
                         genestealers.genestealers[h]["alive"] = False
-                        d[d["connected to"]]["occupied"] = False
+                        d["on fire"] = True
                         print("The flamer shot hit a target.")
                     else:
                         print("The flamer shot didn't hit anything.")
@@ -2372,7 +2372,7 @@ def heavy_flamer(a, b, c, d, e, f):
                 if squad.squad[i]["current position"] == d[d["connected to"]]["occupied"]:
                     if flamer_shot >= 2:
                         squad.squad[i]["alive"] = False
-                        d[d["connected to"]]["occupied"] = False
+                        d["on fire"] = True
                         print("The flamer shot hit some of your own men.")
                     else:
                         print("The flamer shot hit a target.")
