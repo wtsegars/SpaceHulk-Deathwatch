@@ -2355,6 +2355,32 @@ def heavy_flamer(a, b, c, d, e, f):
         a -= 1
         e -= 1
 
+    fire_shot = randint(1, 6)
+
+    if d["occupied"] == True:
+        for h in genestealers.genestealers:
+            if genestealers.genestealers[h]["current position"] == dx:
+                if fire_shot >= 2:
+                    genestealers.genestealers[h]["alive"] = False
+                    d["on fire"] = True
+                    print("The flamer shot hit a target.")
+                else:
+                    d["on fire"] = True
+                    print("The flamer shot didn't hit anything.")
+        
+        for i in squad.squad:
+            if squad.squad[i]["current position"] == d:
+                if fire_shot >= 2:
+                    squad.squad[i]["alive"] = False
+                    d["on fire"] = True
+                    print("The flamer shot hit some of your own men.")
+                else:
+                    d["on fire"] = True
+                    print("The flamer shot didn't hit anything.")
+    else:
+        d["on fire"] = True
+        print("The flamer shot didn't hit anything.")
+
     for g in d["connected to"]:
         flamer_shot = randint(1, 6)
 
@@ -2366,6 +2392,7 @@ def heavy_flamer(a, b, c, d, e, f):
                         d["on fire"] = True
                         print("The flamer shot hit a target.")
                     else:
+                        d["on fire"] = True
                         print("The flamer shot didn't hit anything.")
 
             for i in squad.squad:
@@ -2375,4 +2402,7 @@ def heavy_flamer(a, b, c, d, e, f):
                         d["on fire"] = True
                         print("The flamer shot hit some of your own men.")
                     else:
+                        d["on fire"] = True
                         print("The flamer shot hit a target.")
+    
+    attack()
