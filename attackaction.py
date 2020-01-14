@@ -3144,25 +3144,25 @@ def heavy_flamer(a, b, c, d, e):
     for g in d["connected to"]:
         flamer_shot = randint(1, 6)
 
-        if d[d["connected to"]]["occupied"] == True:
+        if d[d[g]["connected to"]]["occupied"] == True:
             for h in c:
-                if c[h]["current position"] == d[d["connected to"]]["occupied"]:
+                if c[h]["current position"] == d[d[g]["connected to"]]:
                     if flamer_shot >= 2:
                         c[h]["alive"] = False
-                        d["on fire"] = True
+                        d[d[g]["connected to"]]["on fire"] = True
                         print("The flamer shot hit a target.")
                     else:
-                        d["on fire"] = True
+                        d[d[g]["connected to"]]["on fire"] = True
                         print("The flamer shot didn't hit anything.")
 
             for i in squad.squad:
-                if squad.squad[i]["current position"] == d[d["connected to"]]["occupied"]:
+                if squad.squad[i]["current position"] == d[d[g]["connected to"]]:
                     if flamer_shot >= 2:
                         squad.squad[i]["alive"] = False
-                        d["on fire"] = True
+                        d[d[g]["connected to"]]["on fire"] = True
                         print("The flamer shot hit some of your own men.")
                     else:
-                        d["on fire"] = True
+                        d[d[g]["connected to"]]["on fire"] = True
                         print("The flamer shot missed some of your own men.")
     
     attack()
@@ -3195,3 +3195,29 @@ def cyclone_missle(a, b, c, d, e):
                     print("The cyclone missle hit some of your own men.")
                 else:
                     print("The cyclone missle missed some of your men.")
+    else:
+        print("The cyclone missle did not hit anything.")
+
+    for g in d["connected to"]:
+        cyclone_shot = randint(1, 6)
+
+        if d[d[g]["connected to"]]["occupied"]:
+            for h in c:
+                if c[h]["current position"] == d[d[g]["connected to"]]:
+                    if cyclone_shot >= 3:
+                        c[h]["alive"] = False
+                        d[d[g]["connected to"]]["occupied"] = False
+                        print("The cyclone missle blast hit a target")
+                    else:
+                        print("The cyclone missle blast missed a target")
+
+            for i in squad.squad:
+                if squad.squad[i]["current position"] == d[d[g]["connected to"]]:
+                    if cyclone_shot >= 3:
+                        squad.squad[i]["alive"] = False
+                        d[d[g]["connected to"]]["occupied"] = False
+                        print("The cyclone missle blast hit some of your own men.")
+                    else:
+                        print("The cyclone missle blast missed some of your men.")
+
+    attack()
