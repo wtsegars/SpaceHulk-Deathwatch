@@ -3166,3 +3166,15 @@ def heavy_flamer(a, b, c, d, e, f):
                         print("The flamer shot hit a target.")
     
     attack()
+
+def cyclone_missle(a, b, c, d, e, f):
+    if b >= 1:
+        b -= 1
+        e -= 1
+    elif b < 1 and a >= 1:
+        a -= 1
+        e -= 1
+
+    cyclone_blast = randint(1, 6)
+
+    
