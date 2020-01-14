@@ -3107,7 +3107,7 @@ def assault_cannon(a, b, c, d, e, f):
         print("The assault cannon volly missed its target.")
         attack()
 
-def heavy_flamer(a, b, c, d, e, f):
+def heavy_flamer(a, b, c, d, e):
     if b >= 1:
         b -= 1
         e -= 1
@@ -3118,10 +3118,10 @@ def heavy_flamer(a, b, c, d, e, f):
     fire_shot = randint(1, 6)
 
     if d["occupied"] == True:
-        for h in genestealers.genestealers:
-            if genestealers.genestealers[h]["current position"] == dx:
+        for h in c:
+            if c[h]["current position"] == d:
                 if fire_shot >= 2:
-                    genestealers.genestealers[h]["alive"] = False
+                    c[h]["alive"] = False
                     d["on fire"] = True
                     print("The flamer shot hit a target.")
                 else:
@@ -3146,9 +3146,9 @@ def heavy_flamer(a, b, c, d, e, f):
 
         if d[d["connected to"]]["occupied"] == True:
             for h in genestealers.genestealers:
-                if genestealers.genestealers[h]["current position"] == d[d["connected to"]]["occupied"]:
+                if c[h]["current position"] == d[d["connected to"]]["occupied"]:
                     if flamer_shot >= 2:
-                        genestealers.genestealers[h]["alive"] = False
+                        c[h]["alive"] = False
                         d["on fire"] = True
                         print("The flamer shot hit a target.")
                     else:
@@ -3167,7 +3167,7 @@ def heavy_flamer(a, b, c, d, e, f):
     
     attack()
 
-def cyclone_missle(a, b, c, d, e, f):
+def cyclone_missle(a, b, c, d, e):
     if b >= 1:
         b -= 1
         e -= 1
@@ -3177,4 +3177,3 @@ def cyclone_missle(a, b, c, d, e, f):
 
     cyclone_blast = randint(1, 6)
 
-    
