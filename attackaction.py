@@ -3145,7 +3145,7 @@ def heavy_flamer(a, b, c, d, e):
         flamer_shot = randint(1, 6)
 
         if d[d["connected to"]]["occupied"] == True:
-            for h in genestealers.genestealers:
+            for h in c:
                 if c[h]["current position"] == d[d["connected to"]]["occupied"]:
                     if flamer_shot >= 2:
                         c[h]["alive"] = False
@@ -3163,7 +3163,7 @@ def heavy_flamer(a, b, c, d, e):
                         print("The flamer shot hit some of your own men.")
                     else:
                         d["on fire"] = True
-                        print("The flamer shot hit a target.")
+                        print("The flamer shot missed some of your own men.")
     
     attack()
 
@@ -3177,3 +3177,21 @@ def cyclone_missle(a, b, c, d, e):
 
     cyclone_blast = randint(1, 6)
 
+    if d["occupied"] == True:
+        for h in c:
+            if c[h]["current position"] == d:
+                if cyclone_blast >= 3:
+                    c[h]["alive"] = False
+                    d["occupied"] = False
+                    print("The cyclone missle made a kill.")
+                else:
+                    print("The cyclone missle missed its target.")
+        
+        for i in squad.squad:
+            if squad.squad[i]["current position"] == d:
+                if cyclone_blast >= 3:
+                    squad.squad[i]["alive"] = False
+                    d["occupied"] = False
+                    print("The cyclone missle hit some of your own men.")
+                else:
+                    print("The cyclone missle missed some of your men.")
