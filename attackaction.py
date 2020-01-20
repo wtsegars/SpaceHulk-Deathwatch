@@ -2787,7 +2787,11 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[0][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g],
+                                                                    gametiles.tiles[linesight.line_of_sight[0][z]])
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
