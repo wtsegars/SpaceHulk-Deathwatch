@@ -2790,8 +2790,39 @@ def ranged_combat(a, b, c, d, e, f):
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
-                                                                    genestealers.genestealers[g],
+                                                                    genestealers.genestealers[g]["alive"],
                                                                     gametiles.tiles[linesight.line_of_sight[0][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[0][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[0][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[0][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
@@ -2804,7 +2835,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[0][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[0][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[0][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[0][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[0][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
@@ -2821,7 +2887,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[1][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[1][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[1][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[1][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[1][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
@@ -2834,7 +2935,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[1][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[1][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[1][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[1][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[1][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
@@ -2851,7 +2987,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[2][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[2][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[2][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[2][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[2][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
@@ -2864,7 +3035,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[2][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[2][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[2][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[2][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[2][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
@@ -2881,7 +3087,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[3][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[3][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[3][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[3][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[3][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
@@ -2894,7 +3135,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[3][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[3][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[3][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[3][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[3][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
@@ -2911,7 +3187,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[4][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[4][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[4][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[4][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[4][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
@@ -2924,7 +3235,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[4][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[4][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[4][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[4][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[4][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
@@ -2941,7 +3287,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[5][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[5][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[5][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[5][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[5][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
@@ -2954,7 +3335,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[5][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[5][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[5][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[5][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[5][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
@@ -2971,7 +3387,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[6][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[6][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[6][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[6][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[6][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
@@ -2984,7 +3435,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[6][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[6][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[6][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[6][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[6][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
@@ -3001,7 +3487,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[7][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[7][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[7][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[7][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[7][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
@@ -3014,7 +3535,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[7][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[7][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[7][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[7][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[7][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
@@ -3031,7 +3587,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[8][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[8][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
@@ -3045,7 +3636,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[8][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[8][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
@@ -3062,7 +3688,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[9][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[9][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[9][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[9][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[9][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
@@ -3075,7 +3736,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[9][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[9][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[9][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[9][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[9][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
@@ -3092,7 +3788,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[10][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[10][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[10][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[10][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[10][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
@@ -3105,7 +3836,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[10][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[10][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[10][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[10][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[10][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
@@ -3122,7 +3888,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[11][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[11][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[11][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[11][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[11][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
@@ -3135,7 +3936,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[11][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[11][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[11][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[11][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[11][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
@@ -3152,7 +3988,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[12][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[12][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[12][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[12][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[12][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
@@ -3165,7 +4036,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[12][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[12][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[12][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[12][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[12][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
@@ -3182,7 +4088,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[13][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[13][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[13][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[13][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[13][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
@@ -3195,7 +4136,42 @@ def ranged_combat(a, b, c, d, e, f):
                                         if gametiles.tiles[linesight.line_of_sight[13][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
                                                 if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
-                                                    bolter_fire()
+                                                    if f == "Storm Bolter":
+                                                        bolter_fire(game.command_points,
+                                                                    squad[j]["action points"],
+                                                                    genestealers.genestealers[g]["alive"],
+                                                                    gametiles.tiles[linesight.line_of_sight[13][z]])
+                                                    elif f == "Assault Cannon":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            assault_cannon(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers[g]["alive"],
+                                                                            gametiles.tiles[linesight.line_of_sight[13][z]],
+                                                                            squad[j]["alive"],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Heavy Flamer":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            heavy_flamer(game.command_points,
+                                                                        squad[j]["action points"],
+                                                                        genestealers.genestealers,
+                                                                        gametiles.tiles[linesight.line_of_sight[13][z]],
+                                                                        squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
+                                                    elif f == "Cyclone Missile Launcher":
+                                                        if squad.squad[j]["clip_size"] >= 1:
+                                                            cyclone_missle(game.command_points,
+                                                                            squad[j]["action points"],
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[13][z]],
+                                                                            squad[j]["clip_size"])
+                                                        else:
+                                                            print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                            attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
                                                         if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
