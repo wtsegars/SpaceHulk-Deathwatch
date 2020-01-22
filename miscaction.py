@@ -24,7 +24,10 @@ def other_action():
 
         if action_choice == "Reload":
             reload(game.command_points,
-                    )
+                    squad[x]["action points"],
+                    squad[x]["clip_size"],
+                    squad[x]["clip_num"],
+                    squad[x]["weapon loadout"])
         elif action_choice == "Toggle Door":
             toggle_door()
         elif action_choice == "Overwatch":
@@ -37,4 +40,29 @@ def other_action():
             print("You have entered an invalid command, please try again.")
             other_action()
 
-    def reload(a, b):
+def reload(a, b, c, d, e):
+    if d == 0:
+        print("You don't have any more clips to reload your weapon with.")
+        other_action()
+
+    if b >= 4:
+        b -= 4
+    else:
+        diff = 4 - b
+
+        b = 0
+        a -= diff
+
+    if e == "Assault Cannon and Powerfist":
+        c = 10
+        d -= 1
+        print("Your assault cannon has been reloaded.")
+        other_action()
+    elif e == "Heavy Flamer and Powerfist":
+        c = 10
+        d -= 1
+        print("Your heavy flamer has been reloaded.")
+        other_action()
+    else:
+        print("Your don't have a weapon that needs to be reloaded")
+        other_action()
