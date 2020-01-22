@@ -44,6 +44,10 @@ def reload(a, b, c, d, e):
     if d == 0:
         print("You don't have any more clips to reload your weapon with.")
         other_action()
+    
+    if e != "Assault Cannon and Powerfist" and e != "Heavy Flamer and Powerfist":
+        print("Your don't have a weapon that needs to be reloaded")
+        other_action()
 
     if b >= 4:
         b -= 4
@@ -62,7 +66,4 @@ def reload(a, b, c, d, e):
         c = 10
         d -= 1
         print("Your heavy flamer has been reloaded.")
-        other_action()
-    else:
-        print("Your don't have a weapon that needs to be reloaded")
         other_action()
