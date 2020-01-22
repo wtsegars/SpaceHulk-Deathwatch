@@ -1,6 +1,7 @@
 from textwrap import dedent
 import game
 import squad
+import gametiles
 
 def other_action():
     print("Which terminator would you like to take action?")
@@ -29,7 +30,9 @@ def other_action():
                     squad[x]["clip_num"],
                     squad[x]["weapon loadout"])
         elif action_choice == "Toggle Door":
-            toggle_door()
+            toggle_door(game.command_points,
+                        squad[x]["action points"],
+                        gametiles.tiles)
         elif action_choice == "Overwatch":
             overwatch()
         elif action_choice == "Clear Jam":
@@ -67,3 +70,5 @@ def reload(a, b, c, d, e):
         d -= 1
         print("Your heavy flamer has been reloaded.")
         other_action()
+
+def toggle_door(a, b, c):
