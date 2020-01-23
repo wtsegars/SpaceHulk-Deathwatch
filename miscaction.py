@@ -32,7 +32,9 @@ def other_action():
         elif action_choice == "Toggle Door":
             toggle_door(game.command_points,
                         squad[x]["action points"],
-                        gametiles.tiles)
+                        gametiles.tiles,
+                        squad[x]["current_place"],
+                        squad[x]["direction"])
         elif action_choice == "Overwatch":
             overwatch()
         elif action_choice == "Clear Jam":
@@ -71,4 +73,4 @@ def reload(a, b, c, d, e):
         print("Your heavy flamer has been reloaded.")
         other_action()
 
-def toggle_door(a, b, c):
+def toggle_door(a, b, c, d, e):

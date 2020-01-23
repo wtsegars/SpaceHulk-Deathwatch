@@ -31,7 +31,7 @@ def attack():
                 if attack_choice == "Storm Bolter":
                     ranged_combat(game.command_points,
                                   squad[j]["action points"],
-                                  squad[j]["current position"],
+                                  squad[j]["current_place"],
                                   squad[j]["direction"],
                                   squad[j]["alive"],
                                   attack_choice)
@@ -52,7 +52,7 @@ def attack():
                 if attack_choice == "Storm Bolter":
                     ranged_combat(game.command_points,
                                   squad[j]["action points"],
-                                  squad[j]["current position"],
+                                  squad[j]["current_place"],
                                   squad[j]["direction"],
                                   squad[j]["alive"],
                                   attack_choice)
@@ -99,7 +99,7 @@ def attack():
                 if attack_choice == "Storm Bolter":
                     ranged_combat(game.command_points,
                                   squad[j]["action points"],
-                                  squad[j]["current position"],
+                                  squad[j]["current_place"],
                                   squad[j]["direction"],
                                   squad[j]["alive"],
                                   attack_choice)
@@ -120,7 +120,7 @@ def attack():
                 if attack_choice == "Storm Bolter":
                     ranged_combat(game.command_points,
                                   squad[j]["action points"],
-                                  squad[j]["current position"],
+                                  squad[j]["current_place"],
                                   squad[j]["direction"],
                                   squad[j]["alive"],
                                   attack_choice)
@@ -141,7 +141,7 @@ def attack():
                 if attack_choice == "Assault Cannon":
                     ranged_combat(game.command_points,
                                   squad[j]["action points"],
-                                  squad[j]["current position"],
+                                  squad[j]["current_place"],
                                   squad[j]["direction"],
                                   squad[j]["alive"],
                                   attack_choice)
@@ -162,7 +162,7 @@ def attack():
                 if attack_choice == "Heavy Flamer":
                     ranged_combat(game.command_points,
                                   squad[j]["action points"],
-                                  squad[j]["current position"],
+                                  squad[j]["current_place"],
                                   squad[j]["direction"],
                                   squad[j]["alive"],
                                   attack_choice)
@@ -184,14 +184,14 @@ def attack():
                 if attack_choice == "Storm Bolter":
                     ranged_combat(game.command_points,
                                   squad[j]["action points"],
-                                  squad[j]["current position"],
+                                  squad[j]["current_place"],
                                   squad[j]["direction"],
                                   squad[j]["alive"],
                                   attack_choice)
                 elif attack_choice == "Cyclone Missile Launcher":
                     ranged_combat(game.command_points,
                                   squad[j]["action points"],
-                                  squad[j]["current position"],
+                                  squad[j]["current_place"],
                                   squad[j]["direction"],
                                   squad[j]["alive"],
                                   attack_choice)
@@ -212,7 +212,7 @@ def attack():
                 if attack_choice == "Storm Bolter":
                     ranged_combat(game.command_points,
                                   squad[j]["action points"],
-                                  squad[j]["current position"],
+                                  squad[j]["current_place"],
                                   squad[j]["direction"],
                                   squad[j]["alive"],
                                   attack_choice)
@@ -233,7 +233,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[0][x] == gametiles.tiles[linesight.line_of_sight[0][x]]:
                         if gametiles.tiles[linesight.line_of_sight[0][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -272,7 +272,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -288,7 +288,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -327,7 +327,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -343,7 +343,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -382,7 +382,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -398,7 +398,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[4][x] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                         if gametiles.tiles[linesight.line_of_sight[4][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -437,7 +437,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -453,7 +453,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -492,7 +492,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -508,7 +508,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -547,7 +547,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack() 
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -564,7 +564,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[5][x] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                         if gametiles.tiles[linesight.line_of_sight[5][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -603,7 +603,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -620,7 +620,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -659,7 +659,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -675,7 +675,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -714,7 +714,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -731,7 +731,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[4][x] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                         if gametiles.tiles[linesight.line_of_sight[4][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -770,7 +770,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -787,7 +787,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -826,7 +826,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -842,7 +842,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -881,7 +881,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -898,7 +898,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[2][x] == gametiles.tiles[linesight.line_of_sight[2][x]]:
                         if gametiles.tiles[linesight.line_of_sight[2][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -937,7 +937,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -953,7 +953,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -992,7 +992,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1009,7 +1009,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[2][x] == gametiles.tiles[linesight.line_of_sight[2][x]]:
                         if gametiles.tiles[linesight.line_of_sight[2][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1048,7 +1048,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1064,7 +1064,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[1][x] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                         if gametiles.tiles[linesight.line_of_sight[1][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1103,7 +1103,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1120,7 +1120,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[4][x] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                         if gametiles.tiles[linesight.line_of_sight[4][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1159,7 +1159,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1175,7 +1175,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[4][x] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                         if gametiles.tiles[linesight.line_of_sight[4][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1214,7 +1214,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1230,7 +1230,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[6][x] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                         if gametiles.tiles[linesight.line_of_sight[6][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1269,7 +1269,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1286,7 +1286,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[5][x] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                         if gametiles.tiles[linesight.line_of_sight[5][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1325,7 +1325,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1341,7 +1341,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[5][x] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                         if gametiles.tiles[linesight.line_of_sight[5][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1380,7 +1380,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1396,7 +1396,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[6][x] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                         if gametiles.tiles[linesight.line_of_sight[6][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1435,7 +1435,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1452,7 +1452,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[7][x] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                         if gametiles.tiles[linesight.line_of_sight[7][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1491,7 +1491,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1507,7 +1507,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[7][x] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                         if gametiles.tiles[linesight.line_of_sight[7][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1546,7 +1546,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1562,7 +1562,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[6][x] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                         if gametiles.tiles[linesight.line_of_sight[6][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1601,7 +1601,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1617,7 +1617,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[6][x] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                         if gametiles.tiles[linesight.line_of_sight[6][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1656,7 +1656,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1673,7 +1673,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[7][x] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                         if gametiles.tiles[linesight.line_of_sight[7][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1712,7 +1712,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1728,7 +1728,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[8][x] == gametiles.tiles[linesight.line_of_sight[8][x]]:
                         if gametiles.tiles[linesight.line_of_sight[8][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1767,7 +1767,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1783,7 +1783,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[8][x] == gametiles.tiles[linesight.line_of_sight[8][x]]:
                         if gametiles.tiles[linesight.line_of_sight[8][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1822,7 +1822,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1839,7 +1839,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[7][x] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                         if gametiles.tiles[linesight.line_of_sight[7][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1878,7 +1878,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1894,7 +1894,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[9][x] == gametiles.tiles[linesight.line_of_sight[9][x]]:
                         if gametiles.tiles[linesight.line_of_sight[9][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1933,7 +1933,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -1949,7 +1949,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[9][x] == gametiles.tiles[linesight.line_of_sight[9][x]]:
                         if gametiles.tiles[linesight.line_of_sight[9][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -1988,7 +1988,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2005,7 +2005,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[10][x] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                         if gametiles.tiles[linesight.line_of_sight[10][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2044,7 +2044,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2060,7 +2060,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[11][x] == gametiles.tiles[linesight.line_of_sight[11][x]]:
                         if gametiles.tiles[linesight.line_of_sight[9][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2099,7 +2099,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2115,7 +2115,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[11][x] == gametiles.tiles[linesight.line_of_sight[11][x]]:
                         if gametiles.tiles[linesight.line_of_sight[9][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2154,7 +2154,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2171,7 +2171,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[4][x] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                         if gametiles.tiles[linesight.line_of_sight[4][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2210,7 +2210,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2226,7 +2226,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[13][x] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                         if gametiles.tiles[linesight.line_of_sight[13][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2265,7 +2265,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2282,7 +2282,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[5][x] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                         if gametiles.tiles[linesight.line_of_sight[5][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2321,7 +2321,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2337,7 +2337,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[13][x] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                         if gametiles.tiles[linesight.line_of_sight[13][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2376,7 +2376,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2393,7 +2393,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[10][x] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                         if gametiles.tiles[linesight.line_of_sight[10][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2432,7 +2432,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2448,7 +2448,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[10][x] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                         if gametiles.tiles[linesight.line_of_sight[10][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2487,7 +2487,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2503,7 +2503,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[13][x] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                         if gametiles.tiles[linesight.line_of_sight[13][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2542,7 +2542,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2558,7 +2558,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[13][x] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                         if gametiles.tiles[linesight.line_of_sight[13][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2597,7 +2597,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2614,7 +2614,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[10][x] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                         if gametiles.tiles[linesight.line_of_sight[10][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2653,7 +2653,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2669,7 +2669,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[12][x] == gametiles.tiles[linesight.line_of_sight[12][x]]:
                         if gametiles.tiles[linesight.line_of_sight[12][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2708,7 +2708,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2724,7 +2724,7 @@ def ranged_combat(a, b, c, d, e, f):
                     if linesight.line_of_sight[12][x] == gametiles.tiles[linesight.line_of_sight[12][x]]:
                         if gametiles.tiles[linesight.line_of_sight[12][x]]["occupied"] == True:
                             for y in genestealers.genestealers:
-                                if genestealers.genestealers[y]["current position"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
+                                if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
                                     if f == "Storm Bolter":
                                         bolter_fire(game.command_points,
                                                     squad[j]["action points"],
@@ -2763,7 +2763,7 @@ def ranged_combat(a, b, c, d, e, f):
                                             attack()
                                 elif y == len(genestealers.genestealers):
                                     for z in squad.squad:
-                                        if squad.squad[z]["current position"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
+                                        if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
                                             print(
                                                 "You can't fire on your own men.")
                                             attack()
@@ -2786,7 +2786,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[0][z] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[0][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -2825,7 +2825,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -2834,7 +2834,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[0][z] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[0][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -2873,7 +2873,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -2886,7 +2886,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[1][z] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[1][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -2925,7 +2925,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -2934,7 +2934,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[1][z] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[1][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -2973,7 +2973,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -2986,7 +2986,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[2][z] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[2][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3025,7 +3025,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3034,7 +3034,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[2][z] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[2][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3073,7 +3073,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3086,7 +3086,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[3][z] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[3][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3125,7 +3125,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3134,7 +3134,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[3][z] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[3][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3173,7 +3173,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3186,7 +3186,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[4][z] == gametiles.tiles[linesight.line_of_sight[4][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[4][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3225,7 +3225,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3234,7 +3234,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[4][z] == gametiles.tiles[linesight.line_of_sight[4][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[4][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3273,7 +3273,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3286,7 +3286,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[5][z] == gametiles.tiles[linesight.line_of_sight[5][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[5][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3325,7 +3325,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3334,7 +3334,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[5][z] == gametiles.tiles[linesight.line_of_sight[5][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[5][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3373,7 +3373,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3386,7 +3386,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[6][z] == gametiles.tiles[linesight.line_of_sight[6][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[6][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3425,7 +3425,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3434,7 +3434,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[6][z] == gametiles.tiles[linesight.line_of_sight[6][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[6][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3473,7 +3473,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3486,7 +3486,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[7][z] == gametiles.tiles[linesight.line_of_sight[7][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[7][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3525,7 +3525,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3534,7 +3534,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[7][z] == gametiles.tiles[linesight.line_of_sight[7][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[7][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3573,7 +3573,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3586,7 +3586,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[8][z] == gametiles.tiles[linesight.line_of_sight[8][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[8][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3625,7 +3625,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3635,7 +3635,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[8][z] == gametiles.tiles[linesight.line_of_sight[8][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[8][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3674,7 +3674,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3687,7 +3687,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[9][z] == gametiles.tiles[linesight.line_of_sight[9][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[9][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3726,7 +3726,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3735,7 +3735,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[9][z] == gametiles.tiles[linesight.line_of_sight[9][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[9][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3774,7 +3774,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3787,7 +3787,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[10][z] == gametiles.tiles[linesight.line_of_sight[10][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[10][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3826,7 +3826,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3835,7 +3835,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[10][z] == gametiles.tiles[linesight.line_of_sight[10][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[10][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3874,7 +3874,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3887,7 +3887,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[11][z] == gametiles.tiles[linesight.line_of_sight[11][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[11][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3926,7 +3926,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3935,7 +3935,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[11][z] == gametiles.tiles[linesight.line_of_sight[11][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[11][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -3974,7 +3974,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -3987,7 +3987,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[12][z] == gametiles.tiles[linesight.line_of_sight[12][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[12][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -4026,7 +4026,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -4035,7 +4035,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[12][z] == gametiles.tiles[linesight.line_of_sight[12][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[12][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -4074,7 +4074,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -4087,7 +4087,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[13][z] == gametiles.tiles[linesight.line_of_sight[13][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[13][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -4126,7 +4126,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -4135,7 +4135,7 @@ def ranged_combat(a, b, c, d, e, f):
                                     if linesight.line_of_sight[13][z] == gametiles.tiles[linesight.line_of_sight[13][z]]:
                                         if gametiles.tiles[linesight.line_of_sight[13][z]]["occupied"] == True:
                                             for g in genestealers.genestealers:
-                                                if genestealers.genestealers[g]["current position"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
+                                                if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
                                                     if f == "Storm Bolter":
                                                         bolter_fire(game.command_points,
                                                                     squad[j]["action points"],
@@ -4174,7 +4174,7 @@ def ranged_combat(a, b, c, d, e, f):
                                                             attack()
                                                 elif g == len(genestealers.genestealers):
                                                     for h in squad.squad:
-                                                        if squad.squad[h]["current position"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
+                                                        if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
                                                             print(
                                                                 "You can't fire on your own men.")
                                                             attack()
@@ -4192,7 +4192,7 @@ def close_combat(a, b, c, d, e, f):
                 for y in gametiles.tiles[x]["connected to"]:
                     if gametiles.tiles[y]["occupied"] == True:
                         for z in genestealers.genestealers:
-                            if genestealers.genestealers[z]["current position"] == gametiles.tiles[y]:
+                            if genestealers.genestealers[z]["current_place"] == gametiles.tiles[y]:
                                 if genestealers.genestealers[z]["direction"] == "north" and d == "south":
                                     if f == "Powerfist":
                                         spacemarine_roll = randint(1, 6)
@@ -4851,7 +4851,7 @@ def close_combat(a, b, c, d, e, f):
                                     attack()
                             elif z >= len(genestealers.genestealers):
                                 print(
-                                    "There is no foe that you can attack at your current position.")
+                                    "There is no foe that you can attack at your current_place.")
                                 attack()
     else:
         print("You don't have enough action points and/or command points to complete this action.")
@@ -4926,7 +4926,7 @@ def heavy_flamer(a, b, c, d, e):
 
     if d["occupied"] == True:
         for h in c:
-            if c[h]["current position"] == d:
+            if c[h]["current_place"] == d:
                 if fire_shot >= 2:
                     c[h]["alive"] = False
                     d["on fire"] = True
@@ -4936,7 +4936,7 @@ def heavy_flamer(a, b, c, d, e):
                     print("The flamer shot didn't hit anything.")
         
         for i in squad.squad:
-            if squad.squad[i]["current position"] == d:
+            if squad.squad[i]["current_place"] == d:
                 if fire_shot >= 2:
                     squad.squad[i]["alive"] = False
                     d["on fire"] = True
@@ -4953,7 +4953,7 @@ def heavy_flamer(a, b, c, d, e):
 
         if d[d[g]["connected to"]]["occupied"] == True:
             for h in c:
-                if c[h]["current position"] == d[d[g]["connected to"]]:
+                if c[h]["current_place"] == d[d[g]["connected to"]]:
                     if flamer_shot >= 2:
                         c[h]["alive"] = False
                         d[d[g]["connected to"]]["on fire"] = True
@@ -4963,7 +4963,7 @@ def heavy_flamer(a, b, c, d, e):
                         print("The flamer shot didn't hit anything.")
 
             for i in squad.squad:
-                if squad.squad[i]["current position"] == d[d[g]["connected to"]]:
+                if squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
                     if flamer_shot >= 2:
                         squad.squad[i]["alive"] = False
                         d[d[g]["connected to"]]["on fire"] = True
@@ -4986,7 +4986,7 @@ def cyclone_missle(a, b, c, d, e):
 
     if d["occupied"] == True:
         for h in c:
-            if c[h]["current position"] == d:
+            if c[h]["current_place"] == d:
                 if cyclone_blast >= 3:
                     c[h]["alive"] = False
                     d["occupied"] = False
@@ -4995,7 +4995,7 @@ def cyclone_missle(a, b, c, d, e):
                     print("The cyclone missle missed its target.")
         
         for i in squad.squad:
-            if squad.squad[i]["current position"] == d:
+            if squad.squad[i]["current_place"] == d:
                 if cyclone_blast >= 3:
                     squad.squad[i]["alive"] = False
                     d["occupied"] = False
@@ -5010,7 +5010,7 @@ def cyclone_missle(a, b, c, d, e):
 
         if d[d[g]["connected to"]]["occupied"]:
             for h in c:
-                if c[h]["current position"] == d[d[g]["connected to"]]:
+                if c[h]["current_place"] == d[d[g]["connected to"]]:
                     if cyclone_shot >= 3:
                         c[h]["alive"] = False
                         d[d[g]["connected to"]]["occupied"] = False
@@ -5019,7 +5019,7 @@ def cyclone_missle(a, b, c, d, e):
                         print("The cyclone missle blast missed a target")
 
             for i in squad.squad:
-                if squad.squad[i]["current position"] == d[d[g]["connected to"]]:
+                if squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
                     if cyclone_shot >= 3:
                         squad.squad[i]["alive"] = False
                         d[d[g]["connected to"]]["occupied"] = False
