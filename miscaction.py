@@ -37,7 +37,8 @@ def other_action():
                         squad[x]["direction"])
         elif action_choice == "Overwatch":
             overwatch(game.command_points,
-                        squad[x]["action points"])
+                        squad[x]["action points"],
+                        squad[x]["overwatch"])
         elif action_choice == "Clear Jam":
             clear_jam()
         elif action_choice == "Cancel":
@@ -175,4 +176,6 @@ def toggle_door(a, b, c, d, e):
         print("There is no door for you to seal.")
         other_action()
 
-def overwatch():
+def overwatch(a, b, c):
+    if c == False:
+        
