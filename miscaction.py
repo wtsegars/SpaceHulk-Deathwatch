@@ -74,3 +74,102 @@ def reload(a, b, c, d, e):
         other_action()
 
 def toggle_door(a, b, c, d, e):
+    if d == "ll5" and e == "west":
+        if b >= 1:
+            b -= 1
+        elif b < 1 and a >= 1:
+            a -= 1
+        elif b < 1 and a < 1:
+            print("You don't have enough action points to complete this action.")
+            other_action()
+
+        print("The lower left door has been sucessfully sealed.")
+        c["g4"]["door"]["sealed"] == True
+        other_action()
+    elif d == "lr5" and e == "east":
+        if b >= 1:
+            b -= 1
+        elif b < 1 and a >= 1:
+            a -= 1
+        elif b < 1 and a < 1:
+            print("You don't have enough action points to complete this action.")
+            other_action()
+        
+        print("The lower right door has been sucessfully sealed.")
+        c["g8"]["door"]["sealed"] == True
+        other_action()
+    elif d == "c3" and e == "south":
+        if b >= 1:
+            b -= 1
+        elif b < 1 and a >= 1:
+            a -= 1
+        elif b < 1 and a < 1:
+            print("You don't have enough action points to complete this action.")
+            other_action()
+        
+        print("The lower center door has been sucessfully sealed.")
+        c["c3"]["door"]["sealed"] == True
+        other_action()
+    elif d == "c5" and e == "north":
+        if b >= 1:
+            b -= 1
+        elif b < 1 and a >= 1:
+            a -= 1
+        elif b < 1 and a < 1:
+            print("You don't have enough action points to complete this action.")
+            other_action()
+        
+        print("The upper center door has been sucessfully sealed.")
+        c["c5"]["door"]["sealed"] == True
+        other_action()
+    elif d == "g20" and e == "west":
+        if b >= 1:
+            b -= 1
+        elif b < 1 and a >= 1:
+            a -= 1
+        elif b < 1 and a < 1:
+            print("You don't have enough action points to complete this action.")
+            other_action()
+
+        print("The lower top left door has been sucessfully sealed.")
+        c["g20"]["door"]["sealed"] == True
+        other_action()
+    elif d == "g18" and e == "east":
+        if b >= 1:
+            b -= 1
+        elif b < 1 and a >= 1:
+            a -= 1
+        elif b < 1 and a < 1:
+            print("You don't have enough action points to complete this action.")
+            other_action()
+
+        print("The lower top right door has been sucessfully sealed.")
+        c["g18"]["door"]["sealed"] == True
+        other_action()
+    elif d == "g24" and e == "west":
+        if b >= 1:
+            b -= 1
+        elif b < 1 and a >= 1:
+            a -= 1
+        elif b < 1 and a < 1:
+            print("You don't have enough action points to complete this action.")
+            other_action()
+
+        print("The upper top left door has been sucessfully sealed.")
+        c["g24"]["door"]["sealed"] == True
+        other_action()
+    elif d == "g22" and e == "east":
+        if b >= 1:
+            b -= 1
+        elif b < 1 and a >= 1:
+            a -= 1
+        elif b < 1 and a < 1:
+            print("You don't have enough action points to complete this action.")
+            other_action()
+    
+        print("The upper top right door has been sucessfully sealed.")
+        c["g22"]["door"]["sealed"] == True
+        other_action()
+    else:
+        print("There is no door for you to seal.")
+        other_action()
