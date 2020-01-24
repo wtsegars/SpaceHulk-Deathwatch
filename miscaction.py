@@ -34,14 +34,16 @@ def other_action():
                         squad[x]["action points"],
                         gametiles.tiles,
                         squad[x]["current_place"],
-                        squad[x]["direction"],
-                        squad[x]["jammed"])
+                        squad[x]["direction"])
         elif action_choice == "Overwatch":
             overwatch(game.command_points,
                         squad[x]["action points"],
-                        squad[x]["overwatch"])
+                        squad[x]["overwatch"],
+                        squad[x]["jammed"])
         elif action_choice == "Clear Jam":
-            clear_jam()
+            clear_jam(game.command_points,
+                        squad[x]["action points"],
+                        squad[x]["jammed"])
         elif action_choice == "Cancel":
             game.SpaceMarineTurn.enter.turn_menu()
         else:
@@ -200,3 +202,16 @@ def overwatch(a, b, c, d):
 
             print("This marine is no longer on overwatch.")
             other_action()
+
+def clear_jam(a, b, c):
+    if b >= 1:
+        b -= 1
+    elif b < 1 and a >= 1:
+        a -= 1
+    else:
+        print("You do not have enough action points to complete this action.")
+        other_action()
+
+    c = False
+    print("Your storm bolter is no longer jammed.")
+    other_action()
