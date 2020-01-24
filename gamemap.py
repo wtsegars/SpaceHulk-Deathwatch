@@ -1,7 +1,7 @@
 import textwrap
 
 def map():
-    print(dedent"""                    ===[g23][g24][c12][g22][g21]===
+    print(dedent f"""                  ===[g23][g24][c12][g22][g21]===
                                                     [c11]
                            [l13][ul1][ul2][ul3][ul4][c10][ur4][ur3][ur2][ur1][r13]
                            [l12]                    [c9 ]                    [r12]
@@ -22,4 +22,9 @@ def map():
                     ||                              [s3 ]                              ||
                                                     [s2 ]
                                                     [s1 ]
+            legend:
+            ^ = Marine facing north
+            v = Marine facing south
+            > = Marine facing east
+            < = Marine facing west
     """)
