@@ -34,7 +34,8 @@ def other_action():
                         squad[x]["action points"],
                         gametiles.tiles,
                         squad[x]["current_place"],
-                        squad[x]["direction"])
+                        squad[x]["direction"],
+                        squad[x]["jammed"])
         elif action_choice == "Overwatch":
             overwatch(game.command_points,
                         squad[x]["action points"],
@@ -176,22 +177,26 @@ def toggle_door(a, b, c, d, e):
         print("There is no door for you to seal.")
         other_action()
 
-def overwatch(a, b, c):
-    if c == False:
-        if b >= 2:
-            b -= 2
-        elif b < 2 and a >= 2:
-            diff = a - b
-            a -= diff
-        else:
-            print("You don't have enough action points to complete this action.")
-            other_action()
+def overwatch(a, b, c, d):
+    if d == True:
+        print("You weapon is jammed. You need to clear the jam before you can go on overwatch.")
+        other_action()
+    else:
+        if c == False:
+            if b >= 2:
+                b -= 2
+            elif b < 2 and a >= 2:
+                diff = a - b
+                a -= diff
+            else:
+                print("You don't have enough action points to complete this action.")
+                other_action()
         
-        print("This marine is now on overwatch.")
-        c = True
-        other_action()
-    elif c == True:
-        b += 2
+            print("This marine is now on overwatch.")
+            c = True
+            other_action()
+        elif c == True:
+            b += 2
 
-        print("This marine is no longer on overwatch.")
-        other_action()
+            print("This marine is no longer on overwatch.")
+            other_action()
