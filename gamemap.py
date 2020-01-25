@@ -16,10 +16,10 @@ def map():
                            [l3 ]            ||                 ||            [ r3]
                            [l2 ]                                             [ r2]
                            [l1 ]                                             [ r1]
-                   [g3][g4][ll5][ll4][ll3][ll2][ll1][c1 ][lr1][lr2][lr3][lr4][lr5][g8][g7]
-                   [g2]                             [s5 ]                             [g6]
-                   [g1]                             [s4 ]                             [g5]
-                    ||                              [s3 ]                              ||
+                 [g3 ][g4 ][ll5][ll4][ll3][ll2][ll1][c1 ][lr1][lr2][lr3][lr4][lr5][g8 ][g7 ]
+                 [g2 ]                              [s5 ]                              [g6 ]
+                 [g1 ]                              [s4 ]                              [g5 ]
+                   ||                               [s3 ]                               ||
                                                     [s2 ]
                                                     [s1 ]
             legend:
@@ -27,4 +27,12 @@ def map():
             v = Marine facing south
             > = Marine facing east
             < = Marine facing west
+            number next to arrow = Marine in squad
+            O = radar blip
+            G = Genestealer
+            || = Genestealer entrance (facing north or south)
+            === = Genestealer entrance (facing east or west)
+            II = Closed door (facing east or west)
+            -- = Closed door (facing north or south)
+            FF = Panel on fire
     """)
