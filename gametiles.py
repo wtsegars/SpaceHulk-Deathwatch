@@ -543,5 +543,53 @@ tiles = {
             "ur3": "east",
             "c10": "west"
         }
+    },
+    "cl1": {
+        "connected to": {
+            "l6": "west",
+            "cl2": "east"
+        }
+    },
+    "cl2": {
+        "connected to": {
+            "cl1": "west",
+            "cl3": "east"
+        }
+    },
+    "cl3": {
+        "connected to": {
+            "cl2": "west",
+            "cl4": "east"
+        }
+    },
+    "cl4": {
+        "connected to": {
+            "cl3": "west",
+            "c4": "east"
+        }
+    },
+    "cr1": {
+        "connected to": {
+            "r6": "east",
+            "cr2": "west"
+        }
+    },
+    "cr2": {
+        "connected to": {
+            "cr1": "east",
+            "cr3": "west"
+        }
+    },
+    "cr3": {
+        "connected to": {
+            "cr2": "east",
+            "cr4": "west"
+        }
+    },
+    "cr4": {
+        "connected to": {
+            "cr3": "east",
+            "c4": "west"
+        }
     }
 }
