@@ -98,6 +98,9 @@ def map():
         cr4 = gametiles.tiles[92]
 
         tiles_list = [s1, s2, s3, s4, s5, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, ll1, ll2, ll3, ll4, ll5, lr1, lr2, lr3, lr4, lr5, l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l11, l12, l13, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, ul1, ul2, ul3, ul4, ur1, ur2, ur3 , ur4, cl1, cl2, cl3, cl4, cr1, cr2, cr3, cr4]
+
+        for x in tiles_list:
+                
     print(dedent f"""                            ===[{g23}][{g24}][{c12}][{g22}][{g21}]===
                                                                   [{c11}]
                                [{l13}][{ul1}][{ul2}][{ul3}][{ul4}][{c10}][{ur4}][{ur3}][{ur2}][{ur1}][{r13}]
