@@ -10,6 +10,7 @@ import attackaction
 import miscaction
 import gamemap
 import genestealers
+import radarblips
 
 command_points = 0
 
@@ -250,15 +251,23 @@ class SpaceMarineTurn(Scene):
         for i in gametiles.tiles:
             if gametiles.tiles[i]["on fire"] == True:
                 gametiles.tiles[i]["on fire"] = False
-                gametiles.tiles[i]["occupied"] == True:
-
-                for x in genestealers.genestealers:
-                    if genestealers.genestealers[x]["current position"] == gametiles.tiles[i]:
-                        gametiles.tiles[i]["occupied"] = True
-                    
-                for y in squad.squad:
-                    if squad.squad[y]["current position"] == gametiles.tiles[i]:
-                        gametiles.tiles[i]["occupied"] = True
+                if gametiles.tiles[i]["occupied"] == True:
+                    gametiles.tiles[i]["occupied"] == False
+                    for j in squad.squad:
+                        if squad.squad[j]["alive"] == True:
+                            if squad.squad[j]["current_position"] == gametiles.tiles[i]:
+                                gametiles.tiles[i]["occupied"] = True
+                                break
+                    for j in genestealers.genestealers:
+                        if genestealers.genestealers[j]["alive"] == True:
+                            if genestealers.genestealers[j]["current_position"] == gametiles.tiles[i]:
+                                gametiles.tiles[i]["occupied"] = True
+                                break
+                    for j in radarblips.blips:
+                        if radarblips.blips[j]["alive"] == True:
+                            if radarblips.blips[j]["current_position"] == gametiles.tiles[i]:
+                                gametiles.tiles[i]["occupied"] = True
+                                break
 
         command_points = 0
         command_points = randint(1, 6)
