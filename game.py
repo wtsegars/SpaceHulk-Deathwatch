@@ -320,6 +320,9 @@ class GeneStealerTurn(Scene):
 
     turn_count += 1
 
+    if turn_count <= 2:
+        blip_deployment = 3
+
 class GameControl(object):
 
     scenes = {
