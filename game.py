@@ -320,12 +320,20 @@ class GeneStealerTurn(Scene):
 
     turn_count += 1
 
+    blip_deployment = 0
+
     if turn_count <= 2:
-        blip_deployment = 3
+        blip_deployment += 3
     elif 2 < turn_count <= 4:
-        blip_deployment = 2
+        blip_deployment += 2
     elif turn_count > 5:
-        blip_deployment = 1
+        blip_deployment += 1
+
+    deployment_tiles = ["g1", "g5", "g9", "g11", "g13", "g15", "g17", "g19", "g21", "g23"]
+
+    while blip_deployment > 0:
+        tile_choice = randint(0, 9)
+        
 
 class GameControl(object):
 
