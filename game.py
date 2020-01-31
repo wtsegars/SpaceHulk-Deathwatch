@@ -185,8 +185,9 @@ class SquadSelect(Scene):
                         return 'squad_selection'
                 
                 terminator["alive"] = True
-                squad[f"Terminator{terminator_count}"]
+                squad[f"Terminator{terminator_count}"] = terminator
 
+                terminator.clear()
                 terminator_count += 1
 
                 if terminator_count == 4:
@@ -332,8 +333,15 @@ class GeneStealerTurn(Scene):
     deployment_tiles = ["g1", "g5", "g9", "g11", "g13", "g15", "g17", "g19", "g21", "g23"]
 
     while blip_deployment > 0:
+        blip = {}
         tile_choice = randint(0, 9)
         
+        if gametiles.tiles[deployment_tiles[tile_choice]]["occupied"] == False:
+            blip["current_location"] = deployment_tiles[tile_choice]
+            gametiles.tiles[deployment_tiles[tile_choice]]["occupied"] = True
+            radarblips.blips[f"Blip{blip_deployment}"]["current_location"] = gametiles.tiles[deployment_tiles[tile_choice]
+            blip.clear()
+            blip_deployment -= 1
 
 class GameControl(object):
 
