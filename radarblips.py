@@ -171,3 +171,43 @@ def blip_deployment(a, b, c, d):
                     blips[f"Blip{a}"]["action_points"] = 6
                     blip.clear()
                     a -= 1
+            elif b[tile_choice] == "g21":
+                if c["g22"]["occupied"] == True or c["c12"]["occupied"] == True or c["g24"]["occupied"] == True or c["g23"]["occupied"] == True:
+                    for x in d:
+                        if d[x]["current_place"] == "g22" or d[x]["current_place"] == "c12" or d[x]["current_place"] == "g24" or d[x]["current_place"] == "g23":
+                            if d[x]["direction"] != "east":
+                                blip["current_location"] = b[tile_choice]
+                                c[b[tile_choice]]["occupied"] = True
+                                blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
+                                blips[f"Blip{a}"]["hidden"] = True
+                                blips[f"Blip{a}"]["action_points"] = 6
+                                blip.clear()
+                                a -= 1
+                else:
+                    blip["current_location"] = b[tile_choice]
+                    c[b[tile_choice]]["occupied"] = True
+                    blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
+                    blips[f"Blip{a}"]["hidden"] = True
+                    blips[f"Blip{a}"]["action_points"] = 6
+                    blip.clear()
+                    a -= 1
+            elif b[tile_choice] == "g23":
+                if c["g24"]["occupied"] == True or c["c12"]["occupied"] == True or c["g22"]["occupied"] == True or c["g21"]["occupied"] == True:
+                    for x in d:
+                        if d[x]["current_place"] == "g24" or d[x]["current_place"] == "c12" or d[x]["current_place"] == "g22" or d[x]["current_place"] == "g21":
+                            if d[x]["direction"] != "west":
+                                blip["current_location"] = b[tile_choice]
+                                c[b[tile_choice]]["occupied"] = True
+                                blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
+                                blips[f"Blip{a}"]["hidden"] = True
+                                blips[f"Blip{a}"]["action_points"] = 6
+                                blip.clear()
+                                a -= 1
+                else:
+                    blip["current_location"] = b[tile_choice]
+                    c[b[tile_choice]]["occupied"] = True
+                    blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
+                    blips[f"Blip{a}"]["hidden"] = True
+                    blips[f"Blip{a}"]["action_points"] = 6
+                    blip.clear()
+                    a -= 1
