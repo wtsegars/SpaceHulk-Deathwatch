@@ -257,17 +257,17 @@ class SpaceMarineTurn(Scene):
                     gametiles.tiles[i]["occupied"] == False
                     for j in squad.squad:
                         if squad.squad[j]["alive"] == True:
-                            if squad.squad[j]["current_position"] == gametiles.tiles[i]:
+                            if squad.squad[j]["current_place"] == gametiles.tiles[i]:
                                 gametiles.tiles[i]["occupied"] = True
                                 break
                     for j in genestealers.genestealers:
                         if genestealers.genestealers[j]["alive"] == True:
-                            if genestealers.genestealers[j]["current_position"] == gametiles.tiles[i]:
+                            if genestealers.genestealers[j]["current_place"] == gametiles.tiles[i]:
                                 gametiles.tiles[i]["occupied"] = True
                                 break
                     for j in radarblips.blips:
                         if radarblips.blips[j]["alive"] == True:
-                            if radarblips.blips[j]["current_position"] == gametiles.tiles[i]:
+                            if radarblips.blips[j]["current_place"] == gametiles.tiles[i]:
                                 gametiles.tiles[i]["occupied"] = True
                                 break
 
@@ -333,7 +333,7 @@ class GeneStealerTurn(Scene):
 
     deployment_tiles = ["g1", "g5", "g9", "g11", "g13", "g15", "g17", "g19", "g21", "g23"]
 
-    radarblips.blip_deployment(blips_to_deploy, deployment_tiles, gametiles.tiles, linesight.line_of_sight)
+    radarblips.blip_deployment(blips_to_deploy, deployment_tiles, gametiles.tiles, squad.squad)
 
 class GameControl(object):
 
