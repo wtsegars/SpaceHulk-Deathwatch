@@ -151,3 +151,23 @@ def blip_deployment(a, b, c, d):
                     blips[f"Blip{a}"]["action_points"] = 6
                     blip.clear()
                     a -= 1
+            elif b[tile_choice] == "g19":
+                if c["g20"]["occupied"] == True or c["c7"]["occupied"] == True or c["g18"]["occupied"] == True or c["g17"]["occupied"] == True:
+                    for x in d:
+                        if d[x]["current_place"] == "g20" or d[x]["current_place"] == "c7" or d[x]["current_place"] == "g18" or d[x]["current_place"] == "g17":
+                            if d[x]["direction"] != "west":
+                                blip["current_location"] = b[tile_choice]
+                                c[b[tile_choice]]["occupied"] = True
+                                blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
+                                blips[f"Blip{a}"]["hidden"] = True
+                                blips[f"Blip{a}"]["action_points"] = 6
+                                blip.clear()
+                                a -= 1
+                else:
+                    blip["current_location"] = b[tile_choice]
+                    c[b[tile_choice]]["occupied"] = True
+                    blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
+                    blips[f"Blip{a}"]["hidden"] = True
+                    blips[f"Blip{a}"]["action_points"] = 6
+                    blip.clear()
+                    a -= 1
