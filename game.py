@@ -11,6 +11,7 @@ import miscaction
 import gamemap
 import genestealers
 import radarblips
+import linesight
 
 command_points = 0
 
@@ -332,7 +333,7 @@ class GeneStealerTurn(Scene):
 
     deployment_tiles = ["g1", "g5", "g9", "g11", "g13", "g15", "g17", "g19", "g21", "g23"]
 
-    radarblips.blip_deployment(blips_to_deploy,deployment_tiles, gametiles.tiles)
+    radarblips.blip_deployment(blips_to_deploy, deployment_tiles, gametiles.tiles, linesight.line_of_sight)
 
 class GameControl(object):
 
