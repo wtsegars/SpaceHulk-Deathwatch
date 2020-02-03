@@ -321,27 +321,18 @@ class GeneStealerTurn(Scene):
 
     turn_count += 1
 
-    blip_deployment = 0
+    blips_to_deploy = 0
 
     if turn_count <= 2:
-        blip_deployment += 3
+        blips_to_deploy += 3
     elif 2 < turn_count <= 4:
-        blip_deployment += 2
+        blips_to_deploy += 2
     elif turn_count > 5:
-        blip_deployment += 1
+        blips_to_deploy += 1
 
     deployment_tiles = ["g1", "g5", "g9", "g11", "g13", "g15", "g17", "g19", "g21", "g23"]
 
-    while blip_deployment > 0:
-        blip = {}
-        tile_choice = randint(0, 9)
-        
-        if gametiles.tiles[deployment_tiles[tile_choice]]["occupied"] == False:
-            blip["current_location"] = deployment_tiles[tile_choice]
-            gametiles.tiles[deployment_tiles[tile_choice]]["occupied"] = True
-            radarblips.blips[f"Blip{blip_deployment}"]["current_location"] = gametiles.tiles[deployment_tiles[tile_choice]
-            blip.clear()
-            blip_deployment -= 1
+    radarblips.blip_deployment(blips_to_deploy,deployment_tiles, gametiles.tiles)
 
 class GameControl(object):
 
