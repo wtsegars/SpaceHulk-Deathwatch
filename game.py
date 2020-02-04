@@ -12,6 +12,7 @@ import gamemap
 import genestealers
 import radarblips
 import linesight
+import genestealermove
 
 command_points = 0
 
