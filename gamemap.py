@@ -1,4 +1,4 @@
-import textwrap
+from textwrap import dedent
 import gametiles
 import squad
 import genestealers
@@ -118,16 +118,16 @@ def map():
                                         for z in squad.squad:
                                                 if squad.squad[z]["current_place"] == gametiles.tiles[y]:
                                                         if squad.squad[z]["direction"] == "north":
-                                                                tiles_list[x] = f"^{z += 1}"
+                                                                tiles_list[x] = f"^{z + 1}"
                                                                 break
                                                         elif squad.squad[z]["direction"] == "south":
-                                                                tiles_list[x] = f"v{z += 1}"
+                                                                tiles_list[x] = f"v{z + 1}"
                                                                 break
                                                         elif squad.squad[z]["direction"] == "east":
-                                                                tiles_list[x] = f">{z += 1}"
+                                                                tiles_list[x] = f">{z + 1}"
                                                                 break
                                                         elif squad.squad[z]["direction"] == "west":
-                                                                tiles_list[x] = f"<{z += 1}"
+                                                                tiles_list[x] = f"<{z + 1}"
                                                                 break
                                         for z in genestealers.genestealers:
                                                 if genestealers.genestealers[z]["current_place"] == gametiles.tiles[y]:
@@ -139,7 +139,7 @@ def map():
                                                         break
                         else:
                                 tiles_list[x] = "  "
-    print(dedent f"""                            ===[{g23}][{g24}][{c12}][{g22}][{g21}]===
+        print(dedent(f"""                            ===[{g23}][{g24}][{c12}][{g22}][{g21}]===
                                                                   [{c11}]
                                [{l13}][{ul1}][{ul2}][{ul3}][{ul4}][{c10}][{ur4}][{ur3}][{ur2}][{ur1}][{r13}]
                                [{l12}]                            [{c9 }]                            [{r12}]
@@ -173,4 +173,4 @@ def map():
             II = Closed door (facing east or west)
             -- = Closed door (facing north or south)
             FF = Panel on fire
-    """)
+    """))
