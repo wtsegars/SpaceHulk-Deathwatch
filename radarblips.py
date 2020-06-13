@@ -9,7 +9,6 @@ blips = {
 
 def blip_deployment(a, b):
     while a > 0:
-        blip = {}
         tile_choice = randint(0, 9)
         deploy_tile = ""
         
@@ -34,3 +33,6 @@ def blip_deployment(a, b):
             blip_deployment(game.GeneStealerTurn.blips_to_deploy, squad.squad)
         elif gametiles[deploy_tile]["occupied"] == False:
             gametiles[deploy_tile]["occupied"] = True
+            blips[f"blip {a}"]["current location"] = deploy_tile
+            blips[f"blip {a}"]["action points"] = 6
+            a -= 1
