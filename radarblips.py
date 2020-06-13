@@ -1,5 +1,6 @@
 import game
 import gametiles
+from random import randint
 
 blips = {
     
@@ -18,7 +19,7 @@ def blip_deployment(a, b, c, d):
                             if d[x]["direction"] != "south":
                                 blip["current_location"] = b[tile_choice]
                                 c[b[tile_choice]]["occupied"] = True
-                                blips[f"Blip{a}"]["current_place"] = c[b[tile_choice]
+                                blip[f"Blip{a}"]["current_place"] = c[b[tile_choice]
                                 blips[f"Blip{a}"]["hidden"] = True
                                 blips[f"Blip{a}"]["action_points"] = 6
                                 blip.clear()
