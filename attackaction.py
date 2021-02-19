@@ -4872,7 +4872,7 @@ def parry(x):
         print("Did not re-roll.")
     else:
         print("Your response was not valid, please try again.")
-        parry(spacemarine_reroll)
+        parry(x)
 
 def bolter_fire(a, b, c, d):
     bolt_shot_1 = randint(1, 6)

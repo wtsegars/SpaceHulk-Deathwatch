@@ -36,3 +36,6 @@ def blip_deployment(a, b):
             blips[f"blip {a}"]["current location"] = deploy_tile
             blips[f"blip {a}"]["action points"] = 6
             a -= 1
+
+def blip_reveal(a, b, c, d):
+    
