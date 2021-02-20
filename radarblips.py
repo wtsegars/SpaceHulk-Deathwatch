@@ -1,7 +1,10 @@
 import game
 import gametiles
 import squad
+import genestealers
 from random import randint
+
+genestealer_count = 1
 
 blips = {
     
@@ -37,5 +40,9 @@ def blip_deployment(a, b):
             blips[f"blip {a}"]["action points"] = 6
             a -= 1
 
-def blip_reveal(a, b, c, d):
-    
+def blip_reveal(a, b, c):
+    blips.pop(a)
+    blip_num = randint(0, 3)
+    new_genestealer = {}
+    if (blip_num == 1):
+        new_genestealer["current location"] = 
