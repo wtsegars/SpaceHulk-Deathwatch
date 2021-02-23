@@ -40,9 +40,22 @@ def blip_deployment(a, b):
             blips[f"blip {a}"]["action points"] = 6
             a -= 1
 
-def blip_reveal(a, b, c):
-    blips.pop(a)
+def blip_reveal(a, b, c, d):
     blip_num = randint(0, 3)
     new_genestealer = {}
     if (blip_num == 1):
-        new_genestealer["current location"] = 
+        new_genestealer["current location"] = blips[a]["current location"]
+        new_genestealer["action points"] = blips[a]["action points"]
+        if (d == "north"):
+            new_genestealer["direction"] = "south"
+        elif (d == "south"):
+            new_genestealer["direction"] = "north"
+        elif (d == "west"):
+            new_genestealer["direction"] = "east"
+        elif (d == "east"):
+            new_genestealer["direction"] = "west"
+        genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
+
+        new_genestealer.clear()
+        genestealer_count += 1
+
