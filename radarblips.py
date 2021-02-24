@@ -40,22 +40,53 @@ def blip_deployment(a, b):
             blips[f"blip {a}"]["action points"] = 6
             a -= 1
 
-def blip_reveal(a, b, c, d):
+def blip_reveal(a, b):
     blip_num = randint(0, 3)
     new_genestealer = {}
     if (blip_num == 1):
         new_genestealer["current location"] = blips[a]["current location"]
         new_genestealer["action points"] = blips[a]["action points"]
-        if (d == "north"):
+        if (b == "north"):
             new_genestealer["direction"] = "south"
-        elif (d == "south"):
+        elif (b == "south"):
             new_genestealer["direction"] = "north"
-        elif (d == "west"):
+        elif (b == "west"):
             new_genestealer["direction"] = "east"
-        elif (d == "east"):
+        elif (b == "east"):
             new_genestealer["direction"] = "west"
         genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
 
         new_genestealer.clear()
         genestealer_count += 1
+    elif (blip_num == 2):
+        for g in range(1, 3):
+            new_genestealer["current location"] = blips[a]["current location"]
+            new_genestealer["action points"] = blips[a]["action points"]
+            if (b == "north"):
+                new_genestealer["direction"] = "south"
+            elif (b == "south"):
+                new_genestealer["direction"] = "north"
+            elif (b == "west"):
+                new_genestealer["direction"] = "east"
+            elif (b == "east"):
+                new_genestealer["direction"] = "west"
+            genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
 
+            new_genestealer.clear()
+            genestealer_count += 1
+    elif (blip_num == 3):
+        for g in range(1, 4):
+            new_genestealer["current location"] = blips[a]["current location"]
+            new_genestealer["action points"] = blips[a]["action points"]
+            if (b == "north"):
+                new_genestealer["direction"] = "south"
+            elif (b == "south"):
+                new_genestealer["direction"] = "north"
+            elif (b == "west"):
+                new_genestealer["direction"] = "east"
+            elif (b == "east"):
+                new_genestealer["direction"] = "west"
+            genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
+
+            new_genestealer.clear()
+            genestealer_count += 1

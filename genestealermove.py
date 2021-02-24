@@ -20,4 +20,4 @@ def genestealer_movement(a, b, c, d, e):
                         for w in e: #looping through terminator squad
                             for v in d[y]: #looping through each individual tile in line of sight
                                 if e[w]["current_place"] == d[y][v]:
-                                    radarblips.blip_reveal(a[x], b, c, e[w]["direction"])
+                                    radarblips.blip_reveal(a[x], e[w]["direction"])
