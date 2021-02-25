@@ -13,5 +13,6 @@ import squad
 
 def genestealer_movement(a, d, e):
     for x in a: #looping through radar blips
-        while a[x]["action_points"] > 0:
-            
+        while a[x]["action points"] > 0:
+            if (a[x]["current location"]):
+                

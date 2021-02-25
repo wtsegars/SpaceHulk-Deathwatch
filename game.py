@@ -335,7 +335,7 @@ class GeneStealerTurn(Scene):
 
     radarblips.blip_deployment(blips_to_deploy, squad.squad)
 
-    genestealermove.genestealer_movement(radarblips.blips, genestealers.genestealers, gametiles.tiles, linesight.line_of_sight, squad.squad)
+    genestealermove.genestealer_movement(radarblips.blips, linesight.line_of_sight, squad.squad)
 
 class GameControl(object):
 
