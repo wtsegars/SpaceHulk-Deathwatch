@@ -39,4 +39,21 @@ def genestealer_movement():
                                         tracker4 == gametiles(radarblips[x]["current location"])["connected to"][3]                                    
 
                                     while (tracker1 != squad[y]["current_place"] or tracker2 != squad[y]["current_place"] or tracker3 != squad[y]["current_place"] or tracker4 != squad[y]["current_place"]):
-                                        tracker1 == gametiles(radarblips[x]["current location"])
+                                        tracker1 == gametiles(radarblips[x]["current location"]["connected to"][0])["connected to"][0]
+                                        c1 += 1
+
+                                        if (tracker2 != None):
+                                            tracker2 == gametiles(radarblips[x]["current location"]["connected to"][1])["connected to"][1]
+                                            c2 += 1
+
+                                        if (tracker3 != None):
+                                            tracker3 == gametiles(radarblips[x]["current location"]["connected to"][2])["connected to"][2]
+                                            c3 += 1
+
+                                        if (tracker4 != None):
+                                            tracker4 == gametiles(radarblips[x]["current location"]["connected to"][3])["connected to"][3]
+                                            c4 += 1
+
+                                    if (tracker1 == squad[y]["current_place"]):
+                                        
+def action_loop():
