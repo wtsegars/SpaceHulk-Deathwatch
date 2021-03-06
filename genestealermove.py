@@ -5,12 +5,6 @@ import gametiles
 import linesight
 import squad
 
-#a = radarblips.blips
-#b = genestealers.genestealers
-#c = gametiles.tiles
-#d = linesight.line_of_sight
-#e = squad.squad
-
 def genestealer_movement():
     for x in radarblips: #looping through radar blips
         while radarblips[x]["action points"] > 0:
@@ -55,5 +49,19 @@ def genestealer_movement():
                                             c4 += 1
 
                                     if (tracker1 == squad[y]["current_place"]):
-                                        
-def action_loop():
+                                        if (gametiles(radarblips[x]["current location"]["connected to"][0])["occupied"] != True):
+                                            radarblips[x]["current location"] = gametiles(radarblips[x]["current location"])["connected to"][0]
+                                            radarblips[x]["action points"] -= 1
+                                        else:
+                                            for b in radarblips:
+                                                if (radarblips[b] != radarblips[x]):
+                                                    if (radarblips[b]["current location"] == gametiles(radarblips[x]["current location"])["connected to"][0]):
+                                                        break
+                                            
+                                            for c in genestealers:
+                                                if (genestealers[c]["current location"] == gametiles(radarblips[x]["current location"])["connected to"][0]):
+                                                    break
+
+                                            for d in squad:
+                                                if (squad[d]["current_place"] == gametiles(radarblips[x]["current location"])["connected to"][0]):
+                                                    
