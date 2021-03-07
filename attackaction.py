@@ -4,8 +4,6 @@ import game
 import gametiles
 import genestealers
 import linesight
-import weapons
-
 
 def attack():
     print("Which terminator would you like to attack with?")
