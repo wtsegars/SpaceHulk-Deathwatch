@@ -37,7 +37,12 @@ def attack():
                                   squad[j]["alive"],
                                   attack_choice)
                 elif attack_choice == "Powerfist":
-                    close_combat()
+                    close_combat(game.command_points,
+                                    squad[j]["action points"],
+                                    squad[j]["current_place"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"],
+                                    attack_choice)
                 elif attack_choice == "Cancel":
                     attack()
                 else:
@@ -58,7 +63,12 @@ def attack():
                                   squad[j]["alive"],
                                   attack_choice)
                 elif attack_choice == "Power Sword":
-                    close_combat()
+                    close_combat(game.command_points,
+                                    squad[j]["action points"],
+                                    squad[j]["current_place"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"],
+                                    attack_choice)
                 elif attack_choice == "Cancel":
                     attack()
                 else:
@@ -71,7 +81,12 @@ def attack():
                 attack_choice = input("> ")
 
                 if attack_choice == "Thunder Hammer":
-                    close_combat()
+                    close_combat(game.command_points,
+                                    squad[j]["action points"],
+                                    squad[j]["current_place"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"],
+                                    attack_choice)
                 elif attack_choice == "Cancel":
                     attack()
                 else:
@@ -84,7 +99,12 @@ def attack():
                 attack_choice = input("> ")
 
                 if attack_choice == "Lightning Claws":
-                    close_combat()
+                    close_combat(game.command_points,
+                                    squad[j]["action points"],
+                                    squad[j]["current_place"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"],
+                                    attack_choice)
                 elif attack_choice == "Cancel":
                     attack()
                 else:
@@ -105,7 +125,12 @@ def attack():
                                   squad[j]["alive"],
                                   attack_choice)
                 elif attack_choice == "Chainfist":
-                    close_combat()
+                    close_combat(game.command_points,
+                                    squad[j]["action points"],
+                                    squad[j]["current_place"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"],
+                                    attack_choice)
                 elif attack_choice == "Cancel":
                     attack()
                 else:
@@ -126,7 +151,12 @@ def attack():
                                   squad[j]["alive"],
                                   attack_choice)
                 elif attack_choice == "Power Axe":
-                    close_combat()
+                    close_combat(game.command_points,
+                                    squad[j]["action points"],
+                                    squad[j]["current_place"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"],
+                                    attack_choice)
                 elif attack_choice == "Cancel":
                     attack()
                 else:
@@ -148,7 +178,12 @@ def attack():
                                   attack_choice,
                                   squad[j]["clip size"])
                 elif attack_choice == "Powerfist":
-                    close_combat()
+                    close_combat(game.command_points,
+                                    squad[j]["action points"],
+                                    squad[j]["current_place"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"],
+                                    attack_choice)
                 elif attack_choice == "Cancel":
                     attack()
                 else:
@@ -170,7 +205,12 @@ def attack():
                                   attack_choice,
                                   squad[j]["clip size"])
                 elif attack_choice == "Powerfist":
-                    close_combat()
+                    close_combat(game.command_points,
+                                    squad[j]["action points"],
+                                    squad[j]["current_place"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"],
+                                    attack_choice)
                 elif attack_choice == "Cancel":
                     attack()
                 else:
@@ -200,7 +240,12 @@ def attack():
                                   attack_choice,
                                   squad[j]["clip size"])
                 elif attack_choice == "Powerfist":
-                    close_combat()
+                    close_combat(game.command_points,
+                                    squad[j]["action points"],
+                                    squad[j]["current_place"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"],
+                                    attack_choice)
                 elif attack_choice == "Cancel":
                     attack()
                 else:
@@ -221,7 +266,12 @@ def attack():
                                   squad[j]["alive"],
                                   attack_choice)
                 elif attack_choice == "Power Maul":
-                    close_combat()
+                    close_combat(game.command_points,
+                                    squad[j]["action points"],
+                                    squad[j]["current_place"],
+                                    squad[j]["direction"],
+                                    squad[j]["alive"],
+                                    attack_choice)
                 elif attack_choice == "Cancel":
                     attack()
                 else:
@@ -5032,10 +5082,3 @@ def cyclone_missle(a, b, c, d, e):
                         print("The cyclone missle blast missed some of your men.")
 
     attack()
-
-def radarblip_attack(stealer, marine):
-    g_roll_1 = randint(0, 6)
-    g_roll_2 = randint(0, 6)
-    g_roll_3 = randint(0, 6)
-
-    close_combat()

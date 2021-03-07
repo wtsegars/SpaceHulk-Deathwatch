@@ -1,3 +1,4 @@
+import game
 import attackaction
 import radarblips
 import genestealers
@@ -64,4 +65,10 @@ def genestealer_movement():
 
                                             for d in squad:
                                                 if (squad[d]["current_place"] == gametiles(radarblips[x]["current location"])["connected to"][0]):
-                                                    
+                                                    attackaction.close_combat(game.command_points,
+                                                                                squad[d]["action points"],
+                                                                                squad[d]["current_place"],
+                                                                                squad[d]["direction"],
+                                                                                squad[d]["alive"],
+                                                                                squad[d]["weapon loadout"])
+                                                    break
