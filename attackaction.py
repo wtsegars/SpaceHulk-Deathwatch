@@ -4,6 +4,7 @@ import game
 import gametiles
 import genestealers
 import linesight
+import weapons
 
 
 def attack():
@@ -5031,3 +5032,10 @@ def cyclone_missle(a, b, c, d, e):
                         print("The cyclone missle blast missed some of your men.")
 
     attack()
+
+def radarblip_attack(stealer, marine):
+    g_roll_1 = randint(0, 6)
+    g_roll_2 = randint(0, 6)
+    g_roll_3 = randint(0, 6)
+
+    close_combat()
