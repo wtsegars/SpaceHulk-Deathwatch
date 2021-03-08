@@ -33,19 +33,19 @@ def genestealer_movement():
                                     tracker4 == gametiles(radarblips[x]["current location"])["connected to"][3]                                    
 
                                 while (tracker1 != squad[y]["current_place"] or tracker2 != squad[y]["current_place"] or tracker3 != squad[y]["current_place"] or tracker4 != squad[y]["current_place"]):
-                                    tracker1 == gametiles(radarblips[x]["current location"]["connected to"][0])["connected to"][0]
+                                    tracker1 = gametiles(radarblips[x]["current location"]["connected to"][0])
                                     c1 += 1
 
                                     if (tracker2 != None):
-                                        tracker2 == gametiles(radarblips[x]["current location"]["connected to"][1])["connected to"][1]
+                                        tracker2 = gametiles(radarblips[x]["current location"]["connected to"][1])
                                         c2 += 1
 
                                     if (tracker3 != None):
-                                        tracker3 == gametiles(radarblips[x]["current location"]["connected to"][2])["connected to"][2]
+                                        tracker3 = gametiles(radarblips[x]["current location"]["connected to"][2])
                                         c3 += 1
 
                                     if (tracker4 != None):
-                                        tracker4 == gametiles(radarblips[x]["current location"]["connected to"][3])["connected to"][3]
+                                        tracker4 = gametiles(radarblips[x]["current location"]["connected to"][3])
                                         c4 += 1
 
                                 if (tracker1 == squad[y]["current_place"]):
@@ -87,10 +87,35 @@ def genestealer_movement():
 
         if (genestealers[e]["current location"]):
             for f in squad:
-                if (squad[f]["current location"]):
+                if (squad[f]["current_place"]):
                     for g in linesight:
                         for h in linesight:
                             if (genestealers[e]["current location"] == linesight[g][h]):
                                 tracker1 = gametiles(genestealers[e]["current location"])["connected to"][0]
                                 if (gametiles(genestealers[e]["current location"])["connected to"][1]):
                                     tracker2 = gametiles(genestealers[e]["current location"])["connected to"][1]
+                                if (gametiles(genestealers[e]["current location"])["connected to"][2]):
+                                    tracker3 = gametiles(genestealers[e]["current location"])["connected to"][2]
+                                if (gametiles(genestealers[e]["current location"])["connected to"][3]):
+                                    tracker4 = gametiles(genestealers[e]["current location"])["connected to"][3]
+
+                                while (tracker1 != squad[f]["current_place"] or tracker2 != squad[f]["current_place"] or tracker3 != squad[f]["current_place"] or tracker4 != squad[f]["current_place"]):
+                                    tracker1 = gametiles(genestealers[e]["current location"]["connected to"][0])
+                                    c1 += 1
+
+                                    if (tracker2 != None):
+                                        tracker2 = gametiles(genestealers[e]["current location"]["connected to"][1])
+                                        c2 += 1
+
+                                    if (tracker3 != None):
+                                        tracker3 = gametiles(genestealers[e]["current location"]["connected to"][2])
+                                        c3 += 1
+
+                                    if (tracker4 != None):
+                                        tracker4 = gametiles(genestealers[e]["current location"]["connected to"][3])
+                                        c4 += 1
+
+                                if (tracker1 == squad[y]["current_place"]):
+                                    if (gametiles(genestealers[e]["current location"]["connected to"][0])["occupied"] != True):
+                                        genestealers[e]["current location"] = gametiles(genestealers[e]["current location"])["current location"][0]
+                                        genestealers[e]["action points"] -= 1
