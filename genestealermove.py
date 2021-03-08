@@ -73,3 +73,24 @@ def genestealer_movement():
                                                                                     squad[d]["alive"],
                                                                                     squad[d]["weapon loadout"])
                                                         break
+
+    for e in genestealers:
+        c1 = 0
+        c2 = 0
+        c3 = 0
+        c4 = 0
+
+        tracker1 = None
+        tracker2 = None
+        tracker3 = None
+        tracker4 = None
+
+        if (genestealers[e]["current location"]):
+            for f in squad:
+                if (squad[f]["current location"]):
+                    for g in linesight:
+                        for h in linesight:
+                            if (genestealers[e]["current location"] == linesight[g][h]):
+                                tracker1 = gametiles(genestealers[e]["current location"])["connected to"][0]
+                                if (gametiles(genestealers[e]["current location"])["connected to"][1]):
+                                    tracker2 = gametiles(genestealers[e]["current location"])["connected to"][1]
