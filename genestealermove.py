@@ -72,7 +72,7 @@ def genestealer_movement():
                                                                                     squad[d]["direction"],
                                                                                     squad[d]["alive"],
                                                                                     squad[d]["weapon loadout"])
-                                                        break
+                                                    break
 
     for e in genestealers:
         c1 = 0
@@ -119,3 +119,24 @@ def genestealer_movement():
                                     if (gametiles(genestealers[e]["current location"]["connected to"][0])["occupied"] != True):
                                         genestealers[e]["current location"] = gametiles(genestealers[e]["current location"])["current location"][0]
                                         genestealers[e]["action points"] -= 1
+                                    else:
+                                        for i in genestealers:
+                                            if (genestealers[i] != genestealers[e]):
+                                                if (genestealers[i]["current location"] == gametiles(genestealers[e]["current location"])["connected to"][0]):
+                                                    break
+
+                                        for j in radarblips:
+                                            if (radarblips[j]["current location"] == gametiles(genestealers[e]["current location"])["connected to"][0]):
+                                                break
+
+                                        for k in squad:
+                                            if (squad[k]["current_place"] == gametiles(genestealers[e]["current location"])["connected to"][0]):
+                                                if (genestealers[e]["action points"] > 0):
+                                                    while (genestealers[e]["action points"] > 0 or squad[k]["alive"] == True):
+                                                        attackaction.close_combat(game.command_points,
+                                                                                    squad[k]["action points"],
+                                                                                    squad[k]["current_place"],
+                                                                                    squad[k]["direction"],
+                                                                                    squad[k]["alive"],
+                                                                                    squad[k]["weapon loadout"])
+                                                    break
