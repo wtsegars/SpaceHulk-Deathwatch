@@ -2,6 +2,7 @@ import game
 import gametiles
 import squad
 import genestealers
+import linesight
 from random import randint
 
 genestealer_count = 1
@@ -90,3 +91,11 @@ def blip_reveal(a, b):
 
             new_genestealer.clear()
             genestealer_count += 1
+
+def check_for_reveal():
+    for c in linesight:
+        for d in linesight[c]:
+            if gametiles(linesight[c][d])["occupied"] == True:
+                for e in squad:
+                    if squad[e]["current_place"] == gametiles(linesight[c][d]):
+                        
