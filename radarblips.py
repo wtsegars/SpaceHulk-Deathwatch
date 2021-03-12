@@ -112,3 +112,4 @@ def check_for_reveal(blip):
                         elif linesight[c] == linesight.line_of_sight[1] or linesight[c] == linesight.line_of_sight[6] or linesight[c] == linesight.line_of_sight[8] or linesight[c] == linesight.line_of_sight[9] or linesight[c] == linesight.line_of_sight[11] or linesight[c] == linesight.line_of_sight[12] or linesight[c] == linesight.line_of_sight[13]:
                             if squad[e]["direction"] == "west":
                                 sm_index = linesight[c].index(squad[e]["current_place"])
+                                
