@@ -50,7 +50,60 @@ def genestealer_movement():
 
                                 if (tracker1 == squad[y]["current_place"]):
                                     if (gametiles(radarblips[x]["current location"]["connected to"][0])["occupied"] != True):
+                                        radarblips.check_for_reveal(radarblips[x])
                                         radarblips[x]["current location"] = gametiles(radarblips[x]["current location"])["connected to"][0]
+                                        radarblips[x]["action points"] -= 1
+                                    else:
+                                        for b in radarblips:
+                                            if (radarblips[b] != radarblips[x]):
+                                                if (radarblips[b]["current location"] == gametiles(radarblips[x]["current location"])["connected to"][0]):
+                                                    break
+                                            
+                                        for c in genestealers:
+                                            if (genestealers[c]["current location"] == gametiles(radarblips[x]["current location"])["connected to"][0]):
+                                                break
+
+                                        for d in squad:
+                                            if (squad[d]["current_place"] == gametiles(radarblips[x]["current location"])["connected to"][0]):
+                                                if (radarblips[x]["action points"] > 0):
+                                                    while (radarblips[x]["action points"] > 0 or squad[d]["alive"] == True):
+                                                        attackaction.close_combat(game.command_points,
+                                                                                    squad[d]["action points"],
+                                                                                    squad[d]["current_place"],
+                                                                                    squad[d]["direction"],
+                                                                                    squad[d]["alive"],
+                                                                                    squad[d]["weapon loadout"])
+                                                    break
+                                elif (tracker2 == squad[y]["current_place"]):
+                                    if (gametiles(radarblips[x]["current location"]["connected to"][1])["occupied"] != True):
+                                        radarblips.check_for_reveal(radarblips[x])
+                                        radarblips[x]["current location"] = gametiles(radarblips[x]["current location"])["connected to"][1]
+                                        radarblips[x]["action points"] -= 1
+                                    else:
+                                        for b in radarblips:
+                                            if (radarblips[b] != radarblips[x]):
+                                                if (radarblips[b]["current location"] == gametiles(radarblips[x]["current location"])["connected to"][0]):
+                                                    break
+                                            
+                                        for c in genestealers:
+                                            if (genestealers[c]["current location"] == gametiles(radarblips[x]["current location"])["connected to"][0]):
+                                                break
+
+                                        for d in squad:
+                                            if (squad[d]["current_place"] == gametiles(radarblips[x]["current location"])["connected to"][0]):
+                                                if (radarblips[x]["action points"] > 0):
+                                                    while (radarblips[x]["action points"] > 0 or squad[d]["alive"] == True):
+                                                        attackaction.close_combat(game.command_points,
+                                                                                    squad[d]["action points"],
+                                                                                    squad[d]["current_place"],
+                                                                                    squad[d]["direction"],
+                                                                                    squad[d]["alive"],
+                                                                                    squad[d]["weapon loadout"])
+                                                    break
+                                elif (tracker3 == squad[y]["current_place"]):
+                                    if (gametiles(radarblips[x]["current location"]["connected to"][2])["occupied"] != True):
+                                        radarblips.check_for_reveal(radarblips[x])
+                                        radarblips[x]["current location"] = gametiles(radarblips[x]["current location"])["connected to"][2]
                                         radarblips[x]["action points"] -= 1
                                     else:
                                         for b in radarblips:
