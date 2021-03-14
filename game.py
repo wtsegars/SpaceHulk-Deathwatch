@@ -237,15 +237,15 @@ class SpaceMarineTurn(Scene):
         if turn_count == 1:
             for i in squad:
                 if squad[i]["starting_place"] == "First":
-                    tiles["starting tiles"]["s1"]["occupied"] = True
+                    gametiles.tiles["starting tiles"]["s1"]["occupied"] = True
                 elif squad[i]["starting_place"] == "Second":
-                    tiles["starting tiles"]["s2"]["occupied"] = True
+                    gametiles.tiles["starting tiles"]["s2"]["occupied"] = True
                 elif squad[i]["starting_place"] == "Third":
-                    tiles["starting tiles"]["s3"]["occupied"] = True
+                    gametiles.tiles["starting tiles"]["s3"]["occupied"] = True
                 elif squad[i]["starting_place"] == "Fourth":
-                    tiles["starting tiles"]["s4"]["occupied"] = True
+                    gametiles.tiles["starting tiles"]["s4"]["occupied"] = True
                 elif squad[i]["starting_place"] == "Fifth":
-                    tiles["starting tiles"]["s5"]["occupied"] = True
+                    gametiles.tiles["starting tiles"]["s5"]["occupied"] = True
 
         for i in squad:
             if squad[i]["action points"] != 4:
@@ -275,24 +275,6 @@ class SpaceMarineTurn(Scene):
         command_points = 0
         command_points = randint(1, 6)
 
-        if squad["Sergent"]["alive"] == True:
-            print("Would you like to re-roll your command points, yes or no?")
-
-            choice = input("> ")
-
-            if choice == "yes":
-                command_points = 0
-                command_points = randint(1, 6)
-            elif choice == "no":
-                print("Did not re-roll command points")
-            else:
-                print("Your answer is not valid, please try again")
-                return 'space_marine_turn'
-
-            turn_menu()
-        
-        turn_menu()
-        
         def turn_menu():
             print("What would you like to do?")
             print(dedent("""
@@ -318,6 +300,25 @@ class SpaceMarineTurn(Scene):
             else:
                 print("You entered an invalid command, please try again.")
                 turn_menu()
+
+        if squad["Sergent"]["alive"] == True:
+            print("Would you like to re-roll your command points, yes or no?")
+
+            choice = input("> ")
+
+            if choice == "yes":
+                command_points = 0
+                command_points = randint(1, 6)
+            elif choice == "no":
+                print("Did not re-roll command points")
+            else:
+                print("Your answer is not valid, please try again")
+                return 'space_marine_turn'
+
+            turn_menu()
+        
+        turn_menu()
+        
                                 
 class GeneStealerTurn(Scene):
 
@@ -332,11 +333,9 @@ class GeneStealerTurn(Scene):
     elif turn_count > 5:
         blips_to_deploy += 1
 
-    deployment_tiles = ["g1", "g5", "g9", "g11", "g13", "g15", "g17", "g19", "g21", "g23"]
+    radarblips.blip_deployment(blips_to_deploy, squad.squad)
 
-    radarblips.blip_deployment(blips_to_deploy, deployment_tiles, gametiles.tiles, squad.squad)
-
-    genestealermove.genestealer_movement(radarblips.blips, genestealers.genestealers, gametiles.tiles, linesight.line_of_sight, squad.squad)
+    genestealermove.genestealer_movement()
 
 class GameControl(object):
 

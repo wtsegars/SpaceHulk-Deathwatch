@@ -1,214 +1,122 @@
 import game
 import gametiles
+import squad
+import genestealers
+import linesight
 from random import randint
+
+genestealer_count = 1
 
 blips = {
     
 }
 
-def blip_deployment(a, b, c, d):
+def blip_deployment(a, b):
     while a > 0:
-        blip = {}
         tile_choice = randint(0, 9)
+        deploy_tile = ""
         
-        if c[b[tile_choice]]["occupied"] == False:
-            if b[tile_choice] == "g1":
-                if c["g3"]["occupied"] == True or c["g2"]["occupied"] == True:
-                    for x in d:
-                        if d[x]["current_place"] == c["g3"] or d[x]["current_place"] == c["g2"]:
-                            if d[x]["direction"] != "south":
-                                blip["current_location"] = b[tile_choice]
-                                c[b[tile_choice]]["occupied"] = True
-                                blip[f"Blip{a}"]["current_place"] = c[b[tile_choice]
-                                blips[f"Blip{a}"]["hidden"] = True
-                                blips[f"Blip{a}"]["action_points"] = 6
-                                blip.clear()
-                                a -= 1
-                else:
-                    blip["current_location"] = b[tile_choice]
-                    c[b[tile_choice]]["occupied"] = True
-                    blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                    blips[f"Blip{a}"]["hidden"] = True
-                    blips[f"Blip{a}"]["action_points"] = 6
-                    blip.clear()
-                    a -= 1
-            elif b[tile_choice] == "g5":
-                if c["g6"]["occupied"] == True or c["g7"]["occupied"] == True:
-                    for x in d:
-                        if d[x]["current_place"] == "g6" or d[x]["current_place"] == "g7":
-                            if d[x]["direction"] != "south":
-                                blip["current_location"] = b[tile_choice]
-                                c[b[tile_choice]]["occupied"] = True
-                                blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                                blips[f"Blip{a}"]["hidden"] = True
-                                blips[f"Blip{a}"]["action_points"] = 6
-                                blip.clear()
-                                a -= 1
-                else:
-                    blip["current_location"] = b[tile_choice]
-                    c[b[tile_choice]]["occupied"] = True
-                    blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                    blips[f"Blip{a}"]["hidden"] = True
-                    blips[f"Blip{a}"]["action_points"] = 6
-                    blip.clear()
-                    a -= 1
-            elif b[tile_choice] == "g9":
-                if c["g10"]["occupied"] == True or c["c2"]["occupied"] == True or c["g12"]["occupied"] == True or c["g11"]["occupied"] == True:
-                    for x in d:
-                        if d[x]["current_place"] == "g10" or d[x]["current_place"] == "c2" or d[x]["current_place"] == "g12" or d[x]["current_place"] == "g11":
-                            if d[x]["direction"] != "west":
-                                blip["current_location"] = b[tile_choice]
-                                c[b[tile_choice]]["occupied"] = True
-                                blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                                blips[f"Blip{a}"]["hidden"] = True
-                                blips[f"Blip{a}"]["action_points"] = 6
-                                blip.clear()
-                                a -= 1
-                else:
-                    blip["current_location"] = b[tile_choice]
-                    c[b[tile_choice]]["occupied"] = True
-                    blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                    blips[f"Blip{a}"]["hidden"] = True
-                    blips[f"Blip{a}"]["action_points"] = 6
-                    blip.clear()
-                    a -= 1
-            elif b[tile_choice] == "g11":
-                if c["g12"]["occupied"] == True or c["c2"]["occupied"] == True or c["g10"]["occupied"] == True or c["g9"]["occupied"] == True:
-                    for x in d:
-                        if d[x]["current_place"] == "g12" or d[x]["current_place"] == "c2" or d[x]["current_place"] == "g10" or d[]["current_place"] == "g9":
-                            if d[x]["direction"] != "east":
-                                blip["current_location"] = b[tile_choice]
-                                c[b[tile_choice]]["occupied"] = True
-                                blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                                blips[f"Blip{a}"]["hidden"] = True
-                                blips[f"Blip{a}"]["action_points"] = 6
-                                blip.clear()
-                                a -= 1
-                else:
-                    blip["current_location"] = b[tile_choice]
-                    c[b[tile_choice]]["occupied"] = True
-                    blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                    blips[f"Blip{a}"]["hidden"] = True
-                    blips[f"Blip{a}"]["action_points"] = 6
-                    blip.clear()
-                    a -= 1
-            elif b[tile_choice] == "g13":
-                if c["g14"]["occupied"] == True or c["c6"]["occupied"] == True or c["g16"]["occupied"] == True or c["g15"]["occupied"] == True:
-                    for x in d:
-                        if d[x]["current_place"] == "g14" or d[x]["current_place"] == "c6" or d[x]["current_place"] == "g16" or d[x]["current_place"] == "g15":
-                            if d[x]["direction"] != "west":
-                                blip["current_location"] = b[tile_choice]
-                                c[b[tile_choice]]["occupied"] = True
-                                blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                                blips[f"Blip{a}"]["hidden"] = True
-                                blips[f"Blip{a}"]["action_points"] = 6
-                                blip.clear()
-                                a -= 1
-                else:
-                    blip["current_location"] = b[tile_choice]
-                    c[b[tile_choice]]["occupied"] = True
-                    blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                    blips[f"Blip{a}"]["hidden"] = True
-                    blips[f"Blip{a}"]["action_points"] = 6
-                    blip.clear()
-                    a -= 1
-            elif b[tile_choice] == "g15":
-                if c["g16"]["occupied"] == True or c["c6"]["occupied"] == True or c["g14"]["occupied"] == True or c["g13"]["occupied"] == True:
-                    for x in d:
-                        if d[x]["current_place"] == "g16" or d[x]["current_place"] == "c6" or d[x]["current_place"] == True or d[x]["current_place"] == "g14" or d[x]["current_place"] == "g13":
-                            if d[x]["direction"] != "east":
-                                blip["current_location"] = b[tile_choice]
-                                c[b[tile_choice]]["occupied"] = True
-                                blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                                blips[f"Blip{a}"]["hidden"] = True
-                                blips[f"Blip{a}"]["action_points"] = 6
-                                blip.clear()
-                                a -= 1
-                else:
-                    blip["current_location"] = b[tile_choice]
-                    c[b[tile_choice]]["occupied"] = True
-                    blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                    blips[f"Blip{a}"]["hidden"] = True
-                    blips[f"Blip{a}"]["action_points"] = 6
-                    blip.clear()
-                    a -= 1
-            elif b[tile_choice] == "g17":
-                if c["g18"]["occupied"] == True or c["c7"]["occupied"] == True or c["g20"]["occupied"] == True or c["g20"]["occupied"] == True or c["g19"]["occupied"] == True:
-                    for x in d:
-                        if d[x]["current_place"] == "g18" or d[x]["current_place"] == "c7" or d[x]["current_place"] == "g20" or d[x]["current_place"] == "g19":
-                            if d[x]["direction"] != "east":
-                                blip["current_location"] = b[tile_choice]
-                                c[b[tile_choice]]["occupied"] = True
-                                blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                                blips[f"Blip{a}"]["hidden"] = True
-                                blips[f"Blip{a}"]["action_points"] = 6
-                                blip.clear()
-                                a -= 1
-                else:
-                    blip["current_location"] = b[tile_choice]
-                    c[b[tile_choice]]["occupied"] = True
-                    blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                    blips[f"Blip{a}"]["hidden"] = True
-                    blips[f"Blip{a}"]["action_points"] = 6
-                    blip.clear()
-                    a -= 1
-            elif b[tile_choice] == "g19":
-                if c["g20"]["occupied"] == True or c["c7"]["occupied"] == True or c["g18"]["occupied"] == True or c["g17"]["occupied"] == True:
-                    for x in d:
-                        if d[x]["current_place"] == "g20" or d[x]["current_place"] == "c7" or d[x]["current_place"] == "g18" or d[x]["current_place"] == "g17":
-                            if d[x]["direction"] != "west":
-                                blip["current_location"] = b[tile_choice]
-                                c[b[tile_choice]]["occupied"] = True
-                                blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                                blips[f"Blip{a}"]["hidden"] = True
-                                blips[f"Blip{a}"]["action_points"] = 6
-                                blip.clear()
-                                a -= 1
-                else:
-                    blip["current_location"] = b[tile_choice]
-                    c[b[tile_choice]]["occupied"] = True
-                    blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                    blips[f"Blip{a}"]["hidden"] = True
-                    blips[f"Blip{a}"]["action_points"] = 6
-                    blip.clear()
-                    a -= 1
-            elif b[tile_choice] == "g21":
-                if c["g22"]["occupied"] == True or c["c12"]["occupied"] == True or c["g24"]["occupied"] == True or c["g23"]["occupied"] == True:
-                    for x in d:
-                        if d[x]["current_place"] == "g22" or d[x]["current_place"] == "c12" or d[x]["current_place"] == "g24" or d[x]["current_place"] == "g23":
-                            if d[x]["direction"] != "east":
-                                blip["current_location"] = b[tile_choice]
-                                c[b[tile_choice]]["occupied"] = True
-                                blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                                blips[f"Blip{a}"]["hidden"] = True
-                                blips[f"Blip{a}"]["action_points"] = 6
-                                blip.clear()
-                                a -= 1
-                else:
-                    blip["current_location"] = b[tile_choice]
-                    c[b[tile_choice]]["occupied"] = True
-                    blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                    blips[f"Blip{a}"]["hidden"] = True
-                    blips[f"Blip{a}"]["action_points"] = 6
-                    blip.clear()
-                    a -= 1
-            elif b[tile_choice] == "g23":
-                if c["g24"]["occupied"] == True or c["c12"]["occupied"] == True or c["g22"]["occupied"] == True or c["g21"]["occupied"] == True:
-                    for x in d:
-                        if d[x]["current_place"] == "g24" or d[x]["current_place"] == "c12" or d[x]["current_place"] == "g22" or d[x]["current_place"] == "g21":
-                            if d[x]["direction"] != "west":
-                                blip["current_location"] = b[tile_choice]
-                                c[b[tile_choice]]["occupied"] = True
-                                blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                                blips[f"Blip{a}"]["hidden"] = True
-                                blips[f"Blip{a}"]["action_points"] = 6
-                                blip.clear()
-                                a -= 1
-                else:
-                    blip["current_location"] = b[tile_choice]
-                    c[b[tile_choice]]["occupied"] = True
-                    blips[f"Blip{a}"]["current_location"] = c[b[tile_choice]
-                    blips[f"Blip{a}"]["hidden"] = True
-                    blips[f"Blip{a}"]["action_points"] = 6
-                    blip.clear()
-                    a -= 1
+        if tile_choice == 1:
+            deploy_tile = "g1"
+        elif tile_choice == 2:
+            deploy_tile = "g5"
+        elif tile_choice == 3:
+            deploy_tile = "g9"
+        elif tile_choice == 4:
+            deploy_tile = "g11"
+        elif tile_choice == 5:
+            deploy_tile = "g19"
+        elif tile_choice == 6:
+            deploy_tile = "g17"
+        elif tile_choice == 7:
+            deploy_tile = "g23"
+        elif tile_choice == 8:
+            deploy_tile = "g21"
+
+        if gametiles[deploy_tile]["occupied"] == True:
+            blip_deployment(game.GeneStealerTurn.blips_to_deploy, squad.squad)
+        elif gametiles[deploy_tile]["occupied"] == False:
+            gametiles[deploy_tile]["occupied"] = True
+            blips[f"blip {a}"]["current location"] = deploy_tile
+            blips[f"blip {a}"]["action points"] = 6
+            a -= 1
+
+def blip_reveal(a, b):
+    blip_num = randint(0, 3)
+    new_genestealer = {}
+    if (blip_num == 1):
+        new_genestealer["current location"] = blips[a]["current location"]
+        new_genestealer["action points"] = blips[a]["action points"]
+        if (b == "north"):
+            new_genestealer["direction"] = "south"
+        elif (b == "south"):
+            new_genestealer["direction"] = "north"
+        elif (b == "west"):
+            new_genestealer["direction"] = "east"
+        elif (b == "east"):
+            new_genestealer["direction"] = "west"
+        genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
+
+        new_genestealer.clear()
+        genestealer_count += 1
+    elif (blip_num == 2):
+        for g in range(1, 3):
+            new_genestealer["current location"] = blips[a]["current location"]
+            new_genestealer["action points"] = blips[a]["action points"]
+            if (b == "north"):
+                new_genestealer["direction"] = "south"
+            elif (b == "south"):
+                new_genestealer["direction"] = "north"
+            elif (b == "west"):
+                new_genestealer["direction"] = "east"
+            elif (b == "east"):
+                new_genestealer["direction"] = "west"
+            genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
+
+            new_genestealer.clear()
+            genestealer_count += 1
+    elif (blip_num == 3):
+        for g in range(1, 4):
+            new_genestealer["current location"] = blips[a]["current location"]
+            new_genestealer["action points"] = blips[a]["action points"]
+            if (b == "north"):
+                new_genestealer["direction"] = "south"
+            elif (b == "south"):
+                new_genestealer["direction"] = "north"
+            elif (b == "west"):
+                new_genestealer["direction"] = "east"
+            elif (b == "east"):
+                new_genestealer["direction"] = "west"
+            genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
+
+            new_genestealer.clear()
+            genestealer_count += 1
+
+def check_for_reveal(blip):
+    for c in linesight:
+        for d in linesight[c]:
+            if gametiles(linesight[c][d])["occupied"] == True:
+                for e in squad:
+                    if squad[e]["current_place"] == gametiles(linesight[c][d]):
+                        if linesight[c] == linesight.line_of_sight[0] or linesight[c] == linesight.line_of_sight[2] or linesight[c] == linesight.line_of_sight[3] or linesight[c] == linesight.line_of_sight[4] or linesight[c] == linesight.line_of_sight[5] or linesight[c] == linesight.line_of_sight[7] or linesight[c] == linesight.line_of_sight[10]:
+                            if squad[e]["direction"] == "north":
+                                sm_index = linesight[c].index(squad[e]["current_place"])
+                                for f in range(d, sm_index, 1):
+                                    if linesight[c][f] == blip["current location"]:
+                                        blip_reveal(blip, squad[e]["direction"])
+                            if squad[e]["direction"] == "south":
+                                sm_index = linesight[c].index(squad[e]["current_place"])
+                                for g in range(d, sm_index, -1):
+                                    if linesight[c][g] == blip["current location"]:
+                                        blip_reveal(blip, squad[e]["direction"])
+                        elif linesight[c] == linesight.line_of_sight[1] or linesight[c] == linesight.line_of_sight[6] or linesight[c] == linesight.line_of_sight[8] or linesight[c] == linesight.line_of_sight[9] or linesight[c] == linesight.line_of_sight[11] or linesight[c] == linesight.line_of_sight[12] or linesight[c] == linesight.line_of_sight[13]:
+                            if squad[e]["direction"] == "west":
+                                sm_index = linesight[c].index(squad[e]["current_place"])
+                                for h in range(d, sm_index, -1):
+                                    if linesight[c][h] == blip["current location"]:
+                                        blip_reveal(blip, squad[e]["direction"])
+                            if squad[e]["direction"] == "east":
+                                sm_index = linesight[c].index(squad[e]["current_place"])
+                                for i in range(d, sm_index, 1):
+                                    if linesight[c][i] == blip["current location"]:
+                                        blip_reveal(blip, squad[e]["direction"])
