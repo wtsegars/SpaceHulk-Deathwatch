@@ -272,10 +272,10 @@ class SpaceMarineTurn(Scene):
                                 gametiles.tiles[i]["occupied"] = True
                                 break
 
-        command_points = 0
-        command_points = randint(1, 6)
+        command_points = randint(1, 7)
 
         def turn_menu():
+            print(f"Command Points: {command_points}")
             print("What would you like to do?")
             print(dedent("""
                     Move,
@@ -307,8 +307,7 @@ class SpaceMarineTurn(Scene):
             choice = input("> ")
 
             if choice == "yes":
-                command_points = 0
-                command_points = randint(1, 6)
+                command_points = randint(1, 7)
             elif choice == "no":
                 print("Did not re-roll command points")
             else:
