@@ -3,6 +3,7 @@ import gametiles
 import squad
 import genestealers
 import linesight
+import overwatchfire
 from random import randint
 
 genestealer_count = 1

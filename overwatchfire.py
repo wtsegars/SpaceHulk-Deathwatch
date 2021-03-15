@@ -1,6 +1,4 @@
 from random import randint
-import squad
-import game
 import weapons
 
 def overwatch_fire(marine, gs):
