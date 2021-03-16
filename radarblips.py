@@ -48,50 +48,61 @@ def blip_reveal(a, b):
     if (blip_num == 1):
         new_genestealer["current location"] = blips[a]["current location"]
         new_genestealer["action points"] = blips[a]["action points"]
-        if (b == "north"):
+        if (b["direction"] == "north"):
             new_genestealer["direction"] = "south"
-        elif (b == "south"):
+        elif (b["direction"] == "south"):
             new_genestealer["direction"] = "north"
-        elif (b == "west"):
+        elif (b["direction"] == "west"):
             new_genestealer["direction"] = "east"
-        elif (b == "east"):
+        elif (b["direction"] == "east"):
             new_genestealer["direction"] = "west"
         genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
 
         new_genestealer.clear()
         genestealer_count += 1
+
+        if (b["overwatch"] == True):
+            overwatchfire.overwatch_fire(b, genestealers[f"Genestealer {genestealer_count}"])
+        
     elif (blip_num == 2):
         for g in range(1, 3):
             new_genestealer["current location"] = blips[a]["current location"]
             new_genestealer["action points"] = blips[a]["action points"]
-            if (b == "north"):
+            if (b["direction"] == "north"):
                 new_genestealer["direction"] = "south"
-            elif (b == "south"):
+            elif (b["direction"] == "south"):
                 new_genestealer["direction"] = "north"
-            elif (b == "west"):
+            elif (b["direction"] == "west"):
                 new_genestealer["direction"] = "east"
-            elif (b == "east"):
+            elif (b["direction"] == "east"):
                 new_genestealer["direction"] = "west"
             genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
 
             new_genestealer.clear()
             genestealer_count += 1
+
+            if (g == 1 and b["overwatch"] == True):
+                overwatchfire.overwatch_fire(b, genestealers[f"Genestealer {genestealer_count}"])
+
     elif (blip_num == 3):
         for g in range(1, 4):
             new_genestealer["current location"] = blips[a]["current location"]
             new_genestealer["action points"] = blips[a]["action points"]
-            if (b == "north"):
+            if (b["direction"] == "north"):
                 new_genestealer["direction"] = "south"
-            elif (b == "south"):
+            elif (b["direction"] == "south"):
                 new_genestealer["direction"] = "north"
-            elif (b == "west"):
+            elif (b["direction"] == "west"):
                 new_genestealer["direction"] = "east"
-            elif (b == "east"):
+            elif (b["direction"] == "east"):
                 new_genestealer["direction"] = "west"
             genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
 
             new_genestealer.clear()
             genestealer_count += 1
+
+            if (g == 1 and b["overwatch"] == True):
+                overwatchfire.overwatch_fire(b, genestealers[f"Genestealer {genestealer_count}"])
 
 def check_for_reveal(blip):
     for c in linesight:
@@ -104,20 +115,20 @@ def check_for_reveal(blip):
                                 sm_index = linesight[c].index(squad[e]["current_place"])
                                 for f in range(d, sm_index, 1):
                                     if linesight[c][f] == blip["current location"]:
-                                        blip_reveal(blip, squad[e]["direction"])
+                                        blip_reveal(blip, squad[e])
                             if squad[e]["direction"] == "south":
                                 sm_index = linesight[c].index(squad[e]["current_place"])
                                 for g in range(d, sm_index, -1):
                                     if linesight[c][g] == blip["current location"]:
-                                        blip_reveal(blip, squad[e]["direction"])
+                                        blip_reveal(blip, squad[e])
                         elif linesight[c] == linesight.line_of_sight[1] or linesight[c] == linesight.line_of_sight[6] or linesight[c] == linesight.line_of_sight[8] or linesight[c] == linesight.line_of_sight[9] or linesight[c] == linesight.line_of_sight[11] or linesight[c] == linesight.line_of_sight[12] or linesight[c] == linesight.line_of_sight[13]:
                             if squad[e]["direction"] == "west":
                                 sm_index = linesight[c].index(squad[e]["current_place"])
                                 for h in range(d, sm_index, -1):
                                     if linesight[c][h] == blip["current location"]:
-                                        blip_reveal(blip, squad[e]["direction"])
+                                        blip_reveal(blip, squad[e])
                             if squad[e]["direction"] == "east":
                                 sm_index = linesight[c].index(squad[e]["current_place"])
                                 for i in range(d, sm_index, 1):
                                     if linesight[c][i] == blip["current location"]:
-                                        blip_reveal(blip, squad[e]["direction"])
+                                        blip_reveal(blip, squad[e])
