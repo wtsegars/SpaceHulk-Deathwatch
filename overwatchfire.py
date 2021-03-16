@@ -14,11 +14,13 @@ def overwatch_fire(marine, gs):
                 if (roll_1 == roll_2):
                     print(f"{marine}'s bolter has jammed!")
                     marine["jammed"] = True
+                    marine["overwatch"] = False
             else:
                 print("The bolter shot missed its target.")
                 if (roll_1 == roll_2):
                     print(f"{marine}'s bolter has jammed!")
                     marine["jammed"] = True
+                    marine["overwatch"] = False
         elif (marine["weapon loadout"] == weapons.weapon_loadout[6]):
             if ((roll_1 == 4 or roll_1 == 5 or roll_1 == 6) and (roll_2 == 4 or roll_2 == 5 or roll_2 == 6) and (roll_3 == 4 or roll_3 == 5 or roll_3 == 6)):
                 marine["clip_size"] -= 1
