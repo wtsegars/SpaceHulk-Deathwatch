@@ -219,3 +219,78 @@ def genestealer_movement():
                                                                                     squad[k]["alive"],
                                                                                     squad[k]["weapon loadout"])
                                                     break
+                                elif (tracker2 == squad[y]["current_place"]):
+                                    if (gametiles(genestealers[e]["current location"]["connected to"][1])["occupied"] != True):
+                                        genestealers[e]["current location"] = gametiles(genestealers[e]["current location"])["current location"][1]
+                                        genestealers[e]["action points"] -= 1
+                                    else:
+                                        for i in genestealers:
+                                            if (genestealers[i] != genestealers[e]):
+                                                if (genestealers[i]["current location"] == gametiles(genestealers[e]["current location"])["connected to"][1]):
+                                                    break
+
+                                        for j in radarblips:
+                                            if (radarblips[j]["current location"] == gametiles(genestealers[e]["current location"])["connected to"][1]):
+                                                break
+
+                                        for k in squad:
+                                            if (squad[k]["current_place"] == gametiles(genestealers[e]["current location"])["connected to"][1]):
+                                                if (genestealers[e]["action points"] > 0):
+                                                    while (genestealers[e]["action points"] > 0 or squad[k]["alive"] == True):
+                                                        attackaction.close_combat(game.command_points,
+                                                                                    squad[k]["action points"],
+                                                                                    squad[k]["current_place"],
+                                                                                    squad[k]["direction"],
+                                                                                    squad[k]["alive"],
+                                                                                    squad[k]["weapon loadout"])
+                                                    break
+                                elif (tracker3 == squad[y]["current_place"]):
+                                    if (gametiles(genestealers[e]["current location"]["connected to"][2])["occupied"] != True):
+                                        genestealers[e]["current location"] = gametiles(genestealers[e]["current location"])["current location"][2]
+                                        genestealers[e]["action points"] -= 1
+                                    else:
+                                        for i in genestealers:
+                                            if (genestealers[i] != genestealers[e]):
+                                                if (genestealers[i]["current location"] == gametiles(genestealers[e]["current location"])["connected to"][2]):
+                                                    break
+
+                                        for j in radarblips:
+                                            if (radarblips[j]["current location"] == gametiles(genestealers[e]["current location"])["connected to"][2]):
+                                                break
+
+                                        for k in squad:
+                                            if (squad[k]["current_place"] == gametiles(genestealers[e]["current location"])["connected to"][2]):
+                                                if (genestealers[e]["action points"] > 0):
+                                                    while (genestealers[e]["action points"] > 0 or squad[k]["alive"] == True):
+                                                        attackaction.close_combat(game.command_points,
+                                                                                    squad[k]["action points"],
+                                                                                    squad[k]["current_place"],
+                                                                                    squad[k]["direction"],
+                                                                                    squad[k]["alive"],
+                                                                                    squad[k]["weapon loadout"])
+                                                    break
+                                elif (tracker4 == squad[y]["current_place"]):
+                                    if (gametiles(genestealers[e]["current location"]["connected to"][3])["occupied"] != True):
+                                        genestealers[e]["current location"] = gametiles(genestealers[e]["current location"])["current location"][3]
+                                        genestealers[e]["action points"] -= 1
+                                    else:
+                                        for i in genestealers:
+                                            if (genestealers[i] != genestealers[e]):
+                                                if (genestealers[i]["current location"] == gametiles(genestealers[e]["current location"])["connected to"][3]):
+                                                    break
+
+                                        for j in radarblips:
+                                            if (radarblips[j]["current location"] == gametiles(genestealers[e]["current location"])["connected to"][3]):
+                                                break
+
+                                        for k in squad:
+                                            if (squad[k]["current_place"] == gametiles(genestealers[e]["current location"])["connected to"][3]):
+                                                if (genestealers[e]["action points"] > 0):
+                                                    while (genestealers[e]["action points"] > 0 or squad[k]["alive"] == True):
+                                                        attackaction.close_combat(game.command_points,
+                                                                                    squad[k]["action points"],
+                                                                                    squad[k]["current_place"],
+                                                                                    squad[k]["direction"],
+                                                                                    squad[k]["alive"],
+                                                                                    squad[k]["weapon loadout"])
+                                                    break
