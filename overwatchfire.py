@@ -1,5 +1,7 @@
 from random import randint
 import weapons
+import linesight
+import squad
 
 def overwatch_fire(marine, gs):
     if (marine["overwatch"] == True):
@@ -33,3 +35,9 @@ def overwatch_fire(marine, gs):
             else:
                 print("The assault cannon missed its target.")
                 marine["clip_size"] -= 1
+
+def check_for_overwatch(gs):
+    for a in linesight.line_of_sight:
+        for b in linesight.line_of_sight[a]:
+            if (gs["current location"] == linesight.line_of_sight[a][b]):
+                

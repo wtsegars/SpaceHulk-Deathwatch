@@ -5,6 +5,7 @@ import genestealers
 import gametiles
 import linesight
 import squad
+import overwatchfire
 
 def genestealer_movement():
     for x in radarblips: #looping through radar blips
