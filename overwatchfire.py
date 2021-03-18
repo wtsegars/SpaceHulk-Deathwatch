@@ -40,4 +40,18 @@ def check_for_overwatch(gs):
     for a in linesight.line_of_sight:
         for b in linesight.line_of_sight[a]:
             if (gs["current location"] == linesight.line_of_sight[a][b]):
-                
+                for c in linesight.line_of_sight[a]:
+                    for d in squad.squad:
+                        if (linesight.line_of_sight[a][c] == squad.squad[d]["current_place"]):
+                            if (linesight[a] == linesight.line_of_sight[0] or linesight[a] == linesight.line_of_sight[2] or linesight[a] == linesight.line_of_sight[3] or linesight[a] == linesight.line_of_sight[4] or linesight[a] == linesight.line_of_sight[5] or linesight[a] == linesight.line_of_sight[7] or linesight[a] == linesight.line_of_sight[10]):
+                                if (squad.squad[d]["direction"] == "north"):
+                                    gs_index = linesight[a].index(gs["current location"])
+                                    for e in range(b, gs_index, 1):
+                                        if (linesight.line_of_sight[a][e] == gs["current location"]):
+                                            overwatch_fire(squad.squad[d], gs)
+                                elif (squad.squad[d]["direction"] == "south"):
+                                    gs_index = linesight[a].index(gs["current location"])
+                                    for e in range(b, gs_index, -1):
+                                        if (linesight.line_of_sight[a][e] == gs["current location"]):
+                                            overwatch_fire(squad.squad[d], gs)
+                            
