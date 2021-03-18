@@ -199,6 +199,7 @@ def genestealer_movement():
                                     if (gametiles(genestealers[e]["current location"]["connected to"][0])["occupied"] != True):
                                         genestealers[e]["current location"] = gametiles(genestealers[e]["current location"])["current location"][0]
                                         genestealers[e]["action points"] -= 1
+                                        overwatchfire.check_for_overwatch(genestealers.genestealers[e])
                                     else:
                                         for i in genestealers:
                                             if (genestealers[i] != genestealers[e]):
@@ -224,6 +225,7 @@ def genestealer_movement():
                                     if (gametiles(genestealers[e]["current location"]["connected to"][1])["occupied"] != True):
                                         genestealers[e]["current location"] = gametiles(genestealers[e]["current location"])["current location"][1]
                                         genestealers[e]["action points"] -= 1
+                                        overwatchfire.check_for_overwatch(genestealers.genestealers[e])
                                     else:
                                         for i in genestealers:
                                             if (genestealers[i] != genestealers[e]):
@@ -249,6 +251,7 @@ def genestealer_movement():
                                     if (gametiles(genestealers[e]["current location"]["connected to"][2])["occupied"] != True):
                                         genestealers[e]["current location"] = gametiles(genestealers[e]["current location"])["current location"][2]
                                         genestealers[e]["action points"] -= 1
+                                        overwatchfire.check_for_overwatch(genestealers.genestealers[e])
                                     else:
                                         for i in genestealers:
                                             if (genestealers[i] != genestealers[e]):
@@ -274,6 +277,7 @@ def genestealer_movement():
                                     if (gametiles(genestealers[e]["current location"]["connected to"][3])["occupied"] != True):
                                         genestealers[e]["current location"] = gametiles(genestealers[e]["current location"])["current location"][3]
                                         genestealers[e]["action points"] -= 1
+                                        overwatchfire.check_for_overwatch(genestealers.genestealers[e])
                                     else:
                                         for i in genestealers:
                                             if (genestealers[i] != genestealers[e]):
