@@ -332,7 +332,7 @@ class GeneStealerTurn(Scene):
     elif turn_count > 5:
         blips_to_deploy += 1
 
-    radarblips.blip_deployment(blips_to_deploy, squad.squad)
+    radarblips.blip_deployment(blips_to_deploy)
 
     genestealermove.genestealer_movement()
 
