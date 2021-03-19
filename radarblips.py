@@ -12,7 +12,7 @@ blips = {
     
 }
 
-def blip_deployment(a, b):
+def blip_deployment(a):
     while a > 0:
         tile_choice = randint(0, 9)
         deploy_tile = ""
@@ -34,10 +34,10 @@ def blip_deployment(a, b):
         elif tile_choice == 8:
             deploy_tile = "g21"
 
-        if gametiles[deploy_tile]["occupied"] == True:
+        if gametiles.tiles[deploy_tile]["occupied"] == True:
             blip_deployment(game.GeneStealerTurn.blips_to_deploy, squad.squad)
-        elif gametiles[deploy_tile]["occupied"] == False:
-            gametiles[deploy_tile]["occupied"] = True
+        elif gametiles.tiles[deploy_tile]["occupied"] == False:
+            gametiles.tiles[deploy_tile]["occupied"] = True
             blips[f"blip {a}"]["current location"] = deploy_tile
             blips[f"blip {a}"]["action points"] = 6
             a -= 1
@@ -56,7 +56,7 @@ def blip_reveal(a, b):
             new_genestealer["direction"] = "east"
         elif (b["direction"] == "east"):
             new_genestealer["direction"] = "west"
-        genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
+        genestealers.genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
 
         new_genestealer.clear()
         genestealer_count += 1
@@ -76,7 +76,7 @@ def blip_reveal(a, b):
                 new_genestealer["direction"] = "east"
             elif (b["direction"] == "east"):
                 new_genestealer["direction"] = "west"
-            genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
+            genestealers.genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
 
             new_genestealer.clear()
             genestealer_count += 1
@@ -96,7 +96,7 @@ def blip_reveal(a, b):
                 new_genestealer["direction"] = "east"
             elif (b["direction"] == "east"):
                 new_genestealer["direction"] = "west"
-            genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
+            genestealers.genestealers[f"Genestealer {genestealer_count}"] = new_genestealer
 
             new_genestealer.clear()
             genestealer_count += 1
@@ -105,9 +105,9 @@ def blip_reveal(a, b):
                 overwatchfire.overwatch_fire(b, genestealers[f"Genestealer {genestealer_count}"])
 
 def check_for_reveal(blip):
-    for c in linesight:
-        for d in linesight[c]:
-            if gametiles(linesight[c][d])["occupied"] == True:
+    for c in linesight.line_of_sight:
+        for d in linesight.line_of_sight[c]:
+            if gametiles(linesight.line_of_sight[c][d])["occupied"] == True:
                 for e in squad:
                     if squad[e]["current_place"] == gametiles(linesight[c][d]):
                         if linesight[c] == linesight.line_of_sight[0] or linesight[c] == linesight.line_of_sight[2] or linesight[c] == linesight.line_of_sight[3] or linesight[c] == linesight.line_of_sight[4] or linesight[c] == linesight.line_of_sight[5] or linesight[c] == linesight.line_of_sight[7] or linesight[c] == linesight.line_of_sight[10]:
