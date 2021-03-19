@@ -22,9 +22,9 @@ def genestealer_movement():
         if (radarblips.blips[x]["current location"]):
             for y in squad:
                 if (squad[y]["current_place"]):
-                    for z in linesight:
-                        for a in linesight[z]:
-                            if (radarblips.blips[x]["current location"] == linesight[z][a]):
+                    for z in linesight.line_of_sight:
+                        for a in linesight.line_of_sight[z]:
+                            if (radarblips.blips[x]["current location"] == linesight.line_of_sight[z][a]):
                                 tracker1 == gametiles.tiles(radarblips.blips[x]["current location"])["connected to"][0]
                                 if (gametiles.tiles(radarblips.blips[x]["current location"])["connected to"][1]):
                                     tracker2 == gametiles.tiles(radarblips.blips[x]["current location"])["connected to"][1]
@@ -168,9 +168,9 @@ def genestealer_movement():
         if (genestealers[e]["current location"]):
             for f in squad:
                 if (squad[f]["current_place"]):
-                    for g in linesight:
-                        for h in linesight:
-                            if (genestealers[e]["current location"] == linesight[g][h]):
+                    for g in linesight.line_of_sight:
+                        for h in linesight.line_of_sight[g]:
+                            if (genestealers[e]["current location"] == linesight.line_of_sight[g][h]):
                                 tracker1 = gametiles.tiles(genestealers[e]["current location"])["connected to"][0]
                                 if (gametiles.tiles(genestealers[e]["current location"])["connected to"][1]):
                                     tracker2 = gametiles.tiles(genestealers[e]["current location"])["connected to"][1]
