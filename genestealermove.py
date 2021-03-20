@@ -299,3 +299,26 @@ def genestealer_movement():
                                                                                     squad[k]["alive"],
                                                                                     squad[k]["weapon loadout"])
                                                     break
+
+def direction_change(stealer, tracker, tile):
+    turn = False
+    for a in tile["connected to"]:
+        if (tile["connected to"][a] == stealer["current direction"]):
+            turn == False
+            continue
+        else:
+            turn = True
+    
+    if (turn == True):
+        if (tracker == gametiles.tiles(stealer["current location"]["connected to"][0])):
+            stealer["direction"] = gametiles.tiles.get(tile[0])
+            stealer["action points"] -= 1
+        elif (tracker == gametiles.tiles(stealer["current location"]["connected to"][1])):
+            stealer["direction"] = gametiles.tiles.get(tile[1])
+            stealer["action points"] -= 1
+        elif (tracker == gametiles.tiles(stealer["current location"]["connected to"][2])):
+            stealer["direction"] = gametiles.tiles.get(tile[2])
+            stealer["action points"] -= 1
+        elif (tracker == gametiles.tiles(stealer["current location"]["connected to"][3])):
+            stealer["direction"] = gametiles.tiles.get(tile[3])
+            stealer["action points"] -= 1
