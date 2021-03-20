@@ -200,6 +200,7 @@ def genestealer_movement():
                                         genestealers[e]["current location"] = gametiles.tiles(genestealers[e]["current location"])["current location"][0]
                                         genestealers[e]["action points"] -= 1
                                         overwatchfire.check_for_overwatch(genestealers.genestealers[e])
+                                        direction_change(genestealers[e], tracker1, gametiles.tiles(genestealers[e]["current location"])[0])
                                     else:
                                         for i in genestealers:
                                             if (genestealers[i] != genestealers[e]):
@@ -226,6 +227,7 @@ def genestealer_movement():
                                         genestealers[e]["current location"] = gametiles.tiles(genestealers[e]["current location"])["current location"][1]
                                         genestealers[e]["action points"] -= 1
                                         overwatchfire.check_for_overwatch(genestealers.genestealers[e])
+                                        direction_change(genestealers[e], tracker1, gametiles.tiles(genestealers[e]["current location"])[1])
                                     else:
                                         for i in genestealers:
                                             if (genestealers[i] != genestealers[e]):
@@ -252,6 +254,7 @@ def genestealer_movement():
                                         genestealers[e]["current location"] = gametiles.tiles(genestealers[e]["current location"])["current location"][2]
                                         genestealers[e]["action points"] -= 1
                                         overwatchfire.check_for_overwatch(genestealers.genestealers[e])
+                                        direction_change(genestealers[e], tracker1, gametiles.tiles(genestealers[e]["current location"])[2])
                                     else:
                                         for i in genestealers:
                                             if (genestealers[i] != genestealers[e]):
@@ -278,6 +281,7 @@ def genestealer_movement():
                                         genestealers[e]["current location"] = gametiles.tiles(genestealers[e]["current location"])["current location"][3]
                                         genestealers[e]["action points"] -= 1
                                         overwatchfire.check_for_overwatch(genestealers.genestealers[e])
+                                        direction_change(genestealers[e], tracker1, gametiles.tiles(genestealers[e]["current location"])[3])
                                     else:
                                         for i in genestealers:
                                             if (genestealers[i] != genestealers[e]):
