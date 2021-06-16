@@ -42,7 +42,7 @@ def blip_deployment(a):
             blips[f"blip {a}"]["action points"] = 6
             a -= 1
 
-def blip_reveal(a, b):
+def blip_reveal(a, b, genestealer_count):
     blip_num = randint(0, 3)
     new_genestealer = {}
     if (blip_num == 1):
@@ -115,20 +115,20 @@ def check_for_reveal(blip):
                                 sm_index = linesight[c].index(squad[e]["current_place"])
                                 for f in range(d, sm_index, 1):
                                     if linesight[c][f] == blip["current location"]:
-                                        blip_reveal(blip, squad[e])
+                                        blip_reveal(blip, squad[e], genestealer_count)
                             if squad[e]["direction"] == "south":
                                 sm_index = linesight[c].index(squad[e]["current_place"])
                                 for g in range(d, sm_index, -1):
                                     if linesight[c][g] == blip["current location"]:
-                                        blip_reveal(blip, squad[e])
+                                        blip_reveal(blip, squad[e], genestealer_count)
                         elif linesight[c] == linesight.line_of_sight[1] or linesight[c] == linesight.line_of_sight[6] or linesight[c] == linesight.line_of_sight[8] or linesight[c] == linesight.line_of_sight[9] or linesight[c] == linesight.line_of_sight[11] or linesight[c] == linesight.line_of_sight[12] or linesight[c] == linesight.line_of_sight[13]:
                             if squad[e]["direction"] == "west":
                                 sm_index = linesight[c].index(squad[e]["current_place"])
                                 for h in range(d, sm_index, -1):
                                     if linesight[c][h] == blip["current location"]:
-                                        blip_reveal(blip, squad[e])
+                                        blip_reveal(blip, squad[e], genestealer_count)
                             if squad[e]["direction"] == "east":
                                 sm_index = linesight[c].index(squad[e]["current_place"])
                                 for i in range(d, sm_index, 1):
                                     if linesight[c][i] == blip["current location"]:
-                                        blip_reveal(blip, squad[e])
+                                        blip_reveal(blip, squad[e], genestealer_count)

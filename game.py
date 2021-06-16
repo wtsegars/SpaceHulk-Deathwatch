@@ -231,8 +231,10 @@ class Squadplacement(Scene):
 
 class SpaceMarineTurn(Scene):
 
+    turn_count += 1
+    
     def enter(self):
-        turn_count += 1
+        
 
         if turn_count == 1:
             for i in squad:
