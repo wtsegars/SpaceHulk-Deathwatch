@@ -15,7 +15,7 @@ blips = {
 def blip_deployment(a):
     while a > 0:
         tile_choice = randint(0, 9)
-        deploy_tile = ""
+        deploy_tile = None
         
         if tile_choice == 1:
             deploy_tile = "g1"
