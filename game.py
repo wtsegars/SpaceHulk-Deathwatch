@@ -338,6 +338,11 @@ class GeneStealerTurn(Scene):
 
     genestealermove.genestealer_movement()
 
+    def end_turn():
+        return 'space_marine_turn'
+
+    end_turn()
+
 class GameControl(object):
 
     scenes = {
