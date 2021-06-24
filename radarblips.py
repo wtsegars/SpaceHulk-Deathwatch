@@ -14,6 +14,13 @@ blips = {
 
 def blip_deployment(a):
     while a > 0:
+        blip = {
+            f"blip {a}": {
+                "current location": None,
+                "action points": 0
+            }
+        }
+
         tile_choice = randint(0, 9)
         deploy_tile = None
         
@@ -35,11 +42,14 @@ def blip_deployment(a):
             deploy_tile = "g21"
 
         if gametiles.tiles[deploy_tile]["occupied"] == True:
-            blip_deployment(game.GeneStealerTurn.blips_to_deploy, squad.squad)
+            blip_deployment(a, squad.squad)
         elif gametiles.tiles[deploy_tile]["occupied"] == False:
             gametiles.tiles[deploy_tile]["occupied"] = True
-            blips[f"blip {a}"]["current location"] = deploy_tile
-            blips[f"blip {a}"]["action points"] = 6
+            blip[f"blip {a}"]["current location"] = deploy_tile
+            blip[f"blip {a}"]["action points"] += 6
+            blips[f"blip {a}"] = {}
+            blips[f"blip {a}"]["current location"] = blip[f"blip {a}"]["current location"]
+            blips[f"blip {a}"]["action points"] = blip[f"blip {a}"]["action points"]
             a -= 1
 
 def blip_reveal(a, b, genestealer_count):
