@@ -1,4 +1,3 @@
-import game
 import gametiles
 import squad
 import genestealers
@@ -40,6 +39,9 @@ def blip_deployment(a):
             deploy_tile = "g23"
         elif tile_choice == 8:
             deploy_tile = "g21"
+
+        print(a)
+        print(deploy_tile)
 
         if gametiles.tiles[deploy_tile]["occupied"] == True:
             blip_deployment(a, squad.squad)
