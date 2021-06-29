@@ -42,6 +42,7 @@ def blip_deployment(a):
 
         print(a)
         print(deploy_tile)
+        print(gametiles.tiles[deploy_tile])
 
         if gametiles.tiles[deploy_tile]["occupied"] == True:
             blip_deployment(a, squad.squad)
