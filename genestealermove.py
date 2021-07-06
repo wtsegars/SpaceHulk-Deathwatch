@@ -20,8 +20,9 @@ def genestealer_movement():
         tracker4 = None
 
         if (radarblips.blips[x]["current location"]):
-            for y in squad:
-                if (squad[y]["current_place"]):
+            print(squad)
+            for y in squad.squad:
+                if (squad.squad[y]["current_place"]):
                     for z in linesight.line_of_sight:
                         for a in linesight.line_of_sight[z]:
                             if (radarblips.blips[x]["current location"] == linesight.line_of_sight[z][a]):

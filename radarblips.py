@@ -22,6 +22,8 @@ def blip_deployment(a):
 
         tile_choice = randint(0, 9)
         deploy_tile = None
+
+        print(tile_choice)
         
         if tile_choice == 1:
             deploy_tile = "g1"
@@ -45,7 +47,7 @@ def blip_deployment(a):
         print(gametiles.tiles[deploy_tile])
 
         if gametiles.tiles[deploy_tile]["occupied"] == True:
-            blip_deployment(a, squad.squad)
+            blip_deployment(a)
         elif gametiles.tiles[deploy_tile]["occupied"] == False:
             gametiles.tiles[deploy_tile]["occupied"] = True
             blip[f"blip {a}"]["current location"] = deploy_tile
