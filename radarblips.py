@@ -20,31 +20,31 @@ def blip_deployment(a):
             }
         }
 
-        tile_choice = randint(0, 9)
-        deploy_tile = None
+        tile_choice = randint(1, 8)
+        deploy_tile = ""
 
         print(tile_choice)
         
         if tile_choice == 1:
-            deploy_tile = "g1"
+            deploy_tile += "g1"
         elif tile_choice == 2:
-            deploy_tile = "g5"
+            deploy_tile += "g5"
         elif tile_choice == 3:
-            deploy_tile = "g9"
+            deploy_tile += "g9"
         elif tile_choice == 4:
-            deploy_tile = "g11"
+            deploy_tile += "g11"
         elif tile_choice == 5:
-            deploy_tile = "g19"
+            deploy_tile += "g19"
         elif tile_choice == 6:
-            deploy_tile = "g17"
+            deploy_tile += "g17"
         elif tile_choice == 7:
-            deploy_tile = "g23"
+            deploy_tile += "g23"
         elif tile_choice == 8:
-            deploy_tile = "g21"
+            deploy_tile += "g21"
 
         print(a)
         print(deploy_tile)
-        print(gametiles.tiles[deploy_tile])
+        #print(gametiles.tiles[deploy_tile])
 
         if gametiles.tiles[deploy_tile]["occupied"] == True:
             blip_deployment(a)
