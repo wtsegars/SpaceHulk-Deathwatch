@@ -1,47 +1,11 @@
 from sys import exit
 from random import randint
 from textwrap import dedent
-import gametiles
-import squad
 import chapters
+import squad
 import weapons
-import movement
-import attackaction
-import miscaction
-import gamemap
-import genestealers
-import radarblips
-import linesight
-import genestealermove
-
-command_points = 0
-
-turn_count = 0
-
-class Scene(object):
-
-    def enter(self):
-        print("This scene has not yet configured.")
-        print("Subclass it and implement enter()")
-        exit(1)
-
-class Engine(object):
-
-    def __init__(self, turn):
-        self.turn = turn
-
-    def play(self, turn):
-        current_turn = self.turn.opening_scene()
-        last_turn = self.turn.next_turn('finished')
-
-        while current_turn != last_turn:
-            next_turn_name = current_turn.enter()
-            current_turn = self.turn.next_turn(next_turn_name)
-
-        current_turn.enter()
-
-class Openingscene(Scene):
-
+        
+class Openingscene():
     def enter(self):
         print(dedent("""
                 Welcome to Space Hulk Deathwatch, a console-based game that
@@ -71,9 +35,12 @@ class Openingscene(Scene):
                 on board of space hulks).
                 """))
 
-        return 'squad_selection'
+        return SquadSelect().enter()
 
-class SquadSelect(Scene):
+class SquadSelect():
+
+    terminator_count = 0
+    heavy_count = 0
 
     def enter(self):
         print(dedent("""
@@ -82,266 +49,59 @@ class SquadSelect(Scene):
                 be the squad's sergent while the rest are standard marines. Choose
                 wisely because some chapters will have advantages over others.
                 """))
+        SquadSelect.chapter_select()
+        SquadSelect.weapon_select()
 
-        print(chapters)
+    def chapter_select():
+        print("Below is a list of available chapters, choose wisely...")
+        print()
+        
+        for x in chapters.chapters:
+            print(x)
 
-        terminator_count = 1
-        heavy_count = 0
+        for y in squad.squad:
+            if squad.squad[y]["chapter"] == None:
+                print()
+                print(y)
+                print()
+                print("Select the chapter for this terminator:")
+            
+                ch_input = input("> ")
 
-        while len(squad) < 6:
-            if len(squad) == 0:
-                print("Choose your Sergent:")
-
-                sgt = {}
-                sgt_choice = input("> ")
-
-                for i in chapters:
-                    if sgt_choice == chapters[i]:
-                        sgt["chapter"] = sgt_choice
+                for z in chapters.chapters:
+                    if z == ch_input:
+                        squad.squad[y]["chapter"] = ch_input
                         break
-                    elif sgt_choice != chapters[i] and i == len(chapters):
-                        print("The chapter you entered is not valid, please try again.")
-                        return 'squad_selection'
 
-                print("Choose your weapon loadout:")
-                print(weapons.weapon_loadout)
-
-                weapon_choice = input("> ")
-
-                for j in weapons.weapon_loadout:
-                    if weapon_choice == weapons.weapon_loadout[j]:
-                        sgt["weapon loadout"] = weapon_choice
-                        if weapon_choice == weapons.weapon_loadout[6] or weapon_choice == weapons.weapon_loadout[7]:
-                            if weapon_choice == weapons.weapon_loadout[6]:
-                                sgt["overwatch"] = False
-                            heavy_count += 1
-                            sgt["clip_size"] = 10
-                            sgt["clip_num"] = 2
-                            break
-                        elif weapon_choice == weapons.weapon_loadout[8]:
-                            heavy_count += 1
-                            sgt["clip_size"] = 8
-                            sgt["clip_num"] = 0
-                            break
-                        elif heavy_count == 3:
-                            print("You have reached the maximum amount of heavy weapons for you squad, please try again.")
-                            return 'squad_selection'
-                        elif weapon_choice == weapons.weapon_loadout[0] or weapon_choice == weapons.weapon_loadout[1] or weapon_choice == weapons.weapon_loadout[4] or weapon_choice == weapons.weapon_loadout[5] or weapon_choice == weapons.weapon_loadout[8] or weapon_choice == weapons.weapon_loadout[9]:
-                            sgt["overwatch"] = False
-                            sgt["jammed"] = False
-                            break
-                        else:
-                            break
-                    elif weapon_choice != weapons.weapon_loadout[j] and j == len(weapons.weapon_loadout):
-                        print("The weapon loadout you picked is not valid, please try again.")
-                        return 'squad_selection'
-
-                sgt["alive"] = True
-                squad["Sergent"] = sgt
-
+                if squad.squad[y]["chapter"] == None:
+                    print("The chapter you selected is invalid, please select a valid chapter.")
+                    SquadSelect.chapter_select()
             else:
-                print("Choose your terminator:")
-
-                terminator = {}
-                term_choice = input("> ")
-
-                for i in chapters:
-                    if term_choice == chapters[i]:
-                        terminator["chapter"] = term_choice
-                        break
-                    elif term_choice != chapters[i] and i == len(chapters):
-                        print("The chapter that you picked is not valid, please try again")
-                        return 'squad_selection'
-
-                print("Choose your weapon loadout:")
-                print(weapons.weapon_loadout)
-
-                weapon_choice = input("> ")
-
-                for j in weapons.weapon_loadout:
-                    if weapon_choice == weapons.weapon_loadout[j]:
-                        terminator["weapon loadout"] = weapon_choice
-                        if weapon_choice == weapons.weapon_loadout[6] or weapon_choice == weapons.weapon_loadout[7]:
-                            if weapon_choice == weapons.weapon_loadout[6]:
-                                terminator["overwatch"] = False
-                            heavy_count += 1
-                            terminator["clip_size"] = 10
-                            terminator["clip_num"] = 2
-                            break
-                        elif weapon_choice == weapons.weapon_loadout[8]:
-                            heavy_count +=1
-                            terminator["clip_size"] = 8
-                            terminator["clip_num"] = 0
-                            break
-                        elif heavy_count == 3:
-                            print("You have reached the maximum amount of heavy weapons for you squad, please try again.")
-                            return 'squad_selection'
-                        elif weapon_choice == weapons.weapon_loadout[0] or weapon_choice == weapons.weapon_loadout[1] or weapon_choice == weapons.weapon_loadout[4] or weapon_choice == weapons.weapon_loadout[5] or weapon_choice == weapons.weapon_loadout[8] or weapon_choice == weapons.weapon_loadout[9]:
-                            terminator["overwatch"] = False
-                            terminator["jammed"] = False
-                            break
-                        else:
-                            break
-                    elif weapon_choice != weapons.weapon_loadout[j] and j == len(weapons.weapon_loadout):
-                        print("The weapon loadout you picked is not valid, please try again.")
-                        return 'squad_selection'
+                continue
                 
-                terminator["alive"] = True
-                squad[f"Terminator{terminator_count}"] = terminator
+        
+    def weapon_select():
 
-                terminator.clear()
-                terminator_count += 1
+        for y in squad.squad:
+            print(y)
+            print()
+            print("Choose the weapon loadout:")
+            for z in weapons.weapon_loadout:
+                print(z)
+            
+            wpn_input = input("> ")
 
-                if terminator_count == 4:
-                    return 'squad_placement'
+            if wpn_input == weapons.weapon_loadout[6] or wpn_input == weapons.weapon_loadout[7] or wpn_input == weapons.weapon_loadout[8]:
+                if SquadSelect.heavy_count >= 3:
+                    print("You have exceeded the maximum amount of heavy weapons for this squad, another loadout needs to be selected.")
+                    SquadSelect.weapon_select()
+                else:
+                    SquadSelect.heavy_count += 1
+                    y["weapon loadout"] = wpn_input
 
-class Squadplacement(Scene):
-
+class Squadplacement():
     def enter(self):
         print("Select the order in which your squad is to be deployed:")
-
-        squad_places = ["First", "Second", "Third", "Fourth", "Fifth"]
-
-        for i in squad:
-            print(f"Where do you want to place {squad[i]}?")
-            print(squad_places)
-            placement_selector = input("> ")
-            term_place = {}
-            term_direction = {}
-
-            if placement_selector:
-                for j in squad_places:
-                    if placement_selector == squad_places[j]:
-                        term_place["starting_position"] = squad_places[j]
-                        squad[i]["starting_place"] = term_place
-                        term_place.clear()
-                        term_place["current_postion"] = squad_places[j]
-                        squad[i]["current_place"] = term_place
-                        squad_places.pop(j)
-                        term_place.clear()
-                        term_direction["direction"] = "north"
-                        squad[i]["direction"] = term_direction
-                        term_direction.clear()
-                        break
-                    elif placement_selector != squad_places[j] and j == len(squad_places):
-                        print("The placement that you selected is not valid, please try again")
-                        return 'squad_placement'
-                    elif len(squad_places) == 0:
-                        return 'space_marine_turn'
-
-class SpaceMarineTurn(Scene):
-
-    turn_count += 1
-    
-    def enter(self):
-        
-
-        if turn_count == 1:
-            for i in squad:
-                if squad[i]["starting_place"] == "First":
-                    gametiles.tiles["starting tiles"]["s1"]["occupied"] = True
-                elif squad[i]["starting_place"] == "Second":
-                    gametiles.tiles["starting tiles"]["s2"]["occupied"] = True
-                elif squad[i]["starting_place"] == "Third":
-                    gametiles.tiles["starting tiles"]["s3"]["occupied"] = True
-                elif squad[i]["starting_place"] == "Fourth":
-                    gametiles.tiles["starting tiles"]["s4"]["occupied"] = True
-                elif squad[i]["starting_place"] == "Fifth":
-                    gametiles.tiles["starting tiles"]["s5"]["occupied"] = True
-
-        for i in squad:
-            if squad[i]["action points"] != 4:
-                squad[i]["action points"] = 4
-
-        for i in gametiles.tiles:
-            if gametiles.tiles[i]["on fire"] == True:
-                gametiles.tiles[i]["on fire"] = False
-                if gametiles.tiles[i]["occupied"] == True:
-                    gametiles.tiles[i]["occupied"] == False
-                    for j in squad.squad:
-                        if squad.squad[j]["alive"] == True:
-                            if squad.squad[j]["current_place"] == gametiles.tiles[i]:
-                                gametiles.tiles[i]["occupied"] = True
-                                break
-                    for j in genestealers.genestealers:
-                        if genestealers.genestealers[j]["alive"] == True:
-                            if genestealers.genestealers[j]["current_place"] == gametiles.tiles[i]:
-                                gametiles.tiles[i]["occupied"] = True
-                                break
-                    for j in radarblips.blips:
-                        if radarblips.blips[j]["alive"] == True:
-                            if radarblips.blips[j]["current_place"] == gametiles.tiles[i]:
-                                gametiles.tiles[i]["occupied"] = True
-                                break
-
-        command_points = randint(1, 7)
-
-        def turn_menu():
-            print(f"Command Points: {command_points}")
-            print("What would you like to do?")
-            print(dedent("""
-                    Move,
-                    Attack,
-                    Other Action,
-                    View Map,
-                    End Turn
-                    """))
-
-            action_choice = input("> ")
-
-            if action_choice == "Move":
-                movement.move()     
-            elif action_choice == "Attack":
-                attackaction.attack()
-            elif action_choice == "Other Action":
-                miscaction.other_action()
-            elif action_choice == "View Map":
-                gamemap.map()
-            elif action_choice == "End Turn":
-                return 'genestealer_turn'
-            else:
-                print("You entered an invalid command, please try again.")
-                turn_menu()
-
-        if squad["Sergent"]["alive"] == True:
-            print("Would you like to re-roll your command points, yes or no?")
-
-            choice = input("> ")
-
-            if choice == "yes":
-                command_points = randint(1, 7)
-            elif choice == "no":
-                print("Did not re-roll command points")
-            else:
-                print("Your answer is not valid, please try again")
-                return 'space_marine_turn'
-
-            turn_menu()
-        
-        turn_menu()
-        
-                                
-class GeneStealerTurn(Scene):
-
-    turn_count += 1
-
-    blips_to_deploy = 0
-
-    if turn_count <= 2:
-        blips_to_deploy += 3
-    elif 2 < turn_count <= 4:
-        blips_to_deploy += 2
-    elif turn_count > 5:
-        blips_to_deploy += 1
-
-    radarblips.blip_deployment(blips_to_deploy)
-
-    genestealermove.genestealer_movement()
-
-    def end_turn():
-        return 'space_marine_turn'
-
-    end_turn()
 
 class GameControl(object):
 
@@ -349,6 +109,19 @@ class GameControl(object):
         'squad_selections': SquadSelect(),
         'opening_scene': Openingscene(),
         'squad_placement': Squadplacement(),
-        'space_marine_turn': SpaceMarineTurn(),
-        'genestealer_turn': GeneStealerTurn()
+        # 'space_marine_turn': SpaceMarineTurn(),
+        # 'genestealer_turn': GeneStealerTurn()
     }
+
+    def __init__(self, start_scene):
+        self.start_scene = start_scene
+
+    def next_turn(self, scene_name):
+        val = GameControl.scenes.get(scene_name)
+        return val
+
+    def opening_turn(self):
+        return self.next_turn(self.start_scene)
+
+new_game = Openingscene()
+new_game.enter()
