@@ -39,7 +39,6 @@ class Openingscene():
 
 class SquadSelect():
 
-    terminator_count = 0
     heavy_count = 0
 
     def enter(self):
@@ -91,6 +90,7 @@ class SquadSelect():
                 print(y)
                 print()
                 print("Choose the weapon loadout:")
+
                 for z in weapons.weapon_loadout:
                     print(z)
             
@@ -105,8 +105,6 @@ class SquadSelect():
                             else:
                                 SquadSelect.heavy_count += 1
                                 squad.squad[y]["weapon loadout"] = wpn_input
-                        else:
-                            SquadSelect.terminator_count += 1
             
                 if squad.squad[y]["weapon loadout"] == None:
                     print("An invalid weapon loadout was selected, please select another.")
