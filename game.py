@@ -82,22 +82,37 @@ class SquadSelect():
         
     def weapon_select():
 
-        for y in squad.squad:
-            print(y)
-            print()
-            print("Choose the weapon loadout:")
-            for z in weapons.weapon_loadout:
-                print(z)
-            
-            wpn_input = input("> ")
+        for x in weapons.weapon_loadout:
+            print(x)
 
-            if wpn_input == weapons.weapon_loadout[6] or wpn_input == weapons.weapon_loadout[7] or wpn_input == weapons.weapon_loadout[8]:
-                if SquadSelect.heavy_count >= 3:
-                    print("You have exceeded the maximum amount of heavy weapons for this squad, another loadout needs to be selected.")
+        for y in squad.squad:
+            if squad.squad[y]["weapon loadout"] == None:
+                print()
+                print(y)
+                print()
+                print("Choose the weapon loadout:")
+                for z in weapons.weapon_loadout:
+                    print(z)
+            
+                wpn_input = input("> ")
+
+                for x in weapons.weapon_loadout:
+                    if x == wpn_input:
+                        if wpn_input == weapons.weapon_loadout[6] or wpn_input == weapons.weapon_loadout[7] or wpn_input == weapons.weapon_loadout[8]:
+                            if SquadSelect.heavy_count >= 3:
+                                print("You have exceeded the maximum amount of heavy weapons for this squad, another loadout needs to be selected.")
+                                SquadSelect.weapon_select()
+                            else:
+                                SquadSelect.heavy_count += 1
+                                squad.squad[y]["weapon loadout"] = wpn_input
+                        else:
+                            SquadSelect.terminator_count += 1
+            
+                if squad.squad[y]["weapon loadout"] == None:
+                    print("An invalid weapon loadout was selected, please select another.")
                     SquadSelect.weapon_select()
-                else:
-                    SquadSelect.heavy_count += 1
-                    y["weapon loadout"] = wpn_input
+            else:
+                continue
 
 class Squadplacement():
     def enter(self):
