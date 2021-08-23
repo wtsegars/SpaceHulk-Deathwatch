@@ -48,7 +48,7 @@ class SquadSelect():
                 be the squad's sergent while the rest are standard marines. Choose
                 wisely because some chapters will have advantages over others.
                 """))
-        SquadSelect.chapter_select()
+        # SquadSelect.chapter_select()
         SquadSelect.weapon_select()
 
     def chapter_select():
@@ -105,6 +105,8 @@ class SquadSelect():
                             else:
                                 SquadSelect.heavy_count += 1
                                 squad.squad[y]["weapon loadout"] = wpn_input
+                        else:
+                            squad.squad[y]["weapon loadout"] = wpn_input
             
                 if squad.squad[y]["weapon loadout"] == None:
                     print("An invalid weapon loadout was selected, please select another.")
