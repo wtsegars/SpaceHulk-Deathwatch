@@ -48,7 +48,7 @@ class SquadSelect():
                 be the squad's sergent while the rest are standard marines. Choose
                 wisely because some chapters will have advantages over others.
                 """))
-        # SquadSelect.chapter_select()
+        SquadSelect.chapter_select()
         SquadSelect.weapon_select()
 
     def chapter_select():
@@ -115,8 +115,27 @@ class SquadSelect():
                 continue
 
 class Squadplacement():
+    order = ["first", "second", "third", "fourth", "fifth"]
+
     def enter(self):
         print("Select the order in which your squad is to be deployed:")
+        print()
+        Squadplacement.placement()
+
+    def placement():
+        for x in squad.squad:
+            for y in Squadplacement.order:
+                print(y)
+            
+            if squad.squad[x]["current_place"] == None:
+                place_input = input("> ")
+
+                # for z in Squadplacement.order:
+                #     if place_input == z:
+                        
+    def place_loop(term, start_place):
+        if start_place == "first":
+            term["current_location"] = "s5"
 
 class GameControl(object):
 
