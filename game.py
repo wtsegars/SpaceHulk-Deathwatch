@@ -48,9 +48,9 @@ class SquadSelect():
                 be the squad's sergent while the rest are standard marines. Choose
                 wisely because some chapters will have advantages over others.
                 """))
-        SquadSelect.chapter_select()
-        SquadSelect.weapon_select()
-        Squadplacement.enter()
+        # SquadSelect.chapter_select()
+        # SquadSelect.weapon_select()
+        Squadplacement.enter(self)
 
     def chapter_select():
         print("Below is a list of available chapters, choose wisely...")
@@ -77,8 +77,7 @@ class SquadSelect():
                     print("The chapter you selected is invalid, please select a valid chapter.")
                     SquadSelect.chapter_select()
             else:
-                continue
-                
+                continue             
         
     def weapon_select():
 
@@ -124,39 +123,45 @@ class Squadplacement():
         Squadplacement.placement()
 
     def placement():
-        for x in squad.squad:
-            for y in Squadplacement.order:
-                print(y)
-            
-            if squad.squad[x]["current_place"] == None:
-                place_input = input("> ")
-
-                for z in Squadplacement.order:
-                    if place_input == z:
-                        Squadplacement.place_loop(squad.squad[x], place_input)
-                        break
-
+        while len(Squadplacement.order) != 0:
+            for x in squad.squad:
                 if squad.squad[x]["current_place"] == None:
+                    for y in Squadplacement.order:
+                        print(y)
+
                     print()
-                    print("Your position choice is invalid, please reenter a valid position.")
-                    print()
+                    print(x)
+                    place_input = input("> ")
+
+                    for z in Squadplacement.order:
+                        if place_input == z:
+                            Squadplacement.place_loop(squad.squad[x], place_input)
+                            break
+
+                    print(squad.squad[x]["current_place"])
+                    if squad.squad[x]["current_place"] == None:
+                        print()
+                        print("Your position choice is invalid, please reenter a valid position.")
+                        print()
+                        continue
+                else:
                     continue
                         
     def place_loop(term, start_place):
         if start_place == "first":
-            term["current_location"] = "s5"
+            term["current_place"] = "s5"
             Squadplacement.order.remove("first")
         elif start_place == "second":
-            term["current_location"] = "s4"
+            term["current_place"] = "s4"
             Squadplacement.order.remove("second")
         elif start_place == "third":
-            term["current_location"] = "s3"
+            term["current_place"] = "s3"
             Squadplacement.order.remove("third")
         elif start_place == "fourth":
-            term["current_location"] = "s4"
+            term["current_place"] = "s4"
             Squadplacement.order.remove("fourth")
         else:
-            term["current_location"] = "s5"
+            term["current_place"] = "s1"
             Squadplacement.order.remove("fifth")
 
 class GameControl(object):
