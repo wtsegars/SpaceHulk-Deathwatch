@@ -4,6 +4,9 @@ from textwrap import dedent
 import chapters
 import squad
 import weapons
+import gametiles
+
+turn_count = 0
         
 class Openingscene():
     def enter(self):
@@ -38,7 +41,6 @@ class Openingscene():
         return SquadSelect().enter()
 
 class SquadSelect():
-
     heavy_count = 0
 
     def enter(self):
@@ -48,9 +50,10 @@ class SquadSelect():
                 be the squad's sergent while the rest are standard marines. Choose
                 wisely because some chapters will have advantages over others.
                 """))
-        # SquadSelect.chapter_select()
-        # SquadSelect.weapon_select()
+        SquadSelect.chapter_select()
+        SquadSelect.weapon_select()
         Squadplacement.enter(self)
+        SpaceMarineTurn.enter(self, turn_count)
 
     def chapter_select():
         print("Below is a list of available chapters, choose wisely...")
@@ -163,6 +166,24 @@ class Squadplacement():
         else:
             term["current_place"] = "s1"
             Squadplacement.order.remove("fifth")
+
+class SpaceMarineTurn():
+    def enter(self, turn_count):
+        turn_count +=1
+        print("It is now the space marines' turn.")
+        SpaceMarineTurn.pre_turn()
+
+    def pre_turn():
+        for x in squad.squad:
+            if squad.squad[x]["action points"] != 4:
+                squad.squad[x]["action points"] = 4
+
+            if squad.squad[x]["overwatch"] == True:
+                squad.squad[x]["action points"] -= 2
+
+        for y in gametiles.tiles:
+            if gametiles.tiles[y]["on fire"] == True:
+                gametiles.tiles[y]["on fire"] == False
 
 class GameControl(object):
 
