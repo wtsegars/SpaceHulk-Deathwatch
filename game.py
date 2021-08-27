@@ -5,6 +5,7 @@ import chapters
 import squad
 import weapons
 import gametiles
+import genestealers
 
 turn_count = 0
         
@@ -168,10 +169,13 @@ class Squadplacement():
             Squadplacement.order.remove("fifth")
 
 class SpaceMarineTurn():
+    command_points = randint(1, 7)
+
     def enter(self, turn_count):
         turn_count +=1
         print("It is now the space marines' turn.")
         SpaceMarineTurn.pre_turn()
+        SpaceMarineTurn.turn_menu()
 
     def pre_turn():
         for x in squad.squad:
@@ -184,6 +188,36 @@ class SpaceMarineTurn():
         for y in gametiles.tiles:
             if gametiles.tiles[y]["on fire"] == True:
                 gametiles.tiles[y]["on fire"] == False
+                gametiles.tiles[y]["occupied"] == False
+                for z in genestealers.genestealers:
+                    if genestealers.genestealers[z]["current location"] == y:
+                        gametiles.tiles[y]["occupied"] == True
+
+    def turn_menu():
+        print(f"Command Points: {SpaceMarineTurn.command_points}")
+        print(dedent("""
+            Move
+            Attack
+            Other Action
+            View Map
+            End Turn
+        """))
+
+        menu_choice = input("> ")
+
+        if menu_choice == "Move":
+            print("Move")
+        elif menu_choice == "Attack":
+            print("Attack")
+        elif menu_choice == "Other Action":
+            print("Other Action")
+        elif menu_choice == "View Map":
+            print("View Map")
+        elif menu_choice == "End Turn":
+            print("End Turn")
+        else:
+            print("The command that you entered in invalid, please try again.")
+            SpaceMarineTurn.turn_menu()
 
 class GameControl(object):
 
