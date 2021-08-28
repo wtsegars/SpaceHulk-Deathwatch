@@ -4,6 +4,10 @@ import gametiles
 import game
 
 class Movement():
+    motion_1 = ["Forwards", "Backwards","Turn Left", "Turn Right"]
+    motion_2 = ["Forwards", "Turn Left", "Turn Right"]
+    movements = 0
+
     def move():
         print("Which terminator would you like to move?")
 
@@ -17,10 +21,6 @@ class Movement():
             if movement == squad[j]:
                 print("How would you like to move?")
 
-                motion_1 = ["Forwards", "Backwards",
-                            "Turn Left", "Turn Right"]
-                motion_2 = ["Forwards", "Turn Left", "Turn Right"]
-
                 move_option = input("> ")
 
                 if squad[j]["action points"] >= 2:
@@ -33,29 +33,29 @@ class Movement():
                                 Choose Another Action
                                 """))
 
-                    for k in motion_1:
-                        if move_option == motion_1[k]:
-                            if motion_1[k] == "Forwards":
+                    for k in Movement.motion_1:
+                        if move_option == Movement.motion_1[k]:
+                            if Movement.motion_1[k] == "Forwards":
                                 Movement.forwards(game.command_points,
                                         squad[i]["action points"],
                                         squad[i]["current_position"],
                                         squad[i]["direction"])
-                            elif motion_1[k] == "Backwards":
+                            elif Movement.motion_1[k] == "Backwards":
                                 Movement.backwards(game.command_points,
                                         squad[i]["action points"],
                                         squad[i]["current_position"],
                                         squad[i]["direction"])
-                            elif motion_1[k] == "Turn Left":
+                            elif Movement.motion_1[k] == "Turn Left":
                                 Movement.turn_left(game.command_points,
                                         squad[i]["action points"],
                                         squad[i]["direction"])
-                            elif motion_1[k] == "Turn Right":
+                            elif Movement.motion_1[k] == "Turn Right":
                                 Movement.turn_right(game.command_points,
                                         squad[i]["action points"],
                                         squad[i]["direction"])
-                            elif motion_1[k] == "Move Another Terminator":
+                            elif Movement.motion_1[k] == "Move Another Terminator":
                                 Movement.move_other_term()
-                            elif motion_1[k] == "Choose Another Action":
+                            elif Movement.motion_1[k] == "Choose Another Action":
                                 Movement.choose_other_action()
                         else:
                             print("Input was invalid. Please try again.")
@@ -69,24 +69,24 @@ class Movement():
                                 Choose Another Action
                                 """))
 
-                    for k in motion_2:
-                        if move_option == motion_2[k]:
-                            if motion_2[k] == "Forwards":
+                    for k in Movement.motion_2:
+                        if move_option == Movement.motion_2[k]:
+                            if Movement.motion_2[k] == "Forwards":
                                 Movement.forwards(game.command_points,
                                         squad[j]["action points"],
                                         squad[j]["current_position"],
                                         squad[j]["direction"])
-                            elif motion_2[k] == "Turn Left":
+                            elif Movement.motion_2[k] == "Turn Left":
                                 Movement.turn_left(game.command_points,
                                         squad[i]["action points"],
                                         squad[i]["direction"])
-                            elif motion_2[k] == "Turn Right":
+                            elif Movement.motion_2[k] == "Turn Right":
                                 Movement.turn_right(game.command_points,
                                         squad[i]["action points"],
                                         squad[i]["direction"])
-                            elif motion_2[k] == "Move Another Terminator":
+                            elif Movement.motion_2[k] == "Move Another Terminator":
                                 Movement.move_other_term()
-                            elif motion_2[k] == "Choose Another Action":
+                            elif Movement.motion_2[k] == "Choose Another Action":
                                 Movement.choose_other_action()
                         else:
                             print("Input was invalid. Please try again.")
@@ -95,12 +95,11 @@ class Movement():
         print("How far would you like to move forward?")
 
         forward_move = input('> ')
-        movements = 0
 
         if forward_move <= w + x:
-            movements += forward_move
+            Movement.movements += forward_move
 
-            for a in range(movements):
+            for a in range(Movement.movements):
                 if a != 0:
                     if z == "north":
                         for b in gametiles.tiles:
@@ -201,12 +200,12 @@ class Movement():
         print("How far do you want to move backwards?")
 
         backwards_move = input('> ')
-        movements = 0
+        #movements = 0
 
         if backwards_move <= w + x:
-            movements += backwards_move
+            Movement.movements += backwards_move
 
-            for a in range(movements):
+            for a in range(Movement.movements):
                 if a != 0:
                     if z == "north":
                         for b in gametiles.tiles:
