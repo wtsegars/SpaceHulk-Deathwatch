@@ -372,4 +372,4 @@ class Movement():
         Movement.move()
 
     def choose_other_action():
-        game.SpaceMarineTurn.enter.turn_menu()
+        game.SpaceMarineTurn.turn_menu()
