@@ -12,18 +12,18 @@ class Movement():
         print("Which terminator would you like to move?")
 
         for i in squad.squad:
-            if squad[i]["action points"] > 0 and squad[i]["alive"] == True:
-                print(squad[i])
+            if squad.squad[i]["action points"] > 0 and squad.squad[i]["alive"] == True:
+                print(squad.squad[i])
 
         movement = input("> ")
 
-        for j in squad:
-            if movement == squad[j]:
+        for j in squad.squad:
+            if movement == squad.squad[j]:
                 print("How would you like to move?")
 
                 move_option = input("> ")
 
-                if squad[j]["action points"] >= 2:
+                if squad.squad[j]["action points"] >= 2:
                     print(dedent("""
                                 Forwards,
                                 Backwards,
@@ -36,23 +36,23 @@ class Movement():
                     for k in Movement.motion_1:
                         if move_option == Movement.motion_1[k]:
                             if Movement.motion_1[k] == "Forwards":
-                                Movement.forwards(game.command_points,
-                                        squad[i]["action points"],
-                                        squad[i]["current_position"],
-                                        squad[i]["direction"])
+                                Movement.forwards(game.SpaceMarineTurn.command_points,
+                                        squad.squad[i]["action points"],
+                                        squad.squad[i]["current_position"],
+                                        squad.squad[i]["direction"])
                             elif Movement.motion_1[k] == "Backwards":
-                                Movement.backwards(game.command_points,
-                                        squad[i]["action points"],
-                                        squad[i]["current_position"],
-                                        squad[i]["direction"])
+                                Movement.backwards(game.SpaceMarineTurn.command_points,
+                                        squad.squad[i]["action points"],
+                                        squad.squad[i]["current_position"],
+                                        squad.squad[i]["direction"])
                             elif Movement.motion_1[k] == "Turn Left":
-                                Movement.turn_left(game.command_points,
-                                        squad[i]["action points"],
-                                        squad[i]["direction"])
+                                Movement.turn_left(game.SpaceMarineTurn.command_points,
+                                        squad.squad[i]["action points"],
+                                        squad.squad[i]["direction"])
                             elif Movement.motion_1[k] == "Turn Right":
-                                Movement.turn_right(game.command_points,
-                                        squad[i]["action points"],
-                                        squad[i]["direction"])
+                                Movement.turn_right(game.SpaceMarineTurn.command_points,
+                                        squad.squad[i]["action points"],
+                                        squad.squad[i]["direction"])
                             elif Movement.motion_1[k] == "Move Another Terminator":
                                 Movement.move_other_term()
                             elif Movement.motion_1[k] == "Choose Another Action":
@@ -72,16 +72,16 @@ class Movement():
                     for k in Movement.motion_2:
                         if move_option == Movement.motion_2[k]:
                             if Movement.motion_2[k] == "Forwards":
-                                Movement.forwards(game.command_points,
-                                        squad[j]["action points"],
-                                        squad[j]["current_position"],
-                                        squad[j]["direction"])
+                                Movement.forwards(game.SpaceMarineTurn.command_points,
+                                        squad.squad[j]["action points"],
+                                        squad.squad[j]["current_position"],
+                                        squad.squad[j]["direction"])
                             elif Movement.motion_2[k] == "Turn Left":
-                                Movement.turn_left(game.command_points,
+                                Movement.turn_left(game.SpaceMarineTurn.command_points,
                                         squad[i]["action points"],
                                         squad[i]["direction"])
                             elif Movement.motion_2[k] == "Turn Right":
-                                Movement.turn_right(game.command_points,
+                                Movement.turn_right(game.SpaceMarineTurn.command_points,
                                         squad[i]["action points"],
                                         squad[i]["direction"])
                             elif Movement.motion_2[k] == "Move Another Terminator":

@@ -6,6 +6,7 @@ import squad
 import weapons
 import gametiles
 import genestealers
+import movement
 
 turn_count = 0
         
@@ -206,7 +207,7 @@ class SpaceMarineTurn():
         menu_choice = input("> ")
 
         if menu_choice == "Move":
-            print("Move")
+            movement.Movement.move()
         elif menu_choice == "Attack":
             print("Attack")
         elif menu_choice == "Other Action":
