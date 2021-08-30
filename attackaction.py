@@ -10,18 +10,18 @@ class Attack():
         print("Which terminator would you like to attack with?")
 
         for i in squad.squad:
-            if squad[i]["action points"] > 0 and squad[i]["alive"] == True:
-                print(squad[i])
+            if squad.squad[i]["action points"] > 0 and squad.squad[i]["alive"] == True:
+                print(squad.squad[i])
 
         print("Cancel")
 
         attack_with = input("> ")
 
         for j in squad.squad:
-            if attack_with == squad[j]:
+            if attack_with == squad.squad[j]:
                 print("How would you like to Attack.attack?")
 
-                if squad[j]["weapon loadout"] == "Storm Bolter and Powerfist":
+                if squad.squad[j]["weapon loadout"] == "Storm Bolter and Powerfist":
                     print("Storm Bolter")
                     print("Powerfist")
                     print("Cancel")
@@ -30,24 +30,24 @@ class Attack():
 
                     if attack_choice == "Storm Bolter":
                         Attack.ranged_combat(game.SpaceMarineTurn.command_points,
-                                    squad[j]["action points"],
-                                    squad[j]["current_place"],
-                                    squad[j]["direction"],
-                                    squad[j]["alive"],
+                                    squad.squad[j]["action points"],
+                                    squad.squad[j]["current_place"],
+                                    squad.squad[j]["direction"],
+                                    squad.squad[j]["alive"],
                                     attack_choice)
                     elif attack_choice == "Powerfist":
                         Attack.close_combat(game.SpaceMarineTurn.command_points,
-                                        squad[j]["action points"],
-                                        squad[j]["current_place"],
-                                        squad[j]["direction"],
-                                        squad[j]["alive"],
+                                        squad.squad[j]["action points"],
+                                        squad.squad[j]["current_place"],
+                                        squad.squad[j]["direction"],
+                                        squad.squad[j]["alive"],
                                         attack_choice)
                     elif attack_choice == "Cancel":
                         Attack.attack()
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad[i]["weapon loadout"] == "Power Sword and Storm Bolter":
+                elif squad.squad[i]["weapon loadout"] == "Power Sword and Storm Bolter":
                     print("Storm Bolter")
                     print("Power Sword")
                     print("Cancel")
@@ -56,24 +56,24 @@ class Attack():
 
                     if attack_choice == "Storm Bolter":
                         Attack.ranged_combat(game.SpaceMarineTurn.command_points,
-                                    squad[j]["action points"],
-                                    squad[j]["current_place"],
-                                    squad[j]["direction"],
-                                    squad[j]["alive"],
+                                    squad.squad[j]["action points"],
+                                    squad.squad[j]["current_place"],
+                                    squad.squad[j]["direction"],
+                                    squad.squad[j]["alive"],
                                     attack_choice)
                     elif attack_choice == "Power Sword":
                         Attack.close_combat(game.SpaceMarineTurn.command_points,
-                                        squad[j]["action points"],
-                                        squad[j]["current_place"],
-                                        squad[j]["direction"],
-                                        squad[j]["alive"],
+                                        squad.squad[j]["action points"],
+                                        squad.squad[j]["current_place"],
+                                        squad.squad[j]["direction"],
+                                        squad.squad[j]["alive"],
                                         attack_choice)
                     elif attack_choice == "Cancel":
                         Attack.attack()
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad[i]["weapon loadout"] == "Thunder Hammer and Storm Shield":
+                elif squad.squad[i]["weapon loadout"] == "Thunder Hammer and Storm Shield":
                     print("Thunder Hammer")
                     print("Cancel")
 
@@ -81,17 +81,17 @@ class Attack():
 
                     if attack_choice == "Thunder Hammer":
                         Attack.close_combat(game.SpaceMarineTurn.command_points,
-                                        squad[j]["action points"],
-                                        squad[j]["current_place"],
-                                        squad[j]["direction"],
-                                        squad[j]["alive"],
+                                        squad.squad[j]["action points"],
+                                        squad.squad[j]["current_place"],
+                                        squad.squad[j]["direction"],
+                                        squad.squad[j]["alive"],
                                         attack_choice)
                     elif attack_choice == "Cancel":
                         Attack.attack()
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad[i]["weapon loadout"] == "Lightning Claws":
+                elif squad.squad[i]["weapon loadout"] == "Lightning Claws":
                     print("Lightning Claws")
                     print("Cancel")
 
@@ -99,17 +99,17 @@ class Attack():
 
                     if attack_choice == "Lightning Claws":
                         Attack.close_combat(game.SpaceMarineTurn.command_points,
-                                        squad[j]["action points"],
-                                        squad[j]["current_place"],
-                                        squad[j]["direction"],
-                                        squad[j]["alive"],
+                                        squad.squad[j]["action points"],
+                                        squad.squad[j]["current_place"],
+                                        squad.squad[j]["direction"],
+                                        squad.squad[j]["alive"],
                                         attack_choice)
                     elif attack_choice == "Cancel":
                         Attack.attack()
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad[i]["weapon loadout"] == "Storm Bolter and Chainfist":
+                elif squad.squad[i]["weapon loadout"] == "Storm Bolter and Chainfist":
                     print("Storm Bolter")
                     print("Chainfist")
                     print("Cancel")
@@ -118,24 +118,24 @@ class Attack():
 
                     if attack_choice == "Storm Bolter":
                         Attack.ranged_combat(game.SpaceMarineTurn.command_points,
-                                    squad[j]["action points"],
-                                    squad[j]["current_place"],
-                                    squad[j]["direction"],
-                                    squad[j]["alive"],
+                                    squad.squad[j]["action points"],
+                                    squad.squad[j]["current_place"],
+                                    squad.squad[j]["direction"],
+                                    squad.squad[j]["alive"],
                                     attack_choice)
                     elif attack_choice == "Chainfist":
                         Attack.close_combat(game.SpaceMarineTurn.command_points,
-                                        squad[j]["action points"],
-                                        squad[j]["current_place"],
-                                        squad[j]["direction"],
-                                        squad[j]["alive"],
+                                        squad.squad[j]["action points"],
+                                        squad.squad[j]["current_place"],
+                                        squad.squad[j]["direction"],
+                                        squad.squad[j]["alive"],
                                         attack_choice)
                     elif attack_choice == "Cancel":
                         Attack.attack()
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad[i]["weapon loadout"] == "Storm Bolter and Power Axe":
+                elif squad.squad[i]["weapon loadout"] == "Storm Bolter and Power Axe":
                     print("Storm Bolter")
                     print("Power Axe")
                     print("Cancel")
@@ -144,24 +144,24 @@ class Attack():
 
                     if attack_choice == "Storm Bolter":
                         Attack.ranged_combat(game.SpaceMarineTurn.command_points,
-                                    squad[j]["action points"],
-                                    squad[j]["current_place"],
-                                    squad[j]["direction"],
-                                    squad[j]["alive"],
+                                    squad.squad[j]["action points"],
+                                    squad.squad[j]["current_place"],
+                                    squad.squad[j]["direction"],
+                                    squad.squad[j]["alive"],
                                     attack_choice)
                     elif attack_choice == "Power Axe":
                         Attack.close_combat(game.SpaceMarineTurn.command_points,
-                                        squad[j]["action points"],
-                                        squad[j]["current_place"],
-                                        squad[j]["direction"],
-                                        squad[j]["alive"],
+                                        squad.squad[j]["action points"],
+                                        squad.squad[j]["current_place"],
+                                        squad.squad[j]["direction"],
+                                        squad.squad[j]["alive"],
                                         attack_choice)
                     elif attack_choice == "Cancel":
                         Attack.attack()
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad[i]["weapon loadout"] == "Assault Cannon and Powerfist":
+                elif squad.squad[i]["weapon loadout"] == "Assault Cannon and Powerfist":
                     print("Assault Cannon")
                     print("Powerfist")
                     print("Cancel")
@@ -170,25 +170,25 @@ class Attack():
 
                     if attack_choice == "Assault Cannon":
                         Attack.ranged_combat(game.SpaceMarineTurn.command_points,
-                                    squad[j]["action points"],
-                                    squad[j]["current_place"],
-                                    squad[j]["direction"],
-                                    squad[j]["alive"],
+                                    squad.squad[j]["action points"],
+                                    squad.squad[j]["current_place"],
+                                    squad.squad[j]["direction"],
+                                    squad.squad[j]["alive"],
                                     attack_choice,
-                                    squad[j]["clip size"])
+                                    squad.squad[j]["clip size"])
                     elif attack_choice == "Powerfist":
                         Attack.close_combat(game.SpaceMarineTurn.command_points,
-                                        squad[j]["action points"],
-                                        squad[j]["current_place"],
-                                        squad[j]["direction"],
-                                        squad[j]["alive"],
+                                        squad.squad[j]["action points"],
+                                        squad.squad[j]["current_place"],
+                                        squad.squad[j]["direction"],
+                                        squad.squad[j]["alive"],
                                         attack_choice)
                     elif attack_choice == "Cancel":
                         Attack.attack()
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad[i]["weapon loadout"] == "Heavy Flamer and Powerfist":
+                elif squad.squad[i]["weapon loadout"] == "Heavy Flamer and Powerfist":
                     print("Heavy Flamer")
                     print("Powerfist")
                     print("Cancel")
@@ -197,25 +197,25 @@ class Attack():
 
                     if attack_choice == "Heavy Flamer":
                         Attack.ranged_combat(game.SpaceMarineTurn.command_points,
-                                    squad[j]["action points"],
-                                    squad[j]["current_place"],
-                                    squad[j]["direction"],
-                                    squad[j]["alive"],
+                                    squad.squad[j]["action points"],
+                                    squad.squad[j]["current_place"],
+                                    squad.squad[j]["direction"],
+                                    squad.squad[j]["alive"],
                                     attack_choice,
-                                    squad[j]["clip size"])
+                                    squad.squad[j]["clip size"])
                     elif attack_choice == "Powerfist":
                         Attack.close_combat(game.SpaceMarineTurn.command_points,
-                                        squad[j]["action points"],
-                                        squad[j]["current_place"],
-                                        squad[j]["direction"],
-                                        squad[j]["alive"],
+                                        squad.squad[j]["action points"],
+                                        squad.squad[j]["current_place"],
+                                        squad.squad[j]["direction"],
+                                        squad.squad[j]["alive"],
                                         attack_choice)
                     elif attack_choice == "Cancel":
                         Attack.attack()
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad[i]["weapon loadout"] == "Cyclone Missile Launcher, Storm Bolter and Powerfist":
+                elif squad.squad[i]["weapon loadout"] == "Cyclone Missile Launcher, Storm Bolter and Powerfist":
                     print("Storm Bolter")
                     print("Cyclone Missile Launcher")
                     print("Powerfist")
@@ -225,32 +225,32 @@ class Attack():
 
                     if attack_choice == "Storm Bolter":
                         Attack.ranged_combat(game.SpaceMarineTurn.command_points,
-                                    squad[j]["action points"],
-                                    squad[j]["current_place"],
-                                    squad[j]["direction"],
-                                    squad[j]["alive"],
+                                    squad.squad[j]["action points"],
+                                    squad.squad[j]["current_place"],
+                                    squad.squad[j]["direction"],
+                                    squad.squad[j]["alive"],
                                     attack_choice)
                     elif attack_choice == "Cyclone Missile Launcher":
                         Attack.ranged_combat(game.SpaceMarineTurn.command_points,
-                                    squad[j]["action points"],
-                                    squad[j]["current_place"],
-                                    squad[j]["direction"],
-                                    squad[j]["alive"],
+                                    squad.squad[j]["action points"],
+                                    squad.squad[j]["current_place"],
+                                    squad.squad[j]["direction"],
+                                    squad.squad[j]["alive"],
                                     attack_choice,
-                                    squad[j]["clip size"])
+                                    squad.squad[j]["clip size"])
                     elif attack_choice == "Powerfist":
                         Attack.close_combat(game.SpaceMarineTurn.command_points,
-                                        squad[j]["action points"],
-                                        squad[j]["current_place"],
-                                        squad[j]["direction"],
-                                        squad[j]["alive"],
+                                        squad.squad[j]["action points"],
+                                        squad.squad[j]["current_place"],
+                                        squad.squad[j]["direction"],
+                                        squad.squad[j]["alive"],
                                         attack_choice)
                     elif attack_choice == "Cancel":
                         Attack.attack()
                     else:
                         print("You entered and invalid command, please try again.")
                         Attack.attack()
-                elif squad[i]["weapon loadout"] == "Storm Bolter and Power Maul":
+                elif squad.squad[i]["weapon loadout"] == "Storm Bolter and Power Maul":
                     print("Storm Bolter")
                     print("Power Maul")
                     print("Cancel")
@@ -259,17 +259,17 @@ class Attack():
 
                     if attack_choice == "Storm Bolter":
                         Attack.ranged_combat(game.SpaceMarineTurn.command_points,
-                                    squad[j]["action points"],
-                                    squad[j]["current_place"],
-                                    squad[j]["direction"],
-                                    squad[j]["alive"],
+                                    squad.squad[j]["action points"],
+                                    squad.squad[j]["current_place"],
+                                    squad.squad[j]["direction"],
+                                    squad.squad[j]["alive"],
                                     attack_choice)
                     elif attack_choice == "Power Maul":
                         Attack.close_combat(game.SpaceMarineTurn.command_points,
-                                        squad[j]["action points"],
-                                        squad[j]["current_place"],
-                                        squad[j]["direction"],
-                                        squad[j]["alive"],
+                                        squad.squad[j]["action points"],
+                                        squad.squad[j]["current_place"],
+                                        squad.squad[j]["direction"],
+                                        squad.squad[j]["alive"],
                                         attack_choice)
                     elif attack_choice == "Cancel":
                         Attack.attack()
@@ -293,7 +293,7 @@ class Attack():
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[0][x]])
                                         elif f == "Assault Cannon":
-                                            if squad.g >= 1:
+                                            if squad.squad.g >= 1:
                                                 assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
@@ -324,12 +324,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -1432,12 +1432,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -1543,12 +1543,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -1598,12 +1598,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -1653,12 +1653,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -1708,12 +1708,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -1764,12 +1764,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -1819,12 +1819,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -1874,12 +1874,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -1930,12 +1930,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -1985,12 +1985,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2040,12 +2040,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2096,12 +2096,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2151,12 +2151,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2206,12 +2206,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2262,12 +2262,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2317,12 +2317,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2373,12 +2373,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2428,12 +2428,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2484,12 +2484,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2539,12 +2539,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2594,12 +2594,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2649,12 +2649,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2705,12 +2705,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2760,12 +2760,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2815,12 +2815,12 @@ class Attack():
                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
-                                        for z in squad.squad:
-                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
+                                        for z in squad.squad.squad.squad:
+                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
-                                            elif z == len(squad.squad):
+                                            elif z == len(squad.squad.squad.squad):
                                                 print(
                                                     "There is nothing here for you to fire upon.")
                                                 Attack.attack()
@@ -2877,8 +2877,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -2925,8 +2925,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -2977,8 +2977,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3025,8 +3025,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3077,8 +3077,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3125,8 +3125,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3177,8 +3177,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3225,8 +3225,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3277,8 +3277,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3325,8 +3325,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3377,8 +3377,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3425,8 +3425,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3477,8 +3477,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3525,8 +3525,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3577,8 +3577,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3625,8 +3625,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3677,8 +3677,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3726,8 +3726,8 @@ class Attack():
                                                                     print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                     Attack.attack()
                                                         elif g == len(genestealers.genestealers):
-                                                            for h in squad.squad:
-                                                                if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
+                                                            for h in squad.squad.squad.squad:
+                                                                if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
                                                                     print(
                                                                         "You can't fire on your own men.")
                                                                     Attack.attack()
@@ -3778,8 +3778,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3826,8 +3826,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3878,8 +3878,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3926,8 +3926,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -3978,8 +3978,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -4026,8 +4026,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -4078,8 +4078,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -4126,8 +4126,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -4178,8 +4178,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -4226,8 +4226,8 @@ class Attack():
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
                                                                 Attack.attack()
                                                     elif g == len(genestealers.genestealers):
-                                                        for h in squad.squad:
-                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
+                                                        for h in squad.squad.squad.squad:
+                                                            if squad.squad.squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
                                                                 print(
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
@@ -4988,10 +4988,10 @@ def heavy_flamer(a, b, c, d, e):
                     d["on fire"] = True
                     print("The flamer shot didn't hit anything.")
         
-        for i in squad.squad:
-            if squad.squad[i]["current_place"] == d:
+        for i in squad.squad.squad.squad:
+            if squad.squad.squad.squad[i]["current_place"] == d:
                 if fire_shot >= 2:
-                    squad.squad[i]["alive"] = False
+                    squad.squad.squad.squad[i]["alive"] = False
                     d["on fire"] = True
                     print("The flamer shot hit some of your own men.")
                 else:
@@ -5015,10 +5015,10 @@ def heavy_flamer(a, b, c, d, e):
                         d[d[g]["connected to"]]["on fire"] = True
                         print("The flamer shot didn't hit anything.")
 
-            for i in squad.squad:
-                if squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
+            for i in squad.squad.squad.squad:
+                if squad.squad.squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
                     if flamer_shot >= 2:
-                        squad.squad[i]["alive"] = False
+                        squad.squad.squad.squad[i]["alive"] = False
                         d[d[g]["connected to"]]["on fire"] = True
                         print("The flamer shot hit some of your own men.")
                     else:
@@ -5047,10 +5047,10 @@ def cyclone_missle(a, b, c, d, e):
                 else:
                     print("The cyclone missle missed its target.")
         
-        for i in squad.squad:
-            if squad.squad[i]["current_place"] == d:
+        for i in squad.squad.squad.squad:
+            if squad.squad.squad.squad[i]["current_place"] == d:
                 if cyclone_blast >= 3:
-                    squad.squad[i]["alive"] = False
+                    squad.squad.squad.squad[i]["alive"] = False
                     d["occupied"] = False
                     print("The cyclone missle hit some of your own men.")
                 else:
@@ -5071,10 +5071,10 @@ def cyclone_missle(a, b, c, d, e):
                     else:
                         print("The cyclone missle blast missed a target")
 
-            for i in squad.squad:
-                if squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
+            for i in squad.squad.squad.squad:
+                if squad.squad.squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
                     if cyclone_shot >= 3:
-                        squad.squad[i]["alive"] = False
+                        squad.squad.squad.squad[i]["alive"] = False
                         d[d[g]["connected to"]]["occupied"] = False
                         print("The cyclone missle blast hit some of your own men.")
                     else:
