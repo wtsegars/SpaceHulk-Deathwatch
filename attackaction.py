@@ -276,7 +276,7 @@ class Attack():
                     else:
                         print("You entered an invalid command, please try again.")
             elif attack_with == "Cancel":
-                game.SpaceMarineTurn.enter.turn_menu()
+                game.SpaceMarineTurn.turn_menu()
 
     def ranged_combat(a, b, c, d, e, f, g):
         if a >= 1 or b >= 1:
