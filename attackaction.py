@@ -4257,7 +4257,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4280,7 +4280,7 @@ class Attack():
                                                     gametiles.tiles["occupied"] = False
                                                     print(
                                                         "The attacking terminator has perished in combat.")
-                                                    game.SpaceMarineTurn.enter.turn_menu()
+                                                    game.SpaceMarineTurn.turn_menu()
                                                 elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                     genestealers.genestealers[z]["alive"] == False
                                                     gametiles.tiles[y]["occupied"] == False
@@ -4310,7 +4310,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4334,7 +4334,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[2] < spacemarine_rolls[1]:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4354,7 +4354,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4374,7 +4374,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4394,7 +4394,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4421,7 +4421,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4444,7 +4444,7 @@ class Attack():
                                                     gametiles.tiles["occupied"] = False
                                                     print(
                                                         "The attacking terminator has perished in combat.")
-                                                    game.SpaceMarineTurn.enter.turn_menu()
+                                                    game.SpaceMarineTurn.turn_menu()
                                                 elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                     genestealers.genestealers[z]["alive"] == False
                                                     gametiles.tiles[y]["occupied"] == False
@@ -4474,7 +4474,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4498,7 +4498,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[2] < spacemarine_rolls[1]:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4518,7 +4518,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4538,7 +4538,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4558,7 +4558,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4585,7 +4585,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4608,7 +4608,7 @@ class Attack():
                                                     gametiles.tiles["occupied"] = False
                                                     print(
                                                         "The attacking terminator has perished in combat.")
-                                                    game.SpaceMarineTurn.enter.turn_menu()
+                                                    game.SpaceMarineTurn.turn_menu()
                                                 elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                     genestealers.genestealers[z]["alive"] == False
                                                     gametiles.tiles[y]["occupied"] == False
@@ -4638,7 +4638,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4662,7 +4662,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[2] < spacemarine_rolls[1]:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4682,7 +4682,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4702,7 +4702,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4722,7 +4722,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4749,7 +4749,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4772,7 +4772,7 @@ class Attack():
                                                     gametiles.tiles["occupied"] = False
                                                     print(
                                                         "The attacking terminator has perished in combat.")
-                                                    game.SpaceMarineTurn.enter.turn_menu()
+                                                    game.SpaceMarineTurn.turn_menu()
                                                 elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                     genestealers.genestealers[z]["alive"] == False
                                                     gametiles.tiles[y]["occupied"] == False
@@ -4802,7 +4802,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4826,7 +4826,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[2] < spacemarine_rolls[1]:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4846,7 +4846,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4866,7 +4866,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
@@ -4886,7 +4886,7 @@ class Attack():
                                                 gametiles.tiles["occupied"] = False
                                                 print(
                                                     "The attacking terminator has perished in combat.")
-                                                game.SpaceMarineTurn.enter.turn_menu()
+                                                game.SpaceMarineTurn.turn_menu()
                                             elif genestealer_rolls[0] < spacemarine_roll or genestealer_rolls[1] < spacemarine_roll or genestealer_rolls[2] < spacemarine_roll:
                                                 genestealers.genestealers[z]["alive"] == False
                                                 gametiles.tiles[y]["occupied"] == False
