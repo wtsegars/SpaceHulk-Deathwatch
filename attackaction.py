@@ -288,13 +288,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[0][x]])
                                         elif f == "Assault Cannon":
                                             if squad.squad.g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[0][x]],
@@ -305,7 +305,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[0][x]],
@@ -315,7 +315,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g>= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[0][x]],
@@ -343,13 +343,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[1][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -360,7 +360,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -370,7 +370,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -398,13 +398,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[1][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -415,7 +415,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -425,7 +425,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -453,13 +453,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[4][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -470,7 +470,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -480,7 +480,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -508,13 +508,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[1][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -525,7 +525,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -535,7 +535,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -563,13 +563,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[1][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -580,7 +580,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -590,7 +590,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -619,13 +619,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[5][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[5][x]],
@@ -636,7 +636,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[5][x]],
@@ -646,7 +646,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[5][x]],
@@ -675,13 +675,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[1][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -692,7 +692,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -702,7 +702,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -730,13 +730,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[1][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -747,7 +747,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -757,7 +757,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -786,13 +786,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[4][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -803,7 +803,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -813,7 +813,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -842,13 +842,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[1][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -859,7 +859,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -869,7 +869,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -897,13 +897,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[1][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -914,7 +914,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -924,7 +924,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -953,13 +953,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[2][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[2][x]],
@@ -970,7 +970,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[2][x]],
@@ -980,7 +980,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[2][x]],
@@ -1008,13 +1008,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[1][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -1025,7 +1025,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -1035,7 +1035,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -1064,13 +1064,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[2][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[2][x]],
@@ -1081,7 +1081,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[2][x]],
@@ -1091,7 +1091,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[2][x]],
@@ -1119,13 +1119,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[1][x]])
                                         elif f == "Assault Cannon":
                                             if g:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -1136,7 +1136,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -1146,7 +1146,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[1][x]],
@@ -1175,13 +1175,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[4][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -1192,7 +1192,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -1202,7 +1202,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -1230,13 +1230,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[4][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -1247,7 +1247,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -1257,7 +1257,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -1285,13 +1285,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[6][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[6][x]],
@@ -1302,7 +1302,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[6][x]],
@@ -1312,7 +1312,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[6][x]],
@@ -1341,13 +1341,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[5][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[5][x]],
@@ -1358,7 +1358,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[5][x]],
@@ -1368,7 +1368,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[5][x]],
@@ -1396,13 +1396,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[5][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[5][x]],
@@ -1413,7 +1413,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[5][x]],
@@ -1423,7 +1423,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[5][x]],
@@ -1451,13 +1451,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[6][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[6][x]],
@@ -1468,7 +1468,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[6][x]],
@@ -1478,7 +1478,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[6][x]],
@@ -1507,13 +1507,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[7][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[7][x]],
@@ -1524,7 +1524,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[7][x]],
@@ -1534,7 +1534,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[7][x]],
@@ -1562,13 +1562,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[7][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[7][x]],
@@ -1579,7 +1579,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[7][x]],
@@ -1589,7 +1589,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[7][x]],
@@ -1617,13 +1617,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[6][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[6][x]],
@@ -1634,7 +1634,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[6][x]],
@@ -1644,7 +1644,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[6][x]],
@@ -1672,13 +1672,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[6][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[6][x]],
@@ -1689,7 +1689,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[6][x]],
@@ -1699,7 +1699,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[6][x]],
@@ -1728,13 +1728,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[7][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[7][x]],
@@ -1745,7 +1745,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[7][x]],
@@ -1755,7 +1755,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[7][x]],
@@ -1783,13 +1783,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[8][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[8][x]],
@@ -1800,7 +1800,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[8][x]],
@@ -1810,7 +1810,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[8][x]],
@@ -1838,13 +1838,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[8][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[8][x]],
@@ -1855,7 +1855,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[8][x]],
@@ -1865,7 +1865,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missle Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[8][x]],
@@ -1894,13 +1894,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[7][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[7][x]],
@@ -1911,7 +1911,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[7][x]],
@@ -1921,7 +1921,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[7][x]],
@@ -1949,13 +1949,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[9][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[9][x]],
@@ -1966,7 +1966,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[9][x]],
@@ -1976,7 +1976,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[9][x]],
@@ -2004,13 +2004,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[9][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[9][x]],
@@ -2021,7 +2021,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[9][x]],
@@ -2031,7 +2031,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[9][x]],
@@ -2060,13 +2060,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[10][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[10][x]],
@@ -2077,7 +2077,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[10][x]],
@@ -2087,7 +2087,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[10][x]],
@@ -2115,13 +2115,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[11][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[11][x]],
@@ -2132,7 +2132,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[11][x]],
@@ -2142,7 +2142,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[11][x]],
@@ -2170,13 +2170,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[11][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[11][x]],
@@ -2187,7 +2187,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[11][x]],
@@ -2197,7 +2197,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[11][x]],
@@ -2226,13 +2226,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[4][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -2243,7 +2243,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                    heavy_flamer(a,
+                                                    RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -2253,7 +2253,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[4][x]],
@@ -2281,13 +2281,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[13][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[13][x]],
@@ -2298,7 +2298,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[13][x]],
@@ -2308,7 +2308,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[13][x]],
@@ -2337,13 +2337,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[5][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[5][x]],
@@ -2354,7 +2354,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[5][x]],
@@ -2364,7 +2364,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[5][x]],
@@ -2392,13 +2392,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[13][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[13][x]],
@@ -2409,7 +2409,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[13][x]],
@@ -2419,7 +2419,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[13][x]],
@@ -2448,13 +2448,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[10][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[10][x]],
@@ -2465,7 +2465,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[10][x]],
@@ -2475,7 +2475,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[10][x]],
@@ -2503,13 +2503,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[10][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[10][x]],
@@ -2520,7 +2520,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[10][x]],
@@ -2530,7 +2530,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[10][x]],
@@ -2558,13 +2558,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[13][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[13][x]],
@@ -2575,7 +2575,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[13][x]],
@@ -2585,7 +2585,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[13][x]],
@@ -2613,13 +2613,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[13][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[13][x]],
@@ -2630,7 +2630,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[13][x]],
@@ -2640,7 +2640,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[13][x]],
@@ -2669,13 +2669,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[10][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[10][x]],
@@ -2686,7 +2686,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[10][x]],
@@ -2696,7 +2696,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[10][x]],
@@ -2724,13 +2724,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[12][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[12][x]],
@@ -2741,7 +2741,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[12][x]],
@@ -2751,7 +2751,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[12][x]],
@@ -2779,13 +2779,13 @@ class Attack():
                                 for y in genestealers.genestealers:
                                     if genestealers.genestealers[y]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][x]]:
                                         if f == "Storm Bolter":
-                                            bolter_fire(a,
+                                            RangedWeapons.bolter_fire(a,
                                                         b,
                                                         genestealers.genestealers[y]["alive"],
                                                         gametiles.tiles[linesight.line_of_sight[12][x]])
                                         elif f == "Assault Cannon":
                                             if g >= 1:
-                                                assault_cannon(a,
+                                                RangedWeapons.assault_cannon(a,
                                                                 b,
                                                                 genestealers.genestealers[y]["alive"],
                                                                 gametiles.tiles[linesight.line_of_sight[12][x]],
@@ -2796,7 +2796,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Heavy Flamer":
                                             if g >= 1:
-                                                heavy_flamer(a,
+                                                RangedWeapons.heavy_flamer(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[12][x]],
@@ -2806,7 +2806,7 @@ class Attack():
                                                 Attack.attack()
                                         elif f == "Cyclone Missile Launcher":
                                             if g >= 1:
-                                                cyclone_missle(a,
+                                                RangedWeapons.cyclone_missle(a,
                                                                 b,
                                                                 genestealers.genestealers,
                                                                 gametiles.tiles[linesight.line_of_sight[12][x]],
@@ -2841,13 +2841,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[0][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[0][z]],
@@ -2858,7 +2858,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[0][z]],
@@ -2868,7 +2868,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[0][z]],
@@ -2889,13 +2889,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[0][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[0][z]],
@@ -2906,7 +2906,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[0][z]],
@@ -2916,7 +2916,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[0][z]],
@@ -2941,13 +2941,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[1][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[1][z]],
@@ -2958,7 +2958,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[1][z]],
@@ -2968,7 +2968,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[1][z]],
@@ -2989,13 +2989,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[1][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[1][z]],
@@ -3006,7 +3006,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[1][z]],
@@ -3016,7 +3016,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[1][z]],
@@ -3041,13 +3041,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[2][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[2][z]],
@@ -3058,7 +3058,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[2][z]],
@@ -3068,7 +3068,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if a >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[2][z]],
@@ -3089,13 +3089,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[2][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[2][z]],
@@ -3106,7 +3106,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[2][z]],
@@ -3116,7 +3116,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[2][z]],
@@ -3141,13 +3141,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[3][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[3][z]],
@@ -3158,7 +3158,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[3][z]],
@@ -3168,7 +3168,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[3][z]],
@@ -3189,13 +3189,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[3][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[3][z]],
@@ -3206,7 +3206,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[3][z]],
@@ -3216,7 +3216,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[3][z]],
@@ -3241,13 +3241,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[4][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[4][z]],
@@ -3258,7 +3258,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[4][z]],
@@ -3268,7 +3268,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[4][z]],
@@ -3289,13 +3289,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[4][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[4][z]],
@@ -3306,7 +3306,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[4][z]],
@@ -3316,7 +3316,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[4][z]],
@@ -3341,13 +3341,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[5][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[5][z]],
@@ -3358,7 +3358,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[5][z]],
@@ -3368,7 +3368,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[5][z]],
@@ -3389,13 +3389,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[5][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[5][z]],
@@ -3406,7 +3406,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[5][z]],
@@ -3416,7 +3416,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[5][z]],
@@ -3441,13 +3441,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[6][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[6][z]],
@@ -3458,7 +3458,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[6][z]],
@@ -3468,7 +3468,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[6][z]],
@@ -3489,13 +3489,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[6][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[6][z]],
@@ -3506,7 +3506,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[6][z]],
@@ -3516,7 +3516,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[6][z]],
@@ -3541,13 +3541,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[7][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[7][z]],
@@ -3558,7 +3558,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[7][z]],
@@ -3568,7 +3568,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[7][z]],
@@ -3589,13 +3589,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[7][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[7][z]],
@@ -3606,7 +3606,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[7][z]],
@@ -3616,7 +3616,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[7][z]],
@@ -3641,13 +3641,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[8][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[8][z]],
@@ -3658,7 +3658,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[8][z]],
@@ -3668,7 +3668,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[8][z]],
@@ -3690,13 +3690,13 @@ class Attack():
                                                     for g in genestealers.genestealers:
                                                         if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
                                                             if f == "Storm Bolter":
-                                                                bolter_fire(a,
+                                                                RangedWeapons.bolter_fire(a,
                                                                             b,
                                                                             genestealers.genestealers[g]["alive"],
                                                                             gametiles.tiles[linesight.line_of_sight[8][z]])
                                                             elif f == "Assault Cannon":
                                                                 if g >= 1:
-                                                                    assault_cannon(a,
+                                                                    RangedWeapons.assault_cannon(a,
                                                                                     b,
                                                                                     genestealers.genestealers[g]["alive"],
                                                                                     gametiles.tiles[linesight.line_of_sight[8][z]],
@@ -3707,7 +3707,7 @@ class Attack():
                                                                     Attack.attack()
                                                             elif f == "Heavy Flamer":
                                                                 if g >= 1:
-                                                                    heavy_flamer(a,
+                                                                    RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[8][z]],
@@ -3717,7 +3717,7 @@ class Attack():
                                                                     Attack.attack()
                                                             elif f == "Cyclone Missile Launcher":
                                                                 if g >= 1:
-                                                                    cyclone_missle(a,
+                                                                    RangedWeapons.cyclone_missle(a,
                                                                                     b,
                                                                                     genestealers.genestealers,
                                                                                     gametiles.tiles[linesight.line_of_sight[8][z]],
@@ -3742,13 +3742,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[9][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[9][z]],
@@ -3759,7 +3759,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
                                                                             gametiles.tiles[linesight.line_of_sight[9][z]],
@@ -3769,7 +3769,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[9][z]],
@@ -3790,13 +3790,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[9][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[9][z]],
@@ -3807,7 +3807,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[9][z]],
@@ -3817,7 +3817,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[9][z]],
@@ -3842,13 +3842,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[10][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[10][z]],
@@ -3859,7 +3859,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[10][z]],
@@ -3869,7 +3869,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[10][z]],
@@ -3890,13 +3890,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[10][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[10][z]],
@@ -3907,7 +3907,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[10][z]],
@@ -3917,7 +3917,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[10][z]],
@@ -3942,13 +3942,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[11][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[11][z]],
@@ -3959,7 +3959,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[11][z]],
@@ -3969,7 +3969,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[11][z]],
@@ -3990,13 +3990,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[11][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[11][z]],
@@ -4007,7 +4007,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[11][z]],
@@ -4017,7 +4017,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[11][z]],
@@ -4042,13 +4042,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[12][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[12][z]],
@@ -4059,7 +4059,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[12][z]],
@@ -4069,7 +4069,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[12][z]],
@@ -4090,13 +4090,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[12][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[12][z]],
@@ -4107,7 +4107,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[12][z]],
@@ -4117,7 +4117,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[12][z]],
@@ -4142,13 +4142,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[13][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[13][z]],
@@ -4159,7 +4159,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[13][z]],
@@ -4169,7 +4169,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[13][z]],
@@ -4190,13 +4190,13 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
                                                         if f == "Storm Bolter":
-                                                            bolter_fire(a,
+                                                            RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
                                                                         gametiles.tiles[linesight.line_of_sight[13][z]])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
-                                                                assault_cannon(a,
+                                                                RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
                                                                                 gametiles.tiles[linesight.line_of_sight[13][z]],
@@ -4207,7 +4207,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Heavy Flamer":
                                                             if g >= 1:
-                                                                heavy_flamer(a,
+                                                                RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[13][z]],
@@ -4217,7 +4217,7 @@ class Attack():
                                                                 Attack.attack()
                                                         elif f == "Cyclone Missile Launcher":
                                                             if g >= 1:
-                                                                cyclone_missle(a,
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[13][z]],
@@ -4273,7 +4273,7 @@ class Attack():
                                                 randint(1, 6), randint(1, 6), randint(1, 6)}
 
                                             if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
-                                                parry(spacemarine_roll)
+                                                RangedWeapons.parry(spacemarine_roll)
 
                                                 if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
                                                     e = False
@@ -4437,7 +4437,7 @@ class Attack():
                                                 randint(1, 6), randint(1, 6), randint(1, 6)}
 
                                             if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
-                                                parry(spacemarine_roll)
+                                                RangedWeapons.parry(spacemarine_roll)
 
                                                 if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
                                                     e = False
@@ -4601,7 +4601,7 @@ class Attack():
                                                 randint(1, 6), randint(1, 6), randint(1, 6)}
 
                                             if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
-                                                parry(spacemarine_roll)
+                                                RangedWeapons.parry(spacemarine_roll)
 
                                                 if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
                                                     e = False
@@ -4765,7 +4765,7 @@ class Attack():
                                                 randint(1, 6), randint(1, 6), randint(1, 6)}
 
                                             if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
-                                                parry(spacemarine_roll)
+                                                RangedWeapons.parry(spacemarine_roll)
 
                                                 if genestealer_rolls[0] > spacemarine_roll or genestealer_rolls[1] > spacemarine_roll or genestealer_rolls[2] > spacemarine_roll:
                                                     e = False
@@ -4910,174 +4910,175 @@ class Attack():
             print("You don't have enough action points and/or command points to complete this action.")
             Attack.attack()
 
-def parry(x):
-    print("Your terminator's roll was lower than the highest genestealer roll, do you wish to re-roll?(Y/N)")
+class RangedWeapons():
+    def parry(x):
+        print("Your terminator's roll was lower than the highest genestealer roll, do you wish to re-roll?(Y/N)")
 
-    choice = input("> ")
+        choice = input("> ")
 
-    if choice == "Y":
-        spacemarine_reroll = randint(1, 6)
-        x = spacemarine_reroll
-    elif choice == "N":
-        print("Did not re-roll.")
-    else:
-        print("Your response was not valid, please try again.")
-        parry(x)
+        if choice == "Y":
+            spacemarine_reroll = randint(1, 6)
+            x = spacemarine_reroll
+        elif choice == "N":
+            print("Did not re-roll.")
+        else:
+            print("Your response was not valid, please try again.")
+            RangedWeapons.parry(x)
 
-def bolter_fire(a, b, c, d):
-    bolt_shot_1 = randint(1, 6)
-    bolt_shot_2 = randint(1, 6)
+    def bolter_fire(a, b, c, d):
+        bolt_shot_1 = randint(1, 6)
+        bolt_shot_2 = randint(1, 6)
 
-    if b >= 1:
-        b -= 1
-    elif b < 1 and a >= 1:
-        a -= 1
+        if b >= 1:
+            b -= 1
+        elif b < 1 and a >= 1:
+            a -= 1
 
-    if bolt_shot_1 >= 5 or bolt_shot_2 >= 5:
-        c = False
-        d = False
-        print("The xenos menace has been slain by bolter fire.")
-        Attack.attack()
-    else:
-        print("Your shot missed its target.")
-        Attack.attack()
+        if bolt_shot_1 >= 5 or bolt_shot_2 >= 5:
+            c = False
+            d = False
+            print("The xenos menace has been slain by bolter fire.")
+            Attack.attack()
+        else:
+            print("Your shot missed its target.")
+            Attack.attack()
 
-def assault_cannon(a, b, c, d, e, f):
-    assault_shot_1 = randint(1, 6)
-    assault_shot_2 = randint(1, 6)
-    assault_shot_3 = randint(1, 6)
+    def assault_cannon(a, b, c, d, e, f):
+        assault_shot_1 = randint(1, 6)
+        assault_shot_2 = randint(1, 6)
+        assault_shot_3 = randint(1, 6)
 
-    if b >= 1:
-        b -= 1
-        f -= 1
-    elif b < 1 and a >= 1:
-        a -= 1
-        f -= 1
+        if b >= 1:
+            b -= 1
+            f -= 1
+        elif b < 1 and a >= 1:
+            a -= 1
+            f -= 1
 
-    if assault_shot_1 >= 5 or assault_shot_2 >= 5 or assault_shot_3 >= 5:
-        c = False
-        d = False
-        print("The xenos menace has been slain by assault cannon fire.")
-        Attack.attack()
-    elif assault_shot_1 == assault_shot_2 and assault_shot_2 == assault_shot_3:
-        e = False
-        print("The terminator's assault cannon malfunctioned resulting in instant death.")
-        Attack.attack()
-    else:
-        print("The assault cannon volly missed its target.")
-        Attack.attack()
+        if assault_shot_1 >= 5 or assault_shot_2 >= 5 or assault_shot_3 >= 5:
+            c = False
+            d = False
+            print("The xenos menace has been slain by assault cannon fire.")
+            Attack.attack()
+        elif assault_shot_1 == assault_shot_2 and assault_shot_2 == assault_shot_3:
+            e = False
+            print("The terminator's assault cannon malfunctioned resulting in instant death.")
+            Attack.attack()
+        else:
+            print("The assault cannon volly missed its target.")
+            Attack.attack()
 
-def heavy_flamer(a, b, c, d, e):
-    if b >= 1:
-        b -= 1
-        e -= 1
-    elif b < 1 and a >= 1:
-        a -= 1
-        e -= 1
+    def heavy_flamer(a, b, c, d, e):
+        if b >= 1:
+            b -= 1
+            e -= 1
+        elif b < 1 and a >= 1:
+            a -= 1
+            e -= 1
 
-    fire_shot = randint(1, 6)
+        fire_shot = randint(1, 6)
 
-    if d["occupied"] == True:
-        for h in c:
-            if c[h]["current_place"] == d:
-                if fire_shot >= 2:
-                    c[h]["alive"] = False
-                    d["on fire"] = True
-                    print("The flamer shot hit a target.")
-                else:
-                    d["on fire"] = True
-                    print("The flamer shot didn't hit anything.")
-        
-        for i in squad.squad.squad.squad:
-            if squad.squad.squad.squad[i]["current_place"] == d:
-                if fire_shot >= 2:
-                    squad.squad.squad.squad[i]["alive"] = False
-                    d["on fire"] = True
-                    print("The flamer shot hit some of your own men.")
-                else:
-                    d["on fire"] = True
-                    print("The flamer shot didn't hit anything.")
-    else:
-        d["on fire"] = True
-        print("The flamer shot didn't hit anything.")
-
-    for g in d["connected to"]:
-        flamer_shot = randint(1, 6)
-
-        if d[d[g]["connected to"]]["occupied"] == True:
+        if d["occupied"] == True:
             for h in c:
-                if c[h]["current_place"] == d[d[g]["connected to"]]:
-                    if flamer_shot >= 2:
+                if c[h]["current_place"] == d:
+                    if fire_shot >= 2:
                         c[h]["alive"] = False
-                        d[d[g]["connected to"]]["on fire"] = True
+                        d["on fire"] = True
                         print("The flamer shot hit a target.")
                     else:
-                        d[d[g]["connected to"]]["on fire"] = True
+                        d["on fire"] = True
                         print("The flamer shot didn't hit anything.")
-
+            
             for i in squad.squad.squad.squad:
-                if squad.squad.squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
-                    if flamer_shot >= 2:
+                if squad.squad.squad.squad[i]["current_place"] == d:
+                    if fire_shot >= 2:
                         squad.squad.squad.squad[i]["alive"] = False
-                        d[d[g]["connected to"]]["on fire"] = True
+                        d["on fire"] = True
                         print("The flamer shot hit some of your own men.")
                     else:
-                        d[d[g]["connected to"]]["on fire"] = True
-                        print("The flamer shot missed some of your own men.")
-    
-    Attack.attack()
+                        d["on fire"] = True
+                        print("The flamer shot didn't hit anything.")
+        else:
+            d["on fire"] = True
+            print("The flamer shot didn't hit anything.")
 
-def cyclone_missle(a, b, c, d, e):
-    if b >= 1:
-        b -= 1
-        e -= 1
-    elif b < 1 and a >= 1:
-        a -= 1
-        e -= 1
+        for g in d["connected to"]:
+            flamer_shot = randint(1, 6)
 
-    cyclone_blast = randint(1, 6)
+            if d[d[g]["connected to"]]["occupied"] == True:
+                for h in c:
+                    if c[h]["current_place"] == d[d[g]["connected to"]]:
+                        if flamer_shot >= 2:
+                            c[h]["alive"] = False
+                            d[d[g]["connected to"]]["on fire"] = True
+                            print("The flamer shot hit a target.")
+                        else:
+                            d[d[g]["connected to"]]["on fire"] = True
+                            print("The flamer shot didn't hit anything.")
 
-    if d["occupied"] == True:
-        for h in c:
-            if c[h]["current_place"] == d:
-                if cyclone_blast >= 3:
-                    c[h]["alive"] = False
-                    d["occupied"] = False
-                    print("The cyclone missle made a kill.")
-                else:
-                    print("The cyclone missle missed its target.")
+                for i in squad.squad.squad.squad:
+                    if squad.squad.squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
+                        if flamer_shot >= 2:
+                            squad.squad.squad.squad[i]["alive"] = False
+                            d[d[g]["connected to"]]["on fire"] = True
+                            print("The flamer shot hit some of your own men.")
+                        else:
+                            d[d[g]["connected to"]]["on fire"] = True
+                            print("The flamer shot missed some of your own men.")
         
-        for i in squad.squad.squad.squad:
-            if squad.squad.squad.squad[i]["current_place"] == d:
-                if cyclone_blast >= 3:
-                    squad.squad.squad.squad[i]["alive"] = False
-                    d["occupied"] = False
-                    print("The cyclone missle hit some of your own men.")
-                else:
-                    print("The cyclone missle missed some of your men.")
-    else:
-        print("The cyclone missle did not hit anything.")
+        Attack.attack()
 
-    for g in d["connected to"]:
-        cyclone_shot = randint(1, 6)
+    def cyclone_missle(a, b, c, d, e):
+        if b >= 1:
+            b -= 1
+            e -= 1
+        elif b < 1 and a >= 1:
+            a -= 1
+            e -= 1
 
-        if d[d[g]["connected to"]]["occupied"]:
+        cyclone_blast = randint(1, 6)
+
+        if d["occupied"] == True:
             for h in c:
-                if c[h]["current_place"] == d[d[g]["connected to"]]:
-                    if cyclone_shot >= 3:
+                if c[h]["current_place"] == d:
+                    if cyclone_blast >= 3:
                         c[h]["alive"] = False
-                        d[d[g]["connected to"]]["occupied"] = False
-                        print("The cyclone missle blast hit a target")
+                        d["occupied"] = False
+                        print("The cyclone missle made a kill.")
                     else:
-                        print("The cyclone missle blast missed a target")
-
+                        print("The cyclone missle missed its target.")
+            
             for i in squad.squad.squad.squad:
-                if squad.squad.squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
-                    if cyclone_shot >= 3:
+                if squad.squad.squad.squad[i]["current_place"] == d:
+                    if cyclone_blast >= 3:
                         squad.squad.squad.squad[i]["alive"] = False
-                        d[d[g]["connected to"]]["occupied"] = False
-                        print("The cyclone missle blast hit some of your own men.")
+                        d["occupied"] = False
+                        print("The cyclone missle hit some of your own men.")
                     else:
-                        print("The cyclone missle blast missed some of your men.")
+                        print("The cyclone missle missed some of your men.")
+        else:
+            print("The cyclone missle did not hit anything.")
+
+        for g in d["connected to"]:
+            cyclone_shot = randint(1, 6)
+
+            if d[d[g]["connected to"]]["occupied"]:
+                for h in c:
+                    if c[h]["current_place"] == d[d[g]["connected to"]]:
+                        if cyclone_shot >= 3:
+                            c[h]["alive"] = False
+                            d[d[g]["connected to"]]["occupied"] = False
+                            print("The cyclone missle blast hit a target")
+                        else:
+                            print("The cyclone missle blast missed a target")
+
+                for i in squad.squad.squad.squad:
+                    if squad.squad.squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
+                        if cyclone_shot >= 3:
+                            squad.squad.squad.squad[i]["alive"] = False
+                            d[d[g]["connected to"]]["occupied"] = False
+                            print("The cyclone missle blast hit some of your own men.")
+                        else:
+                            print("The cyclone missle blast missed some of your men.")
 
     Attack.attack()
