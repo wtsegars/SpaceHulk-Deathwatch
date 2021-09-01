@@ -7,6 +7,7 @@ import weapons
 import gametiles
 import genestealers
 import movement
+import attackaction
 
 turn_count = 0
         
@@ -209,7 +210,7 @@ class SpaceMarineTurn():
         if menu_choice == "Move":
             movement.Movement.move()
         elif menu_choice == "Attack":
-            print("Attack")
+            attackaction.Attack.attack()
         elif menu_choice == "Other Action":
             print("Other Action")
         elif menu_choice == "View Map":
