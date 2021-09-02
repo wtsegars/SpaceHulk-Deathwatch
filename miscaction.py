@@ -25,24 +25,24 @@ class OtherActions():
             action_choice = input("> ")
 
             if action_choice == "Reload":
-                OtherActions.reload(game.command_points,
+                OtherActions.reload(game.SpaceMarineTurn.command_points,
                         squad[x]["action points"],
                         squad[x]["clip_size"],
                         squad[x]["clip_num"],
                         squad[x]["weapon loadout"])
             elif action_choice == "Toggle Door":
-                OtherActions.toggle_door(game.command_points,
+                OtherActions.toggle_door(game.SpaceMarineTurn.command_points,
                             squad[x]["action points"],
                             gametiles.tiles,
                             squad[x]["current_place"],
                             squad[x]["direction"])
             elif action_choice == "Overwatch":
-                OtherActions.overwatch(game.command_points,
+                OtherActions.overwatch(game.SpaceMarineTurn.command_points,
                             squad[x]["action points"],
                             squad[x]["overwatch"],
                             squad[x]["jammed"])
             elif action_choice == "Clear Jam":
-                OtherActions.clear_jam(game.command_points,
+                OtherActions.clear_jam(game.SpaceMarineTurn.command_points,
                             squad[x]["action points"],
                             squad[x]["jammed"])
             elif action_choice == "Cancel":
