@@ -177,7 +177,7 @@ class Squadplacement():
 class SpaceMarineTurn():
     command_points = randint(1, 7)
 
-    def enter(self, turn_count):
+    def enter(turn_count):
         turn_count +=1
         print("It is now the space marines' turn.")
         SpaceMarineTurn.pre_turn()
@@ -233,6 +233,7 @@ class GenestealerTurn():
         turn_count += 1
         GenestealerTurn.blip_count()
         radarblips.RadarBlips.blip_deployment(GenestealerTurn.blips_to_deploy)
+        genestealermove.GenestealerMove.genestealer_movement()
 
     def blip_count():
         if turn_count <= 2:
@@ -241,6 +242,10 @@ class GenestealerTurn():
             GenestealerTurn.blips_to_deploy += 2
         elif turn_count > 5:
             GenestealerTurn.blips_to_deploy += 1
+
+    def end_turn():
+        print("End of Genestealer turn.")
+        return SpaceMarineTurn.enter(turn_count)
 
 class GameControl(object):
 
