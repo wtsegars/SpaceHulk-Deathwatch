@@ -218,7 +218,7 @@ class SpaceMarineTurn():
         elif menu_choice == "View Map":
             gamemap.map()
         elif menu_choice == "End Turn":
-            print("End Turn")
+            return GenestealerTurn.enter(turn_count)
         else:
             print("The command that you entered in invalid, please try again.")
             SpaceMarineTurn.turn_menu()
@@ -226,9 +226,18 @@ class SpaceMarineTurn():
 class GenestealerTurn():
     blips_to_deploy = 0
 
+    def enter(turn_count):
+        print("Genestealers are now moving.")
+        turn_count += 1
+        GenestealerTurn.blip_count()
+
     def blip_count():
         if turn_count <= 2:
             GenestealerTurn.blips_to_deploy += 3
+        elif 2 < turn_count <= 4:
+            GenestealerTurn.blips_to_deploy += 2
+        elif turn_count > 5:
+            GenestealerTurn.blips_to_deploy += 1
 
 class GameControl(object):
 
