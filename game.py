@@ -10,6 +10,8 @@ import movement
 import attackaction
 import miscaction
 import gamemap
+import radarblips
+import genestealermove
 
 turn_count = 0
         
@@ -230,6 +232,7 @@ class GenestealerTurn():
         print("Genestealers are now moving.")
         turn_count += 1
         GenestealerTurn.blip_count()
+        radarblips.RadarBlips.blip_deployment(GenestealerTurn.blips_to_deploy)
 
     def blip_count():
         if turn_count <= 2:
