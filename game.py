@@ -8,6 +8,8 @@ import gametiles
 import genestealers
 import movement
 import attackaction
+import miscaction
+import gamemap
 
 turn_count = 0
         
@@ -212,14 +214,21 @@ class SpaceMarineTurn():
         elif menu_choice == "Attack":
             attackaction.Attack.attack()
         elif menu_choice == "Other Action":
-            print("Other Action")
+            miscaction.OtherActions.other_action()
         elif menu_choice == "View Map":
-            print("View Map")
+            gamemap.map()
         elif menu_choice == "End Turn":
             print("End Turn")
         else:
             print("The command that you entered in invalid, please try again.")
             SpaceMarineTurn.turn_menu()
+
+class GenestealerTurn():
+    blips_to_deploy = 0
+
+    def blip_count():
+        if turn_count <= 2:
+            GenestealerTurn.blips_to_deploy += 3
 
 class GameControl(object):
 
