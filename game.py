@@ -220,6 +220,7 @@ class SpaceMarineTurn():
         elif menu_choice == "View Map":
             gamemap.map()
         elif menu_choice == "End Turn":
+            SpaceMarineTurn.win_cond()
             return GenestealerTurn.enter(turn_count)
         else:
             print("The command that you entered in invalid, please try again.")
@@ -232,6 +233,26 @@ class SpaceMarineTurn():
                 Mission accompished! The xenos filth has been sealed out of this area of the hulk!
             """))
             exit
+
+    def lose_cond():
+        if squad.squad['Sergent']['alive'] == False and squad.squad['Terminator1']['alive'] == False and squad.squad['Terminator2']['alive'] == False and squad.squad['Terminator3']['alive'] == False and squad.squad["Terminator4"]["alive"] == False:
+            print(dedent("""
+                Your squad had been overrun by the xenos filth!
+                Mission Failed!
+
+                Try again?
+            """))
+
+            try_again = input("> ")
+
+            if try_again == "Y" or try_again == "y":
+                new_game = Openingscene()
+                new_game.enter()
+            elif try_again == "N" or try_again == "n":
+                exit
+            else:
+                print("Invalid input, please try again.")
+                SpaceMarineTurn.lose_cond()
 
 class GenestealerTurn():
     blips_to_deploy = 0
