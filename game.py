@@ -225,6 +225,14 @@ class SpaceMarineTurn():
             print("The command that you entered in invalid, please try again.")
             SpaceMarineTurn.turn_menu()
 
+    def win_cond():
+        if gametiles.tiles['ll5']["door"]["sealed"] == True and gametiles.tiles['lr5']["door"]["sealed"] == True and gametiles.tiles['c3']["door"]["sealed"] == True and gametiles.tiles['c5']["door"]["sealed"] == True and gametiles.tiles['g20']["door"]["sealed"] == True and gametiles.tiles['g18']["door"]["sealed"] == True and gametiles.tiles['g24']["door"]["sealed"] == True and gametiles.tiles['g22']["door"]["sealed"] == True:
+            print(dedent("""
+                Victory is ours!
+                Mission accompished! The xenos filth has been sealed out of this area of the hulk!
+            """))
+            exit
+
 class GenestealerTurn():
     blips_to_deploy = 0
 
@@ -246,26 +254,6 @@ class GenestealerTurn():
     def end_turn():
         print("End of Genestealer turn.")
         return SpaceMarineTurn.enter(turn_count)
-
-class GameControl(object):
-
-    scenes = {
-        'squad_selections': SquadSelect(),
-        'opening_scene': Openingscene(),
-        'squad_placement': Squadplacement(),
-        # 'space_marine_turn': SpaceMarineTurn(),
-        # 'genestealer_turn': GeneStealerTurn()
-    }
-
-    def __init__(self, start_scene):
-        self.start_scene = start_scene
-
-    def next_turn(self, scene_name):
-        val = GameControl.scenes.get(scene_name)
-        return val
-
-    def opening_turn(self):
-        return self.next_turn(self.start_scene)
 
 new_game = Openingscene()
 new_game.enter()
