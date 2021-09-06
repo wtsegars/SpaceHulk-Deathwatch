@@ -4990,10 +4990,10 @@ class RangedWeapons():
                         d["on fire"] = True
                         print("The flamer shot didn't hit anything.")
             
-            for i in squad.squad.squad.squad:
-                if squad.squad.squad.squad[i]["current_place"] == d:
+            for i in squad.squad:
+                if squad.squad[i]["current_place"] == d:
                     if fire_shot >= 2:
-                        squad.squad.squad.squad[i]["alive"] = False
+                        squad.squad[i]["alive"] = False
                         d["on fire"] = True
                         print("The flamer shot hit some of your own men.")
                     else:
@@ -5017,10 +5017,10 @@ class RangedWeapons():
                             d[d[g]["connected to"]]["on fire"] = True
                             print("The flamer shot didn't hit anything.")
 
-                for i in squad.squad.squad.squad:
-                    if squad.squad.squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
+                for i in squad.squad:
+                    if squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
                         if flamer_shot >= 2:
-                            squad.squad.squad.squad[i]["alive"] = False
+                            squad.squad[i]["alive"] = False
                             d[d[g]["connected to"]]["on fire"] = True
                             print("The flamer shot hit some of your own men.")
                         else:
@@ -5049,10 +5049,10 @@ class RangedWeapons():
                     else:
                         print("The cyclone missle missed its target.")
             
-            for i in squad.squad.squad.squad:
-                if squad.squad.squad.squad[i]["current_place"] == d:
+            for i in squad.squad:
+                if squad.squad[i]["current_place"] == d:
                     if cyclone_blast >= 3:
-                        squad.squad.squad.squad[i]["alive"] = False
+                        squad.squad[i]["alive"] = False
                         d["occupied"] = False
                         print("The cyclone missle hit some of your own men.")
                     else:
@@ -5073,13 +5073,12 @@ class RangedWeapons():
                         else:
                             print("The cyclone missle blast missed a target")
 
-                for i in squad.squad.squad.squad:
-                    if squad.squad.squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
+                for i in squad.squad:
+                    if squad.squad[i]["current_place"] == d[d[g]["connected to"]]:
                         if cyclone_shot >= 3:
-                            squad.squad.squad.squad[i]["alive"] = False
+                            squad.squad[i]["alive"] = False
                             d[d[g]["connected to"]]["occupied"] = False
                             print("The cyclone missle blast hit some of your own men.")
                         else:
                             print("The cyclone missle blast missed some of your men.")
-
-    Attack.attack()
+        Attack.attack()
