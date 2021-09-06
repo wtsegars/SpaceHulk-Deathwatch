@@ -4963,6 +4963,7 @@ class RangedWeapons():
         elif assault_shot_1 == assault_shot_2 and assault_shot_2 == assault_shot_3:
             e = False
             print("The terminator's assault cannon malfunctioned resulting in instant death.")
+            game.SpaceMarineTurn.lose_cond()
             Attack.attack()
         else:
             print("The assault cannon volly missed its target.")
