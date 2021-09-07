@@ -211,7 +211,7 @@ class GenestealerMove():
                                                 genestealers[e]["current location"] = gametiles.tiles(
                                                     genestealers[e]["current location"])["current location"][0]
                                                 genestealers[e]["action points"] -= 1
-                                                overwatchfire.check_for_overwatch(
+                                                overwatchfire.OverwatchFire.check_for_overwatch(
                                                     genestealers.genestealers[e])
                                                 GenestealerMove.direction_change(genestealers[e], tracker1, gametiles.tiles(
                                                     genestealers[e]["current location"])[0])
@@ -241,7 +241,7 @@ class GenestealerMove():
                                                 genestealers[e]["current location"] = gametiles.tiles(
                                                     genestealers[e]["current location"])["current location"][1]
                                                 genestealers[e]["action points"] -= 1
-                                                overwatchfire.check_for_overwatch(
+                                                overwatchfire.OverwatchFire.check_for_overwatch(
                                                     genestealers.genestealers[e])
                                                 GenestealerMove.direction_change(genestealers[e], tracker1, gametiles.tiles(
                                                     genestealers[e]["current location"])[1])
@@ -271,7 +271,7 @@ class GenestealerMove():
                                                 genestealers[e]["current location"] = gametiles.tiles(
                                                     genestealers[e]["current location"])["current location"][2]
                                                 genestealers[e]["action points"] -= 1
-                                                overwatchfire.check_for_overwatch(
+                                                overwatchfire.OverwatchFire.check_for_overwatch(
                                                     genestealers.genestealers[e])
                                                 GenestealerMove.direction_change(genestealers[e], tracker1, gametiles.tiles(
                                                     genestealers[e]["current location"])[2])
@@ -301,7 +301,7 @@ class GenestealerMove():
                                                 genestealers[e]["current location"] = gametiles.tiles(
                                                     genestealers[e]["current location"])["current location"][3]
                                                 genestealers[e]["action points"] -= 1
-                                                overwatchfire.check_for_overwatch(
+                                                overwatchfire.OverwatchFire.check_for_overwatch(
                                                     genestealers.genestealers[e])
                                                 GenestealerMove.direction_change(genestealers[e], tracker1, gametiles.tiles(
                                                     genestealers[e]["current location"])[3])
@@ -340,16 +340,16 @@ class GenestealerMove():
             if (tracker == gametiles.tiles(stealer["current location"]["connected to"][0])):
                 stealer["direction"] = gametiles.tiles.get(tile[0])
                 stealer["action points"] -= 1
-                overwatchfire.check_for_overwatch(stealer)
+                overwatchfire.OverwatchFire.check_for_overwatch(stealer)
             elif (tracker == gametiles.tiles(stealer["current location"]["connected to"][1])):
                 stealer["direction"] = gametiles.tiles.get(tile[1])
                 stealer["action points"] -= 1
-                overwatchfire.check_for_overwatch(stealer)
+                overwatchfire.OverwatchFire.check_for_overwatch(stealer)
             elif (tracker == gametiles.tiles(stealer["current location"]["connected to"][2])):
                 stealer["direction"] = gametiles.tiles.get(tile[2])
                 stealer["action points"] -= 1
-                overwatchfire.check_for_overwatch(stealer)
+                overwatchfire.OverwatchFire.check_for_overwatch(stealer)
             elif (tracker == gametiles.tiles(stealer["current location"]["connected to"][3])):
                 stealer["direction"] = gametiles.tiles.get(tile[3])
                 stealer["action points"] -= 1
-                overwatchfire.check_for_overwatch(stealer)
+                overwatchfire.OverwatchFire.check_for_overwatch(stealer)
