@@ -22,7 +22,10 @@ class Openingscene():
                 is based on the classic Games Workshop game, Space Hulk. This, 
                 along with many other games that are created by Game Workshop,
                 is based in the Warhammer 40,000 universe.
+                (press any button to continue)
                 """))
+        
+        input('')
 
         print(dedent("""
                 This game is set inside of a space hulk (hence the name), which
@@ -32,7 +35,10 @@ class Openingscene():
                 Astartes (space marines) will send a squad or two into these
                 space hulks to cleanse them of alien life, find lost relics and
                 technologies from the past, or any number of other reasons.
+                (press any button to continue)
                 """))
+
+        input('')
 
         print(dedent("""
                 The Deathwatch are an elite chaper of the space marines that are
@@ -43,7 +49,10 @@ class Openingscene():
                 to try and get your squad out of the space hulk before they are 
                 overrun by genestealers (a form of Tyranid that are commonly found
                 on board of space hulks).
+                (press any button to continue)
                 """))
+        
+        input('')
 
         return SquadSelect().enter()
 
@@ -56,7 +65,11 @@ class SquadSelect():
                 pre-selected list of chapters. The first marine you select will
                 be the squad's sergent while the rest are standard marines. Choose
                 wisely because some chapters will have advantages over others.
+                (press any button to continue)
                 """))
+
+        input('')
+
         SquadSelect.chapter_select()
         SquadSelect.weapon_select()
         Squadplacement.enter(self)
@@ -64,7 +77,8 @@ class SquadSelect():
 
     def chapter_select():
         print("Below is a list of available chapters, choose wisely...")
-        print()
+        print("(press any button to continue)")
+        input('')
         
         for x in chapters.chapters:
             print(x)
@@ -129,7 +143,8 @@ class Squadplacement():
 
     def enter(self):
         print("Select the order in which your squad is to be deployed:")
-        print()
+        print("(press any button to continue)")
+        input('')
         Squadplacement.placement()
 
     def placement():
@@ -180,6 +195,8 @@ class SpaceMarineTurn():
     def enter(turn_count):
         turn_count +=1
         print("It is now the space marines' turn.")
+        print("(press any button to continue)")
+        input('')
         SpaceMarineTurn.pre_turn()
         SpaceMarineTurn.turn_menu()
 
@@ -259,6 +276,8 @@ class GenestealerTurn():
 
     def enter(turn_count):
         print("Genestealers are now moving.")
+        print("(press any button to continue)")
+        input('')
         turn_count += 1
         GenestealerTurn.blip_count()
         radarblips.RadarBlips.blip_deployment(GenestealerTurn.blips_to_deploy)
@@ -274,6 +293,8 @@ class GenestealerTurn():
 
     def end_turn():
         print("End of Genestealer turn.")
+        print("(press any button to continue)")
+        input('')
         return SpaceMarineTurn.enter(turn_count)
 
 new_game = Openingscene()
