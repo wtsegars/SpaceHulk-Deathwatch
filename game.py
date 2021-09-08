@@ -22,7 +22,7 @@ class Openingscene():
                 is based on the classic Games Workshop game, Space Hulk. This, 
                 along with many other games that are created by Game Workshop,
                 is based in the Warhammer 40,000 universe.
-                (press any button to continue)
+                (press enter to continue)
                 """))
         
         input('')
@@ -35,7 +35,7 @@ class Openingscene():
                 Astartes (space marines) will send a squad or two into these
                 space hulks to cleanse them of alien life, find lost relics and
                 technologies from the past, or any number of other reasons.
-                (press any button to continue)
+                (press enter to continue)
                 """))
 
         input('')
@@ -49,7 +49,7 @@ class Openingscene():
                 to try and get your squad out of the space hulk before they are 
                 overrun by genestealers (a form of Tyranid that are commonly found
                 on board of space hulks).
-                (press any button to continue)
+                (press enter to continue)
                 """))
         
         input('')
