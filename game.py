@@ -73,7 +73,7 @@ class SquadSelect():
         SquadSelect.chapter_select()
         SquadSelect.weapon_select()
         Squadplacement.enter(self)
-        SpaceMarineTurn.enter(self, turn_count)
+        SpaceMarineTurn.enter(turn_count)
 
     def chapter_select():
         
