@@ -76,9 +76,6 @@ class SquadSelect():
         SpaceMarineTurn.enter(self, turn_count)
 
     def chapter_select():
-        print("Below is a list of available chapters, choose wisely...")
-        print("(press any button to continue)")
-        input('')
         
         for x in chapters.chapters:
             print(x)
@@ -129,8 +126,10 @@ class SquadSelect():
                             else:
                                 SquadSelect.heavy_count += 1
                                 squad.squad[y]["weapon loadout"] = wpn_input
+                                break
                         else:
                             squad.squad[y]["weapon loadout"] = wpn_input
+                            break
             
                 if squad.squad[y]["weapon loadout"] == None:
                     print("An invalid weapon loadout was selected, please select another.")
@@ -168,7 +167,7 @@ class Squadplacement():
                         print()
                         print("Your position choice is invalid, please reenter a valid position.")
                         print()
-                        continue
+                        break
                 else:
                     continue
                         
