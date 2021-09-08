@@ -65,7 +65,7 @@ class SquadSelect():
                 pre-selected list of chapters. The first marine you select will
                 be the squad's sergent while the rest are standard marines. Choose
                 wisely because some chapters will have advantages over others.
-                (press any button to continue)
+                (press enter to continue)
                 """))
 
         input('')
@@ -142,7 +142,7 @@ class Squadplacement():
 
     def enter(self):
         print("Select the order in which your squad is to be deployed:")
-        print("(press any button to continue)")
+        print("(press enter to continue)")
         input('')
         Squadplacement.placement()
 
@@ -194,7 +194,7 @@ class SpaceMarineTurn():
     def enter(turn_count):
         turn_count +=1
         print("It is now the space marines' turn.")
-        print("(press any button to continue)")
+        print("(press enter to continue)")
         input('')
         SpaceMarineTurn.pre_turn()
         SpaceMarineTurn.turn_menu()
@@ -275,7 +275,7 @@ class GenestealerTurn():
 
     def enter(turn_count):
         print("Genestealers are now moving.")
-        print("(press any button to continue)")
+        print("(press enter to continue)")
         input('')
         turn_count += 1
         GenestealerTurn.blip_count()
@@ -292,7 +292,7 @@ class GenestealerTurn():
 
     def end_turn():
         print("End of Genestealer turn.")
-        print("(press any button to continue)")
+        print("(press enter to continue)")
         input('')
         return SpaceMarineTurn.enter(turn_count)
 
