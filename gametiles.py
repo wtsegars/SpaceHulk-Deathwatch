@@ -1,12 +1,14 @@
 tiles = {
     "s1": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "s2": "north"
         }
     },
     "s2": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "s1": "south",
             "s3": "north"
@@ -14,6 +16,7 @@ tiles = {
     },
     "s3": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "s2": "south",
             "s4": "north"
@@ -21,6 +24,7 @@ tiles = {
     },
     "s4": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "s3": "south",
             "s5": "north"
@@ -28,6 +32,7 @@ tiles = {
     },
     "s5": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "s4": "south",
             "c1": "north"
@@ -35,6 +40,7 @@ tiles = {
     },
     "g1": {
         "occupied": False,
+        "on fire": False,
         "entrance": True,
         "connected to": {
             "g2": "north"
@@ -42,6 +48,7 @@ tiles = {
     },
     "g2": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "g1": "south",
             "g3": "north"
@@ -49,6 +56,7 @@ tiles = {
     },
     "g3": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "g2": "south",
             "g4": "east"
@@ -56,6 +64,7 @@ tiles = {
     },
     "g4": {
         "occupied": False,
+        "on fire": False,
         "door": {
             "sealed": False
         },
@@ -66,6 +75,7 @@ tiles = {
     },
     "g5": {
         "occupied": False,
+        "on fire": False,
         "entrance": True,
         "connected to": {
             "g6": "north"
@@ -73,6 +83,7 @@ tiles = {
     },
     "g6": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "g5": "south",
             "g7": "north"
@@ -80,6 +91,7 @@ tiles = {
     },
     "g7": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "g6": "south",
             "g8": "west"
@@ -87,6 +99,7 @@ tiles = {
     },
     "g8": {
         "occupied": False,
+        "on fire": False,
         "door": {
             "sealed": False
         },
@@ -97,6 +110,7 @@ tiles = {
     },
     "g9": {
         "occupied": False,
+        "on fire": False,
         "entrance": True,
         "connected to": {
             "g10": "east"
@@ -104,6 +118,7 @@ tiles = {
     },
     "g10": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "g9": "west",
             "c2": "east"
@@ -111,6 +126,7 @@ tiles = {
     },
     "g11": {
         "occupied": False,
+        "on fire": False,
         "entrance": True,
         "connected to": {
             "g12": "west"
@@ -118,6 +134,7 @@ tiles = {
     },
     "g12": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "g11": "east",
             "c2": "west"
@@ -125,6 +142,7 @@ tiles = {
     },
     "g13": {
         "occupied": False,
+        "on fire": False,
         "entrance": True,
         "connected to": {
             "g14": "east"
@@ -132,6 +150,7 @@ tiles = {
     },
     "g14": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "g13": "west",
             "c6": "east"
@@ -139,6 +158,7 @@ tiles = {
     },
     "g15": {
         "occupied": False,
+        "on fire": False,
         "entrance": True,
         "connected to": {
             "g16": "west"
@@ -146,6 +166,7 @@ tiles = {
     },
     "g16": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "g15": "east",
             "c6": "west"
@@ -153,6 +174,7 @@ tiles = {
     },
     "g17": {
         "occupied": False,
+        "on fire": False,
         "entrance": True,
         "connected to": {
             "g18": "west"
@@ -160,6 +182,7 @@ tiles = {
     },
     "g18": {
         "occupied": False,
+        "on fire": False,
         "door": {
             "sealed": False
         },
@@ -170,6 +193,7 @@ tiles = {
     },
     "g19": {
         "occupied": False,
+        "on fire": False,
         "entrance": True,
         "connected to": {
             "g20": "east"
@@ -177,6 +201,7 @@ tiles = {
     },
     "g20": {
         "occupied": False,
+        "on fire": False,
         "door": {
             "sealed": False
         },
@@ -187,6 +212,7 @@ tiles = {
     },
     "g21": {
         "occupied": False,
+        "on fire": False,
         "entrance": True,
         "connected to": {
             "g22": "west"
@@ -194,6 +220,7 @@ tiles = {
     },
     "g22": {
         "occupied": False,
+        "on fire": False,
         "door": {
             "sealed": False
         },
@@ -204,6 +231,7 @@ tiles = {
     },
     "g23": {
         "occupied": False,
+        "on fire": False,
         "entrance": True,
         "connected to": {
             "g24": "east"
@@ -211,6 +239,7 @@ tiles = {
     },
     "g24": {
         "occupied": False,
+        "on fire": False,
         "door": {
             "sealed": False
         },
@@ -221,6 +250,7 @@ tiles = {
     },
     "c1": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "s5": "south",
             "lr1": "east",
@@ -229,6 +259,7 @@ tiles = {
     },
     "c2": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "g10": "west",
             "g12": "east",
@@ -237,6 +268,7 @@ tiles = {
     },
     "c3": {
         "occupied": False,
+        "on fire": False,
         "door": {
             "sealed": False
         },
@@ -247,6 +279,7 @@ tiles = {
     },
     "c4": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "c3": "south",
             "cl4": "west",
@@ -256,6 +289,7 @@ tiles = {
     },
     "c5": {
         "occupied": False,
+        "on fire": False,
         "door": {
             "sealed": False
         },
@@ -266,6 +300,7 @@ tiles = {
     },
     "c6": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "c5": "south",
             "g14": "west",
@@ -274,6 +309,7 @@ tiles = {
     },
     "c7": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "g18": "east",
             "g20": "west"
@@ -281,6 +317,7 @@ tiles = {
     },
     "c8": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "c7": "south",
             "c9": "north"
@@ -288,6 +325,7 @@ tiles = {
     },
     "c9": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "c8": "south",
             "c10": "north"
@@ -295,6 +333,7 @@ tiles = {
     },
     "c10": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "c9": "south",
             "ur4": "east",
@@ -304,6 +343,7 @@ tiles = {
     },
     "c11": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "c10": "south",
             "c12": "north"
@@ -311,6 +351,7 @@ tiles = {
     },
     "c12": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "c11": "south",
             "g22": "east",
@@ -319,6 +360,7 @@ tiles = {
     },
     "ll1": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "c1": "east",
             "ll2": "west"
@@ -326,6 +368,7 @@ tiles = {
     },
     "ll2": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "ll1": "east",
             "ll3": "west"
@@ -333,6 +376,7 @@ tiles = {
     },
     "ll3": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "ll2": "east",
             "ll4": "west"
@@ -340,6 +384,7 @@ tiles = {
     },
     "ll4": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "ll3": "east",
             "ll5": "west"
@@ -347,6 +392,7 @@ tiles = {
     },
     "ll5": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "ll4": "east",
             "g4": "west",
@@ -355,6 +401,7 @@ tiles = {
     },
     "lr1": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "c1": "west",
             "lr1": "east"
@@ -362,6 +409,7 @@ tiles = {
     },
     "lr2": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "lr1": "west",
             "lr3": "east"
@@ -369,6 +417,7 @@ tiles = {
     },
     "lr3": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "lr2": "west",
             "lr4": "east"
@@ -376,6 +425,7 @@ tiles = {
     },
     "lr4": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "lr3": "west",
             "lr5": "east"
@@ -383,6 +433,7 @@ tiles = {
     },
     "lr5": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "lr4": "west",
             "g8": "east",
@@ -391,6 +442,7 @@ tiles = {
     },
     "l1": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "ll5": "south",
             "l2": "north"
@@ -398,6 +450,7 @@ tiles = {
     },
     "l2": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l1": "south",
             "l3": "north"
@@ -405,6 +458,7 @@ tiles = {
     },
     "l3": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l2": "south",
             "l4": "north"
@@ -412,6 +466,7 @@ tiles = {
     },
     "l4": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l3": "south",
             "l5": "north"
@@ -419,6 +474,7 @@ tiles = {
     },
     "l5": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l4": "south",
             "l6": "north"
@@ -426,6 +482,7 @@ tiles = {
     },
     "l6": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l5": "south",
             "l7": "north",
@@ -434,6 +491,7 @@ tiles = {
     },
     "l7": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l6": "south",
             "l8": "north"
@@ -441,6 +499,7 @@ tiles = {
     },
     "l8": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l7": "south",
             "l9": "north"
@@ -448,6 +507,7 @@ tiles = {
     },
     "l9": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l8": "south",
             "l10": "north"
@@ -455,6 +515,7 @@ tiles = {
     },
     "l10": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l9": "south",
             "l11": "north"
@@ -462,6 +523,7 @@ tiles = {
     },
     "l11": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l10": "south",
             "l12": "north"
@@ -469,6 +531,7 @@ tiles = {
     },
     "l12": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l11": "south",
             "l13": "north"
@@ -476,6 +539,7 @@ tiles = {
     },
     "l13": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l12": "south",
             "ul1": "east"
@@ -483,6 +547,7 @@ tiles = {
     },
     "r1": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "lr5": "south",
             "r2": "north"
@@ -490,6 +555,7 @@ tiles = {
     },
     "r2": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r1": "south",
             "r3": "north"
@@ -497,6 +563,7 @@ tiles = {
     },
     "r3": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r2": "south",
             "r4": "north"
@@ -504,6 +571,7 @@ tiles = {
     },
     "r4": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r3": "south",
             "r5": "north"
@@ -511,6 +579,7 @@ tiles = {
     },
     "r5": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r4": "south",
             "r6": "north"
@@ -518,6 +587,7 @@ tiles = {
     },
     "r6": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r5": "south",
             "r7": "north",
@@ -526,6 +596,7 @@ tiles = {
     },
     "r7": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r6": "south",
             "r8": "north"
@@ -533,6 +604,7 @@ tiles = {
     },
     "r8": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r7": "south",
             "r9": "north"
@@ -540,6 +612,7 @@ tiles = {
     },
     "r9": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r8": "south",
             "r10": "north"
@@ -547,6 +620,7 @@ tiles = {
     },
     "r10": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r9": "south",
             "r11": "north"
@@ -554,6 +628,7 @@ tiles = {
     },
     "r11": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r10": "south",
             "r12": "north"
@@ -561,6 +636,7 @@ tiles = {
     },
     "r12": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r11": "south",
             "r13": "north"
@@ -568,6 +644,7 @@ tiles = {
     },
     "r13": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r12": "south",
             "ur1": "west"
@@ -575,6 +652,7 @@ tiles = {
     },
     "ul1": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l13": "west",
             "ul2": "east"
@@ -582,6 +660,7 @@ tiles = {
     },
     "ul2": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "ul1": "west",
             "ul3": "east"
@@ -589,6 +668,7 @@ tiles = {
     },
     "ul3": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "ul2": "west",
             "ul4": "east"
@@ -596,6 +676,7 @@ tiles = {
     },
     "ul4": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "ul3": "west",
             "c10": "east"
@@ -603,6 +684,7 @@ tiles = {
     },
     "ur1": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r13": "east",
             "ur2": "west"
@@ -610,6 +692,7 @@ tiles = {
     },
     "ur2": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "ur1": "east",
             "ur3": "west"
@@ -617,6 +700,7 @@ tiles = {
     },
     "ur3": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "ur2": "east",
             "ur4": "west"
@@ -624,6 +708,7 @@ tiles = {
     },
     "ur4": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "ur3": "east",
             "c10": "west"
@@ -631,6 +716,7 @@ tiles = {
     },
     "cl1": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "l6": "west",
             "cl2": "east"
@@ -638,6 +724,7 @@ tiles = {
     },
     "cl2": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "cl1": "west",
             "cl3": "east"
@@ -645,6 +732,7 @@ tiles = {
     },
     "cl3": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "cl2": "west",
             "cl4": "east"
@@ -652,6 +740,7 @@ tiles = {
     },
     "cl4": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "cl3": "west",
             "c4": "east"
@@ -659,6 +748,7 @@ tiles = {
     },
     "cr1": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "r6": "east",
             "cr2": "west"
@@ -666,6 +756,7 @@ tiles = {
     },
     "cr2": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "cr1": "east",
             "cr3": "west"
@@ -673,6 +764,7 @@ tiles = {
     },
     "cr3": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "cr2": "east",
             "cr4": "west"
@@ -680,6 +772,7 @@ tiles = {
     },
     "cr4": {
         "occupied": False,
+        "on fire": False,
         "connected to": {
             "cr3": "east",
             "c4": "west"
