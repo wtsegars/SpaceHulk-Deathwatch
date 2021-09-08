@@ -70,9 +70,9 @@ class SquadSelect():
 
         input('')
 
-        SquadSelect.chapter_select()
-        SquadSelect.weapon_select()
-        Squadplacement.enter(self)
+        # SquadSelect.chapter_select()
+        # SquadSelect.weapon_select()
+        # Squadplacement.enter(self)
         SpaceMarineTurn.enter(turn_count)
 
     def chapter_select():
@@ -228,7 +228,7 @@ class SpaceMarineTurn():
         menu_choice = input("> ")
 
         if menu_choice == "Move":
-            movement.Movement.move()
+            movement.MoveAction.move()
         elif menu_choice == "Attack":
             attackaction.Attack.attack()
         elif menu_choice == "Other Action":
