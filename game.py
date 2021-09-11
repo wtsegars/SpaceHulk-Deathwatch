@@ -228,7 +228,7 @@ class SpaceMarineTurn():
         menu_choice = input("> ")
 
         if menu_choice == "Move":
-            movement.MoveAction.move()
+            movement.MoveAction.move(SpaceMarineTurn.command_points)
         elif menu_choice == "Attack":
             attackaction.Attack.attack()
         elif menu_choice == "Other Action":
