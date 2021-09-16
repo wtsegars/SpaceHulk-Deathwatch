@@ -12,7 +12,7 @@ class MoveAction():
 
         for i in squad.squad:
             if squad.squad[i]["action points"] > 0 and squad.squad[i]["alive"] == True:
-                print(squad.squad[i])
+                print(i)
 
         movement = input("> ")
 
