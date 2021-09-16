@@ -17,7 +17,7 @@ class MoveAction():
         movement = input("> ")
 
         for j in squad.squad:
-            if movement == squad.squad[j]:
+            if movement == j:
                 print("How would you like to move?")
 
                 move_option = input("> ")
