@@ -19,11 +19,8 @@ class MoveAction():
         for j in squad.squad:
             if movement == j:
                 print("How would you like to move?")
-
-                move_option = input("> ")
-
-                if squad.squad[j]["action points"] >= 2:
-                    print(dedent("""
+                print()
+                print(dedent("""
                                 Forwards,
                                 Backwards,
                                 Turn Left,
@@ -32,29 +29,33 @@ class MoveAction():
                                 Choose Another Action
                                 """))
 
+                move_option = input("> ")
+
+                if squad.squad[j]["action points"] >= 2:
+
                     for k in MoveAction.motion_1:
-                        if move_option == MoveAction.motion_1[k]:
-                            if MoveAction.motion_1[k] == "Forwards":
+                        if move_option == k:
+                            if k == "Forwards":
                                 MoveAction.forwards(command_pts,
                                         squad.squad[i]["action points"],
-                                        squad.squad[i]["current_position"],
+                                        squad.squad[i]["current_place"],
                                         squad.squad[i]["direction"])
-                            elif MoveAction.motion_1[k] == "Backwards":
+                            elif k == "Backwards":
                                 MoveAction.backwards(command_pts,
                                         squad.squad[i]["action points"],
-                                        squad.squad[i]["current_position"],
+                                        squad.squad[i]["current_place"],
                                         squad.squad[i]["direction"])
-                            elif MoveAction.motion_1[k] == "Turn Left":
+                            elif k == "Turn Left":
                                 MoveAction.turn_left(command_pts,
                                         squad.squad[i]["action points"],
                                         squad.squad[i]["direction"])
-                            elif MoveAction.motion_1[k] == "Turn Right":
+                            elif k == "Turn Right":
                                 MoveAction.turn_right(command_pts,
                                         squad.squad[i]["action points"],
                                         squad.squad[i]["direction"])
-                            elif MoveAction.motion_1[k] == "Move Another Terminator":
+                            elif k == "Move Another Terminator":
                                 MoveAction.move_other_term()
-                            elif MoveAction.motion_1[k] == "Choose Another Action":
+                            elif k == "Choose Another Action":
                                 MoveAction.choose_other_action()
                         else:
                             print("Input was invalid. Please try again.")
@@ -73,7 +74,7 @@ class MoveAction():
                             if MoveAction.motion_2[k] == "Forwards":
                                 MoveAction.forwards(command_pts,
                                         squad.squad[j]["action points"],
-                                        squad.squad[j]["current_position"],
+                                        squad.squad[j]["current_place"],
                                         squad.squad[j]["direction"])
                             elif MoveAction.motion_2[k] == "Turn Left":
                                 MoveAction.turn_left(command_pts,
