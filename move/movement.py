@@ -1,6 +1,7 @@
 from textwrap import dedent
 import squad
 import gametiles
+import game
 
 class MoveAction():
     motion_1 = ["Forwards", "Backwards","Turn Left", "Turn Right"]
@@ -373,5 +374,5 @@ class MoveAction():
         MoveAction.move(command_pts)
 
     def choose_other_action():
-        #SpaceMarineTurn.turn_menu()
+        # SpaceMarineTurn.turn_menu()
         exit
