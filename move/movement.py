@@ -12,18 +12,15 @@ class MoveAction():
 
         for i in squad.squad:
             if squad.squad[i]["action points"] > 0 and squad.squad[i]["alive"] == True:
-                print(squad.squad[i])
+                print(i)
 
         movement = input("> ")
 
         for j in squad.squad:
-            if movement == squad.squad[j]:
+            if movement == j:
                 print("How would you like to move?")
-
-                move_option = input("> ")
-
-                if squad.squad[j]["action points"] >= 2:
-                    print(dedent("""
+                print()
+                print(dedent("""
                                 Forwards,
                                 Backwards,
                                 Turn Left,
@@ -32,33 +29,37 @@ class MoveAction():
                                 Choose Another Action
                                 """))
 
+                move_option = input("> ")
+
+                if squad.squad[j]["action points"] >= 2:
+
                     for k in MoveAction.motion_1:
-                        if move_option == MoveAction.motion_1[k]:
-                            if MoveAction.motion_1[k] == "Forwards":
+                        if move_option == k:
+                            if k == "Forwards":
                                 MoveAction.forwards(command_pts,
                                         squad.squad[i]["action points"],
-                                        squad.squad[i]["current_position"],
+                                        squad.squad[i]["current_place"],
                                         squad.squad[i]["direction"])
-                            elif MoveAction.motion_1[k] == "Backwards":
+                            elif k == "Backwards":
                                 MoveAction.backwards(command_pts,
                                         squad.squad[i]["action points"],
-                                        squad.squad[i]["current_position"],
+                                        squad.squad[i]["current_place"],
                                         squad.squad[i]["direction"])
-                            elif MoveAction.motion_1[k] == "Turn Left":
+                            elif k == "Turn Left":
                                 MoveAction.turn_left(command_pts,
                                         squad.squad[i]["action points"],
                                         squad.squad[i]["direction"])
-                            elif MoveAction.motion_1[k] == "Turn Right":
+                            elif k == "Turn Right":
                                 MoveAction.turn_right(command_pts,
                                         squad.squad[i]["action points"],
                                         squad.squad[i]["direction"])
-                            elif MoveAction.motion_1[k] == "Move Another Terminator":
+                            elif k == "Move Another Terminator":
                                 MoveAction.move_other_term()
-                            elif MoveAction.motion_1[k] == "Choose Another Action":
+                            elif k == "Choose Another Action":
                                 MoveAction.choose_other_action()
                         else:
                             print("Input was invalid. Please try again.")
-                            MoveAction.move()
+                            MoveAction.move(command_pts)
                 elif squad[j]["action points"] < 2:
                     print(dedent("""
                                 Forwards,
@@ -73,7 +74,7 @@ class MoveAction():
                             if MoveAction.motion_2[k] == "Forwards":
                                 MoveAction.forwards(command_pts,
                                         squad.squad[j]["action points"],
-                                        squad.squad[j]["current_position"],
+                                        squad.squad[j]["current_place"],
                                         squad.squad[j]["direction"])
                             elif MoveAction.motion_2[k] == "Turn Left":
                                 MoveAction.turn_left(command_pts,
@@ -89,6 +90,7 @@ class MoveAction():
                                 MoveAction.choose_other_action()
                         else:
                             print("Input was invalid. Please try again.")
+                            MoveAction.move(command_pts)
 
     def forwards(w, x, y, z):
         print("How far would you like to move forward?")
@@ -105,7 +107,7 @@ class MoveAction():
                             if gametiles.tiles[b]["connected to"].get(y) == "south":
                                 if gametiles.tiles[b]["occupied"] == True:
                                     print("You are unable to move to this spot.")
-                                    MoveAction.move()
+                                    MoveAction.move(w)
                                 else:
                                     if x < 1 and w > 1:
                                         w -= 1
@@ -113,7 +115,7 @@ class MoveAction():
                                         x -= 1
                                     else:
                                         print("You don't have enough action point and/or command points to do this action.")
-                                        MoveAction.move()
+                                        MoveAction.move(w)
 
                                     gametiles.tiles[y]["occupied"] = False
                                     gametiles.tiles[b]["occupied"] = True
@@ -121,13 +123,13 @@ class MoveAction():
                                     y = gametiles[b]
                             else:
                                 print("You are unable to move in this direction")
-                                MoveAction.move()
+                                MoveAction.move(w)
                     elif z == "south":
                         for b in gametiles.tiles:
                             if gametiles.tiles[b]["connected to"].get(y) == "north":
                                 if gametiles.tiles[b]["occupied"] == True:
                                     print("You are unable to move to this spot.")
-                                    MoveAction.move()
+                                    MoveAction.move(w)
                                 else:
                                     if x < 1 and w >= 1:
                                         w -= 1
@@ -135,7 +137,7 @@ class MoveAction():
                                         x -= 1
                                     else:
                                         print("You don't have enough action point and/or command points to do this action.")
-                                        MoveAction.move()
+                                        MoveAction.move(w)
 
                                     gametiles.tiles[y]["occupied"] = False
                                     gametiles.tiles[b]["occupied"] = True
@@ -143,13 +145,13 @@ class MoveAction():
                                     y = gametiles[b]
                             else:
                                 print("You are unable to move in this direction.")
-                                MoveAction.move()
+                                MoveAction.move(w)
                     elif z == "west":
                         for b in gametiles.tiles:
                             if gametiles.tiles[b]["connected to"].get(y) == "east":
                                 if gametiles.tiles[b]["occupied"] == True:
                                     print("You are unable to move to this spot.")
-                                    MoveAction.move()
+                                    MoveAction.move(w)
                                 else:
                                     if x < 1 and w > 1:
                                         w -= 1
@@ -157,7 +159,7 @@ class MoveAction():
                                         x -= 1
                                     else:
                                         print("You don't have enough action point and/or command points to do this action.")
-                                        MoveAction.move()
+                                        MoveAction.move(w)
 
                                     gametiles.tiles[y]["occupied"] = False
                                     gametiles.tiles[b]["occupied"] = True
@@ -165,13 +167,13 @@ class MoveAction():
                                     y = gametiles[b]
                             else:
                                 print("You are unable to move in this direction.")
-                                MoveAction.move()
+                                MoveAction.move(w)
                     elif z == "east":
                         for b in gametiles.tiles:
                             if gametiles.tiles[b]["connected to"].get(y) == "west":
                                 if gametiles.tiles[b]["occupied"] == True:
                                     print("you are unable to move to this spot.")
-                                    MoveAction.move()
+                                    MoveAction.move(w)
                                 else:
                                     if x < 1 and w > 1:
                                         w -= 1
@@ -179,7 +181,7 @@ class MoveAction():
                                         x -= 1
                                     else:
                                         print("You don't have enough action point and/or command points to do this action.")
-                                        MoveAction.move()
+                                        MoveAction.move(w)
 
                                     gametiles.tiles[y]["occupied"] = False
                                     gametiles.tiles[b]["occupied"] = True
@@ -187,13 +189,13 @@ class MoveAction():
                                     y = gametiles[b]
                             else:
                                 print("You are unable to move in this direction.")
-                                MoveAction.move()
+                                MoveAction.move(w)
             
-            MoveAction.move()
+            MoveAction.move(w)
 
         elif forward_move > w + x:
             print("You do not have enough action points to move this far.")
-            MoveAction.move()
+            MoveAction.move(w)
 
     def backwards(w, x, y, z):
         print("How far do you want to move backwards?")
@@ -211,7 +213,7 @@ class MoveAction():
                             if gametiles.tiles[b]["connected to"].get(y) == "south":
                                 if gametiles.tiles[b]["occupied"] == True:
                                     print("You are unable to move to this spot.")
-                                    MoveAction.move()
+                                    MoveAction.move(w)
                                 else:
                                     if x < 2 and w >= 2:
                                         w -= 2
@@ -219,7 +221,7 @@ class MoveAction():
                                         x -= 2
                                     else:
                                         print("You don't have enough action point and/or command points to do this action.")
-                                        MoveAction.move()
+                                        MoveAction.move(w)
 
                                     gametiles.tiles[y]["occupied"] = False
                                     gametiles.tiles[b]["occupied"] = True
@@ -227,13 +229,13 @@ class MoveAction():
                                     y = gametiles[b]
                             else:
                                 print("You are unable to move in this direction.")
-                                MoveAction.move()  
+                                MoveAction.move(w)  
                     elif z == "south":
                         for b in gametiles.tiles:
                             if gametiles.tiles[b]["connected to"].get(y) == "north":
                                 if gametiles.tiles[b]["occupied"] == True:
                                     print("You are unable to move to this spot")
-                                    MoveAction.move()
+                                    MoveAction.move(w)
                                 else:
                                     if x < 2 and w >= 2:
                                         w -= 2
@@ -241,7 +243,7 @@ class MoveAction():
                                         x -=2
                                     else:
                                         print("You don't have enough action points and/or command points to do this action.")
-                                        MoveAction.move()
+                                        MoveAction.move(w)
 
                                     gametiles.tiles[y]["occupied"] = False
                                     gametiles.tiles[b]["occupied"] = True 
@@ -249,13 +251,13 @@ class MoveAction():
                                     y = gametiles[b]
                             else:
                                 print("You are unable to move in this direction.")
-                                MoveAction.move()
+                                MoveAction.move(w)
                     elif z == "east":
                         for b in gametiles.tiles:
                             if gametiles.tiles[b]["connected to"].get(y) == "west":
                                 if gametiles.tiles[b]["occupied"] == True:
                                     print("You are unable to move to this spot.")
-                                    MoveAction.move()
+                                    MoveAction.move(w)
                                 else:
                                     if x < 2 and w >= 2:
                                         w -= 2
@@ -263,7 +265,7 @@ class MoveAction():
                                         x -= 2
                                     else:
                                         print("You don't have enough action points and/or command points to do this action.")
-                                        MoveAction.move()
+                                        MoveAction.move(w)
 
                                     gametiles.tiles[y]["occupied"] = False
                                     gametiles.tiles[b]["occupied"] = True
@@ -271,13 +273,13 @@ class MoveAction():
                                     y = gametiles[b]
                             else:
                                 print("You are unable to move in this direction.")
-                                MoveAction.move()
+                                MoveAction.move(w)
                     elif z == "west":
                         for b in gametiles.tiles:
                             if gametiles.tiles[b]["connected to"].get(y) == "west":
                                 if gametiles.tiles[b]["occupied"] == True:
                                     print("You are unable to move to this spot.")
-                                    MoveAction.move()
+                                    MoveAction.move(w)
                                 else:
                                     if x < 2 and w >= 2:
                                         w -= 2
@@ -285,7 +287,7 @@ class MoveAction():
                                         x -= 2
                                     else:
                                         print("You don't have enough action points and/or command points to do this action.")
-                                        MoveAction.move()
+                                        MoveAction.move(w)
 
                                     gametiles.tiles[y]["occupied"] = False
                                     gametiles.tiles[b]["occupied"] = True
@@ -293,13 +295,13 @@ class MoveAction():
                                     y = gametiles[MoveAction.backwards]
                             else:
                                 print("You are unable to move in this direction.")
-                                MoveAction.move()
+                                MoveAction.move(w)
 
-            MoveAction.move()
+            MoveAction.move(w)
 
         elif backwards_move > w + x:
             print("You do not have enough action points to move this far.")
-            MoveAction.move()
+            MoveAction.move(w)
 
     def turn_left(x, y, z):
         if y >= 1:
@@ -314,7 +316,7 @@ class MoveAction():
                 z = "south"
             else:
                 print("Was unable to move left.")
-                MoveAction.move()
+                MoveAction.move(x)
         elif x >= 1 and y < 1:
             x -= 1
             if z == "north":
@@ -327,12 +329,12 @@ class MoveAction():
                 z = "south"
             else:
                 print("Was unable to move left.")
-                MoveAction.move()
+                MoveAction.move(x)
         else:
             print("You do not have enough action points/command points to complete this action.")
-            MoveAction.move()
+            MoveAction.move(x)
 
-        MoveAction.move()
+        MoveAction.move(x)
 
     def turn_right(x, y, z):
         if y >= 1:
@@ -347,7 +349,7 @@ class MoveAction():
                 z = "north"
             else:
                 print("Was unable to move right.")
-                MoveAction.move()
+                MoveAction.move(x)
         elif x >= 1 and y < 1:
             x -= 1
             if z == "north":
@@ -360,15 +362,15 @@ class MoveAction():
                 z = "north"
             else:
                 print("Was unable to move right.")
-                MoveAction.move()
+                MoveAction.move(x)
         else:
             print("You do not have enough action points/command points to complete this action.")
-            MoveAction.move()
+            MoveAction.move(x)
         
-        MoveAction.move()
+        MoveAction.move(x)
 
-    def move_other_term():
-        MoveAction.move()
+    def move_other_term(command_pts):
+        MoveAction.move(command_pts)
 
     def choose_other_action():
         #SpaceMarineTurn.turn_menu()

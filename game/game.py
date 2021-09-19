@@ -1,17 +1,16 @@
 from sys import exit
 from random import randint
 from textwrap import dedent
+import move
 import chapters
 import squad
 import weapons
 import gametiles
 import genestealers
-import movement
 import attackaction
 import miscaction
 import gamemap
 import radarblips
-import genestealermove
 
 turn_count = 0
         
@@ -228,7 +227,7 @@ class SpaceMarineTurn():
         menu_choice = input("> ")
 
         if menu_choice == "Move":
-            movement.MoveAction.move(SpaceMarineTurn.command_points)
+            move.MoveAction.move(SpaceMarineTurn.command_points)
         elif menu_choice == "Attack":
             attackaction.Attack.attack()
         elif menu_choice == "Other Action":
@@ -280,7 +279,7 @@ class GenestealerTurn():
         turn_count += 1
         GenestealerTurn.blip_count()
         radarblips.RadarBlips.blip_deployment(GenestealerTurn.blips_to_deploy)
-        genestealermove.GenestealerMove.genestealer_movement()
+        move.GenestealerMove.genestealer_movement()
 
     def blip_count():
         if turn_count <= 2:
