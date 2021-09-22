@@ -1,7 +1,6 @@
 from textwrap import dedent
 import squad
 import gametiles
-import game
 
 class MoveAction():
     motion_1 = ["Forwards", "Backwards","Turn Left", "Turn Right"]
@@ -55,7 +54,7 @@ class MoveAction():
                                         squad.squad[i]["action points"],
                                         squad.squad[i]["direction"])
                             elif k == "Move Another Terminator":
-                                MoveAction.move_other_term()
+                                MoveAction.move_other_term(command_pts)
                             elif k == "Choose Another Action":
                                 MoveAction.choose_other_action()
                         else:
