@@ -1,16 +1,9 @@
-from sys import exit
-from random import randint
 from textwrap import dedent
-import move
+import spacemarineturn
 import chapters
 import squad
 import weapons
 import gametiles
-import genestealers
-import attackaction
-import miscaction
-import gamemap
-import radarblips
 
 turn_count = 0
         
@@ -72,7 +65,7 @@ class SquadSelect():
         # SquadSelect.chapter_select()
         # SquadSelect.weapon_select()
         # Squadplacement.enter(self)
-        SpaceMarineTurn.enter(turn_count)
+        spacemarineturn.SpaceMarineTurn.enter(turn_count)
 
     def chapter_select():
         
@@ -174,126 +167,23 @@ class Squadplacement():
         if start_place == "first":
             term["current_place"] = "s5"
             Squadplacement.order.remove("first")
+            gametiles.tiles['s5']["occupied"] == True
         elif start_place == "second":
             term["current_place"] = "s4"
             Squadplacement.order.remove("second")
+            gametiles.tiles['s4']["occupied"] == True
         elif start_place == "third":
             term["current_place"] = "s3"
             Squadplacement.order.remove("third")
+            gametiles.tiles['s3']["occupied"] == True
         elif start_place == "fourth":
-            term["current_place"] = "s4"
+            term["current_place"] = "s2"
             Squadplacement.order.remove("fourth")
+            gametiles.tiles['s2']["occupied"] == True
         else:
             term["current_place"] = "s1"
             Squadplacement.order.remove("fifth")
-
-class SpaceMarineTurn():
-    command_points = randint(1, 7)
-
-    def enter(turn_count):
-        turn_count +=1
-        print("It is now the space marines' turn.")
-        print("(press enter to continue)")
-        input('')
-        SpaceMarineTurn.pre_turn()
-        SpaceMarineTurn.turn_menu()
-
-    def pre_turn():
-        for x in squad.squad:
-            if squad.squad[x]["action points"] != 4:
-                squad.squad[x]["action points"] = 4
-
-            if squad.squad[x]["overwatch"] == True:
-                squad.squad[x]["action points"] -= 2
-
-        for y in gametiles.tiles:
-            if gametiles.tiles[y]["on fire"] == True:
-                gametiles.tiles[y]["on fire"] == False
-                gametiles.tiles[y]["occupied"] == False
-                for z in genestealers.genestealers:
-                    if genestealers.genestealers[z]["current location"] == y:
-                        gametiles.tiles[y]["occupied"] == True
-
-    def turn_menu():
-        print(f"Command Points: {SpaceMarineTurn.command_points}")
-        print(dedent("""
-            Move
-            Attack
-            Other Action
-            View Map
-            End Turn
-        """))
-
-        menu_choice = input("> ")
-
-        if menu_choice == "Move":
-            move.MoveAction.move(SpaceMarineTurn.command_points)
-        elif menu_choice == "Attack":
-            attackaction.Attack.attack()
-        elif menu_choice == "Other Action":
-            miscaction.OtherActions.other_action()
-        elif menu_choice == "View Map":
-            gamemap.map()
-        elif menu_choice == "End Turn":
-            SpaceMarineTurn.win_cond()
-            return GenestealerTurn.enter(turn_count)
-        else:
-            print("The command that you entered in invalid, please try again.")
-            SpaceMarineTurn.turn_menu()
-
-    def win_cond():
-        if gametiles.tiles['ll5']["door"]["sealed"] == True and gametiles.tiles['lr5']["door"]["sealed"] == True and gametiles.tiles['c3']["door"]["sealed"] == True and gametiles.tiles['c5']["door"]["sealed"] == True and gametiles.tiles['g20']["door"]["sealed"] == True and gametiles.tiles['g18']["door"]["sealed"] == True and gametiles.tiles['g24']["door"]["sealed"] == True and gametiles.tiles['g22']["door"]["sealed"] == True:
-            print(dedent("""
-                Victory is ours!
-                Mission accompished! The xenos filth has been sealed out of this area of the hulk!
-            """))
-            exit
-
-    def lose_cond():
-        if squad.squad['Sergent']['alive'] == False and squad.squad['Terminator1']['alive'] == False and squad.squad['Terminator2']['alive'] == False and squad.squad['Terminator3']['alive'] == False and squad.squad["Terminator4"]["alive"] == False:
-            print(dedent("""
-                Your squad had been overrun by the xenos filth!
-                Mission Failed!
-
-                Try again?
-            """))
-
-            try_again = input("> ")
-
-            if try_again == "Y" or try_again == "y":
-                new_game = Openingscene()
-                new_game.enter()
-            elif try_again == "N" or try_again == "n":
-                exit
-            else:
-                print("Invalid input, please try again.")
-                SpaceMarineTurn.lose_cond()
-
-class GenestealerTurn():
-    blips_to_deploy = 0
-
-    def enter(turn_count):
-        print("Genestealers are now moving.")
-        print("(press enter to continue)")
-        input('')
-        turn_count += 1
-        GenestealerTurn.blip_count()
-        radarblips.RadarBlips.blip_deployment(GenestealerTurn.blips_to_deploy)
-        move.GenestealerMove.genestealer_movement()
-
-    def blip_count():
-        if turn_count <= 2:
-            GenestealerTurn.blips_to_deploy += 3
-        elif 2 < turn_count <= 4:
-            GenestealerTurn.blips_to_deploy += 2
-        elif turn_count > 5:
-            GenestealerTurn.blips_to_deploy += 1
-
-    def end_turn():
-        print("End of Genestealer turn.")
-        print("(press enter to continue)")
-        input('')
-        return SpaceMarineTurn.enter(turn_count)
+            gametiles.tiles['s1']["occupied"] == True
 
 new_game = Openingscene()
 new_game.enter()
