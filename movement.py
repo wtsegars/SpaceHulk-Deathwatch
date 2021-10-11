@@ -17,13 +17,10 @@ class MoveAction():
         movement = input("> ")
 
         for j in squad.squad:
-            if movement == squad.squad[j]:
+            if movement == j:
                 print("How would you like to move?")
-
-                move_option = input("> ")
-
-                if squad.squad[j]["action points"] >= 2:
-                    print(dedent("""
+                print()
+                print(dedent("""
                                 Forwards,
                                 Backwards,
                                 Turn Left,
@@ -31,6 +28,10 @@ class MoveAction():
                                 Move Another Terminator,
                                 Choose Another Action
                                 """))
+
+                move_option = input("> ")
+
+                if squad.squad[j]["action points"] >= 2:
 
                     for k in MoveAction.motion_1:
                         if move_option == MoveAction.motion_1[k]:
