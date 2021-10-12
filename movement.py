@@ -97,9 +97,9 @@ class MoveAction():
         forward_move = input('> ')
 
         if forward_move <= w + x:
-            MoveAction.moveActions += forward_move
+            MoveAction.movement += forward_move
 
-            for a in range(MoveAction.moveActions):
+            for a in range(MoveAction.movement):
                 if a != 0:
                     if z == "north":
                         for b in gametiles.tiles:
@@ -200,12 +200,12 @@ class MoveAction():
         print("How far do you want to move backwards?")
 
         backwards_move = input('> ')
-        #moveActions = 0
+        #movement = 0
 
         if backwards_move <= w + x:
-            MoveAction.moveActions += backwards_move
+            MoveAction.movement += backwards_move
 
-            for a in range(MoveAction.moveActions):
+            for a in range(MoveAction.movement):
                 if a != 0:
                     if z == "north":
                         for b in gametiles.tiles:
