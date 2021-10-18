@@ -326,31 +326,32 @@ class MoveAction():
 
                 if squad.squad[j]["action points"] >= 2:
 
-                            if move_option == "Forwards":
-                                MoveAction.forwards(command_pts,
-                                        squad.squad[i]["action points"],
-                                        squad.squad[i]["current_position"],
-                                        squad.squad[i]["direction"])
-                            elif move_option == "Backwards":
-                                MoveAction.backwards(command_pts,
-                                        squad.squad[i]["action points"],
-                                        squad.squad[i]["current_position"],
-                                        squad.squad[i]["direction"])
-                            elif move_option == "Turn Left":
-                                MoveAction.turn_left(command_pts,
-                                        squad.squad[i]["action points"],
-                                        squad.squad[i]["direction"])
-                            elif move_option == "Turn Right":
-                                MoveAction.turn_right(command_pts,
-                                        squad.squad[i]["action points"],
-                                        squad.squad[i]["direction"])
-                            elif move_option == "Move Another Terminator":
-                                MoveAction.move_other_term()
-                            elif move_option == "Choose Another Action":
-                                MoveAction.choose_other_action()
-                            else:
-                                print("Input was invalid. Please try again.")
-                                MoveAction.move(SpaceMarineTurn.command_points)
+                    if move_option == "Forwards":
+                        MoveAction.forwards(command_pts,
+                                squad.squad[i]["action points"],
+                                squad.squad[i]["current_place"],
+                                squad.squad[i]["direction"])
+                    elif move_option == "Backwards":
+                        MoveAction.backwards(command_pts,
+                                squad.squad[i]["action points"],
+                                squad.squad[i]["current_place"],
+                                squad.squad[i]["direction"])
+                    elif move_option == "Turn Left":
+                        MoveAction.turn_left(command_pts,
+                                squad.squad[i]["action points"],
+                                squad.squad[i]["direction"])
+                    elif move_option == "Turn Right":
+                        MoveAction.turn_right(command_pts,
+                                squad.squad[i]["action points"],
+                                squad.squad[i]["direction"])
+                    elif move_option == "Move Another Terminator":
+                        MoveAction.move_other_term()
+                    elif move_option == "Choose Another Action":
+                        MoveAction.choose_other_action()
+                    else:
+                        print("Input was invalid. Please try again.")
+                        MoveAction.move(SpaceMarineTurn.command_points)
+
                 elif squad[j]["action points"] < 2:
                     print(dedent("""
                                 Forwards,
@@ -360,28 +361,26 @@ class MoveAction():
                                 Choose Another Action
                                 """))
 
-                    for k in MoveAction.motion_2:
-                        if move_option == MoveAction.motion_2[k]:
-                            if MoveAction.motion_2[k] == "Forwards":
-                                MoveAction.forwards(command_pts,
-                                        squad.squad[j]["action points"],
-                                        squad.squad[j]["current_position"],
-                                        squad.squad[j]["direction"])
-                            elif MoveAction.motion_2[k] == "Turn Left":
-                                MoveAction.turn_left(command_pts,
-                                        squad[i]["action points"],
-                                        squad[i]["direction"])
-                            elif MoveAction.motion_2[k] == "Turn Right":
-                                MoveAction.turn_right(command_pts,
-                                        squad[i]["action points"],
-                                        squad[i]["direction"])
-                            elif MoveAction.motion_2[k] == "Move Another Terminator":
-                                MoveAction.move_other_term()
-                            elif MoveAction.motion_2[k] == "Choose Another Action":
-                                MoveAction.choose_other_action()
-                        else:
-                            print("Input was invalid. Please try again.")
-                            MoveAction.move(SpaceMarineTurn.command_points)
+                    if move_option == "Forwards":
+                        MoveAction.forwards(command_pts,
+                                squad.squad[j]["action points"],
+                                squad.squad[j]["current_place"],
+                                squad.squad[j]["direction"])
+                    elif move_option == "Turn Left":
+                        MoveAction.turn_left(command_pts,
+                                squad[i]["action points"],
+                                squad[i]["direction"])
+                    elif move_option == "Turn Right":
+                        MoveAction.turn_right(command_pts,
+                                squad[i]["action points"],
+                                squad[i]["direction"])
+                    elif move_option == "Move Another Terminator":
+                        MoveAction.move_other_term()
+                    elif move_option == "Choose Another Action":
+                        MoveAction.choose_other_action()
+                else:
+                    print("Input was invalid. Please try again.")
+                    MoveAction.move(SpaceMarineTurn.command_points)
 
     def forwards(w, x, y, z):
         print("How far would you like to move forward?")
