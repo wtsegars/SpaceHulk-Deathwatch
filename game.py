@@ -345,7 +345,7 @@ class MoveAction():
                                 squad.squad[i]["action points"],
                                 squad.squad[i]["direction"])
                     elif move_option == "Move Another Terminator":
-                        MoveAction.move_other_term()
+                        MoveAction.move_other_term(command_pts)
                     elif move_option == "Choose Another Action":
                         MoveAction.choose_other_action()
                     else:
@@ -375,7 +375,7 @@ class MoveAction():
                                 squad[i]["action points"],
                                 squad[i]["direction"])
                     elif move_option == "Move Another Terminator":
-                        MoveAction.move_other_term()
+                        MoveAction.move_other_term(command_pts)
                     elif move_option == "Choose Another Action":
                         MoveAction.choose_other_action()
                 else:
@@ -659,8 +659,8 @@ class MoveAction():
         
         MoveAction.move()
 
-    def move_other_term():
-        MoveAction.move()
+    def move_other_term(command_pts):
+        MoveAction.move(command_pts)
 
     def choose_other_action():
         SpaceMarineTurn.turn_menu()
