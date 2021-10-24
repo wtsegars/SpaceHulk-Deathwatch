@@ -173,18 +173,23 @@ class Squadplacement():
     def place_loop(term, start_place):
         if start_place == "first":
             term["current_place"] = "s5"
+            term["direction"] = "north"
             Squadplacement.order.remove("first")
         elif start_place == "second":
             term["current_place"] = "s4"
+            term["direction"] = "north"
             Squadplacement.order.remove("second")
         elif start_place == "third":
             term["current_place"] = "s3"
+            term["direction"] = "north"
             Squadplacement.order.remove("third")
         elif start_place == "fourth":
             term["current_place"] = "s4"
+            term["direction"] = "north"
             Squadplacement.order.remove("fourth")
         else:
             term["current_place"] = "s1"
+            term["direction"] = "north"
             Squadplacement.order.remove("fifth")
 
 class SpaceMarineTurn():
