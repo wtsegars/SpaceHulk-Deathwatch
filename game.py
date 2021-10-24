@@ -390,7 +390,7 @@ class MoveAction():
     def forwards(w, x, y, z):
         print("How far would you like to move forward?")
 
-        forward_move = input('> ')
+        forward_move = int(input('> '))
 
         if forward_move <= w + x:
             MoveAction.movement += forward_move
@@ -402,7 +402,7 @@ class MoveAction():
                             if gametiles.tiles[b]["connected to"].get(y) == "south":
                                 if gametiles.tiles[b]["occupied"] == True:
                                     print("You are unable to move to this spot.")
-                                    MoveAction.move()
+                                    MoveAction.move(w)
                                 else:
                                     if x < 1 and w > 1:
                                         w -= 1
@@ -410,7 +410,7 @@ class MoveAction():
                                         x -= 1
                                     else:
                                         print("You don't have enough action point and/or command points to do this action.")
-                                        MoveAction.move()
+                                        MoveAction.move(w)
 
                                     gametiles.tiles[y]["occupied"] = False
                                     gametiles.tiles[b]["occupied"] = True
@@ -418,13 +418,13 @@ class MoveAction():
                                     y = gametiles[b]
                             else:
                                 print("You are unable to move in this direction")
-                                MoveAction.move()
+                                MoveAction.move(w)
                     elif z == "south":
                         for b in gametiles.tiles:
                             if gametiles.tiles[b]["connected to"].get(y) == "north":
                                 if gametiles.tiles[b]["occupied"] == True:
                                     print("You are unable to move to this spot.")
-                                    MoveAction.move()
+                                    MoveAction.move(w)
                                 else:
                                     if x < 1 and w >= 1:
                                         w -= 1
@@ -432,7 +432,7 @@ class MoveAction():
                                         x -= 1
                                     else:
                                         print("You don't have enough action point and/or command points to do this action.")
-                                        MoveAction.move()
+                                        MoveAction.move(w)
 
                                     gametiles.tiles[y]["occupied"] = False
                                     gametiles.tiles[b]["occupied"] = True
@@ -440,13 +440,13 @@ class MoveAction():
                                     y = gametiles[b]
                             else:
                                 print("You are unable to move in this direction.")
-                                MoveAction.move()
+                                MoveAction.move(w)
                     elif z == "west":
                         for b in gametiles.tiles:
                             if gametiles.tiles[b]["connected to"].get(y) == "east":
                                 if gametiles.tiles[b]["occupied"] == True:
                                     print("You are unable to move to this spot.")
-                                    MoveAction.move()
+                                    MoveAction.move(w)
                                 else:
                                     if x < 1 and w > 1:
                                         w -= 1
@@ -454,7 +454,7 @@ class MoveAction():
                                         x -= 1
                                     else:
                                         print("You don't have enough action point and/or command points to do this action.")
-                                        MoveAction.move()
+                                        MoveAction.move(w)
 
                                     gametiles.tiles[y]["occupied"] = False
                                     gametiles.tiles[b]["occupied"] = True
@@ -462,13 +462,13 @@ class MoveAction():
                                     y = gametiles[b]
                             else:
                                 print("You are unable to move in this direction.")
-                                MoveAction.move()
+                                MoveAction.move(w)
                     elif z == "east":
                         for b in gametiles.tiles:
                             if gametiles.tiles[b]["connected to"].get(y) == "west":
                                 if gametiles.tiles[b]["occupied"] == True:
                                     print("you are unable to move to this spot.")
-                                    MoveAction.move()
+                                    MoveAction.move(w)
                                 else:
                                     if x < 1 and w > 1:
                                         w -= 1
@@ -476,7 +476,7 @@ class MoveAction():
                                         x -= 1
                                     else:
                                         print("You don't have enough action point and/or command points to do this action.")
-                                        MoveAction.move()
+                                        MoveAction.move(w)
 
                                     gametiles.tiles[y]["occupied"] = False
                                     gametiles.tiles[b]["occupied"] = True
@@ -484,9 +484,9 @@ class MoveAction():
                                     y = gametiles[b]
                             else:
                                 print("You are unable to move in this direction.")
-                                MoveAction.move()
+                                MoveAction.move(w)
             
-            MoveAction.move()
+            MoveAction.move(w)
 
         elif forward_move > w + x:
             print("You do not have enough action points to move this far.")
