@@ -495,7 +495,7 @@ class MoveAction():
     def backwards(w, x, y, z):
         print("How far do you want to move backwards?")
 
-        backwards_move = input('> ')
+        backwards_move = int(input('> '))
         #movement = 0
 
         if backwards_move <= w + x:
