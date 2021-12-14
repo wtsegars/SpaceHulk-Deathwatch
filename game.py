@@ -334,9 +334,9 @@ class MoveAction():
 
                     if move_option == "Forwards":
                         MoveAction.forwards(command_pts,
-                                squad.squad[i]["action points"],
-                                squad.squad[i]["current_place"],
-                                squad.squad[i]["direction"])
+                                squad.squad[j]["action points"],
+                                squad.squad[j]["current_place"],
+                                squad.squad[j]["direction"])
                     elif move_option == "Backwards":
                         MoveAction.backwards(command_pts,
                                 squad.squad[j]["action points"],
@@ -344,12 +344,12 @@ class MoveAction():
                                 squad.squad[j]["direction"])
                     elif move_option == "Turn Left":
                         MoveAction.turn_left(command_pts,
-                                squad.squad[i]["action points"],
-                                squad.squad[i]["direction"])
+                                squad.squad[j]["action points"],
+                                squad.squad[j]["direction"])
                     elif move_option == "Turn Right":
                         MoveAction.turn_right(command_pts,
-                                squad.squad[i]["action points"],
-                                squad.squad[i]["direction"])
+                                squad.squad[j]["action points"],
+                                squad.squad[j]["direction"])
                     elif move_option == "Move Another Terminator":
                         MoveAction.move_other_term(command_pts)
                     elif move_option == "Choose Another Action":
@@ -374,12 +374,12 @@ class MoveAction():
                                 squad.squad[j]["direction"])
                     elif move_option == "Turn Left":
                         MoveAction.turn_left(command_pts,
-                                squad[i]["action points"],
-                                squad[i]["direction"])
+                                squad[j]["action points"],
+                                squad[j]["direction"])
                     elif move_option == "Turn Right":
                         MoveAction.turn_right(command_pts,
-                                squad[i]["action points"],
-                                squad[i]["direction"])
+                                squad[j]["action points"],
+                                squad[j]["direction"])
                     elif move_option == "Move Another Terminator":
                         MoveAction.move_other_term(command_pts)
                     elif move_option == "Choose Another Action":
