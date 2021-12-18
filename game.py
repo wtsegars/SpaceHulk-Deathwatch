@@ -622,6 +622,7 @@ class MoveAction():
             MoveAction.move(w)
 
     def turn_left(x, y, z):
+        #print(z)
         if y >= 1:
             y -= 1
             if z == "north":
@@ -652,9 +653,11 @@ class MoveAction():
             print("You do not have enough action points/command points to complete this action.")
             MoveAction.move(x)
 
+        #print(z)
         MoveAction.move(x)
 
     def turn_right(x, y, z):
+        #print(z)
         if y >= 1:
             y -= 1
             if z == "north":
@@ -685,6 +688,7 @@ class MoveAction():
             print("You do not have enough action points/command points to complete this action.")
             MoveAction.move(x)
         
+        #print(z)
         MoveAction.move(x)
 
     def move_other_term(command_pts):
