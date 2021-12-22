@@ -1,5 +1,4 @@
 import game
-import attackaction
 import radarblips
 import genestealers
 import gametiles
@@ -70,7 +69,7 @@ class GenestealerMove():
                                                 if (squad[d]["current_place"] == gametiles.tiles(radarblips.RadarBlips.blips[x]["current location"])["connected to"][0]):
                                                     if (radarblips.RadarBlips.blips[x]["action points"] > 0):
                                                         while (radarblips.RadarBlips.blips[x]["action points"] > 0 or squad[d]["alive"] == True):
-                                                            attackaction.Attack.close_combat(game.SpaceMarineTurn.command_points,
+                                                            game.Attack.close_combat(game.SpaceMarineTurn.command_points,
                                                                                         squad[d]["action points"],
                                                                                         squad[d]["current_place"],
                                                                                         squad[d]["direction"],
@@ -96,7 +95,7 @@ class GenestealerMove():
                                                 if (squad[d]["current_place"] == gametiles.tiles(radarblips.RadarBlips.blips[x]["current location"])["connected to"][1]):
                                                     if (radarblips.RadarBlips.blips[x]["action points"] > 0):
                                                         while (radarblips.RadarBlips.blips[x]["action points"] > 0 or squad[d]["alive"] == True):
-                                                            attackaction.Attack.close_combat(game.SpaceMarineTurn.command_points,
+                                                            game.Attack.close_combat(game.SpaceMarineTurn.command_points,
                                                                                         squad[d]["action points"],
                                                                                         squad[d]["current_place"],
                                                                                         squad[d]["direction"],
@@ -122,7 +121,7 @@ class GenestealerMove():
                                                 if (squad[d]["current_place"] == gametiles.tiles(radarblips.RadarBlips.blips[x]["current location"])["connected to"][2]):
                                                     if (radarblips.RadarBlips.blips[x]["action points"] > 0):
                                                         while (radarblips.RadarBlips.blips[x]["action points"] > 0 or squad[d]["alive"] == True):
-                                                            attackaction.Attack.close_combat(game.SpaceMarineTurn.command_points,
+                                                            game.Attack.close_combat(game.SpaceMarineTurn.command_points,
                                                                                         squad[d]["action points"],
                                                                                         squad[d]["current_place"],
                                                                                         squad[d]["direction"],
@@ -148,7 +147,7 @@ class GenestealerMove():
                                                 if (squad[d]["current_place"] == gametiles.tiles(radarblips.RadarBlips.blips[x]["current location"])["connected to"][3]):
                                                     if (radarblips.RadarBlips.blips[x]["action points"] > 0):
                                                         while (radarblips.RadarBlips.blips[x]["action points"] > 0 or squad[d]["alive"] == True):
-                                                            attackaction.Attack.close_combat(game.SpaceMarineTurn.command_points,
+                                                            game.Attack.close_combat(game.SpaceMarineTurn.command_points,
                                                                                         squad[d]["action points"],
                                                                                         squad[d]["current_place"],
                                                                                         squad[d]["direction"],
@@ -229,7 +228,7 @@ class GenestealerMove():
                                                     if (squad[k]["current_place"] == gametiles.tiles(genestealers[e]["current location"])["connected to"][0]):
                                                         if (genestealers[e]["action points"] > 0):
                                                             while (genestealers[e]["action points"] > 0 or squad[k]["alive"] == True):
-                                                                attackaction.Attack.close_combat(game.SpaceMarineTurn.command_points,
+                                                                game.Attack.close_combat(game.SpaceMarineTurn.command_points,
                                                                                         squad[k]["action points"],
                                                                                         squad[k]["current_place"],
                                                                                         squad[k]["direction"],
@@ -259,7 +258,7 @@ class GenestealerMove():
                                                     if (squad[k]["current_place"] == gametiles.tiles(genestealers[e]["current location"])["connected to"][1]):
                                                         if (genestealers[e]["action points"] > 0):
                                                             while (genestealers[e]["action points"] > 0 or squad[k]["alive"] == True):
-                                                                attackaction.Attack.close_combat(game.SpaceMarineTurn.command_points,
+                                                                game.Attack.close_combat(game.SpaceMarineTurn.command_points,
                                                                                         squad[k]["action points"],
                                                                                         squad[k]["current_place"],
                                                                                         squad[k]["direction"],
@@ -289,7 +288,7 @@ class GenestealerMove():
                                                     if (squad[k]["current_place"] == gametiles.tiles(genestealers[e]["current location"])["connected to"][2]):
                                                         if (genestealers[e]["action points"] > 0):
                                                             while (genestealers[e]["action points"] > 0 or squad[k]["alive"] == True):
-                                                                attackaction.Attack.close_combat(game.SpaceMarineTurn.command_points,
+                                                                game.Attack.close_combat(game.SpaceMarineTurn.command_points,
                                                                                         squad[k]["action points"],
                                                                                         squad[k]["current_place"],
                                                                                         squad[k]["direction"],
@@ -319,7 +318,7 @@ class GenestealerMove():
                                                     if (squad[k]["current_place"] == gametiles.tiles(genestealers[e]["current location"])["connected to"][3]):
                                                         if (genestealers[e]["action points"] > 0):
                                                             while (genestealers[e]["action points"] > 0 or squad[k]["alive"] == True):
-                                                                attackaction.Attack.close_combat(game.SpaceMarineTurn.command_points,
+                                                                game.Attack.close_combat(game.SpaceMarineTurn.command_points,
                                                                                         squad[k]["action points"],
                                                                                         squad[k]["current_place"],
                                                                                         squad[k]["direction"],
