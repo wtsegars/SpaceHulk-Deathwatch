@@ -729,7 +729,8 @@ class Attack():
                                     squad.squad[j]["current_place"],
                                     squad.squad[j]["direction"],
                                     squad.squad[j]["alive"],
-                                    attack_choice)
+                                    attack_choice,
+                                    squad.squad[j]["clip size"])
                     elif attack_choice == "Powerfist":
                         Attack.close_combat(SpaceMarineTurn.command_points,
                                         squad.squad[j]["action points"],
@@ -755,7 +756,8 @@ class Attack():
                                     squad.squad[j]["current_place"],
                                     squad.squad[j]["direction"],
                                     squad.squad[j]["alive"],
-                                    attack_choice)
+                                    attack_choice,
+                                    squad.squad[j]["clip size"])
                     elif attack_choice == "Power Sword":
                         Attack.close_combat(SpaceMarineTurn.command_points,
                                         squad.squad[j]["action points"],
@@ -817,7 +819,8 @@ class Attack():
                                     squad.squad[j]["current_place"],
                                     squad.squad[j]["direction"],
                                     squad.squad[j]["alive"],
-                                    attack_choice)
+                                    attack_choice,
+                                    squad.squad[j]["clip size"])
                     elif attack_choice == "Chainfist":
                         Attack.close_combat(SpaceMarineTurn.command_points,
                                         squad.squad[j]["action points"],
@@ -843,7 +846,8 @@ class Attack():
                                     squad.squad[j]["current_place"],
                                     squad.squad[j]["direction"],
                                     squad.squad[j]["alive"],
-                                    attack_choice)
+                                    attack_choice,
+                                    squad.squad[j]["clip size"])
                     elif attack_choice == "Power Axe":
                         Attack.close_combat(SpaceMarineTurn.command_points,
                                         squad.squad[j]["action points"],
@@ -924,7 +928,8 @@ class Attack():
                                     squad.squad[j]["current_place"],
                                     squad.squad[j]["direction"],
                                     squad.squad[j]["alive"],
-                                    attack_choice)
+                                    attack_choice,
+                                    squad.squad[j]["clip size"])
                     elif attack_choice == "Cyclone Missile Launcher":
                         Attack.ranged_combat(SpaceMarineTurn.command_points,
                                     squad.squad[j]["action points"],
@@ -958,7 +963,8 @@ class Attack():
                                     squad.squad[j]["current_place"],
                                     squad.squad[j]["direction"],
                                     squad.squad[j]["alive"],
-                                    attack_choice)
+                                    attack_choice,
+                                    squad.squad[j]["clip size"])
                     elif attack_choice == "Power Maul":
                         Attack.close_combat(SpaceMarineTurn.command_points,
                                         squad.squad[j]["action points"],
