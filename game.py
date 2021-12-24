@@ -711,7 +711,9 @@ class Attack():
         attack_with = input("> ")
 
         for j in squad.squad:
+            #print(j)
             if attack_with == j:
+                #print(attack_with)
                 print("How would you like to Attack?")
 
                 if squad.squad[j]["weapon loadout"] == "Storm Bolter and Powerfist":
@@ -740,7 +742,7 @@ class Attack():
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad.squad[i]["weapon loadout"] == "Power Sword and Storm Bolter":
+                elif squad.squad[j]["weapon loadout"] == "Power Sword and Storm Bolter":
                     print("Storm Bolter")
                     print("Power Sword")
                     print("Cancel")
@@ -766,7 +768,7 @@ class Attack():
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad.squad[i]["weapon loadout"] == "Thunder Hammer and Storm Shield":
+                elif squad.squad[j]["weapon loadout"] == "Thunder Hammer and Storm Shield":
                     print("Thunder Hammer")
                     print("Cancel")
 
@@ -784,7 +786,7 @@ class Attack():
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad.squad[i]["weapon loadout"] == "Lightning Claws":
+                elif squad.squad[j]["weapon loadout"] == "Lightning Claws":
                     print("Lightning Claws")
                     print("Cancel")
 
@@ -802,7 +804,7 @@ class Attack():
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad.squad[i]["weapon loadout"] == "Storm Bolter and Chainfist":
+                elif squad.squad[j]["weapon loadout"] == "Storm Bolter and Chainfist":
                     print("Storm Bolter")
                     print("Chainfist")
                     print("Cancel")
@@ -828,7 +830,7 @@ class Attack():
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad.squad[i]["weapon loadout"] == "Storm Bolter and Power Axe":
+                elif squad.squad[j]["weapon loadout"] == "Storm Bolter and Power Axe":
                     print("Storm Bolter")
                     print("Power Axe")
                     print("Cancel")
@@ -854,7 +856,7 @@ class Attack():
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad.squad[i]["weapon loadout"] == "Assault Cannon and Powerfist":
+                elif squad.squad[j]["weapon loadout"] == "Assault Cannon and Powerfist":
                     print("Assault Cannon")
                     print("Powerfist")
                     print("Cancel")
@@ -881,7 +883,7 @@ class Attack():
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad.squad[i]["weapon loadout"] == "Heavy Flamer and Powerfist":
+                elif squad.squad[j]["weapon loadout"] == "Heavy Flamer and Powerfist":
                     print("Heavy Flamer")
                     print("Powerfist")
                     print("Cancel")
@@ -908,7 +910,7 @@ class Attack():
                     else:
                         print("You entered an invalid command, please try again.")
                         Attack.attack()
-                elif squad.squad[i]["weapon loadout"] == "Cyclone Missile Launcher, Storm Bolter and Powerfist":
+                elif squad.squad[j]["weapon loadout"] == "Cyclone Missile Launcher, Storm Bolter and Powerfist":
                     print("Storm Bolter")
                     print("Cyclone Missile Launcher")
                     print("Powerfist")
@@ -943,7 +945,7 @@ class Attack():
                     else:
                         print("You entered and invalid command, please try again.")
                         Attack.attack()
-                elif squad.squad[i]["weapon loadout"] == "Storm Bolter and Power Maul":
+                elif squad.squad[j]["weapon loadout"] == "Storm Bolter and Power Maul":
                     print("Storm Bolter")
                     print("Power Maul")
                     print("Cancel")
