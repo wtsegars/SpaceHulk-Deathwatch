@@ -711,8 +711,8 @@ class Attack():
         attack_with = input("> ")
 
         for j in squad.squad:
-            if attack_with == squad.squad[j]:
-                print("How would you like to Attack.attack?")
+            if attack_with == j:
+                print("How would you like to Attack?")
 
                 if squad.squad[j]["weapon loadout"] == "Storm Bolter and Powerfist":
                     print("Storm Bolter")

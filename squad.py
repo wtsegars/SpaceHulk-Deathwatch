@@ -2,20 +2,20 @@ squad = {
     "Sergent" : {
         "action points": 4,
         "overwatch": False,
-        "current_place": None,
+        "current_place": "s5",
         "chapter": None,
-        "weapon loadout": None,
+        "weapon loadout": "Power Sword and Storm Bolter",
         "alive": True,
-        "direction": None
+        "direction": "north"
     },
     "Terminator1" : {
         "action points": 4,
         "overwatch": False,
-        "current_place": None,
+        "current_place": "s4",
         "chapter": None,
         "weapon loadout": None,
         "alive": True,
-        "direction": None
+        "direction": "north"
     },
     "Terminator2" : {
         "action points": 4,
