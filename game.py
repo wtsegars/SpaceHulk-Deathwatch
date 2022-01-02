@@ -3533,8 +3533,10 @@ class Attack():
                                 Attack.attack()
             else:
                 for x in linesight.line_of_sight:
+                    #print(x)
                     for y in linesight.line_of_sight[x]:
-                        if linesight.line_of_sight[x][y] == c:
+                        #print(y)
+                        if y == c:
                             o = 1
                             n = -1
                             if linesight.line_of_sight[x] == "starting hall":
