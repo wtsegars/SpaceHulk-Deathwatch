@@ -711,9 +711,9 @@ class Attack():
         attack_with = input("> ")
 
         for j in squad.squad:
-            #print(j)
+            print(j)
             if attack_with == j:
-                #print(attack_with)
+                print(attack_with)
                 print("How would you like to Attack?")
 
                 if squad.squad[j]["weapon loadout"] == "Storm Bolter and Powerfist":
@@ -751,6 +751,7 @@ class Attack():
                     attack_choice = input("> ")
 
                     if attack_choice == "Storm Bolter":
+                        print("Storm Bolter")
                         Attack.ranged_combat(SpaceMarineTurn.command_points,
                                     squad.squad[j]["action points"],
                                     squad.squad[j]["current_place"],
@@ -1029,7 +1030,7 @@ class Attack():
                                                 Attack.attack()
                                     elif y == len(genestealers.genestealers):
                                         for z in squad.squad:
-                                            if squad.squad.squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
+                                            if squad.squad[z]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][x]]:
                                                 print(
                                                     "You can't fire on your own men.")
                                                 Attack.attack()
@@ -3533,13 +3534,15 @@ class Attack():
                                 Attack.attack()
             else:
                 for x in linesight.line_of_sight:
-                    #print(x)
+                    print(x)
                     for y in linesight.line_of_sight[x]:
-                        #print(y)
+                        print(y)
+                        print(c)
+                        print(linesight.line_of_sight[x])
                         if y == c:
                             o = 1
                             n = -1
-                            if linesight.line_of_sight[x] == "starting hall":
+                            if x == "starting hall":
                                 if d == "south":
                                     for z in range(y + 1, 6, o):
                                         if linesight.line_of_sight[0][z] == gametiles.tiles[linesight.line_of_sight[0][z]]:
@@ -3639,7 +3642,7 @@ class Attack():
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
-                            elif linesight.line_of_sight[x] == "lower hall":
+                            elif x == "lower hall":
                                 if d == "east":
                                     for z in range(y + 1, 15, o):
                                         if linesight.line_of_sight[1][z] == gametiles.tiles[linesight.line_of_sight[1][z]]:
@@ -3739,7 +3742,7 @@ class Attack():
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
-                            elif linesight.line_of_sight[x] == "lower left genestealer entrance":
+                            elif x == "lower left genestealer entrance":
                                 if d == "north":
                                     for z in range(y + 1, 3, o):
                                         if linesight.line_of_sight[2][z] == gametiles.tiles[linesight.line_of_sight[2][z]]:
@@ -3839,7 +3842,7 @@ class Attack():
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
-                            elif linesight.line_of_sight[x] == "lower right genestealer entrance":
+                            elif x == "lower right genestealer entrance":
                                 if d == "north":
                                     for z in range(y + 1, 3, o):
                                         if linesight.line_of_sight[3][z] == gametiles.tiles[linesight.line_of_sight[3][z]]:
@@ -3939,7 +3942,7 @@ class Attack():
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
-                            elif linesight.line_of_sight[x] == "left hallway":
+                            elif x == "left hallway":
                                 if d == "north":
                                     for z in range(y + 1, 14, o):
                                         if linesight.line_of_sight[4][z] == gametiles.tiles[linesight.line_of_sight[4][z]]:
@@ -4039,7 +4042,7 @@ class Attack():
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
-                            elif linesight.line_of_sight[x] == "right hallway":
+                            elif x == "right hallway":
                                 if d == "north":
                                     for z in range(y + 1, 14, o):
                                         if linesight.line_of_sight[5][z] == gametiles.tiles[linesight.line_of_sight[5][z]]:
@@ -4139,7 +4142,7 @@ class Attack():
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
-                            elif linesight.line_of_sight[x] == "center hall":
+                            elif x == "center hall":
                                 if d == "east":
                                     for z in range(y + 1, 11, o):
                                         if linesight.line_of_sight[6][z] == gametiles.tiles[linesight.line_of_sight[6][z]]:
@@ -4239,7 +4242,7 @@ class Attack():
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
-                            elif linesight.line_of_sight[x] == "lower middle hall":
+                            elif x == "lower middle hall":
                                 if d == "north":
                                     for z in range(y + 1, 5, o):
                                         if linesight.line_of_sight[7][z] == gametiles.tiles[linesight.line_of_sight[7][z]]:
@@ -4339,7 +4342,7 @@ class Attack():
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
-                            elif linesight.line_of_sight[x] == "lower middle genestealer entrance":
+                            elif x == "lower middle genestealer entrance":
                                 if d == "east":
                                     for z in range(y + 1, 5, o):
                                         if linesight.line_of_sight[8][z] == gametiles.tiles[linesight.line_of_sight[8][z]]:
@@ -4440,7 +4443,7 @@ class Attack():
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
-                            elif linesight.line_of_sight[x] == "upper middle genestealer entrance":
+                            elif x == "upper middle genestealer entrance":
                                 if d == "east":
                                     for z in range(y + 1, 5, o):
                                         if linesight.line_of_sight[9][z] == gametiles.tiles[linesight.line_of_sight[9][z]]:
@@ -4540,7 +4543,7 @@ class Attack():
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
-                            elif linesight.line_of_sight[x] == "upper middle hall":
+                            elif x == "upper middle hall":
                                 if d == "north":
                                     for z in range(y + 1, 6, o):
                                         if linesight.line_of_sight[10][z] == gametiles.tiles[linesight.line_of_sight[10][z]]:
@@ -4640,7 +4643,7 @@ class Attack():
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
-                            elif linesight.line_of_sight[x] == "lower top genestealer entrance":
+                            elif x == "lower top genestealer entrance":
                                 if d == "east":
                                     for z in range(y + 1, 5, o):
                                         if linesight.line_of_sight[11][z] == gametiles.tiles[linesight.line_of_sight[11][z]]:
@@ -4740,7 +4743,7 @@ class Attack():
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
-                            elif linesight.line_of_sight[x] == "upper top genestealer entrance":
+                            elif x == "upper top genestealer entrance":
                                 if d == "east":
                                     for z in range(y + 1, 5, o):
                                         if linesight.line_of_sight[12][z] == gametiles.tiles[linesight.line_of_sight[12][z]]:
@@ -4840,7 +4843,7 @@ class Attack():
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
-                            elif linesight.line_of_sight[x] == "upper hall":
+                            elif x == "upper hall":
                                 if d == "east":
                                     for z in range(y + 1, 11, o):
                                         if linesight.line_of_sight[13][z] == gametiles.tiles[linesight.line_of_sight[13][z]]:
