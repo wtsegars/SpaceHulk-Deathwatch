@@ -1,13 +1,13 @@
 line_of_sight = {
-    "starting hall": {
+    "starting hall": [
         "s1",
         "s2",
         "s3",
         "s4",
         "s5",
         "c1"
-    },
-    "lower hall": {
+    ],
+    "lower hall": [
         "g3",
         "g4",
         "ll5",
@@ -23,18 +23,18 @@ line_of_sight = {
         "lr5",
         "g8",
         "g7"
-    },
-    "lower left genestealer entrance": {
+    ],
+    "lower left genestealer entrance": [
         "g3",
         "g2",
         "g1"
-    },
-    "lower right genestealer entrance": {
+    ],
+    "lower right genestealer entrance": [
         "g7",
         "g6",
         "g5"
-    },
-    "left hallway": {
+    ],
+    "left hallway": [
         "ll5",
         "l1",
         "l2",
@@ -49,8 +49,8 @@ line_of_sight = {
         "l11",
         "l12",
         "l13"
-    },
-    "right hallway": {
+    ],
+    "right hallway": [
         "lr5",
         "r1",
         "r2",
@@ -65,8 +65,8 @@ line_of_sight = {
         "r11",
         "r12",
         "r13"
-    },
-    "center hall": {
+    ],
+    "center hall": [
         "l6",
         "cl1",
         "cl2",
@@ -78,51 +78,51 @@ line_of_sight = {
         "cr2",
         "cr1",
         "r6"
-    },
-    "lower middle hall": {
+    ],
+    "lower middle hall": [
         "c2",
         "c3",
         "c4",
         "c5",
         "c6"
-    },
-    "lower middle genestealer entrance": {
+    ],
+    "lower middle genestealer entrance": [
         "g9",
         "g10", 
         "c2",
         "g12",
         "g11"
-    },
-    "upper middle genestealer entrance": {
+    ],
+    "upper middle genestealer entrance": [
         "g13",
         "g14",
         "c6",
         "g16",
         "g15"
-    },
-    "upper middle hall": {
+    ],
+    "upper middle hall": [
         "c7",
         "c8",
         "c9",
         "c10",
         "c11",
         "c12"
-    },
-    "lower top genestealer entrance": {
+    ],
+    "lower top genestealer entrance": [
         "g19",
         "g20",
         "c7",
         "g18",
         "g17"
-    },
-    "upper top genestealer entrance": {
+    ],
+    "upper top genestealer entrance": [
         "g23",
         "g24",
         "c12",
         "g22",
         "g21"
-    },
-    "upper hall": {
+    ],
+    "upper hall": [
         "l13",
         "ul1",
         "ul2",
@@ -134,5 +134,5 @@ line_of_sight = {
         "ur2",
         "ur1",
         "r13"
-    }
+    ]
 }
