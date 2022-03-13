@@ -3536,15 +3536,16 @@ class Attack():
                 for x in linesight.line_of_sight:
                     print(x)
                     for y in linesight.line_of_sight[x]:
-                        print(y)
-                        print(c)
-                        print(linesight.line_of_sight[x])
+                        # print(y)
+                        # print(c)
+                        hall_len = len(y)
+                        #print(hall_len)
                         if y == c:
                             o = 1
                             n = -1
                             if x == "starting hall":
                                 if d == "south":
-                                    for z in range(y + 1, 6, o):
+                                    for z in range(hall_len + 1, 6, o):
                                         if linesight.line_of_sight[0][z] == gametiles.tiles[linesight.line_of_sight[0][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[0][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -3592,8 +3593,11 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "north":
-                                    for z in range(y + 1, -1, n):
-                                        if linesight.line_of_sight[0][z] == gametiles.tiles[linesight.line_of_sight[0][z]]:
+                                    for z in linesight.line_of_sight["starting hall"].values():
+                                        # print(z)
+                                        # print(linesight.line_of_sight["starting hall"].get(c))
+                                        # print(gametiles.tiles[c].get("id_1"))
+                                        if z == gametiles.tiles[c].get("id_1"):
                                             if gametiles.tiles[linesight.line_of_sight[0][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
                                                     if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
@@ -3644,7 +3648,7 @@ class Attack():
                                     Attack.attack()
                             elif x == "lower hall":
                                 if d == "east":
-                                    for z in range(y + 1, 15, o):
+                                    for z in range(hall_len + 1, 15, o):
                                         if linesight.line_of_sight[1][z] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[1][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -3692,7 +3696,7 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "west":
-                                    for z in range(y + 1, -1, n):
+                                    for z in range(hall_len + 1, -1, n):
                                         if linesight.line_of_sight[1][z] == gametiles.tiles[linesight.line_of_sight[1][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[1][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -3744,7 +3748,7 @@ class Attack():
                                     Attack.attack()
                             elif x == "lower left genestealer entrance":
                                 if d == "north":
-                                    for z in range(y + 1, 3, o):
+                                    for z in range(hall_len + 1, 3, o):
                                         if linesight.line_of_sight[2][z] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[2][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -3792,7 +3796,7 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "south":
-                                    for z in range(y + 1, -1, n):
+                                    for z in range(hall_len + 1, -1, n):
                                         if linesight.line_of_sight[2][z] == gametiles.tiles[linesight.line_of_sight[2][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[2][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -3844,7 +3848,7 @@ class Attack():
                                     Attack.attack()
                             elif x == "lower right genestealer entrance":
                                 if d == "north":
-                                    for z in range(y + 1, 3, o):
+                                    for z in range(hall_len + 1, 3, o):
                                         if linesight.line_of_sight[3][z] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[3][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -3892,7 +3896,7 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "south":
-                                    for z in range(y + 1, -1, n):
+                                    for z in range(hall_len + 1, -1, n):
                                         if linesight.line_of_sight[3][z] == gametiles.tiles[linesight.line_of_sight[3][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[3][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -3944,7 +3948,7 @@ class Attack():
                                     Attack.attack()
                             elif x == "left hallway":
                                 if d == "north":
-                                    for z in range(y + 1, 14, o):
+                                    for z in range(hall_len + 1, 14, o):
                                         if linesight.line_of_sight[4][z] == gametiles.tiles[linesight.line_of_sight[4][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[4][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -3992,7 +3996,7 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "south":
-                                    for z in range(y + 1, -1, -1):
+                                    for z in range(hall_len + 1, -1, -1):
                                         if linesight.line_of_sight[4][z] == gametiles.tiles[linesight.line_of_sight[4][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[4][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -4044,7 +4048,7 @@ class Attack():
                                     Attack.attack()
                             elif x == "right hallway":
                                 if d == "north":
-                                    for z in range(y + 1, 14, o):
+                                    for z in range(hall_len + 1, 14, o):
                                         if linesight.line_of_sight[5][z] == gametiles.tiles[linesight.line_of_sight[5][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[5][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -4092,7 +4096,7 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "south":
-                                    for z in range(y + 1, -1, n):
+                                    for z in range(hall_len + 1, -1, n):
                                         if linesight.line_of_sight[5][z] == gametiles.tiles[linesight.line_of_sight[5][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[5][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -4144,7 +4148,7 @@ class Attack():
                                     Attack.attack()
                             elif x == "center hall":
                                 if d == "east":
-                                    for z in range(y + 1, 11, o):
+                                    for z in range(hall_len + 1, 11, o):
                                         if linesight.line_of_sight[6][z] == gametiles.tiles[linesight.line_of_sight[6][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[6][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
@@ -4192,7 +4196,7 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "west":
-                                    for z in range(y + 1, -1, n):
+                                    for z in range(hall_len + 1, -1, n):
                                         if linesight.line_of_sight[6][z] == gametiles.tiles[linesight.line_of_sight[6][z]]:
                                             if gametiles.tiles[linesight.line_of_sight[6][z]]["occupied"] == True:
                                                 for g in genestealers.genestealers:
