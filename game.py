@@ -3541,8 +3541,6 @@ class Attack():
                         # hall_len = len(y)
                         #print(hall_len)
                         if y == c:
-                            o = 1
-                            n = -1
                             if x == "starting hall":
                                 if d == "south":
                                     for z in linesight.line_of_sight["starting hall"].values():
@@ -5646,14 +5644,15 @@ class RangedWeapons():
         elif b < 1 and a >= 1:
             a -= 1
 
-        if bolt_shot_1 >= 5 or bolt_shot_2 >= 5:
-            c = False
-            d = False
-            print("The xenos menace has been slain by bolter fire.")
-            Attack.attack()
-        else:
-            print("Your shot missed its target.")
-            Attack.attack()
+        if c == True and d == True:
+            if bolt_shot_1 >= 5 or bolt_shot_2 >= 5:
+                c = False
+                d = False
+                print("The xenos menace has been slain by bolter fire.")
+                Attack.attack()
+            else:
+                print("Your shot missed its target.")
+                Attack.attack()
 
     def assault_cannon(a, b, c, d, e, f):
         assault_shot_1 = randint(1, 6)
