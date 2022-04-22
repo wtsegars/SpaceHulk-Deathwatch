@@ -3538,18 +3538,18 @@ class Attack():
                     for y in linesight.line_of_sight[x]:
                         # print(y)
                         # print(c)
-                        hall_len = len(y)
+                        # hall_len = len(y)
                         #print(hall_len)
                         if y == c:
                             o = 1
                             n = -1
                             if x == "starting hall":
                                 if d == "south":
-                                    for z in range(hall_len + 1, 6, o):
-                                        if linesight.line_of_sight[0][z] == gametiles.tiles[linesight.line_of_sight[0][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[0][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["starting hall"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -3598,9 +3598,10 @@ class Attack():
                                         # print(linesight.line_of_sight["starting hall"].get(c))
                                         # print(gametiles.tiles[c].get("id_1"))
                                         if z == gametiles.tiles[c].get("id_1"):
-                                            if gametiles.tiles[linesight.line_of_sight[0][z]]["occupied"] == True:
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[0][z]]:
+                                                    # print(gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"))
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -3648,11 +3649,11 @@ class Attack():
                                     Attack.attack()
                             elif x == "lower hall":
                                 if d == "east":
-                                    for z in range(hall_len + 1, 15, o):
-                                        if linesight.line_of_sight[1][z] == gametiles.tiles[linesight.line_of_sight[1][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[1][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["lower hall"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -3696,11 +3697,11 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "west":
-                                    for z in range(hall_len + 1, -1, n):
-                                        if linesight.line_of_sight[1][z] == gametiles.tiles[linesight.line_of_sight[1][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[1][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["lower hall"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[1][z]]:
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -3748,11 +3749,11 @@ class Attack():
                                     Attack.attack()
                             elif x == "lower left genestealer entrance":
                                 if d == "north":
-                                    for z in range(hall_len + 1, 3, o):
-                                        if linesight.line_of_sight[2][z] == gametiles.tiles[linesight.line_of_sight[2][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[2][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["lower left genestealer entrance"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -3796,11 +3797,11 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "south":
-                                    for z in range(hall_len + 1, -1, n):
-                                        if linesight.line_of_sight[2][z] == gametiles.tiles[linesight.line_of_sight[2][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[2][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["lower left genestealer entrance"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[2][z]]:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -3848,11 +3849,11 @@ class Attack():
                                     Attack.attack()
                             elif x == "lower right genestealer entrance":
                                 if d == "north":
-                                    for z in range(hall_len + 1, 3, o):
-                                        if linesight.line_of_sight[3][z] == gametiles.tiles[linesight.line_of_sight[3][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[3][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["lower right genestealer entrance"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -3896,11 +3897,11 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "south":
-                                    for z in range(hall_len + 1, -1, n):
-                                        if linesight.line_of_sight[3][z] == gametiles.tiles[linesight.line_of_sight[3][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[3][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["lower right genestealer entrance"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[3][z]]:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -3948,11 +3949,11 @@ class Attack():
                                     Attack.attack()
                             elif x == "left hallway":
                                 if d == "north":
-                                    for z in range(hall_len + 1, 14, o):
-                                        if linesight.line_of_sight[4][z] == gametiles.tiles[linesight.line_of_sight[4][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[4][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["left hallway"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -3996,11 +3997,11 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "south":
-                                    for z in range(hall_len + 1, -1, -1):
-                                        if linesight.line_of_sight[4][z] == gametiles.tiles[linesight.line_of_sight[4][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[4][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["left hallway"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[4][z]]:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4048,11 +4049,11 @@ class Attack():
                                     Attack.attack()
                             elif x == "right hallway":
                                 if d == "north":
-                                    for z in range(hall_len + 1, 14, o):
-                                        if linesight.line_of_sight[5][z] == gametiles.tiles[linesight.line_of_sight[5][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[5][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["right hallway"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4096,11 +4097,11 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "south":
-                                    for z in range(hall_len + 1, -1, n):
-                                        if linesight.line_of_sight[5][z] == gametiles.tiles[linesight.line_of_sight[5][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[5][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["right hallway"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[5][z]]:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4148,11 +4149,11 @@ class Attack():
                                     Attack.attack()
                             elif x == "center hall":
                                 if d == "east":
-                                    for z in range(hall_len + 1, 11, o):
-                                        if linesight.line_of_sight[6][z] == gametiles.tiles[linesight.line_of_sight[6][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[6][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["center hall"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4196,11 +4197,11 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "west":
-                                    for z in range(hall_len + 1, -1, n):
-                                        if linesight.line_of_sight[6][z] == gametiles.tiles[linesight.line_of_sight[6][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[6][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["center hall"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[6][z]]:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4248,11 +4249,11 @@ class Attack():
                                     Attack.attack()
                             elif x == "lower middle hall":
                                 if d == "north":
-                                    for z in range(y + 1, 5, o):
-                                        if linesight.line_of_sight[7][z] == gametiles.tiles[linesight.line_of_sight[7][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[7][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["lower middle hall"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4296,11 +4297,11 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "south":
-                                    for z in range(y + 1, -1, n):
-                                        if linesight.line_of_sight[7][z] == gametiles.tiles[linesight.line_of_sight[7][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[7][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["lower middle hall"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[7][z]]:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4348,11 +4349,11 @@ class Attack():
                                     Attack.attack()
                             elif x == "lower middle genestealer entrance":
                                 if d == "east":
-                                    for z in range(y + 1, 5, o):
-                                        if linesight.line_of_sight[8][z] == gametiles.tiles[linesight.line_of_sight[8][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[8][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["lower middle genestealer entrance"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4396,64 +4397,62 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "west":
-                                    for z in range(y + 1, -1, n):
-                                        for z in range(y + 1, 5, o):
-                                            if linesight.line_of_sight[8][z] == gametiles.tiles[linesight.line_of_sight[8][z]]:
-                                                if gametiles.tiles[linesight.line_of_sight[8][z]]["occupied"] == True:
-                                                    for g in genestealers.genestealers:
-                                                        if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
-                                                            if f == "Storm Bolter":
-                                                                RangedWeapons.bolter_fire(a,
+                                    for z in linesight.line_of_sight["lower middle genestealer entrance"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
+                                                for g in genestealers.genestealers:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
+                                                        if f == "Storm Bolter":
+                                                            RangedWeapons.bolter_fire(a,
+                                                                        b,
+                                                                        genestealers.genestealers[g]["alive"],
+                                                                        gametiles.tiles[linesight.line_of_sight[8][z]])
+                                                        elif f == "Assault Cannon":
+                                                            if g >= 1:
+                                                                RangedWeapons.assault_cannon(a,
+                                                                                b,
+                                                                                genestealers.genestealers[g]["alive"],
+                                                                                gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                                e,
+                                                                                g)
+                                                            else:
+                                                                print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                                Attack.attack()
+                                                        elif f == "Heavy Flamer":
+                                                            if g >= 1:
+                                                                RangedWeapons.heavy_flamer(a,
                                                                             b,
-                                                                            genestealers.genestealers[g]["alive"],
-                                                                            gametiles.tiles[linesight.line_of_sight[8][z]])
-                                                            elif f == "Assault Cannon":
-                                                                if g >= 1:
-                                                                    RangedWeapons.assault_cannon(a,
-                                                                                    b,
-                                                                                    genestealers.genestealers[g]["alive"],
-                                                                                    gametiles.tiles[linesight.line_of_sight[8][z]],
-                                                                                    e,
-                                                                                    g)
-                                                                else:
-                                                                    print("Your weapon is out of ammunition. You need to reload before you can fire again.")
-                                                                    Attack.attack()
-                                                            elif f == "Heavy Flamer":
-                                                                if g >= 1:
-                                                                    RangedWeapons.heavy_flamer(a,
+                                                                            genestealers.genestealers,
+                                                                            gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                            g)
+                                                            else:
+                                                                print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                                Attack.attack()
+                                                        elif f == "Cyclone Missile Launcher":
+                                                            if g >= 1:
+                                                                RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
                                                                                 gametiles.tiles[linesight.line_of_sight[8][z]],
                                                                                 g)
-                                                                else:
-                                                                    print("Your weapon is out of ammunition. You need to reload before you can fire again.")
-                                                                    Attack.attack()
-                                                            elif f == "Cyclone Missile Launcher":
-                                                                if g >= 1:
-                                                                    RangedWeapons.cyclone_missle(a,
-                                                                                    b,
-                                                                                    genestealers.genestealers,
-                                                                                    gametiles.tiles[linesight.line_of_sight[8][z]],
-                                                                                    g)
-                                                                else:
-                                                                    print("Your weapon is out of ammunition. You need to reload before you can fire again.")
-                                                                    Attack.attack()
-                                                        elif g == len(genestealers.genestealers):
-                                                            for h in squad.squad:
-                                                                if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
-                                                                    print(
-                                                                        "You can't fire on your own men.")
-                                                                    Attack.attack()
+                                                            else:
+                                                                print("Your weapon is out of ammunition. You need to reload before you can fire again.")
+                                                                Attack.attack()
+                                                    elif g == len(genestealers.genestealers):
+                                                        for h in squad.squad:
+                                                            if squad.squad[h]["current_place"] == gametiles.tiles[linesight.line_of_sight[8][z]]:
+                                                                print("You can't fire on your own men.")
+                                                                Attack.attack()
                                 else:
                                     print("You cannot fire in this direction.")
                                     Attack.attack()
                             elif x == "upper middle genestealer entrance":
                                 if d == "east":
-                                    for z in range(y + 1, 5, o):
-                                        if linesight.line_of_sight[9][z] == gametiles.tiles[linesight.line_of_sight[9][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[9][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["upper middle genestealer entrance"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4497,11 +4496,11 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "west":
-                                    for z in range(y + 1, -1, n):
-                                        if linesight.line_of_sight[9][z] == gametiles.tiles[linesight.line_of_sight[9][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[9][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["upper middle genestealer entrance"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[9][z]]:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4549,11 +4548,11 @@ class Attack():
                                     Attack.attack()
                             elif x == "upper middle hall":
                                 if d == "north":
-                                    for z in range(y + 1, 6, o):
-                                        if linesight.line_of_sight[10][z] == gametiles.tiles[linesight.line_of_sight[10][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[10][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["upper middle hall"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4597,11 +4596,11 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "south":
-                                    for z in range(y + 1, -1, n):
-                                        if linesight.line_of_sight[10][z] == gametiles.tiles[linesight.line_of_sight[10][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[10][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["upper middle hall"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[10][z]]:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4649,11 +4648,11 @@ class Attack():
                                     Attack.attack()
                             elif x == "lower top genestealer entrance":
                                 if d == "east":
-                                    for z in range(y + 1, 5, o):
-                                        if linesight.line_of_sight[11][z] == gametiles.tiles[linesight.line_of_sight[11][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[11][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["lower top genestealer entrance"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4697,11 +4696,11 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "west":
-                                    for z in range(y + 1, -1, n):
-                                        if linesight.line_of_sight[11][z] == gametiles.tiles[linesight.line_of_sight[11][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[11][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["lower top genestealer entrance"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[11][z]]:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4749,11 +4748,11 @@ class Attack():
                                     Attack.attack()
                             elif x == "upper top genestealer entrance":
                                 if d == "east":
-                                    for z in range(y + 1, 5, o):
-                                        if linesight.line_of_sight[12][z] == gametiles.tiles[linesight.line_of_sight[12][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[12][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["upper top genestealer entrance"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4797,11 +4796,11 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "west":
-                                    for z in range(y + 1, -1, n):
-                                        if linesight.line_of_sight[12][z] == gametiles.tiles[linesight.line_of_sight[12][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[12][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["upper top genestealer entrance"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[12][z]]:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4849,11 +4848,11 @@ class Attack():
                                     Attack.attack()
                             elif x == "upper hall":
                                 if d == "east":
-                                    for z in range(y + 1, 11, o):
-                                        if linesight.line_of_sight[13][z] == gametiles.tiles[linesight.line_of_sight[13][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[13][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["upper hall"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
+                                                    if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
@@ -4897,11 +4896,11 @@ class Attack():
                                                                     "You can't fire on your own men.")
                                                                 Attack.attack()
                                 elif d == "west":
-                                    for z in range(y + 1, -1, n):
-                                        if linesight.line_of_sight[13][z] == gametiles.tiles[linesight.line_of_sight[13][z]]:
-                                            if gametiles.tiles[linesight.line_of_sight[13][z]]["occupied"] == True:
+                                    for z in linesight.line_of_sight["upper hall"].values():
+                                        if z == gametiles.tiles[c].get("id_1"):
+                                            if gametiles.tiles[c]["occupied"] == True:
                                                 for g in genestealers.genestealers:
-                                                    if genestealers.genestealers[g]["current_place"] == gametiles.tiles[linesight.line_of_sight[13][z]]:
+                                                    if z > gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
