@@ -3552,13 +3552,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[0][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[0][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -3569,7 +3569,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[0][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3579,7 +3579,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[0][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3600,17 +3600,18 @@ class Attack():
                                                 for g in genestealers.genestealers:
                                                     # print(gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"))
                                                     if z < gametiles.tiles[genestealers.genestealers[g]["current_place"]].get("id_1"):
+                                                        # print(gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         if f == "Storm Bolter":
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[0][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[0][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -3621,7 +3622,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[0][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3631,7 +3632,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[0][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3656,13 +3657,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[1][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[1][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -3673,7 +3674,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[1][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3683,7 +3684,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[1][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3704,13 +3705,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[1][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[1][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -3721,7 +3722,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[1][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3731,7 +3732,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[1][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3756,13 +3757,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[2][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[2][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -3773,7 +3774,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[2][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3783,7 +3784,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[2][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3804,13 +3805,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[2][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[2][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -3821,7 +3822,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[2][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3831,7 +3832,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[2][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3856,13 +3857,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[3][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[3][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -3873,7 +3874,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[3][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3883,7 +3884,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[3][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3904,13 +3905,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[3][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[3][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -3921,7 +3922,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[3][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3931,7 +3932,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[3][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3956,13 +3957,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[4][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[4][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -3973,7 +3974,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[4][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -3983,7 +3984,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[4][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4004,13 +4005,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[4][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[4][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4021,7 +4022,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[4][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4031,7 +4032,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[4][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4056,13 +4057,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[5][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[5][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4073,7 +4074,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[5][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4083,7 +4084,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[5][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4104,13 +4105,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[5][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[5][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4121,7 +4122,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[5][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4131,7 +4132,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[5][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4156,13 +4157,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[6][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[6][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4173,7 +4174,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[6][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4183,7 +4184,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[6][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4204,13 +4205,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[6][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[6][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4221,7 +4222,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[6][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4231,7 +4232,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[6][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4256,13 +4257,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[7][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[7][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4273,7 +4274,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[7][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4283,7 +4284,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[7][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4304,13 +4305,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[7][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[7][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4321,7 +4322,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[7][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4331,7 +4332,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[7][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4356,13 +4357,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[8][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4373,7 +4374,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4383,7 +4384,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4404,13 +4405,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[8][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4421,7 +4422,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4431,7 +4432,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[8][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4455,13 +4456,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[9][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[9][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4472,7 +4473,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                             b,
                                                                             genestealers.genestealers,
-                                                                            gametiles.tiles[linesight.line_of_sight[9][z]],
+                                                                            gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                             g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4482,7 +4483,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[9][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4503,13 +4504,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[9][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[9][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4520,7 +4521,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[9][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4530,7 +4531,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[9][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4555,13 +4556,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[10][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[10][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4572,7 +4573,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[10][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4582,7 +4583,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[10][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4603,13 +4604,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[10][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[10][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4620,7 +4621,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[10][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4630,7 +4631,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[10][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4655,13 +4656,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[11][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[11][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4672,7 +4673,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[11][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4682,7 +4683,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[11][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4703,13 +4704,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[11][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[11][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4720,7 +4721,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[11][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4730,7 +4731,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[11][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4755,13 +4756,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[12][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[12][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4772,7 +4773,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[12][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4782,7 +4783,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[12][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4803,13 +4804,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[12][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[12][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4820,7 +4821,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[12][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4830,7 +4831,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[12][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4855,13 +4856,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[13][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[13][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4872,7 +4873,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[13][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4882,7 +4883,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[13][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4903,13 +4904,13 @@ class Attack():
                                                             RangedWeapons.bolter_fire(a,
                                                                         b,
                                                                         genestealers.genestealers[g]["alive"],
-                                                                        gametiles.tiles[linesight.line_of_sight[13][z]])
+                                                                        gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"])
                                                         elif f == "Assault Cannon":
                                                             if g >= 1:
                                                                 RangedWeapons.assault_cannon(a,
                                                                                 b,
                                                                                 genestealers.genestealers[g]["alive"],
-                                                                                gametiles.tiles[linesight.line_of_sight[13][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 e,
                                                                                 g)
                                                             else:
@@ -4920,7 +4921,7 @@ class Attack():
                                                                 RangedWeapons.heavy_flamer(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[13][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
@@ -4930,7 +4931,7 @@ class Attack():
                                                                 RangedWeapons.cyclone_missle(a,
                                                                                 b,
                                                                                 genestealers.genestealers,
-                                                                                gametiles.tiles[linesight.line_of_sight[13][z]],
+                                                                                gametiles.tiles[genestealers.genestealers[g]["current_place"]]["occupied"],
                                                                                 g)
                                                             else:
                                                                 print("Your weapon is out of ammunition. You need to reload before you can fire again.")
